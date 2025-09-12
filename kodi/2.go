@@ -7,7 +7,6 @@ import (
 	"namelaruzb_bot/kodi/Menu"
 	"namelaruzb_bot/kodi/anmelaruzb"
 	_default "namelaruzb_bot/kodi/default"
-	"namelaruzb_bot/kodi/rasimlar"
 	"time"
 
 	tele "gopkg.in/telebot.v4"
@@ -103,10 +102,7 @@ func Bot() {
 			return Menu.Home(c)
 		case "🧩 help", "/help":
 			return Help.Home(c)
-		case "📷 Rasmlar", "/obito", "/rin", "/kakashi", "/itachi", "/jiraya", "/akatsuki", "/madara", "/naruto", "/saski", "/hinata", "/sakura":
-			return rasimlar.Home(c)
-		case "/gojo", "/sukuna", "/toji", "/ern", "/mikasa", "/levi", "/shadow", "/Sung_Jin_Woo", "/aliya", "/tokiyo_qasakorlari", "/tokiyogul", "/iblislar_qotili":
-			return rasimlar.Home(c)
+
 		default:
 			return _default.Home(c)
 			/*c.Send("Uzr bu kod noto'g'ri yoki hozircha mavjud emas!" +
