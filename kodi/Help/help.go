@@ -10,7 +10,7 @@ func Home(c tele.Context) error {
 	switch text {
 
 	case "🧩 help", "/help":
-		return c.Send("biz bot ham yaratamiz\nadmin---@TM_ESPORTS\nadmin---@TM_ESPORTS2")
+		return c.Send("biz bot ham yaratamiz..\nadmin---@TM_ESPORTS\nadmin---@TM_ESPORTS2")
 
 	default:
 		return c.Send("Noma'lum buyruq. Iltimos, menyudan foydalaning.")
