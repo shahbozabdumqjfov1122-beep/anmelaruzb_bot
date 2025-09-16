@@ -69,7 +69,7 @@ func Bot() {
 		if isSubscribed(b, user) {
 			return c.Send(" Botga xush kelibsiz \nbotga joylangan anmlerni ko'rish uchun---/menu"+
 				"\nbizni botimizdan bironta  anme ni "+
-				"\nqidirib topolmasagiz adminlarga murojat qiling\nmurojat uchun bosing---/help  ", menu)
+				"\nqidirib topolmasagiz adminlarga murojat qiling\nmurojat uchun bosing---/help \n instagramga obuna bolib qo'yinlar", menu)
 		}
 		msg := "❗ Botdan foydalanish uchun avval barcha kanallarga obuna bo‘ling."
 		return c.Send(msg, inlineMenu)
