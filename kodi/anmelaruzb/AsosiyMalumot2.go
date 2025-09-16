@@ -2,6 +2,7 @@ package anmelaruzb
 
 import (
 	tele "gopkg.in/telebot.v4"
+	JahannamJannati "namelaruzb_bot/kodi/anmelaruzb/ JahannamJannati"
 	"namelaruzb_bot/kodi/anmelaruzb/Aliyabazanmegarustilidanoskarashmaqiladi"
 	"namelaruzb_bot/kodi/anmelaruzb/Davolovchiqahramon"
 	"namelaruzb_bot/kodi/anmelaruzb/Franksdagisevgi"
@@ -75,6 +76,8 @@ func Home(c tele.Context) error {
 		return NomsizXotira.Home(c)
 	case "22", "Qotil Akame":
 		return QotilAkame.Home(c)
+	case "23", " Jahannam Jannati":
+		return JahannamJannati.Home(c)
 
 	//
 	//
