@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb8fcf7f-66fd-49b5-932d-7110c9820c5e" name="Changes" comment="izoy yozishga erindim">
+    <list default="true" id="fb8fcf7f-66fd-49b5-932d-7110c9820c5e" name="Changes" comment="izoy yozishga erindim.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kodi/2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/2.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/ JahannamJannati/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/ JahannamJannati/1.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,21 +31,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Dars1/telegram botlar/anmelar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "master",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "D:/Dars1/telegram botlar/anmelar/kodi/anmelaruzb/ JahannamJannati",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory"
+    ]
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\ JahannamJannati" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -61,7 +73,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="hech narsa yo" />
     <MESSAGE value="izoy yozishga erindim" />
-    <option name="LAST_COMMIT_MESSAGE" value="izoy yozishga erindim" />
+    <MESSAGE value="izoy yozishga erindim." />
+    <option name="LAST_COMMIT_MESSAGE" value="izoy yozishga erindim." />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
