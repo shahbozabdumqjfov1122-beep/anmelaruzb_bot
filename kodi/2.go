@@ -105,8 +105,6 @@ func Bot() {
 
 		default:
 			return _default.Home(c)
-			/*c.Send("Uzr bu kod noto'g'ri yoki hozircha mavjud emas!" +
-			"\n\n Iltimos, menu dan foydalaning 🌎 !")*/
 		}
 	})
 	log.Println("🤖 Bot ishga tushdi...")
