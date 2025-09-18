@@ -107,6 +107,6 @@ func Bot() {
 			return _default.Home(c)
 		}
 	})
-	log.Println("  🤖 Bot ishga tushdi...")
+	log.Println("  🤖 Bot ishga tushdi....")
 	b.Start()
 }
