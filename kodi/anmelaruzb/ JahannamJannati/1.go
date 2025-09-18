@@ -4,6 +4,7 @@ import (
 	tele "gopkg.in/telebot.v4"
 )
 
+// Home funksiyasi, boshqa paketdan chaqirish mumkin
 func Home(c tele.Context) error {
 	b := c.Bot()
 	channelID := int64(-1002932625719)

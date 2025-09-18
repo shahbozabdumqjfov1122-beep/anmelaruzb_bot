@@ -2,7 +2,7 @@ package anmelaruzb
 
 import (
 	tele "gopkg.in/telebot.v4"
-	JahannamJannati "namelaruzb_bot/kodi/anmelaruzb/ JahannamJannati"
+	"namelaruzb_bot/kodi/anmelaruzb/ JahannamJannati"
 	"namelaruzb_bot/kodi/anmelaruzb/Aliyabazanmegarustilidanoskarashmaqiladi"
 	"namelaruzb_bot/kodi/anmelaruzb/Davolovchiqahramon"
 	"namelaruzb_bot/kodi/anmelaruzb/Franksdagisevgi"
