@@ -11,6 +11,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/NomsizXotira"
 	"namelaruzb_bot/kodi/anmelaruzb/Ochkozbosek"
 	"namelaruzb_bot/kodi/anmelaruzb/Qalqonqahromoni"
+	"namelaruzb_bot/kodi/anmelaruzb/QoraKlever"
 	"namelaruzb_bot/kodi/anmelaruzb/Qoshnifarishta"
 	"namelaruzb_bot/kodi/anmelaruzb/QotilAkame"
 	"namelaruzb_bot/kodi/anmelaruzb/Saksonolti"
@@ -78,6 +79,8 @@ func Home(c tele.Context) error {
 		return QotilAkame.Home(c)
 	case "23", " Jahannam Jannati":
 		return JahannamJannati.Home(c)
+	case "24", " Qora Klever":
+		return QoraKlever.Home(c)
 
 	//
 	//

@@ -96,7 +96,7 @@ func Bot() {
 		case "Naruto", "Iblislar qotili", "86", "Franksdagisevgi", "Vanpis", "Tokiyoqasoskorlari", "Xarobalar qiroligi", "Daho shahzodani mamlakatni qutqargani haqida",
 			"Qalqon qahromoni", "Soyada kotarilish", "Titanlar hujumi", "Jodugarlar jangi", "Sharlota", "Qoshni farishta", "Aliya bazan mega rustilida nos karashma qiladi", "Davolovchi qahramon", "yolg'izlikda daraja ko'taish":
 			return anmelaruzb.Home(c)
-		case "Qotil Akame", "Ochkoz bersek", "Zombi 100", "Nomsiz Xotira", "So'ngi serafim", "Jahannam Jannati":
+		case "Qotil Akame", "Ochkoz bersek", "Zombi 100", "Nomsiz Xotira", "So'ngi serafim", "Jahannam Jannati", "Qora Klever":
 			return anmelaruzb.Home(c)
 		case "Animelar", "/menu":
 			return Menu.Home(c)

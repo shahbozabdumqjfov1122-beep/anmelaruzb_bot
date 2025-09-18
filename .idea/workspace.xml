@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8fcf7f-66fd-49b5-932d-7110c9820c5e" name="Changes" comment="izoy yozishga erindim.">
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/QoraKlever/1.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kodi/2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/2.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/ JahannamJannati/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/ JahannamJannati/1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/Menu/menu.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/Menu/menu.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,17 +18,36 @@
   </component>
   <component name="GOROOT" url="file://C:/Program Files/Go" />
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;shahbozabdumqjfov1122-beep&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/shahbozabdumqjfov1122-beep/anmelaruzb_bot.git&quot;,
+    &quot;accountId&quot;: &quot;6e2e0f3e-7a7b-45bd-9e18-e9ff0e694d28&quot;
+  }
+}</component>
   <component name="GoVcsConfiguration">
     <option name="GO_FMT" value="false" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "1e14b0ff",
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;1e14b0ff&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="32da9Ah5DTc8bP24rCakGnAhvGi" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -37,10 +58,10 @@
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "D:/Dars1/telegram botlar/anmelar/kodi/anmelaruzb/ JahannamJannati",
+    "last_opened_file_path": "D:/Dars1/telegram botlar/anmelar/kodi/anmelaruzb/QoraKlever",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm"
@@ -53,6 +74,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\QoraKlever" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\ JahannamJannati" />
     </key>
   </component>
