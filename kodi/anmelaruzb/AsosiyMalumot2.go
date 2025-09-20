@@ -3,14 +3,18 @@ package anmelaruzb
 import (
 	tele "gopkg.in/telebot.v4"
 	"namelaruzb_bot/kodi/anmelaruzb/Aliyabazanmegarustilidanoskarashmaqiladi"
+	"namelaruzb_bot/kodi/anmelaruzb/Bleach"
 	"namelaruzb_bot/kodi/anmelaruzb/Davolovchiqahramon"
 	"namelaruzb_bot/kodi/anmelaruzb/Franksdagisevgi"
+	"namelaruzb_bot/kodi/anmelaruzb/Jahannamjannati"
 	"namelaruzb_bot/kodi/anmelaruzb/Jodugarlarjangi"
 	"namelaruzb_bot/kodi/anmelaruzb/Naruto"
 	"namelaruzb_bot/kodi/anmelaruzb/NomsizXotira"
 	"namelaruzb_bot/kodi/anmelaruzb/Ochkozbosek"
+	"namelaruzb_bot/kodi/anmelaruzb/Olmasqirolningkundalikhayoti"
 	"namelaruzb_bot/kodi/anmelaruzb/Qalqonqahromoni"
 	"namelaruzb_bot/kodi/anmelaruzb/QoraKlever"
+	"namelaruzb_bot/kodi/anmelaruzb/Qoraoq"
 	"namelaruzb_bot/kodi/anmelaruzb/Qoshnifarishta"
 	"namelaruzb_bot/kodi/anmelaruzb/QotilAkame"
 	"namelaruzb_bot/kodi/anmelaruzb/Saksonolti"
@@ -18,6 +22,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Songiserafim"
 	"namelaruzb_bot/kodi/anmelaruzb/Soyadakotarilish"
 	"namelaruzb_bot/kodi/anmelaruzb/Titanlarjangi"
+	"namelaruzb_bot/kodi/anmelaruzb/Vanitasxotiralari"
 	"namelaruzb_bot/kodi/anmelaruzb/Xarobalarqiroligi"
 	"namelaruzb_bot/kodi/anmelaruzb/Zombi100"
 	"namelaruzb_bot/kodi/anmelaruzb/dahoshahzodanimamlakat"
@@ -76,8 +81,18 @@ func Home(c tele.Context) error {
 		return NomsizXotira.Home(c)
 	case "22", "Qotil Akame":
 		return QotilAkame.Home(c)
-	case "24", " Qora Klever":
+	case "23", "Jahannam jannati":
+		return Jahannamjannati.Home(c)
+	case "24", "Qora Klever":
 		return QoraKlever.Home(c)
+	case "25", "Vanitas xotiralari":
+		return Vanitasxotiralari.Home(c)
+	case "26", "Bleach":
+		return Bleach.Home(c)
+	case "27", "O‘lmas qirolning kundalik hayoti":
+		return Olmasqirolningkundalikhayoti.Home(c)
+	case "28", "Qora o'q":
+		return Qoraoq.Home(c)
 
 	//
 	//
