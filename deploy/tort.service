@@ -1,0 +1,15 @@
+[Unit]
+Description=namelaruzb Bot (Go)
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/var/www/animelar/anmelaruzb_bot
+ExecStart=/var/www/animelar/anmelaruzb_bot/namelaruzb_bot
+Restart=always
+RestartSec=5
+StandardOutput=append:/var/www/animelar/anmelaruzb_bot/bot.log
+StandardError=append:/var/www/animelaruzb_bot/bot.err
+
+[Install]
+WantedBy=multi-user.target
