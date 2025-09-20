@@ -13,9 +13,9 @@ import (
 )
 
 var channels = []*tele.Chat{
-	{ID: -1003076598684, Username: "obuna bo'lish"}, // 1-kanal
-	{ID: -1003050934981, Username: "obuna bo'lish"}, // 2-kanal
-	{ID: -1002328747274, Username: "obuna bo'lish"}, // 3-kanal
+	{ID: -1003076598684, Username: "@abu_w"},       // 1-kanal
+	{ID: -1003050934981, Username: "Anmelaruzb"},   // 2-kanal
+	{ID: -1002328747274, Username: "uzb_FCB_fans"}, // 3-kanal
 }
 
 // Obuna bo‘lmagan kanallarni topish
