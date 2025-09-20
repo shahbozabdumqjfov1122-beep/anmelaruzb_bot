@@ -125,6 +125,6 @@ func Bot() {
 		}
 	})
 
-	log.Println("🤖 Bot ishga tushdi...")
+	log.Println("🤖 Bot ishga tushdi....")
 	b.Start()
 }
