@@ -8,6 +8,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Franksdagisevgi"
 	"namelaruzb_bot/kodi/anmelaruzb/Jahannamjannati"
 	"namelaruzb_bot/kodi/anmelaruzb/Jodugarlarjangi"
+	"namelaruzb_bot/kodi/anmelaruzb/Menmuvaffaqiyatsiz"
 	"namelaruzb_bot/kodi/anmelaruzb/Naruto"
 	"namelaruzb_bot/kodi/anmelaruzb/NomsizXotira"
 	"namelaruzb_bot/kodi/anmelaruzb/Ochkozbosek"
@@ -93,6 +94,8 @@ func Home(c tele.Context) error {
 		return Olmasqirolningkundalikhayoti.Home(c)
 	case "28", "Qora o'q":
 		return Qoraoq.Home(c)
+	case "29", "Men Muvaffaqiyatsiz...":
+		return Menmuvaffaqiyatsiz.Home(c)
 
 	//
 	//
