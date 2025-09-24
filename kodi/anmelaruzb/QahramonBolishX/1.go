@@ -1,4 +1,4 @@
-package QahramonBoʻlishX
+package QahramonBolishX
 
 import (
 	tele "gopkg.in/telebot.v4"

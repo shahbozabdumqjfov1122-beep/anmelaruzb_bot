@@ -14,7 +14,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/NomsizXotira"
 	"namelaruzb_bot/kodi/anmelaruzb/Ochkozbosek"
 	"namelaruzb_bot/kodi/anmelaruzb/Olmasqirolningkundalikhayoti"
-	"namelaruzb_bot/kodi/anmelaruzb/QahramonBoʻlishX"
+	"namelaruzb_bot/kodi/anmelaruzb/QahramonBolishX"
 	"namelaruzb_bot/kodi/anmelaruzb/Qalqonqahromoni"
 	"namelaruzb_bot/kodi/anmelaruzb/QoraKlever"
 	"namelaruzb_bot/kodi/anmelaruzb/Qoraoq"
@@ -114,7 +114,7 @@ func Home(c tele.Context) error {
 	case "32", "Zulmat Iblisi":
 		return ZulmatIblisi.Home(c)
 	case "33", "Qahramon Boʻlish X":
-		return QahramonBoʻlishX.Home(c)
+		return QahramonBolishX.Home(c)
 	case "34", "Yozukura Oilasi":
 		return YozukuraOilasi.Home(c)
 	case "35", "Zulmat Farzandi":
