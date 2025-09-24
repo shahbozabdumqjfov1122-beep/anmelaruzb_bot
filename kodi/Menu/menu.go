@@ -37,6 +37,17 @@ func Home(c tele.Context) error {
 	btnOlmasqirolningkundalikhayoti := menu.Text("O‘lmas qirolning kundalik hayoti")
 	btnQoraoq := menu.Text("Qora o'q")
 	btnMenmuvaffaqiyatsiz := menu.Text("Men Muvaffaqiyatsiz...")
+	btnSakamotokunlari := menu.Text("Sakamoto Kunlari")
+	btnTungiBoyqushlarKuyi := menu.Text("Tungi Boyqushlar Kuyi")
+	btnZulmatiblisi := menu.Text("Zulmat Iblisi")
+	btnQahramonBoʻlishX := menu.Text("Qahramon Boʻlish X")
+	btnYozukuraOilasi := menu.Text("Yozukura Oilasi")
+	btnZulmatFarzandi := menu.Text("Zulmat Farzandi")
+	btnQudratYangiHikoya := menu.Text("Qudrat! Yangi Hikoya")
+	btnYangiSaga := menu.Text("Yangi Saga")
+	btnUyatchangQahramonvaQotilMalikalar := menu.Text("Uyatchang Qahramon va Qotil Malikalar")
+	btnDoktorstoun := menu.Text("Doktor stoun")
+	btnTaxtmuxri := menu.Text("Taxt muxri")
 
 	menu.Reply(
 		menu.Row(btnNaruto, btnIblislarqotili),
@@ -54,7 +65,12 @@ func Home(c tele.Context) error {
 		menu.Row(btnQoraKlever, btnVanitasxotiralari),
 		menu.Row(btnJahannamjannati, btnBleach),
 		menu.Row(btnOlmasqirolningkundalikhayoti, btnQoraoq),
-		menu.Row(btnMenmuvaffaqiyatsiz),
+		menu.Row(btnMenmuvaffaqiyatsiz, btnSakamotokunlari),
+		menu.Row(btnTungiBoyqushlarKuyi, btnZulmatiblisi),
+		menu.Row(btnQahramonBoʻlishX, btnYozukuraOilasi),
+		menu.Row(btnZulmatFarzandi, btnQudratYangiHikoya),
+		menu.Row(btnYangiSaga, btnUyatchangQahramonvaQotilMalikalar),
+		menu.Row(btnDoktorstoun, btnTaxtmuxri),
 	)
 
 	switch text {
