@@ -20,7 +20,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Qoraoq"
 	"namelaruzb_bot/kodi/anmelaruzb/Qoshnifarishta"
 	"namelaruzb_bot/kodi/anmelaruzb/QotilAkame"
-	QudratYangiHikoya "namelaruzb_bot/kodi/anmelaruzb/Qudrat!YangiHikoya"
+	"namelaruzb_bot/kodi/anmelaruzb/QudratYangiHikoya"
 	"namelaruzb_bot/kodi/anmelaruzb/Sakamotokunlari"
 	"namelaruzb_bot/kodi/anmelaruzb/Saksonolti"
 	"namelaruzb_bot/kodi/anmelaruzb/Sharlota"
