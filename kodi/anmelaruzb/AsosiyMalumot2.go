@@ -2,20 +2,39 @@ package anmelaruzb
 
 import (
 	tele "gopkg.in/telebot.v4"
+	"namelaruzb_bot/kodi/anmelaruzb/Afsonaviyilohyilnomasi"
 	"namelaruzb_bot/kodi/anmelaruzb/Aliyabazanmegarustilidanoskarashmaqiladi"
+	"namelaruzb_bot/kodi/anmelaruzb/AprelYolgoni"
+	"namelaruzb_bot/kodi/anmelaruzb/Badargaqilinganqahramon"
 	"namelaruzb_bot/kodi/anmelaruzb/Bleach"
+	"namelaruzb_bot/kodi/anmelaruzb/Boshqadunyodanmuammolibolalar"
+	"namelaruzb_bot/kodi/anmelaruzb/Bucchgiri"
+	"namelaruzb_bot/kodi/anmelaruzb/Chegaraortida"
+	"namelaruzb_bot/kodi/anmelaruzb/DastlabkiDrift"
 	"namelaruzb_bot/kodi/anmelaruzb/Davolovchiqahramon"
 	"namelaruzb_bot/kodi/anmelaruzb/Doktorstoun"
+	"namelaruzb_bot/kodi/anmelaruzb/Domekano"
+	"namelaruzb_bot/kodi/anmelaruzb/DragonRajaS"
 	"namelaruzb_bot/kodi/anmelaruzb/Franksdagisevgi"
+	"namelaruzb_bot/kodi/anmelaruzb/GachiakutaQasos"
+	"namelaruzb_bot/kodi/anmelaruzb/Gertsogningqizigashaxsiyoqituvchiboldim"
 	"namelaruzb_bot/kodi/anmelaruzb/Jahannamjannati"
 	"namelaruzb_bot/kodi/anmelaruzb/Jodugarlarjangi"
+	"namelaruzb_bot/kodi/anmelaruzb/Lookism"
+	"namelaruzb_bot/kodi/anmelaruzb/MabudlarHohishiBilan"
+	"namelaruzb_bot/kodi/anmelaruzb/Mengalaktikalararo"
 	"namelaruzb_bot/kodi/anmelaruzb/Menmuvaffaqiyatsiz"
+	"namelaruzb_bot/kodi/anmelaruzb/MinograApokalipsis"
 	"namelaruzb_bot/kodi/anmelaruzb/Naruto"
 	"namelaruzb_bot/kodi/anmelaruzb/NomsizXotira"
 	"namelaruzb_bot/kodi/anmelaruzb/Ochkozbosek"
 	"namelaruzb_bot/kodi/anmelaruzb/Olmasqirolningkundalikhayoti"
+	"namelaruzb_bot/kodi/anmelaruzb/OltinVaqt"
+	"namelaruzb_bot/kodi/anmelaruzb/OsmondagiJanglar"
+	"namelaruzb_bot/kodi/anmelaruzb/Ozgadunyodayolgizhujum"
 	"namelaruzb_bot/kodi/anmelaruzb/QahramonBolishX"
 	"namelaruzb_bot/kodi/anmelaruzb/Qalqonqahromoni"
+	"namelaruzb_bot/kodi/anmelaruzb/QobilyatsizNana"
 	"namelaruzb_bot/kodi/anmelaruzb/QoraKlever"
 	"namelaruzb_bot/kodi/anmelaruzb/Qoraoq"
 	"namelaruzb_bot/kodi/anmelaruzb/Qoshnifarishta"
@@ -23,15 +42,22 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/QudratYangiHikoya"
 	"namelaruzb_bot/kodi/anmelaruzb/Sakamotokunlari"
 	"namelaruzb_bot/kodi/anmelaruzb/Saksonolti"
+	"namelaruzb_bot/kodi/anmelaruzb/Senioshqozon"
 	"namelaruzb_bot/kodi/anmelaruzb/Sharlota"
+	"namelaruzb_bot/kodi/anmelaruzb/SirlarHukmdori"
 	"namelaruzb_bot/kodi/anmelaruzb/Songiserafim"
 	"namelaruzb_bot/kodi/anmelaruzb/Soyadakotarilish"
+	"namelaruzb_bot/kodi/anmelaruzb/SuvSehrgari"
+	"namelaruzb_bot/kodi/anmelaruzb/TaqdirJangKechasi"
 	"namelaruzb_bot/kodi/anmelaruzb/Taxtmuxri"
 	"namelaruzb_bot/kodi/anmelaruzb/Titanlarjangi"
 	"namelaruzb_bot/kodi/anmelaruzb/Tungiboyqushlarkuyi"
 	"namelaruzb_bot/kodi/anmelaruzb/UyatchangQahramonvaQotilMalikalar"
+	"namelaruzb_bot/kodi/anmelaruzb/UzuklarHukumdor"
 	"namelaruzb_bot/kodi/anmelaruzb/Vanitasxotiralari"
 	"namelaruzb_bot/kodi/anmelaruzb/Xarobalarqiroligi"
+	"namelaruzb_bot/kodi/anmelaruzb/XunukAmmoKuchli"
+	"namelaruzb_bot/kodi/anmelaruzb/XushboyGulViqorBilanGulaydi"
 	"namelaruzb_bot/kodi/anmelaruzb/YangiSaga"
 	"namelaruzb_bot/kodi/anmelaruzb/YozukuraOilasi"
 	"namelaruzb_bot/kodi/anmelaruzb/Zombi100"
@@ -39,6 +65,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/ZulmatIblisi"
 	"namelaruzb_bot/kodi/anmelaruzb/dahoshahzodanimamlakat"
 	"namelaruzb_bot/kodi/anmelaruzb/iblislarqotili"
+	"namelaruzb_bot/kodi/anmelaruzb/tahlilashqobilyati"
 	"namelaruzb_bot/kodi/anmelaruzb/tokiyoqasoskorlari"
 	"namelaruzb_bot/kodi/anmelaruzb/vanpis"
 	"namelaruzb_bot/kodi/anmelaruzb/yolgizlikdadarajakotaish"
@@ -129,6 +156,60 @@ func Home(c tele.Context) error {
 		return Doktorstoun.Home(c)
 	case "40", "Taxt muxri":
 		return Taxtmuxri.Home(c)
+	case "41", "Badargʻa qilingan qahramon":
+		return Badargaqilinganqahramon.Home(c)
+	case "42", "Boshqa dunyodan muammoli bolalar":
+		return Boshqadunyodanmuammolibolalar.Home(c)
+	case "43", "Taxt Dastlabki Drift":
+		return DastlabkiDrift.Home(c)
+	case "44", "Dragon Raja":
+		return DragonRajaS.Home(c)
+	case "45", "Xushboʻy Gul Viqor Bilan Gulaydi":
+		return XushboyGulViqorBilanGulaydi.Home(c)
+	case "46", "Xunuk Ammo Kuchli: Busamen G‘alaba Jangi":
+		return XunukAmmoKuchli.Home(c)
+	case "47", "Uzuklar Hukumdori: Rohhirm Urushi":
+		return UzuklarHukumdor.Home(c)
+	case "48", "Taqdir Jang Kechasi":
+		return TaqdirJangKechasi.Home(c)
+	case "49", "Tahlil Qilish Qobiliyati Bilan Aristokrat Sifatida Qayta Tugʻildim":
+		return tahlilashqobilyati.Home(c)
+	case "50", "Suv Sehrgari":
+		return SuvSehrgari.Home(c)
+	case "51", "Sirlar Hukmdori":
+		return SirlarHukmdori.Home(c)
+	case "52", "Seni oshqozon osti bezingni yemoqchi man":
+		return Senioshqozon.Home(c)
+	case "53", "Qobilyatsiz Nana":
+		return QobilyatsizNana.Home(c)
+	case "54", "Ozga dunyoda yolgiz hujum":
+		return Ozgadunyodayolgizhujum.Home(c)
+	case "55", "Osmondagi Janglar":
+		return OsmondagiJanglar.Home(c)
+	case "56", "Oltin Vaqt":
+		return OltinVaqt.Home(c)
+	case "57", "Minogra Apokalipsis":
+		return MinograApokalipsis.Home(c)
+	case "58", "Men galaktikalar aro imperiyaning yovuz lordiman":
+		return Mengalaktikalararo.Home(c)
+	case "59", "Mabudlar Hohishi Bilan":
+		return MabudlarHohishiBilan.Home(c)
+	case "60", "Lookism":
+		return Lookism.Home(c)
+	case "61", "Gertsogning qiziga shaxsiy o'qituvchi boʻldim":
+		return Gertsogningqizigashaxsiyoqituvchiboldim.Home(c)
+	case "62", "Gachiakuta Qasos":
+		return GachiakutaQasos.Home(c)
+	case "63", "Domekano":
+		return Domekano.Home(c)
+	case "64", "Chegara ortida":
+		return Chegaraortida.Home(c)
+	case "65", "Bucchgiri":
+		return Bucchgiri.Home(c)
+	case "66", "AprelYolgoni":
+		return AprelYolgoni.Home(c)
+	case "67", "Afsonaviy ilohy ilnomasi":
+		return Afsonaviyilohyilnomasi.Home(c)
 
 	//
 	//

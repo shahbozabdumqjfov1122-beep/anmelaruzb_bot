@@ -48,6 +48,33 @@ func Home(c tele.Context) error {
 	btnUyatchangQahramonvaQotilMalikalar := menu.Text("Uyatchang Qahramon va Qotil Malikalar")
 	btnDoktorstoun := menu.Text("Doktor stoun")
 	btnTaxtmuxri := menu.Text("Taxt muxri")
+	btnBadarga := menu.Text("Badargʻa qilingan qahramon")
+	btnBoshqadunyo := menu.Text("Boshqa dunyodan muammoli bolalar")
+	btnDrift := menu.Text("Taxt Dastlabki Drift")
+	btnDragonRaja := menu.Text("Dragon Raja")
+	btnXushboy := menu.Text("Xushboʻy Gul Viqor Bilan Gulaydi")
+	btnXunuk := menu.Text("Xunuk Ammo Kuchli: Busamen G‘alaba Jangi")
+	btnUzuklar := menu.Text("Uzuklar Hukumdori: Rohhirm Urushi")
+	btnTaqdir := menu.Text("Taqdir Jang Kechasi")
+	btnTahlil := menu.Text("Tahlil Qilish Qobiliyati Bilan Aristokrat Sifatida Qayta Tugʻildim")
+	btnSuv := menu.Text("Suv Sehrgari")
+	btnSirlar := menu.Text("Sirlar Hukmdori")
+	btnSeniOshqozon := menu.Text("Seni oshqozon osti bezingni yemoqchi man")
+	btnNana := menu.Text("Qobilyatsiz Nana")
+	btnOzgaDunyo := menu.Text("Ozga dunyoda yolgiz hujum")
+	btnOsmondagi := menu.Text("Osmondagi Janglar")
+	btnOltin := menu.Text("Oltin Vaqt")
+	btnMinogra := menu.Text("Minogra Apokalipsis")
+	btnMenGalaktika := menu.Text("Men galaktikalar aro imperiyaning yovuz lordiman")
+	btnMabudlar := menu.Text("Mabudlar Hohishi Bilan")
+	btnLookism := menu.Text("Lookism")
+	btnGertsog := menu.Text("Gertsogning qiziga shaxsiy o'qituvchi boʻldim")
+	btnGachiakuta := menu.Text("Gachiakuta Qasos")
+	btnDomekano := menu.Text("Domekano")
+	btnChegara := menu.Text("Chegara ortida")
+	btnBucchgiri := menu.Text("Bucchgiri")
+	btnAprel := menu.Text("AprelYolgoni")
+	btnAfsona := menu.Text("Afsonaviy ilohy ilnomasi")
 
 	menu.Reply(
 		menu.Row(btnNaruto, btnIblislarqotili),
@@ -71,6 +98,22 @@ func Home(c tele.Context) error {
 		menu.Row(btnZulmatFarzandi, btnQudratYangiHikoya),
 		menu.Row(btnYangiSaga, btnUyatchangQahramonvaQotilMalikalar),
 		menu.Row(btnDoktorstoun, btnTaxtmuxri),
+		menu.Row(btnBadarga, btnBoshqadunyo),
+		menu.Row(btnDrift, btnDragonRaja),
+		menu.Row(btnXushboy, btnXunuk),
+		menu.Row(btnUzuklar, btnTaqdir),
+		menu.Row(btnTahlil),
+		menu.Row(btnSirlar, btnSuv),
+		menu.Row(btnSeniOshqozon),
+		menu.Row(btnNana, btnOzgaDunyo),
+		menu.Row(btnOsmondagi, btnOltin),
+		menu.Row(btnMinogra, btnGachiakuta),
+		menu.Row(btnMenGalaktika),
+		menu.Row(btnMabudlar, btnLookism),
+		menu.Row(btnGertsog),
+		menu.Row(btnDomekano, btnChegara),
+		menu.Row(btnBucchgiri, btnAprel),
+		menu.Row(btnAfsona),
 	)
 
 	switch text {
