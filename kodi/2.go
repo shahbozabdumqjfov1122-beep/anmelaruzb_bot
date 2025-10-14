@@ -13,8 +13,8 @@ import (
 )
 
 var channels = []*tele.Chat{
-	{ID: -1003050934981, Username: "Anmelaruzb"},   // 2-kanal
-	{ID: -1002328747274, Username: "uzb_FCB_fans"}, // 3-kanal
+	{ID: -1003050934981, Username: "Anmelaruzb"},   // 1-kanal
+	{ID: -1002328747274, Username: "uzb_FCB_fans"}, // 2-kanal
 }
 
 // Obuna bo‘lmagan kanallarni topish
