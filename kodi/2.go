@@ -50,9 +50,8 @@ func Bot() {
 	btnID := menu.Text("🖋️ anme izlash")
 	btnMENU := menu.Text("Animelar")
 	btnHELP := menu.Text("🧩 help")
-	btnRASMLAR := menu.Text("📷 Rasmlar")
 	menu.Reply(
-		menu.Row(btnRASMLAR, btnID),
+		menu.Row(btnID),
 		menu.Row(btnMENU, btnHELP),
 	)
 
