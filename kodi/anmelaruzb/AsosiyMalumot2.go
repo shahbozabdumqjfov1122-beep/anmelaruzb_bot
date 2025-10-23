@@ -59,6 +59,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/XunukAmmoKuchli"
 	"namelaruzb_bot/kodi/anmelaruzb/XushboyGulViqorBilanGulaydi"
 	"namelaruzb_bot/kodi/anmelaruzb/YangiSaga"
+	"namelaruzb_bot/kodi/anmelaruzb/Yettinchiumrnibetashvishyashayotgan"
 	"namelaruzb_bot/kodi/anmelaruzb/YozukuraOilasi"
 	"namelaruzb_bot/kodi/anmelaruzb/Zombi100"
 	"namelaruzb_bot/kodi/anmelaruzb/ZulmatFarzandi"
@@ -210,6 +211,8 @@ func Home(c tele.Context) error {
 		return AprelYolgoni.Home(c)
 	case "67", "Afsonaviy ilohy ilnomasi":
 		return Afsonaviyilohyilnomasi.Home(c)
+	case "68", "Yettinchi umrni betashvish yashayotgan yovuz ayol":
+		return Yettinchiumrnibetashvishyashayotgan.Home(c)
 
 	//
 	//
