@@ -156,6 +156,7 @@ func Bot() {
 			"Chegara ortida",
 			"Bucchgiri",
 			"AprelYolgoni",
+			"Abadiylik qoriqchisi",
 			"Yettinchi umrni betashvish yashayotgan yovuz ayol",
 			"Afsonaviy ilohy ilnomasi":
 			return anmelaruzb.Home(c)

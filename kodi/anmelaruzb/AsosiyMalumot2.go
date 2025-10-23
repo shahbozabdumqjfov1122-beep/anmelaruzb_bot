@@ -2,6 +2,7 @@ package anmelaruzb
 
 import (
 	tele "gopkg.in/telebot.v4"
+	"namelaruzb_bot/kodi/anmelaruzb/Abadiylikqoriqchisi"
 	"namelaruzb_bot/kodi/anmelaruzb/Afsonaviyilohyilnomasi"
 	"namelaruzb_bot/kodi/anmelaruzb/Aliyabazanmegarustilidanoskarashmaqiladi"
 	"namelaruzb_bot/kodi/anmelaruzb/AprelYolgoni"
@@ -213,6 +214,8 @@ func Home(c tele.Context) error {
 		return Afsonaviyilohyilnomasi.Home(c)
 	case "68", "Yettinchi umrni betashvish yashayotgan yovuz ayol":
 		return Yettinchiumrnibetashvishyashayotgan.Home(c)
+	case "69", "Abadiylik qoriqchisi":
+		return Abadiylikqoriqchisi.Home(c)
 
 	//
 	//
