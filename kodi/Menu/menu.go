@@ -76,7 +76,7 @@ func Home(c tele.Context) error {
 	btnAprel := menu.Text("AprelYolgoni")
 	btnAfsona := menu.Text("Afsonaviy ilohy ilnomasi")
 	btnYettinchiumrni := menu.Text("Yettinchi umrni betashvish yashayotgan yovuz ayol")
-	btnAbadiylikqoriqchisi := menu.Text("Abadiylikqoriqchisi")
+	btnAbadiylikqoriqchisi := menu.Text("Abadiylik qoriqchisi")
 
 	menu.Reply(
 		menu.Row(btnNaruto, btnIblislarqotili),
