@@ -119,7 +119,7 @@ func Bot() {
 			"91", "92", "93", "94", "95", "96", "97", "98", "99", "100":
 			return anmelaruzb.Home(c)
 		case "Naruto", "Iblislar qotili", "86", "Franksdagisevgi", "Vanpis",
-			"Tokiyoqasoskorlari", "Xarobalar qiroligi", "Daho shahzodani mamlakatni qutqargani haqida",
+			"Tokiyo qasoskorlari", "Xarobalar qiroligi", "Daho shahzodani mamlakatni qutqargani haqida",
 			"Doktor stoun", "Sakamoto Kunlari", "Uyatchang Qahramon va Qotil Malikalar", "Tungi Boyqushlar Kuyi",
 			"Qalqon qahromoni", "Soyada kotarilish", "Titanlar hujumi", "Jodugarlar jangi", "Sharlota",
 			"Qoshni farishta", "Aliya bazan mega rustilida nos karashma qiladi", "Yangi Saga", "Davolovchi qahramon",

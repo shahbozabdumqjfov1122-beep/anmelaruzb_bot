@@ -12,7 +12,7 @@ func Home(c tele.Context) error {
 	btnIblislarqotili := menu.Text("Iblislar qotili")
 	btnFranksdagisevgi := menu.Text("Franksdagisevgi")
 	btnVanpis := menu.Text("Vanpis")
-	btnTokiyoqasoskorlari := menu.Text("Tokiyoqasoskorlari")
+	btnTokiyoqasoskorlari := menu.Text("Tokiyo qasoskorlari")
 	btnXarobalarqiroligi := menu.Text("Xarobalar qiroligi")
 	btnDahoshahzodanimamlakat := menu.Text("Daho shahzodani mamlakatni qutqargani haqida")
 	btnSoyadakotarilish := menu.Text("Soyada kotarilish")

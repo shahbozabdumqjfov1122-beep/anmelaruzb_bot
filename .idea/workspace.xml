@@ -48,33 +48,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Dars1/kutubxoana&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "D:/Dars1/telegram botlar/anmelar/kodi/anmelaruzb/Abadiylikqoriqchisi",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Abadiylikqoriqchisi" />
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Yettinchiumrnibetashvishyashayotgan" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Chegaraortida" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Shilliqsifatidaqaytatugilganimhaqida" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\GachiakutaQasos" />
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\OsmondagiJanglar" />
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\vanpis" />
     </key>
   </component>
   <component name="SharedIndexes">

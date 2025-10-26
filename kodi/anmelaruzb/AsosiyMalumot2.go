@@ -92,7 +92,7 @@ func Home(c tele.Context) error {
 		return Soyadakotarilish.Home(c)
 	case "7", "Vanpis":
 		return vanpis.Home(c)
-	case "8", "Tokiyoqasoskorlari":
+	case "8", "Tokiyo qasoskorlari":
 		return tokiyoqasoskorlari.Home(c)
 	case "9", "Titanlar hujumi":
 		return Titanlarjangi.Home(c)
