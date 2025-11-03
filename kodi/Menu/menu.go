@@ -78,6 +78,7 @@ func Home(c tele.Context) error {
 	btnYettinchiumrni := menu.Text("Yettinchi umrni betashvish yashayotgan yovuz ayol")
 	btnAbadiylikqoriqchisi := menu.Text("Abadiylik qoriqchisi")
 	btnYanabirnarsasorasamboladimi := menu.Text("Yana bir narsa soʻrasam boʻladimi")
+	btnOlimkundaligi := menu.Text("O'lim kundaligi")
 
 	menu.Reply(
 		menu.Row(btnNaruto, btnIblislarqotili),
@@ -119,6 +120,8 @@ func Home(c tele.Context) error {
 		menu.Row(btnAfsona, btnAbadiylikqoriqchisi),
 		menu.Row(btnYettinchiumrni),
 		menu.Row(btnYanabirnarsasorasamboladimi),
+		menu.Row(btnYanabirnarsasorasamboladimi),
+		menu.Row(btnOlimkundaligi),
 	)
 
 	switch text {

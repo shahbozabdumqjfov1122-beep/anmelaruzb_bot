@@ -30,6 +30,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Naruto"
 	"namelaruzb_bot/kodi/anmelaruzb/NomsizXotira"
 	"namelaruzb_bot/kodi/anmelaruzb/Ochkozbosek"
+	"namelaruzb_bot/kodi/anmelaruzb/Olimkundaligi"
 	"namelaruzb_bot/kodi/anmelaruzb/Olmasqirolningkundalikhayoti"
 	"namelaruzb_bot/kodi/anmelaruzb/OltinVaqt"
 	"namelaruzb_bot/kodi/anmelaruzb/OsmondagiJanglar"
@@ -219,6 +220,8 @@ func Home(c tele.Context) error {
 		return Abadiylikqoriqchisi.Home(c)
 	case "70", "Yana bir narsa soʻrasam boʻladimi":
 		return Yanabirnarsasorasamboladimi.Home(c)
+	case "71", "O'lim kundaligi":
+		return Olimkundaligi.Home(c)
 
 	//
 	//
