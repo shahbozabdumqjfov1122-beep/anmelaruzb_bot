@@ -1,4 +1,4 @@
-package Yanabirnarsasorasamboladimi
+package Yanabirnarsa
 
 import (
 	tele "gopkg.in/telebot.v4"

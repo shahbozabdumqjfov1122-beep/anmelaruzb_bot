@@ -2,7 +2,6 @@ package anmelaruzb
 
 import (
 	tele "gopkg.in/telebot.v4"
-	Yanabirnarsasorasamboladimi "namelaruzb_bot/kodi/anmelaruzb/ Yanabirnarsasorasamboladimi"
 	"namelaruzb_bot/kodi/anmelaruzb/Abadiylikqoriqchisi"
 	"namelaruzb_bot/kodi/anmelaruzb/Afsonaviyilohyilnomasi"
 	"namelaruzb_bot/kodi/anmelaruzb/Aliyabazanmegarustilidanoskarashmaqiladi"
@@ -61,6 +60,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Xarobalarqiroligi"
 	"namelaruzb_bot/kodi/anmelaruzb/XunukAmmoKuchli"
 	"namelaruzb_bot/kodi/anmelaruzb/XushboyGulViqorBilanGulaydi"
+	"namelaruzb_bot/kodi/anmelaruzb/Yanabirnarsa"
 	"namelaruzb_bot/kodi/anmelaruzb/YangiSaga"
 	"namelaruzb_bot/kodi/anmelaruzb/Yettinchiumrnibetashvishyashayotgan"
 	"namelaruzb_bot/kodi/anmelaruzb/YozukuraOilasi"
@@ -219,7 +219,7 @@ func Home(c tele.Context) error {
 	case "69", "Abadiylik qoriqchisi":
 		return Abadiylikqoriqchisi.Home(c)
 	case "70", "Yana bir narsa soʻrasam boʻladimi":
-		return Yanabirnarsasorasamboladimi.Home(c)
+		return Yanabirnarsa.Home(c)
 	case "71", "O'lim kundaligi":
 		return Olimkundaligi.Home(c)
 
