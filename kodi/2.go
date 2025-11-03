@@ -171,7 +171,8 @@ func Bot() {
 			"AprelYolgoni",
 			"Abadiylik qoriqchisi",
 			"Yettinchi umrni betashvish yashayotgan yovuz ayol",
-			"Afsonaviy ilohy ilnomasi":
+			"Afsonaviy ilohy ilnomasi",
+			"Yana bir narsa soʻrasam boʻladimi":
 			return anmelaruzb.Home(c)
 
 		case "Animelar", "/menu":
