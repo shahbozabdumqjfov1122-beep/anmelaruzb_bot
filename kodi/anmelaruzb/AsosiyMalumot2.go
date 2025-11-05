@@ -54,6 +54,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/TaqdirJangKechasi"
 	"namelaruzb_bot/kodi/anmelaruzb/Taxtmuxri"
 	"namelaruzb_bot/kodi/anmelaruzb/Titanlarjangi"
+	"namelaruzb_bot/kodi/anmelaruzb/TokyoGul"
 	"namelaruzb_bot/kodi/anmelaruzb/Tungiboyqushlarkuyi"
 	"namelaruzb_bot/kodi/anmelaruzb/UyatchangQahramonvaQotilMalikalar"
 	"namelaruzb_bot/kodi/anmelaruzb/UzuklarHukumdor"
@@ -228,6 +229,8 @@ func Home(c tele.Context) error {
 		return Voleybol.Home(c)
 	case "73", "Shilliq sifatida qayta tug'ilganim haqida":
 		return Shilliqsifatida.Home(c)
+	case "74", "Tokyo Gul":
+		return TokyoGul.Home(c)
 
 	//
 	//
