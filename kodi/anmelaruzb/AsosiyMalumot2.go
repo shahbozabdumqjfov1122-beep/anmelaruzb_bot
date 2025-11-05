@@ -46,6 +46,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Saksonolti"
 	"namelaruzb_bot/kodi/anmelaruzb/Senioshqozon"
 	"namelaruzb_bot/kodi/anmelaruzb/Sharlota"
+	"namelaruzb_bot/kodi/anmelaruzb/Shilliqsifatida"
 	"namelaruzb_bot/kodi/anmelaruzb/SirlarHukmdori"
 	"namelaruzb_bot/kodi/anmelaruzb/Songiserafim"
 	"namelaruzb_bot/kodi/anmelaruzb/Soyadakotarilish"
@@ -225,6 +226,8 @@ func Home(c tele.Context) error {
 		return Olimkundaligi.Home(c)
 	case "72", "Voleybol":
 		return Voleybol.Home(c)
+	case "73", "Shilliq sifatida qayta tug'ilganim haqida ":
+		return Shilliqsifatida.Home(c)
 
 	//
 	//
