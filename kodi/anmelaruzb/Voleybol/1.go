@@ -1,4 +1,4 @@
-package vanpis
+package Voleybol
 
 import (
 	tele "gopkg.in/telebot.v4"
@@ -6,9 +6,9 @@ import (
 
 func Home(c tele.Context) error {
 	b := c.Bot()
-	channelID := int64(-1002957299408)
+	channelID := int64(-1003276268323)
 	messageIDs := []int{}
-	for i := 3; i < 500; i++ {
+	for i := 3; i < 100; i++ {
 		messageIDs = append(messageIDs, i)
 	}
 

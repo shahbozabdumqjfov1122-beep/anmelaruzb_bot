@@ -173,6 +173,7 @@ func Bot() {
 			"Yettinchi umrni betashvish yashayotgan yovuz ayol",
 			"Afsonaviy ilohy ilnomasi",
 			"O'lim kundaligi",
+			"Voleybol",
 			"Yana bir narsa soʻrasam boʻladimi":
 			return anmelaruzb.Home(c)
 

@@ -57,6 +57,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/UyatchangQahramonvaQotilMalikalar"
 	"namelaruzb_bot/kodi/anmelaruzb/UzuklarHukumdor"
 	"namelaruzb_bot/kodi/anmelaruzb/Vanitasxotiralari"
+	"namelaruzb_bot/kodi/anmelaruzb/Voleybol"
 	"namelaruzb_bot/kodi/anmelaruzb/Xarobalarqiroligi"
 	"namelaruzb_bot/kodi/anmelaruzb/XunukAmmoKuchli"
 	"namelaruzb_bot/kodi/anmelaruzb/XushboyGulViqorBilanGulaydi"
@@ -222,6 +223,8 @@ func Home(c tele.Context) error {
 		return Yanabirnarsa.Home(c)
 	case "71", "O'lim kundaligi":
 		return Olimkundaligi.Home(c)
+	case "72", "Voleybol":
+		return Voleybol.Home(c)
 
 	//
 	//
