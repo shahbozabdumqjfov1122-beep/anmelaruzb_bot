@@ -174,7 +174,7 @@ func Bot() {
 			"Afsonaviy ilohy ilnomasi",
 			"O'lim kundaligi",
 			"Voleybol",
-			"TokyoGul",
+			"Tokyo Gul",
 			"Shilliq sifatida qayta tug'ilganim haqida",
 			"Yana bir narsa soʻrasam boʻladimi":
 			return anmelaruzb.Home(c)
