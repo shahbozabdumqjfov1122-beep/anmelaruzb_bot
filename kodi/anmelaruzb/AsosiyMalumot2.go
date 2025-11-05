@@ -226,7 +226,7 @@ func Home(c tele.Context) error {
 		return Olimkundaligi.Home(c)
 	case "72", "Voleybol":
 		return Voleybol.Home(c)
-	case "73", "Shilliq sifatida qayta tug'ilganim haqida ":
+	case "73", "Shilliq sifatida qayta tug'ilganim haqida":
 		return Shilliqsifatida.Home(c)
 
 	//

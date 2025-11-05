@@ -80,7 +80,7 @@ func Home(c tele.Context) error {
 	btnYanabirnarsasorasamboladimi := menu.Text("Yana bir narsa soʻrasam boʻladimi")
 	btnOlimkundaligi := menu.Text("O'lim kundaligi")
 	btnVoleybol := menu.Text("Voleybol")
-	btnShilliqsifatida := menu.Text("Shilliq sifatida qayta tug'ilganim haqida ")
+	btnShilliqsifatida := menu.Text("Shilliq sifatida qayta tug'ilganim haqida")
 
 	menu.Reply(
 		menu.Row(btnNaruto, btnIblislarqotili),
