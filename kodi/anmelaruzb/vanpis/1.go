@@ -8,7 +8,7 @@ func Home(c tele.Context) error {
 	b := c.Bot()
 	channelID := int64(-1002957299408)
 	messageIDs := []int{}
-	for i := 270; i < 1500; i++ {
+	for i := 559; i < 2000; i++ {
 		messageIDs = append(messageIDs, i)
 	}
 
