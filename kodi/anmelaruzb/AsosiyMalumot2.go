@@ -19,6 +19,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Franksdagisevgi"
 	"namelaruzb_bot/kodi/anmelaruzb/GachiakutaQasos"
 	"namelaruzb_bot/kodi/anmelaruzb/Gertsogningqizigashaxsiyoqituvchiboldim"
+	"namelaruzb_bot/kodi/anmelaruzb/Hukmdor"
 	"namelaruzb_bot/kodi/anmelaruzb/Jahannamjannati"
 	"namelaruzb_bot/kodi/anmelaruzb/Jodugarlarjangi"
 	"namelaruzb_bot/kodi/anmelaruzb/Lookism"
@@ -33,6 +34,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Olmasqirolningkundalikhayoti"
 	"namelaruzb_bot/kodi/anmelaruzb/OltinVaqt"
 	"namelaruzb_bot/kodi/anmelaruzb/OsmondagiJanglar"
+	"namelaruzb_bot/kodi/anmelaruzb/OvozShakli"
 	"namelaruzb_bot/kodi/anmelaruzb/Ozgadunyodayolgizhujum"
 	"namelaruzb_bot/kodi/anmelaruzb/QahramonBolishX"
 	"namelaruzb_bot/kodi/anmelaruzb/Qalqonqahromoni"
@@ -42,8 +44,10 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Qoshnifarishta"
 	"namelaruzb_bot/kodi/anmelaruzb/QotilAkame"
 	"namelaruzb_bot/kodi/anmelaruzb/QudratYangiHikoya"
+	"namelaruzb_bot/kodi/anmelaruzb/QuyonQiz"
 	"namelaruzb_bot/kodi/anmelaruzb/Sakamotokunlari"
 	"namelaruzb_bot/kodi/anmelaruzb/Saksonolti"
+	"namelaruzb_bot/kodi/anmelaruzb/SarguzashtchilarRestorani"
 	"namelaruzb_bot/kodi/anmelaruzb/Senioshqozon"
 	"namelaruzb_bot/kodi/anmelaruzb/Sharlota"
 	"namelaruzb_bot/kodi/anmelaruzb/Shilliqsifatida"
@@ -215,7 +219,7 @@ func Home(c tele.Context) error {
 		return Bucchgiri.Home(c)
 	case "66", "AprelYolgoni":
 		return AprelYolgoni.Home(c)
-	case "67", "Afsonaviy ilohy ilnomasi":
+	case "67", "Afsonaviy ilohy yilnomasi":
 		return Afsonaviyilohyilnomasi.Home(c)
 	case "68", "Yettinchi umrni betashvish yashayotgan yovuz ayol":
 		return Yettinchiumrnibetashvishyashayotgan.Home(c)
@@ -231,6 +235,20 @@ func Home(c tele.Context) error {
 		return Shilliqsifatida.Home(c)
 	case "74", "Tokyo Gul":
 		return TokyoGul.Home(c)
+	case "75", "Horimiya":
+		return TokyoGul.Home(c)
+	case "76", "Sarguzashtchilar Restorani":
+		return SarguzashtchilarRestorani.Home(c)
+	case "77", "Ovoz Shakli":
+		return OvozShakli.Home(c)
+	case "78", "Quyon Qiz":
+		return QuyonQiz.Home(c)
+	case "79", "Bir zarbli odam":
+		return QuyonQiz.Home(c)
+	case "80", "Hukmdor":
+		return Hukmdor.Home(c)
+	case "81", "Yozgi Urushima Tuneli Oldidagi Hayrlashuv":
+		return Hukmdor.Home(c)
 
 	//
 	//

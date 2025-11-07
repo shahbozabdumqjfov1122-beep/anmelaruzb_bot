@@ -1,4 +1,4 @@
-package tahlilashqobilyati
+package Horimiya
 
 import (
 	tele "gopkg.in/telebot.v4"
@@ -6,18 +6,21 @@ import (
 
 func Home(c tele.Context) error {
 	b := c.Bot()
-	channelID := int64(-1002968614056)
-	messageIDs := []int{2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}
+	channelID := int64(-1003210605058)
+	messageIDs := []int{2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
 
 	for _, msgID := range messageIDs {
 		msg := &tele.Message{
 			ID:   msgID,
 			Chat: &tele.Chat{ID: channelID},
 		}
+
+		// Xabarni forward emas, copy qilish (faqat video chiqadi, yozuvsiz)
 		_, err := b.Copy(c.Sender(), msg)
 		if err != nil {
 			return c.Send("❌ Video olishda xatolik: " + err.Error())
 		}
 	}
+
 	return nil
 }

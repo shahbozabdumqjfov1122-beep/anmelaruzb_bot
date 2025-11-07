@@ -13,9 +13,10 @@ import (
 )
 
 var channels = []*tele.Chat{
-	{ID: -1003050934981, Username: "Anmelaruzb"},   // 1-kanal
-	{ID: -1002328747274, Username: "uzb_FCB_fans"}, // 2-kanal
-	{ID: -1003185463264, Username: "abu_w"},        // 2-kanal
+	{ID: -1003050934981, Username: "Anmelaruzb"},        // 1-kanal
+	{ID: -1003276785399, Username: "animelaruzbekcha9"}, // 2-kanal
+	//{ID: -1002328747274, Username: "uzb_FCB_fans"}, // 3-kanal
+	//{ID: -1003185463264, Username: "abu_w"},        // 4-kanal
 }
 
 // Obuna bo‘lmagan kanallarni topish
@@ -175,6 +176,12 @@ func Bot() {
 			"O'lim kundaligi",
 			"Voleybol",
 			"Tokyo Gul",
+			"Horimiya",
+			"Ovoz Shakli",
+			"Quyon Qiz",
+			"Hukmdor",
+			"Bir zarbli odam",
+			"Sarguzashtchilar Restorani",
 			"Shilliq sifatida qayta tug'ilganim haqida",
 			"Yana bir narsa soʻrasam boʻladimi":
 			return anmelaruzb.Home(c)

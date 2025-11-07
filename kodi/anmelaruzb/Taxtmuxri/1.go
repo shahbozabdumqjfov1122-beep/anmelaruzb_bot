@@ -6,7 +6,7 @@ import (
 
 func Home(c tele.Context) error {
 	b := c.Bot()
-	channelID := int64(-1002932366001)
+	channelID := int64(-1003201950186)
 	messageIDs := []int{}
 	for i := 2; i < 250; i++ {
 		messageIDs = append(messageIDs, i)
