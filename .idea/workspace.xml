@@ -5,81 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8fcf7f-66fd-49b5-932d-7110c9820c5e" name="Changes" comment="izoy yozishga erindim.">
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Birzarbliodam/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Horimiya/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Hukmdor/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/OvozShakli/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/QuyonQiz/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/SarguzashtchilarRestorani/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/YozgiUrushimaTuneliOldidagiHayrlashuv/1.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/app.conf" beforeDir="false" afterPath="$PROJECT_DIR$/conf/app.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kodi/2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/2.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kodi/Menu/menu.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/Menu/menu.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Abadiylikqoriqchisi/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Abadiylikqoriqchisi/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Afsonaviyilohyilnomasi/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Afsonaviyilohyilnomasi/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Aliyabazanmegarustilidanoskarashmaqiladi/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Aliyabazanmegarustilidanoskarashmaqiladi/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/AprelYolgoni/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/AprelYolgoni/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Badargaqilinganqahramon/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Badargaqilinganqahramon/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Bleach/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Bleach/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Boshqadunyodanmuammolibolalar/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Boshqadunyodanmuammolibolalar/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Bucchgiri/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Bucchgiri/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Chegaraortida/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Chegaraortida/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/DastlabkiDrift/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/DastlabkiDrift/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Davolovchiqahramon/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Davolovchiqahramon/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Doktorstoun/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Doktorstoun/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Domekano/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Domekano/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/DragonRajaS/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/DragonRajaS/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Franksdagisevgi/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Franksdagisevgi/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/GachiakutaQasos/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/GachiakutaQasos/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Gertsogningqizigashaxsiyoqituvchiboldim/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Gertsogningqizigashaxsiyoqituvchiboldim/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Jahannamjannati/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Jahannamjannati/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Jodugarlarjangi/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Jodugarlarjangi/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Lookism/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Lookism/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/MabudlarHohishiBilan/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/MabudlarHohishiBilan/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Mengalaktikalararo/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Mengalaktikalararo/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/MinograApokalipsis/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/MinograApokalipsis/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/NomsizXotira/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/NomsizXotira/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Ochkozbosek/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Ochkozbosek/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Olimkundaligi/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Olimkundaligi/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/OltinVaqt/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/OltinVaqt/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/OsmondagiJanglar/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/OsmondagiJanglar/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Ozgadunyodayolgizhujum/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Ozgadunyodayolgizhujum/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/QahramonBolishX/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/QahramonBolishX/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/QobilyatsizNana/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/QobilyatsizNana/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/QoraKlever/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/QoraKlever/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Qoshnifarishta/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Qoshnifarishta/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/QotilAkame/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/QotilAkame/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/QudratYangiHikoya/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/QudratYangiHikoya/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Sakamotokunlari/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Sakamotokunlari/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Saksonolti/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Saksonolti/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Senioshqozon/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Senioshqozon/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Sharlota/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Sharlota/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Shilliqsifatida/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Shilliqsifatida/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/SirlarHukmdori/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/SirlarHukmdori/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Songiserafim/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Songiserafim/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Soyadakotarilish/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Soyadakotarilish/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/SuvSehrgari/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/SuvSehrgari/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/TaqdirJangKechasi/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/TaqdirJangKechasi/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Taxtmuxri/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Taxtmuxri/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Titanlarjangi/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Titanlarjangi/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/TokyoGul/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/TokyoGul/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Tungiboyqushlarkuyi/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Tungiboyqushlarkuyi/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Voleybol/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Voleybol/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Xarobalarqiroligi/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Xarobalarqiroligi/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/XunukAmmoKuchli/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/XunukAmmoKuchli/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/XushboyGulViqorBilanGulaydi/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/XushboyGulViqorBilanGulaydi/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Yanabirnarsa/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Yanabirnarsa/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Yettinchiumrnibetashvishyashayotgan/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Yettinchiumrnibetashvishyashayotgan/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Zombi100/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Zombi100/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/ZulmatFarzandi/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/ZulmatFarzandi/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/dahoshahzodanimamlakat/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/dahoshahzodanimamlakat/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/iblislarqotili/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/iblislarqotili/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/tahlilashqobilyati/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/tahlilashqobilyati/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/tokiyoqasoskorlari/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/tokiyoqasoskorlari/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/vanpis/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/vanpis/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/yolgizlikdadarajakotaish/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/yolgizlikdadarajakotaish/1.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,27 +57,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultGoTemplateProperty": "Go File",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "git-widget-placeholder": "main",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "D:/Dars1/telegram botlar/anmelar/kodi/anmelaruzb/YozgiUrushimaTuneliOldidagiHayrlashuv",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Dars1/telegram botlar/anmelar/kodi/anmelaruzb/YozgiUrushimaTuneliOldidagiHayrlashuv&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-      "directory"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\YozgiUrushimaTuneliOldidagiHayrlashuv" />

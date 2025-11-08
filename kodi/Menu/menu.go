@@ -8,9 +8,9 @@ func Home(c tele.Context) error {
 	text := c.Text()
 
 	menu := &tele.ReplyMarkup{ResizeKeyboard: true}
-	btnNaruto := menu.Text("Naruto")
+	//btnNaruto := menu.Text("Naruto")
 	btnIblislarqotili := menu.Text("Iblislar qotili")
-	btnFranksdagisevgi := menu.Text("Franksdagisevgi")
+	btnFranksdagisevgi := menu.Text("Franksdagi sevgi")
 	btnVanpis := menu.Text("Vanpis")
 	btnTokiyoqasoskorlari := menu.Text("Tokiyo qasoskorlari")
 	btnXarobalarqiroligi := menu.Text("Xarobalar qiroligi")
@@ -31,7 +31,7 @@ func Home(c tele.Context) error {
 	btnZombi100 := menu.Text("Zombi 100")
 	btnNomsizXotira := menu.Text("Nomsiz Xotira")
 	btnQoraKlever := menu.Text("Qora Klever")
-	btnVanitasxotiralari := menu.Text("Vanitas xotiralari")
+	//btnVanitasxotiralari := menu.Text("Vanitas xotiralari")
 	btnJahannamjannati := menu.Text("Jahannam jannati")
 	btnBleach := menu.Text("Bleach")
 	btnOlmasqirolningkundalikhayoti := menu.Text("O‘lmas qirolning kundalik hayoti")
@@ -90,7 +90,7 @@ func Home(c tele.Context) error {
 	btnHukmdor := menu.Text("Hukmdor")
 
 	menu.Reply(
-		menu.Row(btnNaruto, btnIblislarqotili),
+		menu.Row(btnIblislarqotili),
 		menu.Row(btnFranksdagisevgi, btnVanpis),
 		menu.Row(btnTokiyoqasoskorlari, btnXarobalarqiroligi),
 		menu.Row(btnDahoshahzodanimamlakat),
@@ -102,7 +102,7 @@ func Home(c tele.Context) error {
 		menu.Row(btnSongiserafim, btnSaksonolti),
 		menu.Row(btnOchkozbersek, btnQotilAkame),
 		menu.Row(btnZombi100, btnNomsizXotira),
-		menu.Row(btnQoraKlever, btnVanitasxotiralari),
+		menu.Row(btnQoraKlever),
 		menu.Row(btnJahannamjannati, btnBleach),
 		menu.Row(btnOlmasqirolningkundalikhayoti, btnQoraoq),
 		menu.Row(btnMenmuvaffaqiyatsiz, btnSakamotokunlari),
@@ -129,7 +129,7 @@ func Home(c tele.Context) error {
 		menu.Row(btnAfsona, btnAbadiylikqoriqchisi),
 		menu.Row(btnYettinchiumrni),
 		menu.Row(btnYanabirnarsasorasamboladimi),
-		menu.Row(btnYanabirnarsasorasamboladimi),
+		//menu.Row(btnYanabirnarsasorasamboladimi),
 		menu.Row(btnOlimkundaligi, btnVoleybol),
 		menu.Row(btnShilliqsifatida),
 		menu.Row(btnTokyoGul, btnHorimiya),

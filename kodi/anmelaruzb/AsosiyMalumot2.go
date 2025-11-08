@@ -91,7 +91,7 @@ func Home(c tele.Context) error {
 		return Naruto.Home(c)
 	case "2", "Iblislar qotili":
 		return iblislarqotili.Home(c)
-	case "3", "Franksdagisevgi":
+	case "3", "Franksdagi sevgi":
 		return Franksdagisevgi.Home(c)
 	case "4", "Daho shahzodani mamlakatni qutqargani haqida":
 		return dahoshahzodanimamlakat.Home(c)
