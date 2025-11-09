@@ -8,7 +8,7 @@ func Home(c tele.Context) error {
 	text := c.Text()
 
 	menu := &tele.ReplyMarkup{ResizeKeyboard: true}
-	//btnNaruto := menu.Text("Naruto")
+	btnNaruto := menu.Text("Naruto")
 	btnIblislarqotili := menu.Text("Iblislar qotili")
 	btnFranksdagisevgi := menu.Text("Franksdagi sevgi")
 	btnVanpis := menu.Text("Vanpis")
@@ -90,7 +90,7 @@ func Home(c tele.Context) error {
 	btnHukmdor := menu.Text("Hukmdor")
 
 	menu.Reply(
-		menu.Row(btnIblislarqotili),
+		menu.Row(btnNaruto, btnIblislarqotili),
 		menu.Row(btnFranksdagisevgi, btnVanpis),
 		menu.Row(btnTokiyoqasoskorlari, btnXarobalarqiroligi),
 		menu.Row(btnDahoshahzodanimamlakat),
