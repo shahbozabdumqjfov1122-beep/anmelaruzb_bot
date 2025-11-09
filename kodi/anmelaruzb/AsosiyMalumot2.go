@@ -7,6 +7,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Aliyabazanmegarustilidanoskarashmaqiladi"
 	"namelaruzb_bot/kodi/anmelaruzb/AprelYolgoni"
 	"namelaruzb_bot/kodi/anmelaruzb/Badargaqilinganqahramon"
+	"namelaruzb_bot/kodi/anmelaruzb/Birzarbliodam"
 	"namelaruzb_bot/kodi/anmelaruzb/Bleach"
 	"namelaruzb_bot/kodi/anmelaruzb/Boshqadunyodanmuammolibolalar"
 	"namelaruzb_bot/kodi/anmelaruzb/Bucchgiri"
@@ -19,6 +20,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Franksdagisevgi"
 	"namelaruzb_bot/kodi/anmelaruzb/GachiakutaQasos"
 	"namelaruzb_bot/kodi/anmelaruzb/Gertsogningqizigashaxsiyoqituvchiboldim"
+	"namelaruzb_bot/kodi/anmelaruzb/Horimiya"
 	"namelaruzb_bot/kodi/anmelaruzb/Hukmdor"
 	"namelaruzb_bot/kodi/anmelaruzb/Jahannamjannati"
 	"namelaruzb_bot/kodi/anmelaruzb/Jodugarlarjangi"
@@ -70,6 +72,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Yanabirnarsa"
 	"namelaruzb_bot/kodi/anmelaruzb/YangiSaga"
 	"namelaruzb_bot/kodi/anmelaruzb/Yettinchiumrnibetashvishyashayotgan"
+	"namelaruzb_bot/kodi/anmelaruzb/YozgiUrushimaTuneliOldidagiHayrlashuv"
 	"namelaruzb_bot/kodi/anmelaruzb/YozukuraOilasi"
 	"namelaruzb_bot/kodi/anmelaruzb/Zombi100"
 	"namelaruzb_bot/kodi/anmelaruzb/ZulmatFarzandi"
@@ -236,7 +239,7 @@ func Home(c tele.Context) error {
 	case "74", "Tokyo Gul":
 		return TokyoGul.Home(c)
 	case "75", "Horimiya":
-		return TokyoGul.Home(c)
+		return Horimiya.Home(c)
 	case "76", "Sarguzashtchilar Restorani":
 		return SarguzashtchilarRestorani.Home(c)
 	case "77", "Ovoz Shakli":
@@ -244,11 +247,11 @@ func Home(c tele.Context) error {
 	case "78", "Quyon Qiz":
 		return QuyonQiz.Home(c)
 	case "79", "Bir zarbli odam":
-		return QuyonQiz.Home(c)
+		return Birzarbliodam.Home(c)
 	case "80", "Hukmdor":
 		return Hukmdor.Home(c)
 	case "81", "Yozgi Urushima Tuneli Oldidagi Hayrlashuv":
-		return Hukmdor.Home(c)
+		return YozgiUrushimaTuneliOldidagiHayrlashuv.Home(c)
 
 	//
 	//
