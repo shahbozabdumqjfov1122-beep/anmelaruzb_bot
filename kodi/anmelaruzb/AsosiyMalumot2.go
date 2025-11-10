@@ -40,6 +40,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Ozgadunyodayolgizhujum"
 	"namelaruzb_bot/kodi/anmelaruzb/QahramonBolishX"
 	"namelaruzb_bot/kodi/anmelaruzb/Qalqonqahromoni"
+	"namelaruzb_bot/kodi/anmelaruzb/Qilichsanationline"
 	"namelaruzb_bot/kodi/anmelaruzb/QobilyatsizNana"
 	"namelaruzb_bot/kodi/anmelaruzb/QoraKlever"
 	"namelaruzb_bot/kodi/anmelaruzb/Qoraoq"
@@ -252,6 +253,8 @@ func Home(c tele.Context) error {
 		return Hukmdor.Home(c)
 	case "81", "Yozgi Urushima Tuneli Oldidagi Hayrlashuv":
 		return YozgiUrushimaTuneliOldidagiHayrlashuv.Home(c)
+	case "82", "Qilich sanati online":
+		return Qilichsanationline.Home(c)
 
 	//
 	//

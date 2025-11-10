@@ -153,7 +153,7 @@ func Bot() {
 			"Lookism", "Gertsogning qiziga shaxsiy o'qituvchi boʻldim", "Gachiakuta Qasos", "Domekano", "Chegara ortida",
 			"Bucchgiri", "AprelYolgoni", "Abadiylik qoriqchisi", "Yettinchi umrni betashvish yashayotgan yovuz ayol", "Afsonaviy ilohy ilnomasi", "O'lim kundaligi", "Voleybol", "Tokyo Gul",
 			"Horimiya", "Ovoz Shakli", "Quyon Qiz", "Hukmdor", "Bir zarbli odam", "Sarguzashtchilar Restorani", "Shilliq sifatida qayta tug'ilganim haqida",
-			"Yana bir narsa soʻrasam boʻladimi":
+			"Qilich sanati online", "Yana bir narsa soʻrasam boʻladimi":
 			return anmelaruzb.Home(c)
 
 		case "Animelar", "/menu":
