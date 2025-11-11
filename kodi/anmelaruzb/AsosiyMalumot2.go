@@ -12,6 +12,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Boshqadunyodanmuammolibolalar"
 	"namelaruzb_bot/kodi/anmelaruzb/Bucchgiri"
 	"namelaruzb_bot/kodi/anmelaruzb/Chegaraortida"
+	"namelaruzb_bot/kodi/anmelaruzb/DMC"
 	"namelaruzb_bot/kodi/anmelaruzb/DastlabkiDrift"
 	"namelaruzb_bot/kodi/anmelaruzb/Davolovchiqahramon"
 	"namelaruzb_bot/kodi/anmelaruzb/Doktorstoun"
@@ -255,6 +256,8 @@ func Home(c tele.Context) error {
 		return YozgiUrushimaTuneliOldidagiHayrlashuv.Home(c)
 	case "82", "Qilich sanati online":
 		return Qilichsanationline.Home(c)
+	case "83", "DMC":
+		return DMC.Home(c)
 
 	//
 	//
