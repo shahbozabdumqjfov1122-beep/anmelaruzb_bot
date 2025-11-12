@@ -279,6 +279,8 @@ func Home(c tele.Context) error {
 		return Rainbow.Home(c)
 	case "91", "Qo'g'irchoqlar sirki":
 		return Qogirchoqlarsirki.Home(c)
+	case "92", "Yulduz Farzandi":
+		return YulduzFarzandi.Home(c)
 
 	//
 	//
