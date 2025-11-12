@@ -83,6 +83,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Yettinchiumrnibetashvishyashayotgan"
 	"namelaruzb_bot/kodi/anmelaruzb/YozgiUrushimaTuneliOldidagiHayrlashuv"
 	"namelaruzb_bot/kodi/anmelaruzb/YozukuraOilasi"
+	"namelaruzb_bot/kodi/anmelaruzb/YulduzFarzandi"
 	"namelaruzb_bot/kodi/anmelaruzb/Zombi100"
 	"namelaruzb_bot/kodi/anmelaruzb/ZulmatFarzandi"
 	"namelaruzb_bot/kodi/anmelaruzb/ZulmatIblisi"
