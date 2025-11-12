@@ -6,6 +6,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Afsonaviyilohyilnomasi"
 	"namelaruzb_bot/kodi/anmelaruzb/Aliyabazanmegarustilidanoskarashmaqiladi"
 	"namelaruzb_bot/kodi/anmelaruzb/AprelYolgoni"
+	"namelaruzb_bot/kodi/anmelaruzb/ArraOdam"
 	"namelaruzb_bot/kodi/anmelaruzb/Badargaqilinganqahramon"
 	"namelaruzb_bot/kodi/anmelaruzb/Birzarbliodam"
 	"namelaruzb_bot/kodi/anmelaruzb/Bleach"
@@ -17,6 +18,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Davolovchiqahramon"
 	"namelaruzb_bot/kodi/anmelaruzb/Doktorstoun"
 	"namelaruzb_bot/kodi/anmelaruzb/Domekano"
+	"namelaruzb_bot/kodi/anmelaruzb/Dororo"
 	"namelaruzb_bot/kodi/anmelaruzb/DragonRajaS"
 	"namelaruzb_bot/kodi/anmelaruzb/Franksdagisevgi"
 	"namelaruzb_bot/kodi/anmelaruzb/GachiakutaQasos"
@@ -32,6 +34,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/MinograApokalipsis"
 	"namelaruzb_bot/kodi/anmelaruzb/Naruto"
 	"namelaruzb_bot/kodi/anmelaruzb/NomsizXotira"
+	"namelaruzb_bot/kodi/anmelaruzb/OchkozBerserk"
 	"namelaruzb_bot/kodi/anmelaruzb/Ochkozbosek"
 	"namelaruzb_bot/kodi/anmelaruzb/Olimkundaligi"
 	"namelaruzb_bot/kodi/anmelaruzb/Olmasqirolningkundalikhayoti"
@@ -39,20 +42,24 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/OsmondagiJanglar"
 	"namelaruzb_bot/kodi/anmelaruzb/OvozShakli"
 	"namelaruzb_bot/kodi/anmelaruzb/Ozgadunyodayolgizhujum"
+	"namelaruzb_bot/kodi/anmelaruzb/Polatqaladagikabaneri"
 	"namelaruzb_bot/kodi/anmelaruzb/QahramonBolishX"
 	"namelaruzb_bot/kodi/anmelaruzb/Qalqonqahromoni"
 	"namelaruzb_bot/kodi/anmelaruzb/Qilichsanationline"
 	"namelaruzb_bot/kodi/anmelaruzb/QobilyatsizNana"
+	"namelaruzb_bot/kodi/anmelaruzb/Qogirchoqlarsirki"
 	"namelaruzb_bot/kodi/anmelaruzb/QoraKlever"
 	"namelaruzb_bot/kodi/anmelaruzb/Qoraoq"
 	"namelaruzb_bot/kodi/anmelaruzb/Qoshnifarishta"
 	"namelaruzb_bot/kodi/anmelaruzb/QotilAkame"
 	"namelaruzb_bot/kodi/anmelaruzb/QudratYangiHikoya"
 	"namelaruzb_bot/kodi/anmelaruzb/QuyonQiz"
+	"namelaruzb_bot/kodi/anmelaruzb/Rainbow"
 	"namelaruzb_bot/kodi/anmelaruzb/Sakamotokunlari"
 	"namelaruzb_bot/kodi/anmelaruzb/Saksonolti"
 	"namelaruzb_bot/kodi/anmelaruzb/SarguzashtchilarRestorani"
 	"namelaruzb_bot/kodi/anmelaruzb/Senioshqozon"
+	"namelaruzb_bot/kodi/anmelaruzb/ShamolniBoysundirish"
 	"namelaruzb_bot/kodi/anmelaruzb/Sharlota"
 	"namelaruzb_bot/kodi/anmelaruzb/Shilliqsifatida"
 	"namelaruzb_bot/kodi/anmelaruzb/SirlarHukmdori"
@@ -258,6 +265,20 @@ func Home(c tele.Context) error {
 		return Qilichsanationline.Home(c)
 	case "83", "DMC":
 		return DMC.Home(c)
+	case "84", "Ochko'z Berserk":
+		return OchkozBerserk.Home(c)
+	case "85", "Shamolni Bo'ysundirish":
+		return ShamolniBoysundirish.Home(c)
+	case "87", "Dororo":
+		return Dororo.Home(c)
+	case "88", "Arra Odam":
+		return ArraOdam.Home(c)
+	case "89", "Poʻlat qal'adagi kabaneri":
+		return Polatqaladagikabaneri.Home(c)
+	case "90", "Rainbow":
+		return Rainbow.Home(c)
+	case "91", "Qo'g'irchoqlar sirki":
+		return Qogirchoqlarsirki.Home(c)
 
 	//
 	//

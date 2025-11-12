@@ -142,7 +142,8 @@ func Bot() {
 		case "Qotil Akame", "Ochkoz bersek", "Qora o'q", "O‘lmas qirolning kundalik hayoti",
 			"Zombi 100", "Nomsiz Xotira", "So'ngi serafim", "Qora Klever", "Taxt muxri", "Bleach",
 			"Zulmat Farzandi", "Qudrat! Yangi Hikoya", "Yozukura Oilasi", "Men Muvaffaqiyatsiz...",
-			"Qahramon Boʻlish X", "Zulmat Iblisi", "Jahannam jannati", "Vanitas xotiralari", "":
+			"Qahramon Boʻlish X", "Zulmat Iblisi", "Jahannam jannati", "Vanitas xotiralari", "Arra Odam", "Poʻlat qal'adagi kabaneri",
+			"Rainbow", "Qo'g'irchoqlar sirki":
 			return anmelaruzb.Home(c)
 		case "Badargʻa qilingan qahramon",
 			"Boshqa dunyodan muammoli bolalar", "Taxt Dastlabki Drift", "Dragon Raja", "Xushboʻy Gul Viqor Bilan Gulaydi",
@@ -153,7 +154,7 @@ func Bot() {
 			"Lookism", "Gertsogning qiziga shaxsiy o'qituvchi boʻldim", "Gachiakuta Qasos", "Domekano", "Chegara ortida",
 			"Bucchgiri", "AprelYolgoni", "Abadiylik qoriqchisi", "Yettinchi umrni betashvish yashayotgan yovuz ayol", "Afsonaviy ilohy ilnomasi", "O'lim kundaligi", "Voleybol", "Tokyo Gul",
 			"Horimiya", "Ovoz Shakli", "Quyon Qiz", "Hukmdor", "Bir zarbli odam", "Sarguzashtchilar Restorani", "Shilliq sifatida qayta tug'ilganim haqida",
-			"Qilich sanati online", "Yana bir narsa soʻrasam boʻladimi", "DMC":
+			"Qilich sanati online", "Yana bir narsa soʻrasam boʻladimi", "DMC", "Ochko'z Berserk", "Shamolni Bo'ysundirish", "Dororo":
 			return anmelaruzb.Home(c)
 
 		case "Animelar", "/menu":

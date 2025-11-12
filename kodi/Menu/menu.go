@@ -45,7 +45,7 @@ func Home(c tele.Context) error {
 	btnZulmatFarzandi := menu.Text("Zulmat Farzandi")
 	btnQudratYangiHikoya := menu.Text("Qudrat! Yangi Hikoya")
 	btnYangiSaga := menu.Text("Yangi Saga")
-	btnUyatchangQahramonvaQotilMalikalar := menu.Text("Uyatchang Qahramon va Qotil Malikalar")
+	//btnUyatchangQahramonvaQotilMalikalar := menu.Text("Uyatchang Qahramon va Qotil Malikalar")
 	btnDoktorstoun := menu.Text("Doktor stoun")
 	btnTaxtmuxri := menu.Text("Taxt muxri")
 	btnBadarga := menu.Text("Badargʻa qilingan qahramon")
@@ -90,6 +90,13 @@ func Home(c tele.Context) error {
 	btnHukmdor := menu.Text("Hukmdor")
 	btnQilichsanationline := menu.Text("Qilich sanati online")
 	btnDMC := menu.Text("DMC")
+	btnOchkozBerserk := menu.Text("Ochko'z Berserk")
+	btnShamolniBoysundirish := menu.Text("Shamolni Bo'ysundirish")
+	btnDororo := menu.Text("Dororo")
+	btnArraOdam := menu.Text("Arra Odam")
+	btnPolatqaladagikabaneri := menu.Text("Poʻlat qal'adagi kabaneri")
+	btnRainbow := menu.Text("Rainbow")
+	btnQogirchoqlarsirki := menu.Text("Qo'g'irchoqlar sirki")
 
 	menu.Reply(
 		menu.Row(btnNaruto, btnIblislarqotili),
@@ -111,7 +118,8 @@ func Home(c tele.Context) error {
 		menu.Row(btnTungiBoyqushlarKuyi, btnZulmatiblisi),
 		menu.Row(btnQahramonBolishX, btnYozukuraOilasi),
 		menu.Row(btnZulmatFarzandi, btnQudratYangiHikoya),
-		menu.Row(btnYangiSaga, btnUyatchangQahramonvaQotilMalikalar),
+		menu.Row(btnYangiSaga),
+		//menu.Row(btnUyatchangQahramonvaQotilMalikalar),
 		menu.Row(btnDoktorstoun, btnTaxtmuxri),
 		menu.Row(btnBadarga, btnBoshqadunyo),
 		menu.Row(btnDrift, btnDragonRaja),
@@ -138,6 +146,11 @@ func Home(c tele.Context) error {
 		menu.Row(btnOvozShakli, btnQuyonQiz),
 		menu.Row(btnBirzarbliodam, btnHukmdor),
 		menu.Row(btnQilichsanationline, btnDMC),
+		menu.Row(btnOchkozBerserk),
+		menu.Row(btnShamolniBoysundirish),
+		menu.Row(btnDororo, btnArraOdam),
+		menu.Row(btnPolatqaladagikabaneri),
+		menu.Row(btnRainbow, btnQogirchoqlarsirki),
 	)
 
 	switch text {
