@@ -20,6 +20,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Domekano"
 	"namelaruzb_bot/kodi/anmelaruzb/Dororo"
 	"namelaruzb_bot/kodi/anmelaruzb/DragonRajaS"
+	"namelaruzb_bot/kodi/anmelaruzb/ElitaSinfi"
 	"namelaruzb_bot/kodi/anmelaruzb/Franksdagisevgi"
 	"namelaruzb_bot/kodi/anmelaruzb/GachiakutaQasos"
 	"namelaruzb_bot/kodi/anmelaruzb/Gertsogningqizigashaxsiyoqituvchiboldim"
@@ -282,6 +283,8 @@ func Home(c tele.Context) error {
 		return Qogirchoqlarsirki.Home(c)
 	case "92", "Yulduz Farzandi":
 		return YulduzFarzandi.Home(c)
+	case "93", "Elita Sinfi":
+		return ElitaSinfi.Home(c)
 
 	//
 	//
