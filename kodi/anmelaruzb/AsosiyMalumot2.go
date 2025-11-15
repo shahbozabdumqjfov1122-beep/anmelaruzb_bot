@@ -54,6 +54,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Qoshnifarishta"
 	"namelaruzb_bot/kodi/anmelaruzb/QotilAkame"
 	"namelaruzb_bot/kodi/anmelaruzb/QudratYangiHikoya"
+	"namelaruzb_bot/kodi/anmelaruzb/QudratliSongiDushman"
 	"namelaruzb_bot/kodi/anmelaruzb/QuyonQiz"
 	"namelaruzb_bot/kodi/anmelaruzb/Rainbow"
 	"namelaruzb_bot/kodi/anmelaruzb/Sakamotokunlari"
@@ -289,7 +290,7 @@ func Home(c tele.Context) error {
 	case "94", "Tajribasiz Senpai":
 		return TajribasizSenpai.Home(c)
 	case "95", "Qudratli Soʻngi Dushman":
-		return TajribasizSenpai.Home(c)
+		return QudratliSongiDushman.Home(c)
 
 	//
 	//
