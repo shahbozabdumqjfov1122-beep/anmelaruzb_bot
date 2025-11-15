@@ -137,7 +137,7 @@ func Bot() {
 			"Doktor stoun", "Sakamoto Kunlari", "Uyatchang Qahramon va Qotil Malikalar", "Tungi Boyqushlar Kuyi",
 			"Qalqon qahromoni", "Soyada kotarilish", "Titanlar hujumi", "Jodugarlar jangi", "Sharlota",
 			"Qoshni farishta", "Aliya bazan mega rustilida nos karashma qiladi", "Yangi Saga", "Davolovchi qahramon",
-			"yolg'izlikda daraja ko'taish", "Yulduz Farzandi", "Elita Sinfi":
+			"yolg'izlikda daraja ko'taish", "Yulduz Farzandi", "Elita Sinfi", "Tajribasiz Senpai", "Qudratli Soʻngi Dushman":
 			return anmelaruzb.Home(c)
 		case "Qotil Akame", "Ochkoz bersek", "Qora o'q", "O‘lmas qirolning kundalik hayoti",
 			"Zombi 100", "Nomsiz Xotira", "So'ngi serafim", "Qora Klever", "Taxt muxri", "Bleach",

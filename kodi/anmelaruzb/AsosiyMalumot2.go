@@ -67,6 +67,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Songiserafim"
 	"namelaruzb_bot/kodi/anmelaruzb/Soyadakotarilish"
 	"namelaruzb_bot/kodi/anmelaruzb/SuvSehrgari"
+	"namelaruzb_bot/kodi/anmelaruzb/TajribasizSenpai"
 	"namelaruzb_bot/kodi/anmelaruzb/TaqdirJangKechasi"
 	"namelaruzb_bot/kodi/anmelaruzb/Taxtmuxri"
 	"namelaruzb_bot/kodi/anmelaruzb/Titanlarjangi"
@@ -285,6 +286,10 @@ func Home(c tele.Context) error {
 		return YulduzFarzandi.Home(c)
 	case "93", "Elita Sinfi":
 		return ElitaSinfi.Home(c)
+	case "94", "Tajribasiz Senpai":
+		return TajribasizSenpai.Home(c)
+	case "95", "Qudratli Soʻngi Dushman":
+		return TajribasizSenpai.Home(c)
 
 	//
 	//
