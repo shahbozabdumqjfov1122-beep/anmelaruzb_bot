@@ -58,6 +58,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/QudratYangiHikoya"
 	"namelaruzb_bot/kodi/anmelaruzb/QudratliSongiDushman"
 	"namelaruzb_bot/kodi/anmelaruzb/QuyonQiz"
+	"namelaruzb_bot/kodi/anmelaruzb/Ragnarok"
 	"namelaruzb_bot/kodi/anmelaruzb/Rainbow"
 	"namelaruzb_bot/kodi/anmelaruzb/Sakamotokunlari"
 	"namelaruzb_bot/kodi/anmelaruzb/Saksonolti"
@@ -301,8 +302,7 @@ func Home(c tele.Context) error {
 	case "98", "Josus X Oilasi":
 		return JosusXOilasi.Home(c)
 	case "99", "Ragnarok Rekordi":
-		return RagnarokRekordi.Home(c)
-
+		return Ragnarok.Home(c)
 	//
 	//
 	//

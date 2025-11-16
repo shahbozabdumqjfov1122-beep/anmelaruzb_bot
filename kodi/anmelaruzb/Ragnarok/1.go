@@ -1,4 +1,4 @@
-package RagnarokRekordi
+package Ragnarok
 
 import (
 	tele "gopkg.in/telebot.v4"
