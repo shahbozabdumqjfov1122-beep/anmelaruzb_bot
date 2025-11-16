@@ -13,6 +13,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Boshqadunyodanmuammolibolalar"
 	"namelaruzb_bot/kodi/anmelaruzb/Bucchgiri"
 	"namelaruzb_bot/kodi/anmelaruzb/Chegaraortida"
+	"namelaruzb_bot/kodi/anmelaruzb/Cheksizlikgacha"
 	"namelaruzb_bot/kodi/anmelaruzb/DMC"
 	"namelaruzb_bot/kodi/anmelaruzb/DastlabkiDrift"
 	"namelaruzb_bot/kodi/anmelaruzb/Davolovchiqahramon"
@@ -28,6 +29,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Hukmdor"
 	"namelaruzb_bot/kodi/anmelaruzb/Jahannamjannati"
 	"namelaruzb_bot/kodi/anmelaruzb/Jodugarlarjangi"
+	"namelaruzb_bot/kodi/anmelaruzb/JosusXOilasi"
 	"namelaruzb_bot/kodi/anmelaruzb/Lookism"
 	"namelaruzb_bot/kodi/anmelaruzb/MabudlarHohishiBilan"
 	"namelaruzb_bot/kodi/anmelaruzb/Mengalaktikalararo"
@@ -82,6 +84,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/XunukAmmoKuchli"
 	"namelaruzb_bot/kodi/anmelaruzb/XushboyGulViqorBilanGulaydi"
 	"namelaruzb_bot/kodi/anmelaruzb/Yanabirnarsa"
+	"namelaruzb_bot/kodi/anmelaruzb/YangiDarvoza"
 	"namelaruzb_bot/kodi/anmelaruzb/YangiSaga"
 	"namelaruzb_bot/kodi/anmelaruzb/Yettinchiumrnibetashvishyashayotgan"
 	"namelaruzb_bot/kodi/anmelaruzb/YozgiUrushimaTuneliOldidagiHayrlashuv"
@@ -103,20 +106,20 @@ func Home(c tele.Context) error {
 	switch text {
 	case "🖋️ anme izlash":
 		return c.Send("ID-kiriting:")
-	case "1", "Naruto":
-		return Naruto.Home(c)
-	case "2", "Iblislar qotili":
-		return iblislarqotili.Home(c)
-	case "3", "Franksdagi sevgi":
-		return Franksdagisevgi.Home(c)
-	case "4", "Daho shahzodani mamlakatni qutqargani haqida":
-		return dahoshahzodanimamlakat.Home(c)
-	case "5", "Xarobalar qiroligi":
-		return Xarobalarqiroligi.Home(c)
-	case "6", "Soyada kotarilish":
-		return Soyadakotarilish.Home(c)
-	case "7", "Vanpis":
+	case "1", "Vanpis":
 		return vanpis.Home(c)
+	case "2", "Naruto":
+		return Naruto.Home(c)
+	case "3", "Iblislar qotili":
+		return iblislarqotili.Home(c)
+	case "4", "Franksdagi sevgi":
+		return Franksdagisevgi.Home(c)
+	case "5", "Daho shahzodani mamlakatni qutqargani haqida":
+		return dahoshahzodanimamlakat.Home(c)
+	case "6", "Xarobalar qiroligi":
+		return Xarobalarqiroligi.Home(c)
+	case "7", "Soyada kotarilish":
+		return Soyadakotarilish.Home(c)
 	case "8", "Tokiyo qasoskorlari":
 		return tokiyoqasoskorlari.Home(c)
 	case "9", "Titanlar hujumi":
@@ -291,6 +294,12 @@ func Home(c tele.Context) error {
 		return TajribasizSenpai.Home(c)
 	case "95", "Qudratli Soʻngi Dushman":
 		return QudratliSongiDushman.Home(c)
+	case "96", "Yangi Darvoza":
+		return YangiDarvoza.Home(c)
+	case "97", "Cheksizlikgacha Lv9999":
+		return Cheksizlikgacha.Home(c)
+	case "98", "Josus X Oilasi":
+		return JosusXOilasi.Home(c)
 
 	//
 	//
