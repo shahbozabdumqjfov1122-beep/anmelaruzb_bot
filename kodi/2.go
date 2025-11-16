@@ -143,7 +143,7 @@ func Bot() {
 			"Zombi 100", "Nomsiz Xotira", "So'ngi serafim", "Qora Klever", "Taxt muxri", "Bleach",
 			"Zulmat Farzandi", "Qudrat! Yangi Hikoya", "Yozukura Oilasi", "Men Muvaffaqiyatsiz...",
 			"Qahramon Boʻlish X", "Zulmat Iblisi", "Jahannam jannati", "Vanitas xotiralari", "Arra Odam", "Poʻlat qal'adagi kabaneri",
-			"Rainbow", "Qo'g'irchoqlar sirki", "Yangi Darvoza", "Cheksizlikgacha Lv9999", "Josus X Oilasi":
+			"Rainbow", "Qo'g'irchoqlar sirki", "Yangi Darvoza", "Cheksizlikgacha Lv9999", "Josus X Oilasi", "Ragnarok Rekordi":
 			return anmelaruzb.Home(c)
 		case "Badargʻa qilingan qahramon",
 			"Boshqa dunyodan muammoli bolalar", "Taxt Dastlabki Drift", "Dragon Raja", "Xushboʻy Gul Viqor Bilan Gulaydi",

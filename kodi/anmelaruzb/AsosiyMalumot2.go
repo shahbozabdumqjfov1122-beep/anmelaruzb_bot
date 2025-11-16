@@ -300,6 +300,8 @@ func Home(c tele.Context) error {
 		return Cheksizlikgacha.Home(c)
 	case "98", "Josus X Oilasi":
 		return JosusXOilasi.Home(c)
+	case "99", "Ragnarok Rekordi":
+		return RagnarokRekordi.Home(c)
 
 	//
 	//
