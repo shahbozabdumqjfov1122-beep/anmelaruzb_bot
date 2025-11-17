@@ -64,6 +64,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Saksonolti"
 	"namelaruzb_bot/kodi/anmelaruzb/SarguzashtchilarRestorani"
 	"namelaruzb_bot/kodi/anmelaruzb/Senioshqozon"
+	"namelaruzb_bot/kodi/anmelaruzb/SenuchunOlmas"
 	"namelaruzb_bot/kodi/anmelaruzb/ShamolniBoysundirish"
 	"namelaruzb_bot/kodi/anmelaruzb/Sharlota"
 	"namelaruzb_bot/kodi/anmelaruzb/Shilliqsifatida"
@@ -303,6 +304,8 @@ func Home(c tele.Context) error {
 		return JosusXOilasi.Home(c)
 	case "99", "Ragnarok Rekordi":
 		return Ragnarok.Home(c)
+	case "100", "Sen uchun O'lmas":
+		return SenuchunOlmas.Home(c)
 	//
 	//
 	//
