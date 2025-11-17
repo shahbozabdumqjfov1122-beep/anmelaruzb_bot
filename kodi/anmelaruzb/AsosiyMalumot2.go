@@ -32,6 +32,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/JosusXOilasi"
 	"namelaruzb_bot/kodi/anmelaruzb/Lookism"
 	"namelaruzb_bot/kodi/anmelaruzb/MabudlarHohishiBilan"
+	"namelaruzb_bot/kodi/anmelaruzb/MasamuneQasosi"
 	"namelaruzb_bot/kodi/anmelaruzb/Mengalaktikalararo"
 	"namelaruzb_bot/kodi/anmelaruzb/Menmuvaffaqiyatsiz"
 	"namelaruzb_bot/kodi/anmelaruzb/MinograApokalipsis"
@@ -306,6 +307,8 @@ func Home(c tele.Context) error {
 		return Ragnarok.Home(c)
 	case "100", "Sen uchun O'lmas":
 		return SenuchunOlmas.Home(c)
+	case "101", "Masamune Qasosi":
+		return MasamuneQasosi.Home(c)
 	//
 	//
 	//
