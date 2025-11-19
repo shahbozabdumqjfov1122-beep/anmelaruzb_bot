@@ -31,7 +31,7 @@ func Home(c tele.Context) error {
 	btnZombi100 := menu.Text("Zombi 100")
 	btnNomsizXotira := menu.Text("Nomsiz Xotira")
 	btnQoraKlever := menu.Text("Qora Klever")
-	//btnVanitasxotiralari := menu.Text("Vanitas xotiralari")
+	btnVanitasxotiralari := menu.Text("Vanitas xotiralari")
 	btnJahannamjannati := menu.Text("Jahannam jannati")
 	btnBleach := menu.Text("Bleach")
 	btnOlmasqirolningkundalikhayoti := menu.Text("O‘lmas qirolning kundalik hayoti")
@@ -135,6 +135,7 @@ func Home(c tele.Context) error {
 		menu.Row(btnQahramonBolishX, btnYozukuraOilasi),
 		menu.Row(btnZulmatFarzandi, btnQudratYangiHikoya),
 		menu.Row(btnYangiSaga),
+		menu.Row(btnVanitasxotiralari),
 		//menu.Row(btnUyatchangQahramonvaQotilMalikalar),
 		menu.Row(btnDoktorstoun, btnTaxtmuxri),
 		menu.Row(btnBadarga, btnBoshqadunyo),
