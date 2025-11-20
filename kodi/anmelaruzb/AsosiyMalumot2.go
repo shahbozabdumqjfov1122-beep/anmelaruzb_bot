@@ -31,6 +31,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Jodugarlarjangi"
 	"namelaruzb_bot/kodi/anmelaruzb/JosusXOilasi"
 	"namelaruzb_bot/kodi/anmelaruzb/KimMeniMalikaQildi"
+	"namelaruzb_bot/kodi/anmelaruzb/KokZindon"
 	"namelaruzb_bot/kodi/anmelaruzb/Lookism"
 	"namelaruzb_bot/kodi/anmelaruzb/MabudlarHohishiBilan"
 	"namelaruzb_bot/kodi/anmelaruzb/MasamuneQasosi"
@@ -312,6 +313,8 @@ func Home(c tele.Context) error {
 		return MasamuneQasosi.Home(c)
 	case "102", "Kim Meni Malika Qildi":
 		return KimMeniMalikaQildi.Home(c)
+	case "103", "Koʻk Zindon":
+		return KokZindon.Home(c)
 	//
 	//
 	//

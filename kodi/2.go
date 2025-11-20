@@ -140,7 +140,7 @@ func Bot() {
 			"yolg'izlikda daraja ko'taish", "Yulduz Farzandi", "Elita Sinfi", "Tajribasiz Senpai", "Qudratli Soʻngi Dushman":
 			return anmelaruzb.Home(c)
 		case "Qotil Akame", "Ochkoz bersek", "Qora o'q", "O‘lmas qirolning kundalik hayoti",
-			"Zombi 100", "Nomsiz Xotira", "So'ngi serafim", "Qora Klever", "Taxt muxri", "Bleach",
+			"Zombi 100", "Nomsiz Xotira", "So'ngi serafim", "Qora Klever", "Taxt muxri", "Bleach", "Ko'k Zindon",
 			"Zulmat Farzandi", "Qudrat! Yangi Hikoya", "Yozukura Oilasi", "Men Muvaffaqiyatsiz...",
 			"Qahramon Boʻlish X", "Zulmat Iblisi", "Jahannam jannati", "Vanitas xotiralari", "Arra Odam", "Poʻlat qal'adagi kabaneri",
 			"Rainbow", "Qo'g'irchoqlar sirki", "Yangi Darvoza", "Cheksizlikgacha Lv9999", "Josus X Oilasi", "Ragnarok Rekordi":
