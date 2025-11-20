@@ -48,6 +48,8 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/OsmondagiJanglar"
 	"namelaruzb_bot/kodi/anmelaruzb/OvozShakli"
 	"namelaruzb_bot/kodi/anmelaruzb/Ozgadunyodayolgizhujum"
+	"namelaruzb_bot/kodi/anmelaruzb/ParazitHayotSaboqlari"
+	"namelaruzb_bot/kodi/anmelaruzb/PariDumihaqidaafsona"
 	"namelaruzb_bot/kodi/anmelaruzb/Polatqaladagikabaneri"
 	"namelaruzb_bot/kodi/anmelaruzb/QahramonBolishX"
 	"namelaruzb_bot/kodi/anmelaruzb/Qalqonqahromoni"
@@ -82,6 +84,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/TokyoGul"
 	"namelaruzb_bot/kodi/anmelaruzb/Tungiboyqushlarkuyi"
 	"namelaruzb_bot/kodi/anmelaruzb/UyatchangQahramonvaQotilMalikalar"
+	"namelaruzb_bot/kodi/anmelaruzb/UysizMabud"
 	"namelaruzb_bot/kodi/anmelaruzb/UzuklarHukumdor"
 	"namelaruzb_bot/kodi/anmelaruzb/Vanitasxotiralari"
 	"namelaruzb_bot/kodi/anmelaruzb/Voleybol"
@@ -315,6 +318,12 @@ func Home(c tele.Context) error {
 		return KimMeniMalikaQildi.Home(c)
 	case "103", "Koʻk Zindon":
 		return KokZindon.Home(c)
+	case "104", "Parazit - Hayot Saboqlari":
+		return ParazitHayotSaboqlari.Home(c)
+	case "105", "Uysiz Ma'bud":
+		return UysizMabud.Home(c)
+	case "106", "Pari Dumi haqida afsona":
+		return PariDumihaqidaafsona.Home(c)
 	//
 	//
 	//

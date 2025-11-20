@@ -134,14 +134,14 @@ func Bot() {
 			return anmelaruzb.Home(c)
 		case "Naruto", "Iblislar qotili", "Franksdagi sevgi", "Vanpis",
 			"Tokiyo qasoskorlari", "Xarobalar qiroligi", "Daho shahzodani mamlakatni qutqargani haqida", "Sen uchun O'lmas",
-			"Doktor stoun", "Sakamoto Kunlari", "Uyatchang Qahramon va Qotil Malikalar", "Tungi Boyqushlar Kuyi",
+			"Doktor stoun", "Sakamoto Kunlari", "Uyatchang Qahramon va Qotil Malikalar", "Tungi Boyqushlar Kuyi", "Pari Dumi haqida afsona",
 			"Qalqon qahromoni", "Soyada kotarilish", "Titanlar hujumi", "Jodugarlar jangi", "Sharlota", "Masamune Qasosi", "Kim Meni Malika Qildi",
 			"Qoshni farishta", "Aliya bazan mega rustilida nos karashma qiladi", "Yangi Saga", "Davolovchi qahramon",
-			"yolg'izlikda daraja ko'taish", "Yulduz Farzandi", "Elita Sinfi", "Tajribasiz Senpai", "Qudratli Soʻngi Dushman":
+			"yolg'izlikda daraja ko'taish", "Yulduz Farzandi", "Elita Sinfi", "Tajribasiz Senpai", "Qudratli Soʻngi Dushman", "Uysiz Ma'bud":
 			return anmelaruzb.Home(c)
 		case "Qotil Akame", "Ochkoz bersek", "Qora o'q", "O‘lmas qirolning kundalik hayoti",
 			"Zombi 100", "Nomsiz Xotira", "So'ngi serafim", "Qora Klever", "Taxt muxri", "Bleach", "Ko'k Zindon",
-			"Zulmat Farzandi", "Qudrat! Yangi Hikoya", "Yozukura Oilasi", "Men Muvaffaqiyatsiz...",
+			"Zulmat Farzandi", "Qudrat! Yangi Hikoya", "Yozukura Oilasi", "Men Muvaffaqiyatsiz...", "Parazit - Hayot Saboqlari",
 			"Qahramon Boʻlish X", "Zulmat Iblisi", "Jahannam jannati", "Vanitas xotiralari", "Arra Odam", "Poʻlat qal'adagi kabaneri",
 			"Rainbow", "Qo'g'irchoqlar sirki", "Yangi Darvoza", "Cheksizlikgacha Lv9999", "Josus X Oilasi", "Ragnarok Rekordi":
 			return anmelaruzb.Home(c)
