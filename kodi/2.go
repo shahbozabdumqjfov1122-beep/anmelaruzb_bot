@@ -135,7 +135,7 @@ func Bot() {
 		case "Naruto", "Iblislar qotili", "Franksdagi sevgi", "Vanpis",
 			"Tokiyo qasoskorlari", "Xarobalar qiroligi", "Daho shahzodani mamlakatni qutqargani haqida", "Sen uchun O'lmas",
 			"Doktor stoun", "Sakamoto Kunlari", "Uyatchang Qahramon va Qotil Malikalar", "Tungi Boyqushlar Kuyi",
-			"Qalqon qahromoni", "Soyada kotarilish", "Titanlar hujumi", "Jodugarlar jangi", "Sharlota", "Masamune Qasosi",
+			"Qalqon qahromoni", "Soyada kotarilish", "Titanlar hujumi", "Jodugarlar jangi", "Sharlota", "Masamune Qasosi", "Kim Meni Malika Qildi",
 			"Qoshni farishta", "Aliya bazan mega rustilida nos karashma qiladi", "Yangi Saga", "Davolovchi qahramon",
 			"yolg'izlikda daraja ko'taish", "Yulduz Farzandi", "Elita Sinfi", "Tajribasiz Senpai", "Qudratli Soʻngi Dushman":
 			return anmelaruzb.Home(c)
