@@ -1,4 +1,4 @@
-package yolgizlikdadarajakotaish
+package KayjuRaqam
 
 import (
 	tele "gopkg.in/telebot.v4"
@@ -6,9 +6,9 @@ import (
 
 func Home(c tele.Context) error {
 	b := c.Bot()
-	channelID := int64(-1003241319542)
+	channelID := int64(-1003444332741)
 	messageIDs := []int{}
-	for i := 2; i < 40; i++ {
+	for i := 2; i < 50; i++ {
 		messageIDs = append(messageIDs, i)
 	}
 

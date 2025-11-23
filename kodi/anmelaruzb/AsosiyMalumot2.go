@@ -30,6 +30,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Jahannamjannati"
 	"namelaruzb_bot/kodi/anmelaruzb/Jodugarlarjangi"
 	"namelaruzb_bot/kodi/anmelaruzb/JosusXOilasi"
+	"namelaruzb_bot/kodi/anmelaruzb/KayjuRaqam"
 	"namelaruzb_bot/kodi/anmelaruzb/KimMeniMalikaQildi"
 	"namelaruzb_bot/kodi/anmelaruzb/KokZindon"
 	"namelaruzb_bot/kodi/anmelaruzb/Lookism"
@@ -45,6 +46,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Olimkundaligi"
 	"namelaruzb_bot/kodi/anmelaruzb/Olmasqirolningkundalikhayoti"
 	"namelaruzb_bot/kodi/anmelaruzb/OltinVaqt"
+	"namelaruzb_bot/kodi/anmelaruzb/Omadsizning"
 	"namelaruzb_bot/kodi/anmelaruzb/OsmondagiJanglar"
 	"namelaruzb_bot/kodi/anmelaruzb/OvozShakli"
 	"namelaruzb_bot/kodi/anmelaruzb/Ozgadunyodayolgizhujum"
@@ -75,6 +77,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Shilliqsifatida"
 	"namelaruzb_bot/kodi/anmelaruzb/SirlarHukmdori"
 	"namelaruzb_bot/kodi/anmelaruzb/Songiserafim"
+	"namelaruzb_bot/kodi/anmelaruzb/Soqolimniolib"
 	"namelaruzb_bot/kodi/anmelaruzb/Soyadakotarilish"
 	"namelaruzb_bot/kodi/anmelaruzb/SuvSehrgari"
 	"namelaruzb_bot/kodi/anmelaruzb/TajribasizSenpai"
@@ -94,6 +97,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Yanabirnarsa"
 	"namelaruzb_bot/kodi/anmelaruzb/YangiDarvoza"
 	"namelaruzb_bot/kodi/anmelaruzb/YangiSaga"
+	"namelaruzb_bot/kodi/anmelaruzb/YettiOlimGunohlari"
 	"namelaruzb_bot/kodi/anmelaruzb/Yettinchiumrnibetashvishyashayotgan"
 	"namelaruzb_bot/kodi/anmelaruzb/YozgiUrushimaTuneliOldidagiHayrlashuv"
 	"namelaruzb_bot/kodi/anmelaruzb/YozukuraOilasi"
@@ -324,6 +328,14 @@ func Home(c tele.Context) error {
 		return UysizMabud.Home(c)
 	case "106", "Pari Dumi haqida afsona":
 		return PariDumihaqidaafsona.Home(c)
+	case "107", "Kayju 8-Raqam":
+		return KayjuRaqam.Home(c)
+	case "108", "Soqolimni olib, yuqori maktab qizini uyimga olib keldim":
+		return Soqolimniolib.Home(c)
+	case "109", "Yetti O'lim Gunohlari":
+		return YettiOlimGunohlari.Home(c)
+	case "110", "Omadsizning qayta tug'ilishi":
+		return Omadsizning.Home(c)
 	//
 	//
 	//
