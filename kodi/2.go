@@ -15,6 +15,7 @@ import (
 var channels = []*tele.Chat{
 	{ID: -1003050934981, Username: "Anmelaruzb"},        // 1-kanal
 	{ID: -1003276785399, Username: "animelaruzbekcha9"}, // 2-kanal
+	{ID: -1003316396409, Username: "anmelar_chat"},      // 2-kanal
 	//{ID: -1002328747274, Username: "uzb_FCB_fans"}, // 3-kanal
 	//{ID: -1003185463264, Username: "abu_w"},        // 4-kanal
 }

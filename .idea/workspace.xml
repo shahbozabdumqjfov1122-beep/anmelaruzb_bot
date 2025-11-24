@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8fcf7f-66fd-49b5-932d-7110c9820c5e" name="Changes" comment="izoy yozishga erindim.">
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/KayjuRaqam/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Omadsizning/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Soqolimniolib/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/YettiOlimGunohlari/1.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/2.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/Menu/menu.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/Menu/menu.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Aliyabazanmegarustilidanoskarashmaqiladi/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Aliyabazanmegarustilidanoskarashmaqiladi/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Qoshnifarishta/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Qoshnifarishta/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Taxtmuxri/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Taxtmuxri/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/yolgizlikdadarajakotaish/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/yolgizlikdadarajakotaish/1.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
