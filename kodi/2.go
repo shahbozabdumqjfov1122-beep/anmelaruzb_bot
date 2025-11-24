@@ -134,7 +134,7 @@ func Bot() {
 
 			return anmelaruzb.Home(c)
 		case "Naruto", "Iblislar qotili", "Franksdagi sevgi", "Vanpis",
-			"Tokiyo qasoskorlari", "Xarobalar qiroligi", "Daho shahzodani mamlakatni qutqargani haqida", "Sen uchun O'lmas",
+			"Tokiyo qasoskorlari", "Xarobalar qiroligi", "Daho shahzodani mamlakatni qutqargani haqida", "Qirol oʻyini", "Sen uchun O'lmas",
 			"Doktor stoun", "Sakamoto Kunlari", "Uyatchang Qahramon va Qotil Malikalar", "Tungi Boyqushlar Kuyi", "Pari Dumi haqida afsona",
 			"Qalqon qahromoni", "Soyada kotarilish", "Titanlar hujumi", "Jodugarlar jangi", "Sharlota", "Masamune Qasosi", "Kim Meni Malika Qildi",
 			"Qoshni farishta", "Aliya bazan mega rustilida nos karashma qiladi", "Yangi Saga", "Davolovchi qahramon",

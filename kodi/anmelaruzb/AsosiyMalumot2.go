@@ -56,6 +56,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/QahramonBolishX"
 	"namelaruzb_bot/kodi/anmelaruzb/Qalqonqahromoni"
 	"namelaruzb_bot/kodi/anmelaruzb/Qilichsanationline"
+	"namelaruzb_bot/kodi/anmelaruzb/Qiroloyini"
 	"namelaruzb_bot/kodi/anmelaruzb/QobilyatsizNana"
 	"namelaruzb_bot/kodi/anmelaruzb/Qogirchoqlarsirki"
 	"namelaruzb_bot/kodi/anmelaruzb/QoraKlever"
@@ -336,6 +337,8 @@ func Home(c tele.Context) error {
 		return YettiOlimGunohlari.Home(c)
 	case "110", "Omadsizning qayta tug'ilishi":
 		return Omadsizning.Home(c)
+	case "111", "Qirol oʻyini":
+		return Qiroloyini.Home(c)
 	//
 	//
 	//
