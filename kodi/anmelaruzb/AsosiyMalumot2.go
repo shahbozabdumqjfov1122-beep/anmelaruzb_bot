@@ -91,6 +91,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/UysizMabud"
 	"namelaruzb_bot/kodi/anmelaruzb/UzuklarHukumdor"
 	"namelaruzb_bot/kodi/anmelaruzb/Vanitasxotiralari"
+	"namelaruzb_bot/kodi/anmelaruzb/VioletEvergarden"
 	"namelaruzb_bot/kodi/anmelaruzb/Voleybol"
 	"namelaruzb_bot/kodi/anmelaruzb/Xarobalarqiroligi"
 	"namelaruzb_bot/kodi/anmelaruzb/XunukAmmoKuchli"
@@ -339,6 +340,8 @@ func Home(c tele.Context) error {
 		return Omadsizning.Home(c)
 	case "111", "Qirol oʻyini":
 		return Qiroloyini.Home(c)
+	case "112", "Violet Evergarden":
+		return VioletEvergarden.Home(c)
 	//
 	//
 	//
