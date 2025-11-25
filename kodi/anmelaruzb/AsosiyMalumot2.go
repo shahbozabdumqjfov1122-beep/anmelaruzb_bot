@@ -49,6 +49,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Omadsizning"
 	"namelaruzb_bot/kodi/anmelaruzb/OsmondagiJanglar"
 	"namelaruzb_bot/kodi/anmelaruzb/OvozShakli"
+	"namelaruzb_bot/kodi/anmelaruzb/Ozgadunyoda"
 	"namelaruzb_bot/kodi/anmelaruzb/Ozgadunyodayolgizhujum"
 	"namelaruzb_bot/kodi/anmelaruzb/ParazitHayotSaboqlari"
 	"namelaruzb_bot/kodi/anmelaruzb/PariDumihaqidaafsona"
@@ -342,6 +343,8 @@ func Home(c tele.Context) error {
 		return Qiroloyini.Home(c)
 	case "112", "Violet Evergarden":
 		return VioletEvergarden.Home(c)
+	case "113", "Oʻzga dunyoda darajamni koʻtarib, bu dunyoda ham tengsiz boʻldim":
+		return Ozgadunyoda.Home(c)
 	//
 	//
 	//

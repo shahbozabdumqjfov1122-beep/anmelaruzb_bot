@@ -133,7 +133,7 @@ func Bot() {
 			"191", "192", "193", "194", "195", "196", "197", "198", "199", "200":
 
 			return anmelaruzb.Home(c)
-		case "Naruto", "Iblislar qotili", "Franksdagi sevgi", "Vanpis", "Violet Evergarden",
+		case "Naruto", "Iblislar qotili", "Franksdagi sevgi", "Vanpis", "Violet Evergarden", "Oʻzga dunyoda darajamni koʻtarib, bu dunyoda ham tengsiz boʻldim",
 			"Tokiyo qasoskorlari", "Xarobalar qiroligi", "Daho shahzodani mamlakatni qutqargani haqida", "Qirol oʻyini", "Sen uchun O'lmas",
 			"Doktor stoun", "Sakamoto Kunlari", "Uyatchang Qahramon va Qotil Malikalar", "Tungi Boyqushlar Kuyi", "Pari Dumi haqida afsona",
 			"Qalqon qahromoni", "Soyada kotarilish", "Titanlar hujumi", "Jodugarlar jangi", "Sharlota", "Masamune Qasosi", "Kim Meni Malika Qildi",
