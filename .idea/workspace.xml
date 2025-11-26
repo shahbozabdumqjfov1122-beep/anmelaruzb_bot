@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8fcf7f-66fd-49b5-932d-7110c9820c5e" name="Changes" comment="izoy yozishga erindim.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kodi/2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/2.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/Menu/menu.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/Menu/menu.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +66,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
     &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Dars1/telegram botlar/anmelar/kodi/anmelaruzb/VioletEvergarden&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Dars1/telegram botlar/anmelar/kodi/anmelaruzb/Ozgadunyoda&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
@@ -79,11 +79,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Ozgadunyoda" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\VioletEvergarden" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Qiroloyini" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Omadsizning" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Soqolimniolib" />
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\YettiOlimGunohlari" />
     </key>
   </component>
   <component name="SharedIndexes">
