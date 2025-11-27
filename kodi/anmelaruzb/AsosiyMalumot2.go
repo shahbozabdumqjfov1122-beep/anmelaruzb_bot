@@ -27,6 +27,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Gertsogningqizigashaxsiyoqituvchiboldim"
 	"namelaruzb_bot/kodi/anmelaruzb/Horimiya"
 	"namelaruzb_bot/kodi/anmelaruzb/Hukmdor"
+	"namelaruzb_bot/kodi/anmelaruzb/Hyouka"
 	"namelaruzb_bot/kodi/anmelaruzb/Jahannamjannati"
 	"namelaruzb_bot/kodi/anmelaruzb/Jodugarlarjangi"
 	"namelaruzb_bot/kodi/anmelaruzb/JosusXOilasi"
@@ -345,6 +346,10 @@ func Home(c tele.Context) error {
 		return VioletEvergarden.Home(c)
 	case "113", "Oʻzga dunyoda darajamni koʻtarib, bu dunyoda ham tengsiz boʻldim":
 		return Ozgadunyoda.Home(c)
+	case "114", "Hyouka":
+		return Hyouka.Home(c)
+	case "115", "U qiz yolgiz ":
+		return Hyouka.Home(c)
 	//
 	//
 	//
