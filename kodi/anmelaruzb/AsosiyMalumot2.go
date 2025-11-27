@@ -89,6 +89,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Titanlarjangi"
 	"namelaruzb_bot/kodi/anmelaruzb/TokyoGul"
 	"namelaruzb_bot/kodi/anmelaruzb/Tungiboyqushlarkuyi"
+	"namelaruzb_bot/kodi/anmelaruzb/Uqizyolgiz"
 	"namelaruzb_bot/kodi/anmelaruzb/UyatchangQahramonvaQotilMalikalar"
 	"namelaruzb_bot/kodi/anmelaruzb/UysizMabud"
 	"namelaruzb_bot/kodi/anmelaruzb/UzuklarHukumdor"
@@ -348,8 +349,8 @@ func Home(c tele.Context) error {
 		return Ozgadunyoda.Home(c)
 	case "114", "Hyouka":
 		return Hyouka.Home(c)
-	case "115", "U qiz yolgiz ":
-		return Hyouka.Home(c)
+	case "115", "U qiz yolgiz":
+		return Uqizyolgiz.Home(c)
 	//
 	//
 	//
