@@ -134,11 +134,11 @@ func Bot() {
 			// bu yerda kodi bajariladi
 
 			return anmelaruzb.Home(c)
-		case "Naruto", "Iblislar qotili", "Franksdagisevgi", "Vanpis",
+		case "Naruto", "Iblislar qotili", "Franksdagisevgi", "Vanpis", "Franksdagi sevgi",
 			"Tokiyoqasoskorlari", "Xarobalar qiroligi", "Daho shahzodani mamlakatni qutqargani haqida", "Qirol oʻyini", "Yetti O'lim Gunohlari", "Parazit - Hayot Saboqlari",
 			"Doktor stoun", "Sakamoto Kunlari", "Uyatchang Qahramon va Qotil Malikalar", "Tungi Boyqushlar Kuyi", "Omadsizning qayta tug'ilishi", "Uysiz Ma'bud", "Ochko'z Berserk",
 			"Qalqon qahromoni", "Soyada kotarilish", "Titanlar hujumi", "Jodugarlar jangi", "Sharlota", "Soqolimni olib, yuqori maktab qizini uyimga olib keldim", "DMC", "Qilich sanati online", "Yozgi Urushima Tuneli Oldidagi Hayrlashuv", "Hukmdor", "Bir zarbli odam",
-			"Quyon Qiz", "Ovoz Shakli", "Sarguzashtchilar Restorani", "Horimiya", "Hyouka", "U qiz yolgiz",
+			"Quyon Qiz", "Ovoz Shakli", "Sarguzashtchilar Restorani", "Horimiya", "Hyouka", "U qiz yolgiz", "Josus X Oilasi",
 			"Qoshni farishta", "Aliya bazan mega rustilida nos karashma qiladi", "Yangi Saga", "Davolovchi qahramon", "Kayju 8-Raqam", "Pari Dumi haqida afsona",
 			"yolg'izlikda daraja ko'taish":
 			return anmelaruzb.Home(c)
