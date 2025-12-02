@@ -102,13 +102,91 @@ func Bot() {
 
 		return c.Send(msg, inlineMenu)
 	})
+	//b.Handle(tele.OnText, func(c tele.Context) error {
+	//	user := c.Sender()
+	//	if len(notSubscribedChannels(b, user)) > 0 {
+	//		return c.Send("❌ Avval barcha kanallarga obuna bo‘ling!", nil)
+	//	}
+	//
+	//	text := c.Text()
+	//	switch text {
+	//	case "🖋️ anme izlash",
+	//		"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+	//		"11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
+	//		"21", "22", "23", "24", "25", "26", "27", "28", "29", "30",
+	//		"31", "32", "33", "34", "35", "36", "37", "38", "39", "40",
+	//		"41", "42", "43", "44", "45", "46", "47", "48", "49", "50",
+	//		"51", "52", "53", "54", "55", "56", "57", "58", "59", "60",
+	//		"61", "62", "63", "64", "65", "66", "67", "68", "69", "70",
+	//		"71", "72", "73", "74", "75", "76", "77", "78", "79", "80",
+	//		"81", "82", "83", "84", "85", "86", "87", "88", "89", "90",
+	//		"91", "92", "93", "94", "95", "96", "97", "98", "99", "100",
+	//		"101", "102", "103", "104", "105", "106", "107", "108", "109", "110",
+	//		"111", "112", "113", "114", "115", "116", "117", "118", "119", "120",
+	//		"121", "122", "123", "124", "125", "126", "127", "128", "129", "130",
+	//		"131", "132", "133", "134", "135", "136", "137", "138", "139", "140",
+	//		"141", "142", "143", "144", "145", "146", "147", "148", "149", "150",
+	//		"151", "152", "153", "154", "155", "156", "157", "158", "159", "160",
+	//		"161", "162", "163", "164", "165", "166", "167", "168", "169", "170",
+	//		"171", "172", "173", "174", "175", "176", "177", "178", "179", "180",
+	//		"181", "182", "183", "184", "185", "186", "187", "188", "189", "190",
+	//		"191", "192", "193", "194", "195", "196", "197", "198", "199", "200":
+	//		// bu yerda kodi bajariladi
+	//
+	//		return anmelaruzb.Home(c)
+	//	case "Naruto", "Iblislar qotili", "Franksdagisevgi", "Vanpis", "Franksdagi sevgi",
+	//		"Tokiyoqasoskorlari", "Xarobalar qiroligi", "Daho shahzodani mamlakatni qutqargani haqida", "Qirol oʻyini", "Yetti O'lim Gunohlari", "Parazit - Hayot Saboqlari",
+	//		"Doktor stoun", "Sakamoto Kunlari", "Uyatchang Qahramon va Qotil Malikalar", "Tungi Boyqushlar Kuyi", "Omadsizning qayta tug'ilishi", "Uysiz Ma'bud", "Ochko'z Berserk",
+	//		"Qalqon qahromoni", "Soyada kotarilish", "Titanlar hujumi", "Jodugarlar jangi", "Sharlota", "Soqolimni olib, yuqori maktab qizini uyimga olib keldim", "DMC", "Qilich sanati online", "Yozgi Urushima Tuneli Oldidagi Hayrlashuv", "Hukmdor", "Bir zarbli odam",
+	//		"Quyon Qiz", "Ovoz Shakli", "Sarguzashtchilar Restorani", "Horimiya", "Hyouka", "U qiz yolgiz", "Josus X Oilasi",
+	//		"Qoshni farishta", "Aliya bazan mega rustilida nos karashma qiladi", "Yangi Saga", "Davolovchi qahramon", "Kayju 8-Raqam", "Pari Dumi haqida afsona",
+	//		"yolg'izlikda daraja ko'taish":
+	//		return anmelaruzb.Home(c)
+	//	case "Qotil Akame", "Ochkoz bersek", "Qora o'q", "O‘lmas qirolning kundalik hayoti", "Zombi 100", "Nomsiz Xotira", "Shamolni Bo'ysundirish", "Dororo", "Arra Odam",
+	//		"So'ngi serafim", "Qora Klever", "Taxt muxri", "Bleach", "Zulmat Farzandi", "Qudrat! Yangi Hikoya", "Yozukura Oilasi", "Poʻlat qal'adagi kabaneri", "Rainbow", "Qo'g'irchoqlar sirki", "Yulduz Farzandi",
+	//		"Men Muvaffaqiyatsiz...", "Qahramon Boʻlish X", "Zulmat Iblisi", "Jahannam jannati", "Vanitas xotiralari", "Violet Evergarden", "Elita Sinfi":
+	//		return anmelaruzb.Home(c)
+	//	case "Badargʻa qilingan qahramon",
+	//		"Boshqa dunyodan muammoli bolalar", "Tokyo Gul", "Shilliq sifatida qayta tug'ilganim haqida", "Voleybol", "O'lim kundaligi", "Yana bir narsa soʻrasam boʻladimi", "Abadiylik qoriqchisi", "Yettinchi umrni betashvish yashayotgan yovuz ayol",
+	//		"Taxt Dastlabki Drift", "Dragon Raja", "Xushboʻy Gul Viqor Bilan Gulaydi", "Xunuk Ammo Kuchli: Busamen G‘alaba Jangi", "Afsonaviy ilohy yilnomasi",
+	//		"Uzuklar Hukumdori: Rohhirm Urushi", "Taqdir Jang Kechasi", "Tahlil Qilish Qobiliyati Bilan Aristokrat Sifatida Qayta Tugʻildim", "Suv Sehrgari", "Sirlar Hukmdori", "Seni oshqozon osti bezingni yemoqchi man", "Qobilyatsiz Nana", "Ozga dunyoda yolgiz hujum",
+	//		"Osmondagi Janglar", "Oltin Vaqt", "Minogra Apokalipsis", "Men galaktikalar aro imperiyaning yovuz lordiman", "Tajribasiz Senpai", "Cheksizlikgacha Lv9999",
+	//		"Mabudlar Hohishi Bilan", "Lookism", "Gertsogning qiziga shaxsiy o'qituvchi boʻldim", "Gachiakuta Qasos", "Domekano", "Qudratli Soʻngi Dushman", "Yangi Darvoza",
+	//		"Chegara ortida", "Bucchgiri", "AprelYolgoni", "Afsonaviy ilohy ilnomasi", "Oʻzga dunyoda darajamni koʻtarib, bu dunyoda ham tengsiz boʻldim", "Josus X Oilasi0", "Ragnarok Rekordi", "Sen uchun O'lmas", "Masamune Qasosi", "Kim Meni Malika Qildi", "Koʻk Zindon":
+	//		return anmelaruzb.Home(c)
+	//
+	//	case "Animelar", "/menu":
+	//		return Menu.Home(c)
+	//	case "🧩 help", "/help":
+	//		return Help.Home(c)
+	//	default:
+	//		return _default.Home(c)
+	//	}
+	//})
 	b.Handle(tele.OnText, func(c tele.Context) error {
 		user := c.Sender()
-		if len(notSubscribedChannels(b, user)) > 0 {
-			return c.Send("❌ Avval barcha kanallarga obuna bo‘ling!", nil)
+
+		// 🔹 Har safar foydalanuvchi kod yuborsa, kanallarga obuna bo‘lishini tekshiramiz
+		notSubs := notSubscribedChannels(b, user)
+		if len(notSubs) > 0 {
+			msg := "❌ Avval barcha kanallarga obuna bo‘ling:\n"
+			inlineMenu := &tele.ReplyMarkup{}
+			var rows []tele.Row
+			for _, ch := range notSubs {
+				btn := inlineMenu.URL("📢 "+ch.Username, "https://t.me/"+ch.Username)
+				rows = append(rows, inlineMenu.Row(btn))
+			}
+			btnCheck := inlineMenu.Data("✅ Tekshirish", "check_sub")
+			rows = append(rows, inlineMenu.Row(btnCheck))
+			inlineMenu.Inline(rows...)
+
+			log.Printf("❗ Foydalanuvchi %s obuna emas: %+v\n", user.Username, notSubs)
+			return c.Send(msg, inlineMenu)
 		}
 
 		text := c.Text()
+
+		// 🔹 Kodlar va nomlar bo‘yicha switch
 		switch text {
 		case "🖋️ anme izlash",
 			"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
