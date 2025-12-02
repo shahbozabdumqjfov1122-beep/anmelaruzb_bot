@@ -213,24 +213,37 @@ func Bot() {
 
 			return anmelaruzb.Home(c)
 		case "Naruto", "Iblislar qotili", "Franksdagisevgi", "Vanpis", "Franksdagi sevgi",
-			"Tokiyoqasoskorlari", "Xarobalar qiroligi", "Daho shahzodani mamlakatni qutqargani haqida", "Qirol oʻyini", "Yetti O'lim Gunohlari", "Parazit - Hayot Saboqlari",
-			"Doktor stoun", "Sakamoto Kunlari", "Uyatchang Qahramon va Qotil Malikalar", "Tungi Boyqushlar Kuyi", "Omadsizning qayta tug'ilishi", "Uysiz Ma'bud", "Ochko'z Berserk",
-			"Qalqon qahromoni", "Soyada kotarilish", "Titanlar hujumi", "Jodugarlar jangi", "Sharlota", "Soqolimni olib, yuqori maktab qizini uyimga olib keldim", "DMC", "Qilich sanati online", "Yozgi Urushima Tuneli Oldidagi Hayrlashuv", "Hukmdor", "Bir zarbli odam",
-			"Quyon Qiz", "Ovoz Shakli", "Sarguzashtchilar Restorani", "Horimiya", "Hyouka", "U qiz yolgiz", "Josus X Oilasi",
-			"Qoshni farishta", "Aliya bazan mega rustilida nos karashma qiladi", "Yangi Saga", "Davolovchi qahramon", "Kayju 8-Raqam", "Pari Dumi haqida afsona",
-			"yolg'izlikda daraja ko'taish":
+			"Tokiyoqasoskorlari", "Xarobalar qiroligi", "Daho shahzodani mamlakatni qutqargani haqida",
+			"Qirol oʻyini", "Yetti O'lim Gunohlari", "Parazit - Hayot Saboqlari", "Doktor stoun",
+			"Sakamoto Kunlari", "Uyatchang Qahramon va Qotil Malikalar", "Tungi Boyqushlar Kuyi",
+			"Omadsizning qayta tug'ilishi", "Uysiz Ma'bud", "Ochko'z Berserk", "Qalqon qahromoni",
+			"Soyada kotarilish", "Titanlar hujumi", "Jodugarlar jangi", "Sharlota", "Soqolimni olib," +
+				" yuqori maktab qizini uyimga olib keldim", "DMC", "Qilich sanati online", "Ovoz Shakli",
+			"Yozgi Urushima Tuneli Oldidagi Hayrlashuv", "Hukmdor", "Bir zarbli odam", "Quyon Qiz",
+			"Sarguzashtchilar Restorani", "Horimiya", "Hyouka", "U qiz yolgiz", "Josus X Oilasi",
+			"Qoshni farishta", "Aliya bazan mega rustilida nos karashma qiladi", "Yangi Saga",
+			"Davolovchi qahramon", "Kayju 8-Raqam", "Pari Dumi haqida afsona", "yolg'izlikda daraja ko'taish":
 			return anmelaruzb.Home(c)
-		case "Qotil Akame", "Ochkoz bersek", "Qora o'q", "O‘lmas qirolning kundalik hayoti", "Zombi 100", "Nomsiz Xotira", "Shamolni Bo'ysundirish", "Dororo", "Arra Odam",
-			"So'ngi serafim", "Qora Klever", "Taxt muxri", "Bleach", "Zulmat Farzandi", "Qudrat! Yangi Hikoya", "Yozukura Oilasi", "Poʻlat qal'adagi kabaneri", "Rainbow", "Qo'g'irchoqlar sirki", "Yulduz Farzandi",
-			"Men Muvaffaqiyatsiz...", "Qahramon Boʻlish X", "Zulmat Iblisi", "Jahannam jannati", "Vanitas xotiralari", "Violet Evergarden", "Elita Sinfi":
+		case "Qotil Akame", "Ochkoz bersek", "Qora o'q", "O‘lmas qirolning kundalik hayoti", "Zombi 100",
+			"Nomsiz Xotira", "Shamolni Bo'ysundirish", "Dororo", "Arra Odam", "So'ngi serafim", "Qora Klever", "Taxt muxri",
+			"Bleach", "Zulmat Farzandi", "Qudrat! Yangi Hikoya", "Yozukura Oilasi", "Poʻlat qal'adagi kabaneri",
+			"Rainbow", "Qo'g'irchoqlar sirki", "Yulduz Farzandi", "Men Muvaffaqiyatsiz...", "Qahramon Boʻlish X",
+			"Zulmat Iblisi", "Jahannam jannati", "Vanitas xotiralari", "Violet Evergarden", "Elita Sinfi":
 			return anmelaruzb.Home(c)
 		case "Badargʻa qilingan qahramon",
-			"Boshqa dunyodan muammoli bolalar", "Tokyo Gul", "Shilliq sifatida qayta tug'ilganim haqida", "Voleybol", "O'lim kundaligi", "Yana bir narsa soʻrasam boʻladimi", "Abadiylik qoriqchisi", "Yettinchi umrni betashvish yashayotgan yovuz ayol",
-			"Taxt Dastlabki Drift", "Dragon Raja", "Xushboʻy Gul Viqor Bilan Gulaydi", "Xunuk Ammo Kuchli: Busamen G‘alaba Jangi", "Afsonaviy ilohy yilnomasi",
-			"Uzuklar Hukumdori: Rohhirm Urushi", "Taqdir Jang Kechasi", "Tahlil Qilish Qobiliyati Bilan Aristokrat Sifatida Qayta Tugʻildim", "Suv Sehrgari", "Sirlar Hukmdori", "Seni oshqozon osti bezingni yemoqchi man", "Qobilyatsiz Nana", "Ozga dunyoda yolgiz hujum",
-			"Osmondagi Janglar", "Oltin Vaqt", "Minogra Apokalipsis", "Men galaktikalar aro imperiyaning yovuz lordiman", "Tajribasiz Senpai", "Cheksizlikgacha Lv9999",
-			"Mabudlar Hohishi Bilan", "Lookism", "Gertsogning qiziga shaxsiy o'qituvchi boʻldim", "Gachiakuta Qasos", "Domekano", "Qudratli Soʻngi Dushman", "Yangi Darvoza",
-			"Chegara ortida", "Bucchgiri", "AprelYolgoni", "Afsonaviy ilohy ilnomasi", "Oʻzga dunyoda darajamni koʻtarib, bu dunyoda ham tengsiz boʻldim", "Josus X Oilasi0", "Ragnarok Rekordi", "Sen uchun O'lmas", "Masamune Qasosi", "Kim Meni Malika Qildi", "Koʻk Zindon":
+			"Boshqa dunyodan muammoli bolalar", "Tokyo Gul", "Shilliq sifatida qayta tug'ilganim haqida",
+			"Voleybol", "O'lim kundaligi", "Yana bir narsa soʻrasam boʻladimi", "Abadiylik qoriqchisi",
+			"Yettinchi umrni betashvish yashayotgan yovuz ayol", "Taxt Dastlabki Drift", "Dragon Raja",
+			"Xushboʻy Gul Viqor Bilan Gulaydi", "Xunuk Ammo Kuchli: Busamen G‘alaba Jangi", "Afsonaviy ilohy yilnomasi",
+			"Uzuklar Hukumdori: Rohhirm Urushi", "Taqdir Jang Kechasi",
+			"Tahlil Qilish Qobiliyati Bilan Aristokrat Sifatida Qayta Tugʻildim", "Suv Sehrgari", "Sirlar Hukmdori",
+			"Seni oshqozon osti bezingni yemoqchi man", "Qobilyatsiz Nana", "Ozga dunyoda yolgiz hujum",
+			"Osmondagi Janglar", "Oltin Vaqt", "Minogra Apokalipsis", "Men galaktikalar aro imperiyaning yovuz lordiman",
+			"Tajribasiz Senpai", "Cheksizlikgacha Lv9999", "Mabudlar Hohishi Bilan", "Lookism", "Domekano",
+			"Gertsogning qiziga shaxsiy o'qituvchi boʻldim", "Gachiakuta Qasos", "Qudratli Soʻngi Dushman", "Yangi Darvoza",
+			"Chegara ortida", "Bucchgiri", "AprelYolgoni", "Afsonaviy ilohy ilnomasi", "Sen uchun O'lmas",
+			"Oʻzga dunyoda darajamni koʻtarib, bu dunyoda ham tengsiz boʻldim", "Josus X Oilasi0",
+			"Ragnarok Rekordi", "Masamune Qasosi", "Kim Meni Malika Qildi", "Bir soatli qizcha", "Koʻk Zindon":
 			return anmelaruzb.Home(c)
 
 		case "Animelar", "/menu":

@@ -8,6 +8,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/AprelYolgoni"
 	"namelaruzb_bot/kodi/anmelaruzb/ArraOdam"
 	"namelaruzb_bot/kodi/anmelaruzb/Badargaqilinganqahramon"
+	"namelaruzb_bot/kodi/anmelaruzb/Birsoatliqizcha"
 	"namelaruzb_bot/kodi/anmelaruzb/Birzarbliodam"
 	"namelaruzb_bot/kodi/anmelaruzb/Bleach"
 	"namelaruzb_bot/kodi/anmelaruzb/Boshqadunyodanmuammolibolalar"
@@ -351,6 +352,8 @@ func Home(c tele.Context) error {
 		return Hyouka.Home(c)
 	case "115", "U qiz yolgiz":
 		return Uqizyolgiz.Home(c)
+	case "116", "Bir soatli qizcha":
+		return Birsoatliqizcha.Home(c)
 	//
 	//
 	//
