@@ -31,6 +31,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Hyouka"
 	"namelaruzb_bot/kodi/anmelaruzb/Jahannamjannati"
 	"namelaruzb_bot/kodi/anmelaruzb/Jodugarlarjangi"
+	"namelaruzb_bot/kodi/anmelaruzb/JonliSana"
 	"namelaruzb_bot/kodi/anmelaruzb/JosusXOilasi"
 	"namelaruzb_bot/kodi/anmelaruzb/KayjuRaqam"
 	"namelaruzb_bot/kodi/anmelaruzb/KimMeniMalikaQildi"
@@ -354,6 +355,8 @@ func Home(c tele.Context) error {
 		return Uqizyolgiz.Home(c)
 	case "116", "Bir soatli qizcha":
 		return Birsoatliqizcha.Home(c)
+	case "117", "Jonli Sana":
+		return JonliSana.Home(c)
 	//
 	//
 	//
