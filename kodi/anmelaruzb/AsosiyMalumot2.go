@@ -114,6 +114,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/ZulmatIblisi"
 	"namelaruzb_bot/kodi/anmelaruzb/dahoshahzodanimamlakat"
 	"namelaruzb_bot/kodi/anmelaruzb/iblislarqotili"
+	"namelaruzb_bot/kodi/anmelaruzb/qipqizilragna"
 	"namelaruzb_bot/kodi/anmelaruzb/tahlilashqobilyati"
 	"namelaruzb_bot/kodi/anmelaruzb/tokiyoqasoskorlari"
 	"namelaruzb_bot/kodi/anmelaruzb/vanpis"
@@ -357,6 +358,8 @@ func Home(c tele.Context) error {
 		return Birsoatliqizcha.Home(c)
 	case "117", "Jonli Sana":
 		return JonliSana.Home(c)
+	case "118", "qip-qizil ragna":
+		return qipqizilragna.Home(c)
 	//
 	//
 	//

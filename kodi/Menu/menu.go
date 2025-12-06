@@ -123,6 +123,7 @@ func Home(c tele.Context) error {
 	btnUqizyolgiz := menu.Text("U qiz yolgiz")
 	btnBirsoatliqizcha := menu.Text("Bir soatli qizcha")
 	btnJonliSana := menu.Text("Jonli Sana")
+	btnqipqizilragna := menu.Text("qip-qizil ragna")
 
 	menu.Reply(
 		menu.Row(btnVanpis, btnNaruto),
@@ -208,6 +209,7 @@ func Home(c tele.Context) error {
 		menu.Row(btnOzgadunyoda),
 		menu.Row(btnUqizyolgiz, btnBirsoatliqizcha),
 		menu.Row(btnUqizyolgiz, btnJonliSana),
+		menu.Row(btnqipqizilragna),
 	)
 
 	switch text {
