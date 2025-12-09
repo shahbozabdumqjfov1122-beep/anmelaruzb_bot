@@ -124,6 +124,7 @@ func Home(c tele.Context) error {
 	btnBirsoatliqizcha := menu.Text("Bir soatli qizcha")
 	btnJonliSana := menu.Text("Jonli Sana")
 	btnqipqizilragna := menu.Text("qip-qizil ragna")
+	btnbizbirga := menu.Text("Biz birga bo'lsak, sevgimiz har qanday to'siqni ortda qoldiradi")
 
 	menu.Reply(
 		menu.Row(btnVanpis, btnNaruto),
@@ -146,11 +147,16 @@ func Home(c tele.Context) error {
 		menu.Row(btnZombi100, btnNomsizXotira),
 		menu.Row(btnQoraKlever),
 		menu.Row(btnJahannamjannati, btnBleach),
-		menu.Row(btnOlmasqirolningkundalikhayoti, btnQoraoq),
-		menu.Row(btnMenmuvaffaqiyatsiz, btnSakamotokunlari),
-		menu.Row(btnTungiBoyqushlarKuyi, btnZulmatiblisi),
-		menu.Row(btnQahramonBolishX, btnYozukuraOilasi),
-		menu.Row(btnZulmatFarzandi, btnQudratYangiHikoya),
+		menu.Row(btnOlmasqirolningkundalikhayoti),
+		menu.Row(btnQoraoq),
+		menu.Row(btnSakamotokunlari),
+		menu.Row(btnMenmuvaffaqiyatsiz),
+		menu.Row(btnZulmatiblisi),
+		menu.Row(btnTungiBoyqushlarKuyi),
+		menu.Row(btnYozukuraOilasi),
+		menu.Row(btnQahramonBolishX),
+		menu.Row(btnQudratYangiHikoya),
+		menu.Row(btnZulmatFarzandi),
 		menu.Row(btnYangiSaga),
 		menu.Row(btnVanitasxotiralari),
 		//menu.Row(btnUyatchangQahramonvaQotilMalikalar),
@@ -205,11 +211,14 @@ func Home(c tele.Context) error {
 		menu.Row(btnSoqolimniolib),
 		menu.Row(btnYettiOlimGunohlari),
 		menu.Row(btnOmadsizningqaytatugilishi),
-		menu.Row(btnQiroloyini, btnVioletEvergarden),
+		menu.Row(btnQiroloyini),
+		menu.Row(btnVioletEvergarden),
 		menu.Row(btnOzgadunyoda),
-		menu.Row(btnUqizyolgiz, btnBirsoatliqizcha),
-		menu.Row(btnUqizyolgiz, btnJonliSana),
+		menu.Row(btnBirsoatliqizcha),
+		menu.Row(btnUqizyolgiz),
+		menu.Row(btnJonliSana),
 		menu.Row(btnqipqizilragna),
+		menu.Row(btnbizbirga),
 	)
 
 	switch text {

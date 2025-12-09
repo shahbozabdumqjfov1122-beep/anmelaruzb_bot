@@ -360,6 +360,8 @@ func Home(c tele.Context) error {
 		return JonliSana.Home(c)
 	case "118", "qip-qizil ragna":
 		return qipqizilragna.Home(c)
+	case "119", "Biz birga bo'lsak, sevgimiz har qanday to'siqni ortda qoldiradi":
+		return qipqizilragna.Home(c)
 	//
 	//
 	//

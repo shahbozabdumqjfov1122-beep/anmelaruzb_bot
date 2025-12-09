@@ -243,7 +243,7 @@ func Bot() {
 			"Gertsogning qiziga shaxsiy o'qituvchi boʻldim", "Gachiakuta Qasos", "Qudratli Soʻngi Dushman", "Yangi Darvoza",
 			"Chegara ortida", "Bucchgiri", "AprelYolgoni", "Afsonaviy ilohy ilnomasi", "Sen uchun O'lmas", "qip-qizil ragna",
 			"Oʻzga dunyoda darajamni koʻtarib, bu dunyoda ham tengsiz boʻldim", "Josus X Oilasi0", "Jonli Sana",
-			"Ragnarok Rekordi", "Masamune Qasosi", "Kim Meni Malika Qildi", "Bir soatli qizcha", "Koʻk Zindon":
+			"Ragnarok Rekordi", "Masamune Qasosi", "Kim Meni Malika Qildi", "Bir soatli qizcha", "Koʻk Zindon", "Biz birga bo'lsak, sevgimiz har qanday to'siqni ortda qoldiradi":
 			return anmelaruzb.Home(c)
 
 		case "Animelar", "/menu":
