@@ -112,6 +112,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Zombi100"
 	"namelaruzb_bot/kodi/anmelaruzb/ZulmatFarzandi"
 	"namelaruzb_bot/kodi/anmelaruzb/ZulmatIblisi"
+	"namelaruzb_bot/kodi/anmelaruzb/bizbirga"
 	"namelaruzb_bot/kodi/anmelaruzb/dahoshahzodanimamlakat"
 	"namelaruzb_bot/kodi/anmelaruzb/iblislarqotili"
 	"namelaruzb_bot/kodi/anmelaruzb/qipqizilragna"
@@ -361,7 +362,7 @@ func Home(c tele.Context) error {
 	case "118", "qip-qizil ragna":
 		return qipqizilragna.Home(c)
 	case "119", "Biz birga bo'lsak, sevgimiz har qanday to'siqni ortda qoldiradi":
-		return qipqizilragna.Home(c)
+		return bizbirga.Home(c)
 	//
 	//
 	//
