@@ -228,14 +228,17 @@ func Bot() {
 			"Nomsiz Xotira", "Shamolni Bo'ysundirish", "Dororo", "Arra Odam", "So'ngi serafim", "Qora Klever", "Taxt muxri",
 			"Bleach", "Zulmat Farzandi", "Qudrat! Yangi Hikoya", "Yozukura Oilasi", "Poʻlat qal'adagi kabaneri",
 			"Rainbow", "Qo'g'irchoqlar sirki", "Yulduz Farzandi", "Men Muvaffaqiyatsiz...", "Qahramon Boʻlish X",
-			"Zulmat Iblisi", "Jahannam jannati", "Vanitas xotiralari", "Violet Evergarden", "Elita Sinfi":
+			"Zulmat Iblisi", "Jahannam jannati", "Vanitas xotiralari", "Violet Evergarden", "Elita Sinfi",
+			"Davolash sehridan foydalanishni noto'g'ri usuli", "Lordi Armiyasining eng kuchli Sehrgari...",
+			"Tahlil qilish qobiliyatiga ega aristokrat bo'lib qayta tug'ilish", "Ilohiy qilich maktabining Iblis qilich egasi",
+			"Meni Qilich bo'lib qayta tug'ilishim haqida":
 			return anmelaruzb.Home(c)
 		case "Badargʻa qilingan qahramon",
 			"Boshqa dunyodan muammoli bolalar", "Tokyo Gul", "Shilliq sifatida qayta tug'ilganim haqida",
 			"Voleybol", "O'lim kundaligi", "Yana bir narsa soʻrasam boʻladimi", "Abadiylik qoriqchisi",
 			"Yettinchi umrni betashvish yashayotgan yovuz ayol", "Taxt Dastlabki Drift", "Dragon Raja",
 			"Xushboʻy Gul Viqor Bilan Gulaydi", "Xunuk Ammo Kuchli: Busamen G‘alaba Jangi", "Afsonaviy ilohy yilnomasi",
-			"Uzuklar Hukumdori: Rohhirm Urushi", "Taqdir Jang Kechasi",
+			"Uzuklar Hukumdori: Rohhirm Urushi", "Taqdir Jang Kechasi", "Qora chaqiruvchi",
 			"Tahlil Qilish Qobiliyati Bilan Aristokrat Sifatida Qayta Tugʻildim", "Suv Sehrgari", "Sirlar Hukmdori",
 			"Seni oshqozon osti bezingni yemoqchi man", "Qobilyatsiz Nana", "Ozga dunyoda yolgiz hujum",
 			"Osmondagi Janglar", "Oltin Vaqt", "Minogra Apokalipsis", "Men galaktikalar aro imperiyaning yovuz lordiman",
@@ -243,7 +246,11 @@ func Bot() {
 			"Gertsogning qiziga shaxsiy o'qituvchi boʻldim", "Gachiakuta Qasos", "Qudratli Soʻngi Dushman", "Yangi Darvoza",
 			"Chegara ortida", "Bucchgiri", "AprelYolgoni", "Afsonaviy ilohy ilnomasi", "Sen uchun O'lmas", "qip-qizil ragna",
 			"Oʻzga dunyoda darajamni koʻtarib, bu dunyoda ham tengsiz boʻldim", "Josus X Oilasi0", "Jonli Sana",
-			"Ragnarok Rekordi", "Masamune Qasosi", "Kim Meni Malika Qildi", "Bir soatli qizcha", "Koʻk Zindon", "Biz birga bo'lsak, sevgimiz har qanday to'siqni ortda qoldiradi":
+			"Ragnarok Rekordi", "Masamune Qasosi", "Kim Meni Malika Qildi", "Bir soatli qizcha", "Koʻk Zindon",
+			"Biz birga bo'lsak, sevgimiz har qanday to'siqni ortda qoldiradi", "Moviy Quticha", "Hikaruning songi yozi",
+			"Taqdir: Buyuk Tartib Mutlaq Iblislar Jabhasi", "Sevgi deb atalgan shart", "Lideyl Dunyosi",
+			"Afsonaviy qahramonlar va Ruhlar malikasi qizi sifatida qayta tug‘ildim", "Skelet Ritsar o‘zga dunyoda":
+
 			return anmelaruzb.Home(c)
 
 		case "Animelar", "/menu":

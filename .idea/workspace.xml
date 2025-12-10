@@ -5,7 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8fcf7f-66fd-49b5-932d-7110c9820c5e" name="Changes" comment="izoy yozishga erindim.">
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Afsonaviyqahramonlar/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Davolashsehridan/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Hikaruningsongiyozi/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Ilohiyqilichmaktabining/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/LideylDunyosi/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/LordiArmiyasiningeng/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/MeniQilich/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/MoviyQuticha/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Qorachaqiruvchi/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Sevgidebatalganshart/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/SkeletRitsarozgadunyoda/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Tahlilqilishqobiliyatigaega/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/TaqdirBuyukTartibMutlaqIblislarJabhasi/1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/anmelar.exe" beforeDir="false" afterPath="$PROJECT_DIR$/anmelar.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/2.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/Menu/menu.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/Menu/menu.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/DMC/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/DMC/1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Doktorstoun/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Doktorstoun/1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Domekano/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Domekano/1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Dororo/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Dororo/1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/DragonRajaS/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/DragonRajaS/1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Horimiya/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Horimiya/1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/SirlarHukmdori/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/SirlarHukmdori/1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Soyadakotarilish/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Soyadakotarilish/1.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +90,7 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "D:/Dars1/telegram botlar/anmelar/kodi/anmelaruzb/qipqizilragna",
+    "last_opened_file_path": "D:/Dars1/telegram botlar/anmelar/kodi/anmelaruzb/MeniQilich",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm"
@@ -78,11 +103,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\qipqizilragna" />
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\JonliSana" />
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Jonli Sana" />
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Uqizyolgiz" />
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Hyouka" />
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\MeniQilich" />
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Ilohiyqilichmaktabining" />
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Tahlilqilishqobiliyatigaega" />
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\LordiArmiyasiningeng" />
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Davolashsehridan" />
     </key>
   </component>
   <component name="SharedIndexes">

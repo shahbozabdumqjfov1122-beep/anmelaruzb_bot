@@ -4,6 +4,7 @@ import (
 	tele "gopkg.in/telebot.v4"
 	"namelaruzb_bot/kodi/anmelaruzb/Abadiylikqoriqchisi"
 	"namelaruzb_bot/kodi/anmelaruzb/Afsonaviyilohyilnomasi"
+	"namelaruzb_bot/kodi/anmelaruzb/Afsonaviyqahramonlar"
 	"namelaruzb_bot/kodi/anmelaruzb/Aliyabazanmegarustilidanoskarashmaqiladi"
 	"namelaruzb_bot/kodi/anmelaruzb/AprelYolgoni"
 	"namelaruzb_bot/kodi/anmelaruzb/ArraOdam"
@@ -17,6 +18,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Cheksizlikgacha"
 	"namelaruzb_bot/kodi/anmelaruzb/DMC"
 	"namelaruzb_bot/kodi/anmelaruzb/DastlabkiDrift"
+	"namelaruzb_bot/kodi/anmelaruzb/Davolashsehridan"
 	"namelaruzb_bot/kodi/anmelaruzb/Davolovchiqahramon"
 	"namelaruzb_bot/kodi/anmelaruzb/Doktorstoun"
 	"namelaruzb_bot/kodi/anmelaruzb/Domekano"
@@ -26,9 +28,11 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Franksdagisevgi"
 	"namelaruzb_bot/kodi/anmelaruzb/GachiakutaQasos"
 	"namelaruzb_bot/kodi/anmelaruzb/Gertsogningqizigashaxsiyoqituvchiboldim"
+	"namelaruzb_bot/kodi/anmelaruzb/Hikaruningsongiyozi"
 	"namelaruzb_bot/kodi/anmelaruzb/Horimiya"
 	"namelaruzb_bot/kodi/anmelaruzb/Hukmdor"
 	"namelaruzb_bot/kodi/anmelaruzb/Hyouka"
+	"namelaruzb_bot/kodi/anmelaruzb/Ilohiyqilichmaktabining"
 	"namelaruzb_bot/kodi/anmelaruzb/Jahannamjannati"
 	"namelaruzb_bot/kodi/anmelaruzb/Jodugarlarjangi"
 	"namelaruzb_bot/kodi/anmelaruzb/JonliSana"
@@ -36,12 +40,16 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/KayjuRaqam"
 	"namelaruzb_bot/kodi/anmelaruzb/KimMeniMalikaQildi"
 	"namelaruzb_bot/kodi/anmelaruzb/KokZindon"
+	"namelaruzb_bot/kodi/anmelaruzb/LideylDunyosi"
 	"namelaruzb_bot/kodi/anmelaruzb/Lookism"
+	"namelaruzb_bot/kodi/anmelaruzb/LordiArmiyasiningeng"
 	"namelaruzb_bot/kodi/anmelaruzb/MabudlarHohishiBilan"
 	"namelaruzb_bot/kodi/anmelaruzb/MasamuneQasosi"
 	"namelaruzb_bot/kodi/anmelaruzb/Mengalaktikalararo"
+	"namelaruzb_bot/kodi/anmelaruzb/MeniQilich"
 	"namelaruzb_bot/kodi/anmelaruzb/Menmuvaffaqiyatsiz"
 	"namelaruzb_bot/kodi/anmelaruzb/MinograApokalipsis"
+	"namelaruzb_bot/kodi/anmelaruzb/MoviyQuticha"
 	"namelaruzb_bot/kodi/anmelaruzb/Naruto"
 	"namelaruzb_bot/kodi/anmelaruzb/NomsizXotira"
 	"namelaruzb_bot/kodi/anmelaruzb/OchkozBerserk"
@@ -64,6 +72,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/QobilyatsizNana"
 	"namelaruzb_bot/kodi/anmelaruzb/Qogirchoqlarsirki"
 	"namelaruzb_bot/kodi/anmelaruzb/QoraKlever"
+	"namelaruzb_bot/kodi/anmelaruzb/Qorachaqiruvchi"
 	"namelaruzb_bot/kodi/anmelaruzb/Qoraoq"
 	"namelaruzb_bot/kodi/anmelaruzb/Qoshnifarishta"
 	"namelaruzb_bot/kodi/anmelaruzb/QotilAkame"
@@ -77,15 +86,19 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/SarguzashtchilarRestorani"
 	"namelaruzb_bot/kodi/anmelaruzb/Senioshqozon"
 	"namelaruzb_bot/kodi/anmelaruzb/SenuchunOlmas"
+	"namelaruzb_bot/kodi/anmelaruzb/Sevgidebatalganshart"
 	"namelaruzb_bot/kodi/anmelaruzb/ShamolniBoysundirish"
 	"namelaruzb_bot/kodi/anmelaruzb/Sharlota"
 	"namelaruzb_bot/kodi/anmelaruzb/Shilliqsifatida"
 	"namelaruzb_bot/kodi/anmelaruzb/SirlarHukmdori"
+	"namelaruzb_bot/kodi/anmelaruzb/SkeletRitsarozgadunyoda"
 	"namelaruzb_bot/kodi/anmelaruzb/Songiserafim"
 	"namelaruzb_bot/kodi/anmelaruzb/Soqolimniolib"
 	"namelaruzb_bot/kodi/anmelaruzb/Soyadakotarilish"
 	"namelaruzb_bot/kodi/anmelaruzb/SuvSehrgari"
+	"namelaruzb_bot/kodi/anmelaruzb/Tahlilqilishqobiliyatigaega"
 	"namelaruzb_bot/kodi/anmelaruzb/TajribasizSenpai"
+	"namelaruzb_bot/kodi/anmelaruzb/TaqdirBuyukTartibMutlaqIblislarJabhasi"
 	"namelaruzb_bot/kodi/anmelaruzb/TaqdirJangKechasi"
 	"namelaruzb_bot/kodi/anmelaruzb/Taxtmuxri"
 	"namelaruzb_bot/kodi/anmelaruzb/Titanlarjangi"
@@ -363,6 +376,32 @@ func Home(c tele.Context) error {
 		return qipqizilragna.Home(c)
 	case "119", "Biz birga bo'lsak, sevgimiz har qanday to'siqni ortda qoldiradi":
 		return bizbirga.Home(c)
+	case "120", "Moviy Quticha":
+		return MoviyQuticha.Home(c)
+	case "121", "Hikaruning songi yozi":
+		return Hikaruningsongiyozi.Home(c)
+	case "122", "Taqdir: Buyuk Tartib Mutlaq Iblislar Jabhasi":
+		return TaqdirBuyukTartibMutlaqIblislarJabhasi.Home(c)
+	case "123", "Sevgi deb atalgan shart":
+		return Sevgidebatalganshart.Home(c)
+	case "124", "Afsonaviy qahramonlar va Ruhlar malikasi qizi sifatida qayta tug‘ildim":
+		return Afsonaviyqahramonlar.Home(c)
+	case "125", "Lideyl Dunyosi":
+		return LideylDunyosi.Home(c)
+	case "126", "Skelet Ritsar o‘zga dunyoda":
+		return SkeletRitsarozgadunyoda.Home(c)
+	case "127", "Qora chaqiruvchi":
+		return Qorachaqiruvchi.Home(c)
+	case "128", "Davolash sehridan foydalanishni noto'g'ri usuli":
+		return Davolashsehridan.Home(c)
+	case "129", "Lordi Armiyasining eng kuchli Sehrgari...":
+		return LordiArmiyasiningeng.Home(c)
+	case "130", "Tahlil qilish qobiliyatiga ega aristokrat bo'lib qayta tug'ilish":
+		return Tahlilqilishqobiliyatigaega.Home(c)
+	case "131", "Ilohiy qilich maktabining Iblis qilich egasi":
+		return Ilohiyqilichmaktabining.Home(c)
+	case "132", "Meni Qilich bo'lib qayta tug'ilishim haqida":
+		return MeniQilich.Home(c)
 	//
 	//
 	//

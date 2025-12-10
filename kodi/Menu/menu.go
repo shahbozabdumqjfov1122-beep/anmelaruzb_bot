@@ -125,6 +125,19 @@ func Home(c tele.Context) error {
 	btnJonliSana := menu.Text("Jonli Sana")
 	btnqipqizilragna := menu.Text("qip-qizil ragna")
 	btnbizbirga := menu.Text("Biz birga bo'lsak, sevgimiz har qanday to'siqni ortda qoldiradi")
+	btnMoviyQuticha := menu.Text("Moviy Quticha")
+	btnHikaruningsongiyozi := menu.Text("Hikaruning songi yozi")
+	btnTaqdirBuyukTartibMutlaqIblislarJabhasi := menu.Text("Taqdir: Buyuk Tartib Mutlaq Iblislar Jabhasi")
+	btnSevgidebatalganshart := menu.Text("Sevgi deb atalgan shart")
+	btnAfsonaviyqahramonlar := menu.Text("Afsonaviy qahramonlar va Ruhlar malikasi qizi sifatida qayta tug‘ildim")
+	btnLideylDunyosi := menu.Text("Lideyl Dunyosi")
+	btnSkeletRitsarozgadunyoda := menu.Text("Skelet Ritsar o‘zga dunyoda")
+	btnQorachaqiruvchi := menu.Text("Qora chaqiruvchi")
+	btnDavolashsehridan := menu.Text("Davolash sehridan foydalanishni noto'g'ri usuli")
+	btnLordiArmiyasiningengkuchliSehrgari := menu.Text("Lordi Armiyasining eng kuchli Sehrgari...")
+	btnTahlilqilishqobiliyatigaega := menu.Text("Tahlil qilish qobiliyatiga ega aristokrat bo'lib qayta tug'ilish")
+	btnIlohiyqilichmaktabining := menu.Text("Ilohiy qilich maktabining Iblis qilich egasi")
+	btnMeniQilich := menu.Text("Meni Qilich bo'lib qayta tug'ilishim haqida")
 
 	menu.Reply(
 		menu.Row(btnVanpis, btnNaruto),
@@ -219,6 +232,19 @@ func Home(c tele.Context) error {
 		menu.Row(btnJonliSana),
 		menu.Row(btnqipqizilragna),
 		menu.Row(btnbizbirga),
+		menu.Row(btnMoviyQuticha),
+		menu.Row(btnHikaruningsongiyozi),
+		menu.Row(btnTaqdirBuyukTartibMutlaqIblislarJabhasi),
+		menu.Row(btnSevgidebatalganshart),
+		menu.Row(btnAfsonaviyqahramonlar),
+		menu.Row(btnLideylDunyosi),
+		menu.Row(btnSkeletRitsarozgadunyoda),
+		menu.Row(btnQorachaqiruvchi),
+		menu.Row(btnDavolashsehridan),
+		menu.Row(btnLordiArmiyasiningengkuchliSehrgari),
+		menu.Row(btnTahlilqilishqobiliyatigaega),
+		menu.Row(btnIlohiyqilichmaktabining),
+		menu.Row(btnMeniQilich),
 	)
 
 	switch text {

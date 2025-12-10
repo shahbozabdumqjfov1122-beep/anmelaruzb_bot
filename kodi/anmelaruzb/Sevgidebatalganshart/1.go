@@ -1,4 +1,4 @@
-package Domekano
+package Sevgidebatalganshart
 
 import (
 	tele "gopkg.in/telebot.v4"
@@ -6,9 +6,9 @@ import (
 
 func Home(c tele.Context) error {
 	b := c.Bot()
-	channelID := int64(-1003297682467)
+	channelID := int64(-1003278756314)
 	messageIDs := []int{}
-	for i := 2; i < 60; i++ {
+	for i := 2; i < 30; i++ {
 		messageIDs = append(messageIDs, i)
 	}
 
