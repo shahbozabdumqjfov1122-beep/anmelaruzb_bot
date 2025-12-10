@@ -231,7 +231,9 @@ func Bot() {
 			"Zulmat Iblisi", "Jahannam jannati", "Vanitas xotiralari", "Violet Evergarden", "Elita Sinfi",
 			"Davolash sehridan foydalanishni noto'g'ri usuli", "Lordi Armiyasining eng kuchli Sehrgari...",
 			"Tahlil qilish qobiliyatiga ega aristokrat bo'lib qayta tug'ilish", "Ilohiy qilich maktabining Iblis qilich egasi",
-			"Meni Qilich bo'lib qayta tug'ilishim haqida":
+			"Meni Qilich bo'lib qayta tug'ilishim haqida", "O'z joniga qasd qiluvchilar o'zga dunyoda",
+			"Sehr Yaratuvchi Boshqa dunyoda qanday qilib sehr yaratish mumkin", "O'rta yoshli erkakning zodagon qiziga aylanishi",
+			"Eng qudratli partiya tomonidan o'limgacha tarbiyalangan Ossan ...", "Baholovchining mashhur bo'lmagan ishi aslida eng Kuchlisi hisoblanadi":
 			return anmelaruzb.Home(c)
 		case "Badargʻa qilingan qahramon",
 			"Boshqa dunyodan muammoli bolalar", "Tokyo Gul", "Shilliq sifatida qayta tug'ilganim haqida",
@@ -250,6 +252,15 @@ func Bot() {
 			"Biz birga bo'lsak, sevgimiz har qanday to'siqni ortda qoldiradi", "Moviy Quticha", "Hikaruning songi yozi",
 			"Taqdir: Buyuk Tartib Mutlaq Iblislar Jabhasi", "Sevgi deb atalgan shart", "Lideyl Dunyosi",
 			"Afsonaviy qahramonlar va Ruhlar malikasi qizi sifatida qayta tug‘ildim", "Skelet Ritsar o‘zga dunyoda":
+
+			return anmelaruzb.Home(c)
+		case "Yaponiyaga Xush Kelibsiz, Elf Xonim!", "Grimgaldagi kulgi va illuziya", "Nega hamma meni dunyomni unutdi?",
+			"80.000 oltin tanga to'plab hayotimni qayta qurdim", "Cheksiz dendagron", "Oy sayohati yangi dunyoga olib keladi",
+			"Man o'rgimchakman ! Ho'sh shunga nma qibti?", "O'zga dunyoda fermerlik hayotim", "Iblislar maktabiga hush kelibsiz",
+			"Daholar uchun oʻzga dunyoda yashash ham muammo emas", "Menda million hayot bor", "Maktab tomonidan tan olinmagan iblislar hukmdori",
+			"Boshqa dunyo bir zumda o'lim kuchiga dosh bera olmaydi", "Kumush qirolning qayta tugʻilishi", "Oʻzga dunyoda Noyob mahoratim",
+			"Egzartis boshqa dunyoda qayta tug'ilib eng kuchli bo'lishga intiladi", "Nikoh uzuklari haqida afsona", "tanyang urush yilnomalari",
+			"Yovuzlik darajasi 99: Men yashirin xo'jayin bo'lishim mumkin, lekin men jin xo'jayini emasman", "Doktor Eliza: hayotlarni saqlab qoluvchi malika":
 
 			return anmelaruzb.Home(c)
 

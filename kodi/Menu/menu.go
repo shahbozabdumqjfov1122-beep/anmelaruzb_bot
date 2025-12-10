@@ -138,6 +138,9 @@ func Home(c tele.Context) error {
 	btnTahlilqilishqobiliyatigaega := menu.Text("Tahlil qilish qobiliyatiga ega aristokrat bo'lib qayta tug'ilish")
 	btnIlohiyqilichmaktabining := menu.Text("Ilohiy qilich maktabining Iblis qilich egasi")
 	btnMeniQilich := menu.Text("Meni Qilich bo'lib qayta tug'ilishim haqida")
+	btnOzjonigaqasd := menu.Text("O'z joniga qasd qiluvchilar o'zga dunyoda")
+	btnEngqudratlipartiya := menu.Text("Eng qudratli partiya tomonidan o'limgacha tarbiyalangan Ossan ...")
+	btnBaholovchiningmashhur := menu.Text("Baholovchining mashhur bo'lmagan ishi aslida eng Kuchlisi hisoblanadi")
 
 	menu.Reply(
 		menu.Row(btnVanpis, btnNaruto),
@@ -245,6 +248,9 @@ func Home(c tele.Context) error {
 		menu.Row(btnTahlilqilishqobiliyatigaega),
 		menu.Row(btnIlohiyqilichmaktabining),
 		menu.Row(btnMeniQilich),
+		menu.Row(btnOzjonigaqasd),
+		menu.Row(btnEngqudratlipartiya),
+		menu.Row(btnBaholovchiningmashhur),
 	)
 
 	switch text {

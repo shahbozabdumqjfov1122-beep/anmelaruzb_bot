@@ -9,29 +9,38 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/AprelYolgoni"
 	"namelaruzb_bot/kodi/anmelaruzb/ArraOdam"
 	"namelaruzb_bot/kodi/anmelaruzb/Badargaqilinganqahramon"
+	"namelaruzb_bot/kodi/anmelaruzb/Baholovchiningmashhur"
 	"namelaruzb_bot/kodi/anmelaruzb/Birsoatliqizcha"
 	"namelaruzb_bot/kodi/anmelaruzb/Birzarbliodam"
 	"namelaruzb_bot/kodi/anmelaruzb/Bleach"
+	"namelaruzb_bot/kodi/anmelaruzb/Boshqadunyobirzumda"
 	"namelaruzb_bot/kodi/anmelaruzb/Boshqadunyodanmuammolibolalar"
 	"namelaruzb_bot/kodi/anmelaruzb/Bucchgiri"
 	"namelaruzb_bot/kodi/anmelaruzb/Chegaraortida"
+	"namelaruzb_bot/kodi/anmelaruzb/Cheksizdendagron"
 	"namelaruzb_bot/kodi/anmelaruzb/Cheksizlikgacha"
 	"namelaruzb_bot/kodi/anmelaruzb/DMC"
+	"namelaruzb_bot/kodi/anmelaruzb/Daholaruchunozga"
 	"namelaruzb_bot/kodi/anmelaruzb/DastlabkiDrift"
 	"namelaruzb_bot/kodi/anmelaruzb/Davolashsehridan"
 	"namelaruzb_bot/kodi/anmelaruzb/Davolovchiqahramon"
+	"namelaruzb_bot/kodi/anmelaruzb/DoktorElizahayotlarni"
 	"namelaruzb_bot/kodi/anmelaruzb/Doktorstoun"
 	"namelaruzb_bot/kodi/anmelaruzb/Domekano"
 	"namelaruzb_bot/kodi/anmelaruzb/Dororo"
 	"namelaruzb_bot/kodi/anmelaruzb/DragonRajaS"
+	"namelaruzb_bot/kodi/anmelaruzb/Egzartisboshqadunyodaqayta"
 	"namelaruzb_bot/kodi/anmelaruzb/ElitaSinfi"
+	"namelaruzb_bot/kodi/anmelaruzb/Engqudratlipartiya"
 	"namelaruzb_bot/kodi/anmelaruzb/Franksdagisevgi"
 	"namelaruzb_bot/kodi/anmelaruzb/GachiakutaQasos"
 	"namelaruzb_bot/kodi/anmelaruzb/Gertsogningqizigashaxsiyoqituvchiboldim"
+	"namelaruzb_bot/kodi/anmelaruzb/Grimgaldagikulgi"
 	"namelaruzb_bot/kodi/anmelaruzb/Hikaruningsongiyozi"
 	"namelaruzb_bot/kodi/anmelaruzb/Horimiya"
 	"namelaruzb_bot/kodi/anmelaruzb/Hukmdor"
 	"namelaruzb_bot/kodi/anmelaruzb/Hyouka"
+	"namelaruzb_bot/kodi/anmelaruzb/Iblislarmaktabigahush"
 	"namelaruzb_bot/kodi/anmelaruzb/Ilohiyqilichmaktabining"
 	"namelaruzb_bot/kodi/anmelaruzb/Jahannamjannati"
 	"namelaruzb_bot/kodi/anmelaruzb/Jodugarlarjangi"
@@ -40,17 +49,23 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/KayjuRaqam"
 	"namelaruzb_bot/kodi/anmelaruzb/KimMeniMalikaQildi"
 	"namelaruzb_bot/kodi/anmelaruzb/KokZindon"
+	"namelaruzb_bot/kodi/anmelaruzb/Kumushqirolning"
 	"namelaruzb_bot/kodi/anmelaruzb/LideylDunyosi"
 	"namelaruzb_bot/kodi/anmelaruzb/Lookism"
 	"namelaruzb_bot/kodi/anmelaruzb/LordiArmiyasiningeng"
 	"namelaruzb_bot/kodi/anmelaruzb/MabudlarHohishiBilan"
+	"namelaruzb_bot/kodi/anmelaruzb/Maktabtomonidantan"
+	"namelaruzb_bot/kodi/anmelaruzb/Manorgimchakman"
 	"namelaruzb_bot/kodi/anmelaruzb/MasamuneQasosi"
+	"namelaruzb_bot/kodi/anmelaruzb/Mendamillionhayot"
 	"namelaruzb_bot/kodi/anmelaruzb/Mengalaktikalararo"
 	"namelaruzb_bot/kodi/anmelaruzb/MeniQilich"
 	"namelaruzb_bot/kodi/anmelaruzb/Menmuvaffaqiyatsiz"
 	"namelaruzb_bot/kodi/anmelaruzb/MinograApokalipsis"
 	"namelaruzb_bot/kodi/anmelaruzb/MoviyQuticha"
 	"namelaruzb_bot/kodi/anmelaruzb/Naruto"
+	"namelaruzb_bot/kodi/anmelaruzb/Negahammameni"
+	"namelaruzb_bot/kodi/anmelaruzb/Nikohuzuklarihaqida"
 	"namelaruzb_bot/kodi/anmelaruzb/NomsizXotira"
 	"namelaruzb_bot/kodi/anmelaruzb/OchkozBerserk"
 	"namelaruzb_bot/kodi/anmelaruzb/Ochkozbosek"
@@ -58,10 +73,15 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Olmasqirolningkundalikhayoti"
 	"namelaruzb_bot/kodi/anmelaruzb/OltinVaqt"
 	"namelaruzb_bot/kodi/anmelaruzb/Omadsizning"
+	"namelaruzb_bot/kodi/anmelaruzb/Ortayoshli"
 	"namelaruzb_bot/kodi/anmelaruzb/OsmondagiJanglar"
 	"namelaruzb_bot/kodi/anmelaruzb/OvozShakli"
+	"namelaruzb_bot/kodi/anmelaruzb/Oysayohatiyangi"
 	"namelaruzb_bot/kodi/anmelaruzb/Ozgadunyoda"
+	"namelaruzb_bot/kodi/anmelaruzb/OzgadunyodaNoyob"
+	"namelaruzb_bot/kodi/anmelaruzb/Ozgadunyodafermerlik"
 	"namelaruzb_bot/kodi/anmelaruzb/Ozgadunyodayolgizhujum"
+	"namelaruzb_bot/kodi/anmelaruzb/Ozjonigaqasd"
 	"namelaruzb_bot/kodi/anmelaruzb/ParazitHayotSaboqlari"
 	"namelaruzb_bot/kodi/anmelaruzb/PariDumihaqidaafsona"
 	"namelaruzb_bot/kodi/anmelaruzb/Polatqaladagikabaneri"
@@ -84,12 +104,14 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Sakamotokunlari"
 	"namelaruzb_bot/kodi/anmelaruzb/Saksonolti"
 	"namelaruzb_bot/kodi/anmelaruzb/SarguzashtchilarRestorani"
+	"namelaruzb_bot/kodi/anmelaruzb/SehrYaratuvchi"
 	"namelaruzb_bot/kodi/anmelaruzb/Senioshqozon"
 	"namelaruzb_bot/kodi/anmelaruzb/SenuchunOlmas"
 	"namelaruzb_bot/kodi/anmelaruzb/Sevgidebatalganshart"
 	"namelaruzb_bot/kodi/anmelaruzb/ShamolniBoysundirish"
 	"namelaruzb_bot/kodi/anmelaruzb/Sharlota"
 	"namelaruzb_bot/kodi/anmelaruzb/Shilliqsifatida"
+	"namelaruzb_bot/kodi/anmelaruzb/Shirinrenkarnatsiya"
 	"namelaruzb_bot/kodi/anmelaruzb/SirlarHukmdori"
 	"namelaruzb_bot/kodi/anmelaruzb/SkeletRitsarozgadunyoda"
 	"namelaruzb_bot/kodi/anmelaruzb/Songiserafim"
@@ -117,8 +139,10 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Yanabirnarsa"
 	"namelaruzb_bot/kodi/anmelaruzb/YangiDarvoza"
 	"namelaruzb_bot/kodi/anmelaruzb/YangiSaga"
+	"namelaruzb_bot/kodi/anmelaruzb/YaponiyagaXush"
 	"namelaruzb_bot/kodi/anmelaruzb/YettiOlimGunohlari"
 	"namelaruzb_bot/kodi/anmelaruzb/Yettinchiumrnibetashvishyashayotgan"
+	"namelaruzb_bot/kodi/anmelaruzb/YovuzlikdarajasiMenyashirin"
 	"namelaruzb_bot/kodi/anmelaruzb/YozgiUrushimaTuneliOldidagiHayrlashuv"
 	"namelaruzb_bot/kodi/anmelaruzb/YozukuraOilasi"
 	"namelaruzb_bot/kodi/anmelaruzb/YulduzFarzandi"
@@ -130,7 +154,9 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/iblislarqotili"
 	"namelaruzb_bot/kodi/anmelaruzb/qipqizilragna"
 	"namelaruzb_bot/kodi/anmelaruzb/tahlilashqobilyati"
+	"namelaruzb_bot/kodi/anmelaruzb/tanyangurushyilnomalari"
 	"namelaruzb_bot/kodi/anmelaruzb/tokiyoqasoskorlari"
+	"namelaruzb_bot/kodi/anmelaruzb/toplabhayotimni"
 	"namelaruzb_bot/kodi/anmelaruzb/vanpis"
 	"namelaruzb_bot/kodi/anmelaruzb/yolgizlikdadarajakotaish"
 )
@@ -402,6 +428,61 @@ func Home(c tele.Context) error {
 		return Ilohiyqilichmaktabining.Home(c)
 	case "132", "Meni Qilich bo'lib qayta tug'ilishim haqida":
 		return MeniQilich.Home(c)
+	case "133", "O'z joniga qasd qiluvchilar o'zga dunyoda":
+		return Ozjonigaqasd.Home(c)
+	case "134", "Eng qudratli partiya tomonidan o'limgacha tarbiyalangan Ossan ...":
+		return Engqudratlipartiya.Home(c)
+	case "135", "Baholovchining mashhur bo'lmagan ishi aslida eng Kuchlisi hisoblanadi":
+		return Baholovchiningmashhur.Home(c)
+	case "136", "Sehr Yaratuvchi Boshqa dunyoda qanday qilib sehr yaratish mumkin":
+		return SehrYaratuvchi.Home(c)
+	case "137", "O'rta yoshli erkakning zodagon qiziga aylanishi":
+		return Ortayoshli.Home(c)
+	case "138", "Yaponiyaga Xush Kelibsiz, Elf Xonim!":
+		return YaponiyagaXush.Home(c)
+	case "139", "Grimgaldagi kulgi va illuziya":
+		return Grimgaldagikulgi.Home(c)
+	case "140", "Nega hamma meni dunyomni unutdi?":
+		return Negahammameni.Home(c)
+	case "141", "80.000 oltin tanga to'plab hayotimni qayta qurdim":
+		return toplabhayotimni.Home(c)
+	case "142", "Cheksiz dendagron":
+		return Cheksizdendagron.Home(c)
+	case "143", "Oy sayohati yangi dunyoga olib keladi":
+		return Oysayohatiyangi.Home(c)
+	case "144", "Man o'rgimchakman ! Ho'sh shunga nma qibti?":
+		return Manorgimchakman.Home(c)
+	case "145", "O'zga dunyoda fermerlik hayotim":
+		return Ozgadunyodafermerlik.Home(c)
+	case "146", "Iblislar maktabiga hush kelibsiz":
+		return Iblislarmaktabigahu.Home(c)
+	case "147", "Daholar uchun oʻzga dunyoda yashash ham muammo emas":
+		return Daholaruchunozga.Home(c)
+	case "148", "Shirin renkarnatsiya":
+		return Shirinrenkarnatsi.Home(c)
+	case "149", "Menda million hayot bor":
+		return Mendamillionhayot.Home(c)
+	case "150", "Maktab tomonidan tan olinmagan iblislar hukmdori":
+		return Maktabtomonidantan.Home(c)
+	case "151", "Boshqa dunyo bir zumda o'lim kuchiga dosh bera olmaydi":
+		return Boshqadunyobirzumda.Home(c)
+	case "152", "Kumush qirolning qayta tugʻilishi":
+		return Kumushqirolning.Home(c)
+	case "153", "Oʻzga dunyoda Noyob mahoratim":
+		return OzgadunyodaNoyob.Home(c)
+	case "154", "Egzartis boshqa dunyoda qayta tug'ilib eng kuchli bo'lishga intiladi":
+		return Egzartisboshqadunyodaqayta.Home(c)
+	case "155", "Nikoh uzuklari haqida afsona":
+		return Nikohuzuklarihaqida.Home(c)
+	case "156", "tanyang urush yilnomalari":
+		return tanyangurushyilnomalari.Home(c)
+	case "157", "Yovuzlik darajasi 99: Men yashirin xo'jayin bo'lishim mumkin, lekin men jin xo'jayini emasman":
+		return YovuzlikdarajasiMenyashirin.Home(c)
+	case "158", "Doktor Eliza: hayotlarni saqlab qoluvchi malika":
+		return DoktorElizahayotlarni.Home(c)
+	//case "158", "Mening qotil maqomim qahramonlik maqomidan ustun ekanligi aniq":
+	//	return DoktorElizahayotlarni.Home(c)
+
 	//
 	//
 	//
