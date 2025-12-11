@@ -490,7 +490,7 @@ func Home(c tele.Context) error {
 	case "159", "Eng zaif yirtqich hayvon":
 		return Engzaifyirtqich.Home(c)
 	case "160", "Fojiaga sababchi bõlgan malika xalq uchun qõlidan kelgan barcha ishni qiladi":
-		return Fojiagasababchibõlganmalika.Home(c)
+		return Fojiagasababchiblganmalika.Home(c)
 	case "161", "Iblislar hukmdori qoʻshimcha ishda!":
 		return Iblislarhukmdoriqoshimcha.Home(c)
 	case "162", "Oying bilan birga video o'yin":
