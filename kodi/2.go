@@ -260,7 +260,10 @@ func Bot() {
 			"Daholar uchun oʻzga dunyoda yashash ham muammo emas", "Menda million hayot bor", "Maktab tomonidan tan olinmagan iblislar hukmdori",
 			"Boshqa dunyo bir zumda o'lim kuchiga dosh bera olmaydi", "Kumush qirolning qayta tugʻilishi", "Oʻzga dunyoda Noyob mahoratim",
 			"Egzartis boshqa dunyoda qayta tug'ilib eng kuchli bo'lishga intiladi", "Nikoh uzuklari haqida afsona", "tanyang urush yilnomalari",
-			"Yovuzlik darajasi 99: Men yashirin xo'jayin bo'lishim mumkin, lekin men jin xo'jayini emasman", "Doktor Eliza: hayotlarni saqlab qoluvchi malika":
+			"Yovuzlik darajasi 99: Men yashirin xo'jayin bo'lishim mumkin, lekin men jin xo'jayini emasman", "Doktor Eliza: hayotlarni saqlab qoluvchi malika",
+			"Eng zaif yirtqich hayvon", "Fojiaga sababchi bõlgan malika xalq uchun qõlidan kelgan barcha ishni qiladi",
+			"Iblislar hukmdori qoʻshimcha ishda!", "Oying bilan birga video o'yin", "Bekami Ko'st Yashashim Ushun Hamma Narsa Qildim",
+			"Uzoq paladin", "Realizm qahramoni qirollikni qayta qurishi":
 
 			return anmelaruzb.Home(c)
 

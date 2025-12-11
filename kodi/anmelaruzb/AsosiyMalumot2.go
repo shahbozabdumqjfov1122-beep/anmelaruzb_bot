@@ -10,6 +10,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/ArraOdam"
 	"namelaruzb_bot/kodi/anmelaruzb/Badargaqilinganqahramon"
 	"namelaruzb_bot/kodi/anmelaruzb/Baholovchiningmashhur"
+	"namelaruzb_bot/kodi/anmelaruzb/BekamiKostYashashimUshun"
 	"namelaruzb_bot/kodi/anmelaruzb/Birsoatliqizcha"
 	"namelaruzb_bot/kodi/anmelaruzb/Birzarbliodam"
 	"namelaruzb_bot/kodi/anmelaruzb/Bleach"
@@ -32,6 +33,8 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Egzartisboshqadunyodaqayta"
 	"namelaruzb_bot/kodi/anmelaruzb/ElitaSinfi"
 	"namelaruzb_bot/kodi/anmelaruzb/Engqudratlipartiya"
+	"namelaruzb_bot/kodi/anmelaruzb/Engzaifyirtqich"
+	"namelaruzb_bot/kodi/anmelaruzb/Fojiagasababchibõlganmalika"
 	"namelaruzb_bot/kodi/anmelaruzb/Franksdagisevgi"
 	"namelaruzb_bot/kodi/anmelaruzb/GachiakutaQasos"
 	"namelaruzb_bot/kodi/anmelaruzb/Gertsogningqizigashaxsiyoqituvchiboldim"
@@ -40,6 +43,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Horimiya"
 	"namelaruzb_bot/kodi/anmelaruzb/Hukmdor"
 	"namelaruzb_bot/kodi/anmelaruzb/Hyouka"
+	"namelaruzb_bot/kodi/anmelaruzb/Iblislarhukmdoriqoshimcha"
 	"namelaruzb_bot/kodi/anmelaruzb/Iblislarmaktabigahush"
 	"namelaruzb_bot/kodi/anmelaruzb/Ilohiyqilichmaktabining"
 	"namelaruzb_bot/kodi/anmelaruzb/Jahannamjannati"
@@ -76,6 +80,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Ortayoshli"
 	"namelaruzb_bot/kodi/anmelaruzb/OsmondagiJanglar"
 	"namelaruzb_bot/kodi/anmelaruzb/OvozShakli"
+	"namelaruzb_bot/kodi/anmelaruzb/Oyingbilanbirgavideo"
 	"namelaruzb_bot/kodi/anmelaruzb/Oysayohatiyangi"
 	"namelaruzb_bot/kodi/anmelaruzb/Ozgadunyoda"
 	"namelaruzb_bot/kodi/anmelaruzb/OzgadunyodaNoyob"
@@ -101,6 +106,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/QuyonQiz"
 	"namelaruzb_bot/kodi/anmelaruzb/Ragnarok"
 	"namelaruzb_bot/kodi/anmelaruzb/Rainbow"
+	"namelaruzb_bot/kodi/anmelaruzb/Realizmqahramoniqirollikni"
 	"namelaruzb_bot/kodi/anmelaruzb/Sakamotokunlari"
 	"namelaruzb_bot/kodi/anmelaruzb/Saksonolti"
 	"namelaruzb_bot/kodi/anmelaruzb/SarguzashtchilarRestorani"
@@ -129,6 +135,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Uqizyolgiz"
 	"namelaruzb_bot/kodi/anmelaruzb/UyatchangQahramonvaQotilMalikalar"
 	"namelaruzb_bot/kodi/anmelaruzb/UysizMabud"
+	"namelaruzb_bot/kodi/anmelaruzb/Uzoqpaladin"
 	"namelaruzb_bot/kodi/anmelaruzb/UzuklarHukumdor"
 	"namelaruzb_bot/kodi/anmelaruzb/Vanitasxotiralari"
 	"namelaruzb_bot/kodi/anmelaruzb/VioletEvergarden"
@@ -480,8 +487,20 @@ func Home(c tele.Context) error {
 		return YovuzlikdarajasiMenyashirin.Home(c)
 	case "158", "Doktor Eliza: hayotlarni saqlab qoluvchi malika":
 		return DoktorElizahayotlarni.Home(c)
-	//case "158", "Mening qotil maqomim qahramonlik maqomidan ustun ekanligi aniq":
-	//	return DoktorElizahayotlarni.Home(c)
+	case "159", "Eng zaif yirtqich hayvon":
+		return Engzaifyirtqich.Home(c)
+	case "160", "Fojiaga sababchi bõlgan malika xalq uchun qõlidan kelgan barcha ishni qiladi":
+		return Fojiagasababchibõlganmalika.Home(c)
+	case "161", "Iblislar hukmdori qoʻshimcha ishda!":
+		return Iblislarhukmdoriqoshimcha.Home(c)
+	case "162", "Oying bilan birga video o'yin":
+		return Oyingbilanbirgavideo.Home(c)
+	case "163", "Bekami Ko'st Yashashim Ushun Hamma Narsa Qildim":
+		return BekamiKostYashashimUshu.Home(c)
+	case "164", "Uzoq paladin":
+		return Uzoqpaladin.Home(c)
+	case "165", "Realizm qahramoni qirollikni qayta qurishi":
+		return Realizmqahramoniqirollikni.Home(c)
 
 	//
 	//
