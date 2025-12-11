@@ -1,4 +1,4 @@
-package Fojiagasababchiblganmalika
+package Fojiagasababchiblganmalik
 
 import (
 	tele "gopkg.in/telebot.v4"

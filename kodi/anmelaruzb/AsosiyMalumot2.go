@@ -34,7 +34,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/ElitaSinfi"
 	"namelaruzb_bot/kodi/anmelaruzb/Engqudratlipartiya"
 	"namelaruzb_bot/kodi/anmelaruzb/Engzaifyirtqich"
-	"namelaruzb_bot/kodi/anmelaruzb/Fojiagasababchibõlganmalika"
+	Fojiagasababchiblganmalik "namelaruzb_bot/kodi/anmelaruzb/Fojiagasababchiblganmalika"
 	"namelaruzb_bot/kodi/anmelaruzb/Franksdagisevgi"
 	"namelaruzb_bot/kodi/anmelaruzb/GachiakutaQasos"
 	"namelaruzb_bot/kodi/anmelaruzb/Gertsogningqizigashaxsiyoqituvchiboldim"
@@ -490,7 +490,7 @@ func Home(c tele.Context) error {
 	case "159", "Eng zaif yirtqich hayvon":
 		return Engzaifyirtqich.Home(c)
 	case "160", "Fojiaga sababchi bõlgan malika xalq uchun qõlidan kelgan barcha ishni qiladi":
-		return Fojiagasababchiblganmalika.Home(c)
+		return Fojiagasababchiblganmalik.Home(c)
 	case "161", "Iblislar hukmdori qoʻshimcha ishda!":
 		return Iblislarhukmdoriqoshimcha.Home(c)
 	case "162", "Oying bilan birga video o'yin":
