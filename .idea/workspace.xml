@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8fcf7f-66fd-49b5-932d-7110c9820c5e" name="Changes" comment="izoy yozishga erindim.">
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/BekamiKostYashashimUshun/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Engzaifyirtqich/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Fojiagasababchibõlganmalika/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Iblislarhukmdoriqoshimcha/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Oyingbilanbirgavideo/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Realizmqahramoniqirollikni/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Uzoqpaladin/1.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/anmelar.exe" beforeDir="false" afterPath="$PROJECT_DIR$/anmelar.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/2.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/GachiakutaQasos/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/GachiakutaQasos/1.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,10 +68,11 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "D:/Dars1/telegram botlar/anmelar/kodi/anmelaruzb/Realizmqahramoniqirollikni",
+    "last_opened_file_path": "D:/Dars1/telegram botlar/anmelar/kodi/anmelaruzb",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   },
   "keyToStringList": {
     "ChangesTree.GroupingKeys": [
@@ -88,11 +82,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Realizmqahramoniqirollikni" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Uzoqpaladin" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\BekamiKostYashashimUshun" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Oyingbilanbirgavideo" />
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Iblislarhukmdoriqoshimcha" />
     </key>
   </component>
   <component name="SharedIndexes">
