@@ -1,4 +1,4 @@
-package Sakamotokunlari
+package OyindagiEngBoyodam
 
 import (
 	tele "gopkg.in/telebot.v4"
@@ -6,9 +6,9 @@ import (
 
 func Home(c tele.Context) error {
 	b := c.Bot()
-	channelID := int64(-1003215122737)
+	channelID := int64(-1003390478322)
 	messageIDs := []int{}
-	for i := 2; i < 50; i++ {
+	for i := 3; i < 30; i++ {
 		messageIDs = append(messageIDs, i)
 	}
 

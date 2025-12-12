@@ -263,7 +263,9 @@ func Bot() {
 			"Yovuzlik darajasi 99: Men yashirin xo'jayin bo'lishim mumkin, lekin men jin xo'jayini emasman", "Doktor Eliza: hayotlarni saqlab qoluvchi malika",
 			"Eng zaif yirtqich hayvon", "Fojiaga sababchi bõlgan malika xalq uchun qõlidan kelgan barcha ishni qiladi",
 			"Iblislar hukmdori qoʻshimcha ishda!", "Oying bilan birga video o'yin", "Bekami Ko'st Yashashim Ushun Hamma Narsa Qildim",
-			"Uzoq paladin", "Realizm qahramoni qirollikni qayta qurishi":
+			"Uzoq paladin", "Realizm qahramoni qirollikni qayta qurishi", "Olti barg qahramonlari", "Daho Shifokorning Soyadagi Yangi Hayoti",
+			"Qayta tugʻilgan aristokratning misli koʻrilmagan sarguzashtlari", "Sakkizinchi o'g'il, qo'ysangizlarchi?", "O'yindagi Eng Boy odam",
+			"O'yinsiz hayot yo'q":
 
 			return anmelaruzb.Home(c)
 
