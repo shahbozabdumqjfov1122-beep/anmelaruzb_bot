@@ -21,6 +21,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Cheksizdendagron"
 	"namelaruzb_bot/kodi/anmelaruzb/Cheksizlikgacha"
 	"namelaruzb_bot/kodi/anmelaruzb/DMC"
+	DahoShifokorningSoyadag "namelaruzb_bot/kodi/anmelaruzb/DahoShifokorningSoyadagi"
 	"namelaruzb_bot/kodi/anmelaruzb/Daholaruchunozga"
 	"namelaruzb_bot/kodi/anmelaruzb/DastlabkiDrift"
 	"namelaruzb_bot/kodi/anmelaruzb/Davolashsehridan"
@@ -34,7 +35,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/ElitaSinfi"
 	"namelaruzb_bot/kodi/anmelaruzb/Engqudratlipartiya"
 	"namelaruzb_bot/kodi/anmelaruzb/Engzaifyirtqich"
-	Fojiagasababchiblganmalik "namelaruzb_bot/kodi/anmelaruzb/Fojiagasababchiblganmalika"
+	"namelaruzb_bot/kodi/anmelaruzb/Fojiagasababchiblganmalika"
 	"namelaruzb_bot/kodi/anmelaruzb/Franksdagisevgi"
 	"namelaruzb_bot/kodi/anmelaruzb/GachiakutaQasos"
 	"namelaruzb_bot/kodi/anmelaruzb/Gertsogningqizigashaxsiyoqituvchiboldim"
@@ -75,12 +76,15 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Ochkozbosek"
 	"namelaruzb_bot/kodi/anmelaruzb/Olimkundaligi"
 	"namelaruzb_bot/kodi/anmelaruzb/Olmasqirolningkundalikhayoti"
+	"namelaruzb_bot/kodi/anmelaruzb/Oltibargqahramonlari"
 	"namelaruzb_bot/kodi/anmelaruzb/OltinVaqt"
 	"namelaruzb_bot/kodi/anmelaruzb/Omadsizning"
 	"namelaruzb_bot/kodi/anmelaruzb/Ortayoshli"
 	"namelaruzb_bot/kodi/anmelaruzb/OsmondagiJanglar"
 	"namelaruzb_bot/kodi/anmelaruzb/OvozShakli"
+	"namelaruzb_bot/kodi/anmelaruzb/OyindagiEngBoyodam"
 	"namelaruzb_bot/kodi/anmelaruzb/Oyingbilanbirgavideo"
+	"namelaruzb_bot/kodi/anmelaruzb/Oyinsizhayotyoq"
 	"namelaruzb_bot/kodi/anmelaruzb/Oysayohatiyangi"
 	"namelaruzb_bot/kodi/anmelaruzb/Ozgadunyoda"
 	"namelaruzb_bot/kodi/anmelaruzb/OzgadunyodaNoyob"
@@ -92,6 +96,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Polatqaladagikabaneri"
 	"namelaruzb_bot/kodi/anmelaruzb/QahramonBolishX"
 	"namelaruzb_bot/kodi/anmelaruzb/Qalqonqahromoni"
+	"namelaruzb_bot/kodi/anmelaruzb/Qaytatugilganaristokratningmisli"
 	"namelaruzb_bot/kodi/anmelaruzb/Qilichsanationline"
 	"namelaruzb_bot/kodi/anmelaruzb/Qiroloyini"
 	"namelaruzb_bot/kodi/anmelaruzb/QobilyatsizNana"
@@ -108,6 +113,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Rainbow"
 	"namelaruzb_bot/kodi/anmelaruzb/Realizmqahramoniqirollikni"
 	"namelaruzb_bot/kodi/anmelaruzb/Sakamotokunlari"
+	"namelaruzb_bot/kodi/anmelaruzb/Sakkizinchiogilqoysangizlarchi"
 	"namelaruzb_bot/kodi/anmelaruzb/Saksonolti"
 	"namelaruzb_bot/kodi/anmelaruzb/SarguzashtchilarRestorani"
 	"namelaruzb_bot/kodi/anmelaruzb/SehrYaratuvchi"
@@ -501,6 +507,18 @@ func Home(c tele.Context) error {
 		return Uzoqpaladin.Home(c)
 	case "165", "Realizm qahramoni qirollikni qayta qurishi":
 		return Realizmqahramoniqirollikni.Home(c)
+	case "166", "Olti barg qahramonlari":
+		return Oltibargqahramonlari.Home(c)
+	case "167", "Daho Shifokorning Soyadagi Yangi Hayoti":
+		return DahoShifokorningSoyadag.Home(c)
+	case "168", "Qayta tugʻilgan aristokratning misli koʻrilmagan sarguzashtlari":
+		return Qaytatugilganaristokratningmisli.Home(c)
+	case "169", "Sakkizinchi o'g'il qo'ysangizlarchi?":
+		return Sakkizinchiogilqoysangizlarchi.Home(c)
+	case "170", "O'yindagi Eng Boy odam":
+		return OyindagiEngBoyodam.Home(c)
+	case "171", "O'yinsiz hayot yo'q":
+		return Oyinsizhayotyoq.Home(c)
 
 	//
 	//
