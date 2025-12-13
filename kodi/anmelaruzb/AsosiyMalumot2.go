@@ -7,6 +7,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Afsonaviyqahramonlar"
 	"namelaruzb_bot/kodi/anmelaruzb/Aliyabazanmegarustilidanoskarashmaqiladi"
 	"namelaruzb_bot/kodi/anmelaruzb/AprelYolgoni"
+	"namelaruzb_bot/kodi/anmelaruzb/ArifuretaDunyodagiengkuchli"
 	"namelaruzb_bot/kodi/anmelaruzb/ArraOdam"
 	"namelaruzb_bot/kodi/anmelaruzb/Badargaqilinganqahramon"
 	"namelaruzb_bot/kodi/anmelaruzb/Baholovchiningmashhur"
@@ -519,6 +520,8 @@ func Home(c tele.Context) error {
 		return OyindagiEngBoyodam.Home(c)
 	case "171", "O'yinsiz hayot yo'q":
 		return Oyinsizhayotyoq.Home(c)
+	case "172", "Arifureta: Dunyodagi eng kuchli hunarmand":
+		return ArifuretaDunyodagiengkuchli.Home(c)
 
 	//
 	//

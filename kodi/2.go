@@ -265,7 +265,7 @@ func Bot() {
 			"Iblislar hukmdori qoʻshimcha ishda!", "Oying bilan birga video o'yin", "Bekami Ko'st Yashashim Ushun Hamma Narsa Qildim",
 			"Uzoq paladin", "Realizm qahramoni qirollikni qayta qurishi", "Olti barg qahramonlari", "Daho Shifokorning Soyadagi Yangi Hayoti",
 			"Qayta tugʻilgan aristokratning misli koʻrilmagan sarguzashtlari", "Sakkizinchi o'g'il, qo'ysangizlarchi?", "O'yindagi Eng Boy odam",
-			"O'yinsiz hayot yo'q":
+			"O'yinsiz hayot yo'q", "Arifureta: Dunyodagi eng kuchli hunarmand":
 
 			return anmelaruzb.Home(c)
 
