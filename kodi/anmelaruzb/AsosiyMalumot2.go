@@ -166,6 +166,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/YovuzlikdarajasiMenyashirin"
 	"namelaruzb_bot/kodi/anmelaruzb/YozgiUrushimaTuneliOldidagiHayrlashuv"
 	"namelaruzb_bot/kodi/anmelaruzb/YozukuraOilasi"
+	"namelaruzb_bot/kodi/anmelaruzb/Yugureningabadiyligi"
 	"namelaruzb_bot/kodi/anmelaruzb/YulduzFarzandi"
 	"namelaruzb_bot/kodi/anmelaruzb/Zombi100"
 	"namelaruzb_bot/kodi/anmelaruzb/ZulmatFarzandi"
@@ -543,6 +544,8 @@ func Home(c tele.Context) error {
 		return Yettinchishahzodasifatid.Home(c)
 	case "179", "Mening Qotillik Maqomim Qahramonlik Maqomidan Yaxshiroq":
 		return MeningQotillikMaqomim.Home(c)
+	case "180", "Yugurening abadiyligi":
+		return Yugureningabadiyligi.Home(c)
 
 	//
 	//
