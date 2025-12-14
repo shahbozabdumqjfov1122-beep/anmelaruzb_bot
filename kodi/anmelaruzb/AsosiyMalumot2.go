@@ -67,6 +67,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Mendamillionhayot"
 	"namelaruzb_bot/kodi/anmelaruzb/Mengalaktikalararo"
 	"namelaruzb_bot/kodi/anmelaruzb/MeniQilich"
+	"namelaruzb_bot/kodi/anmelaruzb/MeningQotillikMaqomim"
 	"namelaruzb_bot/kodi/anmelaruzb/Menmuvaffaqiyatsiz"
 	"namelaruzb_bot/kodi/anmelaruzb/MinograApokalipsis"
 	"namelaruzb_bot/kodi/anmelaruzb/MoviyQuticha"
@@ -160,6 +161,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/YangiSaga"
 	"namelaruzb_bot/kodi/anmelaruzb/YaponiyagaXush"
 	"namelaruzb_bot/kodi/anmelaruzb/YettiOlimGunohlari"
+	Yettinchishahzodasifatid "namelaruzb_bot/kodi/anmelaruzb/Yettinchishahzodasifatida"
 	"namelaruzb_bot/kodi/anmelaruzb/Yettinchiumrnibetashvishyashayotgan"
 	"namelaruzb_bot/kodi/anmelaruzb/YovuzlikdarajasiMenyashirin"
 	"namelaruzb_bot/kodi/anmelaruzb/YozgiUrushimaTuneliOldidagiHayrlashuv"
@@ -537,6 +539,10 @@ func Home(c tele.Context) error {
 		return ReZero.Home(c)
 	case "177", "Onmyo Qayta Tug‘ilishi: Hayolot Olami":
 		return OnmyoQaytaTugilishi.Home(c)
+	case "178", "Yettinchi shahzoda sifatida qayta tug'ildim va endi sehrimni istaganimcha kuchaytiraman!":
+		return Yettinchishahzodasifatid.Home(c)
+	case "179", "Mening Qotillik Maqomim Qahramonlik Maqomidan Yaxshiroq":
+		return MeningQotillikMaqomim.Home(c)
 
 	//
 	//
