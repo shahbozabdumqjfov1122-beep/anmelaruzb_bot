@@ -22,11 +22,12 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Cheksizdendagron"
 	"namelaruzb_bot/kodi/anmelaruzb/Cheksizlikgacha"
 	"namelaruzb_bot/kodi/anmelaruzb/DMC"
-	DahoShifokorningSoyadag "namelaruzb_bot/kodi/anmelaruzb/DahoShifokorningSoyadagi"
+	"namelaruzb_bot/kodi/anmelaruzb/DahoShifokorningSoyadagi"
 	"namelaruzb_bot/kodi/anmelaruzb/Daholaruchunozga"
 	"namelaruzb_bot/kodi/anmelaruzb/DastlabkiDrift"
 	"namelaruzb_bot/kodi/anmelaruzb/Davolashsehridan"
 	"namelaruzb_bot/kodi/anmelaruzb/Davolovchiqahramon"
+	"namelaruzb_bot/kodi/anmelaruzb/Daydiitlarningbuyugi"
 	"namelaruzb_bot/kodi/anmelaruzb/DoktorElizahayotlarni"
 	"namelaruzb_bot/kodi/anmelaruzb/Doktorstoun"
 	"namelaruzb_bot/kodi/anmelaruzb/Domekano"
@@ -161,7 +162,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/YangiSaga"
 	"namelaruzb_bot/kodi/anmelaruzb/YaponiyagaXush"
 	"namelaruzb_bot/kodi/anmelaruzb/YettiOlimGunohlari"
-	Yettinchishahzodasifatid "namelaruzb_bot/kodi/anmelaruzb/Yettinchishahzodasifatida"
+	"namelaruzb_bot/kodi/anmelaruzb/Yettinchishahzodasifatida"
 	"namelaruzb_bot/kodi/anmelaruzb/Yettinchiumrnibetashvishyashayotgan"
 	"namelaruzb_bot/kodi/anmelaruzb/YovuzlikdarajasiMenyashirin"
 	"namelaruzb_bot/kodi/anmelaruzb/YozgiUrushimaTuneliOldidagiHayrlashuv"
@@ -546,6 +547,8 @@ func Home(c tele.Context) error {
 		return MeningQotillikMaqomim.Home(c)
 	case "180", "Yugurening abadiyligi":
 		return Yugureningabadiyligi.Home(c)
+	case "181", "Daydi itlarning buyugi":
+		return Daydiitlarningbuyug.Home(c)
 
 	//
 	//
