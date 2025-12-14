@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8fcf7f-66fd-49b5-932d-7110c9820c5e" name="Changes" comment="izoy yozishga erindim.">
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Gildiyaadminstratoribolib/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Oddiyinsondanqahramonlikkacha/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/ReZero/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Tayoqvaqilich/1.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/2.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +71,7 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "D:/Dars1/telegram botlar/anmelar/kodi/anmelaruzb/Oyinsizhayotyoq",
+    "last_opened_file_path": "D:/Dars1/telegram botlar/anmelar/kodi/anmelaruzb/ReZero",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -79,11 +85,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Oyinsizhayotyoq" />
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\OyindagiEngBoyodam" />
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Sakkizinchiogilqoysangizlarchi" />
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Qaytatugilganaristokratningmisli" />
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\DahoShifokorningSoyadagi" />
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\ReZero" />
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Tayoqvaqilich" />
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Oddiyinsondanqahramonlikkacha" />
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Gildiyaadminstratoribolib" />
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\ArifuretaDunyodagiengkuchli" />
     </key>
   </component>
   <component name="SharedIndexes">

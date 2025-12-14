@@ -40,6 +40,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Franksdagisevgi"
 	"namelaruzb_bot/kodi/anmelaruzb/GachiakutaQasos"
 	"namelaruzb_bot/kodi/anmelaruzb/Gertsogningqizigashaxsiyoqituvchiboldim"
+	"namelaruzb_bot/kodi/anmelaruzb/Gildiyaadminstratoribolib"
 	"namelaruzb_bot/kodi/anmelaruzb/Grimgaldagikulgi"
 	"namelaruzb_bot/kodi/anmelaruzb/Hikaruningsongiyozi"
 	"namelaruzb_bot/kodi/anmelaruzb/Horimiya"
@@ -75,11 +76,13 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/NomsizXotira"
 	"namelaruzb_bot/kodi/anmelaruzb/OchkozBerserk"
 	"namelaruzb_bot/kodi/anmelaruzb/Ochkozbosek"
+	"namelaruzb_bot/kodi/anmelaruzb/Oddiyinsondanqahramonlikkacha"
 	"namelaruzb_bot/kodi/anmelaruzb/Olimkundaligi"
 	"namelaruzb_bot/kodi/anmelaruzb/Olmasqirolningkundalikhayoti"
 	"namelaruzb_bot/kodi/anmelaruzb/Oltibargqahramonlari"
 	"namelaruzb_bot/kodi/anmelaruzb/OltinVaqt"
 	"namelaruzb_bot/kodi/anmelaruzb/Omadsizning"
+	"namelaruzb_bot/kodi/anmelaruzb/OnmyoQaytaTugilishi"
 	"namelaruzb_bot/kodi/anmelaruzb/Ortayoshli"
 	"namelaruzb_bot/kodi/anmelaruzb/OsmondagiJanglar"
 	"namelaruzb_bot/kodi/anmelaruzb/OvozShakli"
@@ -112,6 +115,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/QuyonQiz"
 	"namelaruzb_bot/kodi/anmelaruzb/Ragnarok"
 	"namelaruzb_bot/kodi/anmelaruzb/Rainbow"
+	"namelaruzb_bot/kodi/anmelaruzb/ReZero"
 	"namelaruzb_bot/kodi/anmelaruzb/Realizmqahramoniqirollikni"
 	"namelaruzb_bot/kodi/anmelaruzb/Sakamotokunlari"
 	"namelaruzb_bot/kodi/anmelaruzb/Sakkizinchiogilqoysangizlarchi"
@@ -136,6 +140,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/TaqdirBuyukTartibMutlaqIblislarJabhasi"
 	"namelaruzb_bot/kodi/anmelaruzb/TaqdirJangKechasi"
 	"namelaruzb_bot/kodi/anmelaruzb/Taxtmuxri"
+	"namelaruzb_bot/kodi/anmelaruzb/Tayoqvaqilich"
 	"namelaruzb_bot/kodi/anmelaruzb/Titanlarjangi"
 	"namelaruzb_bot/kodi/anmelaruzb/TokyoGul"
 	"namelaruzb_bot/kodi/anmelaruzb/Tungiboyqushlarkuyi"
@@ -522,6 +527,16 @@ func Home(c tele.Context) error {
 		return Oyinsizhayotyoq.Home(c)
 	case "172", "Arifureta: Dunyodagi eng kuchli hunarmand":
 		return ArifuretaDunyodagiengkuchli.Home(c)
+	case "173", "Gildiya adminstratori bo'lib ortiqcha ishlashni xohlamaganim uchun ishdan ketmoqchiman":
+		return Gildiyaadminstratoribolib.Home(c)
+	case "174", "Oddiy insondan qahramonlikkacha":
+		return Oddiyinsondanqahramonlikkach.Home(c)
+	case "175", "Tayoq va qilich":
+		return Tayoqvaqilich.Home(c)
+	case "176", "Re:Zero":
+		return ReZero.Home(c)
+	case "177", "Onmyo Qayta Tug‘ilishi: Hayolot Olami":
+		return OnmyoQaytaTugilishi.Home(c)
 
 	//
 	//
