@@ -27,7 +27,7 @@ type ChannelInfo struct {
 
 var myChannels = []ChannelInfo{
 	{ID: -1003050934981, Username: "Anmelaruzb", Invite: "https://t.me/Anmelaruzb"},
-	{ID: -1003276785399, Username: "animelaruzbekcha9", Invite: "https://t.me/animelaruzbekcha9"},
+	{ID: -1003276785399, Username: "", Invite: "https://t.me/+4UV-HNVBaOs4Zjli"},
 	{ID: -1003323161290, Username: "Manga_uzbekcha26", Invite: "https://t.me/Manga_uzbekcha26"},
 	{ID: -1003411861509, Username: "", Invite: "https://t.me/+C0qmcf4ZHY83NmNi"},
 	// Maxfiy kanal bo'lsa quyidagicha qo'shasiz:
