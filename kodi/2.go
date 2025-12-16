@@ -27,7 +27,7 @@ type ChannelInfo struct {
 var myChannels = []ChannelInfo{
 	{ID: -1003050934981, Name: "anmelaruzb", Invite: "https://t.me/anmelaruzb"},
 	{ID: -1003323161290, Name: "Manga Uzb", Invite: "https://t.me/Manga_uzbekcha26"},
-	{ID: -1003276785399, Name: "Maxfiy Kanal", Invite: "https://t.me/+4UV-HNVBaOs4Zjli"},
+	{ID: -1003276785399, Name: "Maxfiy Kanal", Invite: "https://t.me/+9bsKINaEOHJiNjUy"},
 	{ID: -1003411861509, Name: "Maxfiy Kanal", Invite: "https://t.me/+C0qmcf4ZHY83NmNi"},
 }
 
@@ -276,7 +276,7 @@ func sendSubMessage(c tele.Context, missing []ChannelInfo) error {
 //	{ID: -1003323161290, Username: "Manga_uzbekcha26", Invite: "https://t.me/Manga_uzbekcha26"},
 //	{ID: -1003411861509, Username: "", Invite: "https://t.me/+C0qmcf4ZHY83NmNi"},
 //	// Maxfiy kanal bo'lsa quyidagicha qo'shasiz:
-//	// {ID: -10012345678, Username: "", Invite: "https://t.me/+AbCdEfGhIj"},
+//	// {ID: -10012345678, Username:	 "", Invite: "https://t.me/+AbCdEfGhIj"},
 //}
 //
 //// Obuna yoki so'rovni tekshirish funksiyasi
