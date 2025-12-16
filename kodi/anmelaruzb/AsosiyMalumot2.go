@@ -69,6 +69,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Mengalaktikalararo"
 	"namelaruzb_bot/kodi/anmelaruzb/MeniQilich"
 	"namelaruzb_bot/kodi/anmelaruzb/MeningQotillikMaqomim"
+	"namelaruzb_bot/kodi/anmelaruzb/Meniqizchamnafaqatgozal"
 	"namelaruzb_bot/kodi/anmelaruzb/Menmuvaffaqiyatsiz"
 	"namelaruzb_bot/kodi/anmelaruzb/MinograApokalipsis"
 	"namelaruzb_bot/kodi/anmelaruzb/MoviyQuticha"
@@ -549,6 +550,8 @@ func Home(c tele.Context) error {
 		return Yugureningabadiyligi.Home(c)
 	case "181", "Daydi itlarning buyugi":
 		return Daydiitlarningbuyug.Home(c)
+	case "182", "Meni qizcham nafaqat go'zal":
+		return Meniqizchamnafaqatgozal.Home(c)
 
 	//
 	//
