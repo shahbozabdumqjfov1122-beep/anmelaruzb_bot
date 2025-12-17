@@ -11,6 +11,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/ArraOdam"
 	"namelaruzb_bot/kodi/anmelaruzb/Badargaqilinganqahramon"
 	"namelaruzb_bot/kodi/anmelaruzb/Baholovchiningmashhur"
+	"namelaruzb_bot/kodi/anmelaruzb/Barmoqlaruchidagisevgi"
 	"namelaruzb_bot/kodi/anmelaruzb/BekamiKostYashashimUshun"
 	"namelaruzb_bot/kodi/anmelaruzb/Birsoatliqizcha"
 	"namelaruzb_bot/kodi/anmelaruzb/Birzarbliodam"
@@ -130,6 +131,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/SenuchunOlmas"
 	"namelaruzb_bot/kodi/anmelaruzb/Sevgidebatalganshart"
 	"namelaruzb_bot/kodi/anmelaruzb/ShamolniBoysundirish"
+	"namelaruzb_bot/kodi/anmelaruzb/Shangrilachegarasi"
 	"namelaruzb_bot/kodi/anmelaruzb/Sharlota"
 	"namelaruzb_bot/kodi/anmelaruzb/Shilliqsifatida"
 	"namelaruzb_bot/kodi/anmelaruzb/Shirinrenkarnatsiya"
@@ -555,6 +557,10 @@ func Home(c tele.Context) error {
 		return Meniqizchamnafaqatgozal.Home(c)
 	case "183", "Meni qahramonlik akademiyam":
 		return Meniahramonlikakademiyam.Home(c)
+	case "184", "Barmoqlar uchidagi sevgi":
+		return Barmoqlaruchidagisevgi.Home(c)
+	case "185", "Shangri-la chegarasi":
+		return Shangrilachegarasi.Home(c)
 
 	//
 	//
