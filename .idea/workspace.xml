@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8fcf7f-66fd-49b5-932d-7110c9820c5e" name="Changes" comment="izoy yozishga erindim.">
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Barmoqlaruchidagisevgi/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Shangrilachegarasi/1.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/2.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Barmoqlaruchidagisevgi/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Barmoqlaruchidagisevgi/1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Shangrilachegarasi/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Shangrilachegarasi/1.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,11 +81,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Shangrilachegarasi" />
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Barmoqlaruchidagisevgi" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Meniahramonlikakademiyam" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Meniqizchamnafaqatgozal" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Daydiitlarningbuyugi" />
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Yugureningabadiyligi" />
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\MeningQotillikMaqomim" />
     </key>
   </component>
   <component name="SharedIndexes">
