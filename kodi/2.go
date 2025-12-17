@@ -206,7 +206,7 @@ func Bot() {
 			"O'yinsiz hayot yo'q", "Arifureta: Dunyodagi eng kuchli hunarmand", "Gildiya adminstratori bo'lib ortiqcha ishlashni xohlamaganim uchun ishdan ketmoqchiman",
 			"Oddiy insondan qahramonlikkacha", "Tayoq va qilich", "Re:Zero", "Onmyo Qayta Tug‘ilishi: Hayolot Olami",
 			"Yettinchi shahzoda sifatida qayta tug'ildim va endi sehrimni istaganimcha kuchaytiraman!", "Mening Qotillik Maqomim Qahramonlik Maqomidan Yaxshiroq",
-			"Yugurening abadiyligi", "Daydi itlarning buyugi", "Meni qizcham nafaqat go'zal":
+			"Yugurening abadiyligi", "Daydi itlarning buyugi", "Meni qizcham nafaqat go'zal", "Meni qahramonlik akademiyam":
 
 			return anmelaruzb.Home(c)
 
