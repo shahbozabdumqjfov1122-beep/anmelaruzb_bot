@@ -141,6 +141,21 @@ func Home(c tele.Context) error {
 	btnOzjonigaqasd := menu.Text("O'z joniga qasd qiluvchilar o'zga dunyoda")
 	btnEngqudratlipartiya := menu.Text("Eng qudratli partiya tomonidan o'limgacha tarbiyalangan Ossan ...")
 	btnBaholovchiningmashhur := menu.Text("Baholovchining mashhur bo'lmagan ishi aslida eng Kuchlisi hisoblanadi")
+	btn136 := menu.Text("Sehr Yaratuvchi Boshqa dunyoda qanday qilib sehr yaratish mumkin")
+	btn137 := menu.Text("O'rta yoshli erkakning zodagon qiziga aylanishi")
+	btn138 := menu.Text("Yaponiyaga Xush Kelibsiz, Elf Xonim!")
+	btn139 := menu.Text("Grimgaldagi kulgi va illuziya")
+	btn140 := menu.Text("Nega hamma meni dunyomni unutdi?")
+	btn141 := menu.Text("80.000 oltin tanga to'plab hayotimni qayta qurdim")
+	btn142 := menu.Text("Cheksiz dendagron")
+	btn143 := menu.Text("Oy sayohati yangi dunyoga olib keladi")
+	btn144 := menu.Text("Man o'rgimchakman ! Ho'sh shunga nma qibti?")
+	btn145 := menu.Text("O'zga dunyoda fermerlik hayotim")
+	btn146 := menu.Text("Iblislar maktabiga hush kelibsiz")
+	btn147 := menu.Text("Daholar uchun oʻzga dunyoda yashash ham muammo emas")
+	btn148 := menu.Text("Shirin renkarnatsiya")
+	btn149 := menu.Text("Menda million hayot bor")
+	btn150 := menu.Text("Maktab tomonidan tan olinmagan iblislar hukmdori")
 
 	menu.Reply(
 		menu.Row(btnVanpis, btnNaruto),
@@ -251,6 +266,21 @@ func Home(c tele.Context) error {
 		menu.Row(btnOzjonigaqasd),
 		menu.Row(btnEngqudratlipartiya),
 		menu.Row(btnBaholovchiningmashhur),
+		menu.Row(btn136),
+		menu.Row(btn137),
+		menu.Row(btn138),
+		menu.Row(btn139),
+		menu.Row(btn140),
+		menu.Row(btn141),
+		menu.Row(btn142),
+		menu.Row(btn143),
+		menu.Row(btn144),
+		menu.Row(btn145),
+		menu.Row(btn146),
+		menu.Row(btn147),
+		menu.Row(btn148),
+		menu.Row(btn149),
+		menu.Row(btn150),
 	)
 
 	switch text {

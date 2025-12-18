@@ -56,6 +56,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/JonliSana"
 	"namelaruzb_bot/kodi/anmelaruzb/JosusXOilasi"
 	"namelaruzb_bot/kodi/anmelaruzb/KayjuRaqam"
+	"namelaruzb_bot/kodi/anmelaruzb/Kelajakkundaligi"
 	"namelaruzb_bot/kodi/anmelaruzb/KimMeniMalikaQildi"
 	"namelaruzb_bot/kodi/anmelaruzb/KokZindon"
 	"namelaruzb_bot/kodi/anmelaruzb/Kumushqirolning"
@@ -561,6 +562,8 @@ func Home(c tele.Context) error {
 		return Barmoqlaruchidagisevgi.Home(c)
 	case "185", "Shangri-la chegarasi":
 		return Shangrilachegarasi.Home(c)
+	case "186", "Kelajak kundaligi":
+		return Kelajakkundaligi.Home(c)
 
 	//
 	//
