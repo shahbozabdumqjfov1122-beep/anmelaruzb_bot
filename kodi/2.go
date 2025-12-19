@@ -208,7 +208,7 @@ func Bot() {
 			"Oddiy insondan qahramonlikkacha", "Tayoq va qilich", "Re:Zero", "Onmyo Qayta Tug‘ilishi: Hayolot Olami",
 			"Yettinchi shahzoda sifatida qayta tug'ildim va endi sehrimni istaganimcha kuchaytiraman!", "Mening Qotillik Maqomim Qahramonlik Maqomidan Yaxshiroq",
 			"Yugurening abadiyligi", "Daydi itlarning buyugi", "Meni qizcham nafaqat go'zal", "Meni qahramonlik akademiyam",
-			"Shangri-la chegarasi", "Barmoqlar uchidagi sevgi", " Kelajak kundaligi":
+			"Shangri-la chegarasi", "Barmoqlar uchidagi sevgi", " Kelajak kundaligi", "Men eng kuchli sarguzashtchi bo'lish uchun har doim mashq qildim":
 
 			return anmelaruzb.Home(c)
 

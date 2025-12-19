@@ -564,6 +564,8 @@ func Home(c tele.Context) error {
 		return Shangrilachegarasi.Home(c)
 	case "186", "Kelajak kundaligi":
 		return Kelajakkundaligi.Home(c)
+	case "187", "Men eng kuchli sarguzashtchi bo'lish uchun har doim mashq qildim":
+		return Menengkuchlisarguzashtchi.Home(c)
 
 	//
 	//
