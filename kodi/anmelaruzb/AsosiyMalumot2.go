@@ -94,6 +94,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Ortayoshli"
 	"namelaruzb_bot/kodi/anmelaruzb/OsmondagiJanglar"
 	"namelaruzb_bot/kodi/anmelaruzb/OvozShakli"
+	"namelaruzb_bot/kodi/anmelaruzb/OxirgiTelbaBosspaydo"
 	"namelaruzb_bot/kodi/anmelaruzb/OyindagiEngBoyodam"
 	"namelaruzb_bot/kodi/anmelaruzb/Oyingbilanbirgavideo"
 	"namelaruzb_bot/kodi/anmelaruzb/Oyinsizhayotyoq"
@@ -136,6 +137,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/ShamolniBoysundirish"
 	"namelaruzb_bot/kodi/anmelaruzb/Shangrilachegarasi"
 	"namelaruzb_bot/kodi/anmelaruzb/Sharlota"
+	"namelaruzb_bot/kodi/anmelaruzb/Shikastlanishniistamasdimshuning"
 	"namelaruzb_bot/kodi/anmelaruzb/Shilliqsifatida"
 	"namelaruzb_bot/kodi/anmelaruzb/Shirinrenkarnatsiya"
 	"namelaruzb_bot/kodi/anmelaruzb/SirlarHukmdori"
@@ -570,6 +572,10 @@ func Home(c tele.Context) error {
 		return Menengkuchlisarguzashtchi.Home(c)
 	case "188", "Do'stimning singlisi bezovta qilyapti":
 		return Dostimningsinglisibezovta.Home(c)
+	case "189", "Shikastlanishni istamasdim shuning uchun himoyamni kuchaytirdim":
+		return Shikastlanishniistamasdimshuning.Home(c)
+	case "190", "Oxirgi Telba Boss paydo bo'ldi":
+		return OxirgiTelbaBosspayd.Home(c)
 
 	//
 	//
