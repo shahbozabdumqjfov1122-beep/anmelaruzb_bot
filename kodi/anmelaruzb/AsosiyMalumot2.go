@@ -68,6 +68,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Manorgimchakman"
 	"namelaruzb_bot/kodi/anmelaruzb/MasamuneQasosi"
 	"namelaruzb_bot/kodi/anmelaruzb/Mendamillionhayot"
+	"namelaruzb_bot/kodi/anmelaruzb/Menengkuchlisarguzashtchi"
 	"namelaruzb_bot/kodi/anmelaruzb/Mengalaktikalararo"
 	"namelaruzb_bot/kodi/anmelaruzb/MeniQilich"
 	"namelaruzb_bot/kodi/anmelaruzb/Meniahramonlikakademiyam"
