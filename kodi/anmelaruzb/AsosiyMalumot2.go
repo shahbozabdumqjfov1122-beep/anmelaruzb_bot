@@ -33,6 +33,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Doktorstoun"
 	"namelaruzb_bot/kodi/anmelaruzb/Domekano"
 	"namelaruzb_bot/kodi/anmelaruzb/Dororo"
+	"namelaruzb_bot/kodi/anmelaruzb/Dostimningsinglisibezovta"
 	"namelaruzb_bot/kodi/anmelaruzb/DragonRajaS"
 	"namelaruzb_bot/kodi/anmelaruzb/Egzartisboshqadunyodaqayta"
 	"namelaruzb_bot/kodi/anmelaruzb/ElitaSinfi"
@@ -567,6 +568,8 @@ func Home(c tele.Context) error {
 		return Kelajakkundaligi.Home(c)
 	case "187", "Men eng kuchli sarguzashtchi bo'lish uchun har doim mashq qildim":
 		return Menengkuchlisarguzashtchi.Home(c)
+	case "188", "Do'stimning singlisi bezovta qilyapti":
+		return Dostimningsinglisibezovta.Home(c)
 
 	//
 	//
