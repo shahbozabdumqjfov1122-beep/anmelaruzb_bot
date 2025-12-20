@@ -12,6 +12,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Badargaqilinganqahramon"
 	"namelaruzb_bot/kodi/anmelaruzb/Baholovchiningmashhur"
 	"namelaruzb_bot/kodi/anmelaruzb/Barmoqlaruchidagisevgi"
+	"namelaruzb_bot/kodi/anmelaruzb/BasketbolKuroko"
 	"namelaruzb_bot/kodi/anmelaruzb/BekamiKostYashashimUshun"
 	"namelaruzb_bot/kodi/anmelaruzb/Birsoatliqizcha"
 	"namelaruzb_bot/kodi/anmelaruzb/Birzarbliodam"
@@ -232,8 +233,8 @@ func Home(c tele.Context) error {
 		return Davolovchiqahramon.Home(c)
 	case "17", "So'ngi serafim":
 		return Songiserafim.Home(c)
-	case "86":
-		return Saksonolti.Home(c)
+	case "18", "Basketbol Kuroko":
+		return BasketbolKuroko.Home(c)
 	case "19", "Ochkoz bersek":
 		return Ochkozbosek.Home(c)
 	case "20", "Zombi 100":
@@ -368,6 +369,8 @@ func Home(c tele.Context) error {
 		return OchkozBerserk.Home(c)
 	case "85", "Shamolni Bo'ysundirish":
 		return ShamolniBoysundirish.Home(c)
+	case "86":
+		return Saksonolti.Home(c)
 	case "87", "Dororo":
 		return Dororo.Home(c)
 	case "88", "Arra Odam":
