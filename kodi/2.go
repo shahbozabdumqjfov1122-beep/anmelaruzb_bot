@@ -28,7 +28,7 @@ var myChannels = []ChannelInfo{
 	{ID: -1003050934981, Name: "anmelaruzb", Invite: "https://t.me/anmelaruzb"},
 	//{ID: -1003323161290, Name: "Manga Uzb", Invite: "https://t.me/Manga_uzbekcha26"},
 	{ID: -1003276785399, Name: "Maxfiy Kanal", Invite: "https://t.me/+9bsKINaEOHJiNjUy"},
-	{ID: -1003316396409, Name: "Maxfiy Kanal", Invite: "https://t.me/+tiTQ4s1PcJJhZGNi"},
+	//{ID: -1003316396409, Name: "Maxfiy Kanal", Invite: "https://t.me/+tiTQ4s1PcJJhZGNi"},
 	{ID: -1003411861509, Name: "Maxfiy Kanal", Invite: "https://t.me/+C0qmcf4ZHY83NmNi"},
 }
 
