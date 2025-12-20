@@ -162,6 +162,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Uzoqpaladin"
 	"namelaruzb_bot/kodi/anmelaruzb/UzuklarHukumdor"
 	"namelaruzb_bot/kodi/anmelaruzb/Vanitasxotiralari"
+	"namelaruzb_bot/kodi/anmelaruzb/Vayronbolganmojizalar"
 	"namelaruzb_bot/kodi/anmelaruzb/VioletEvergarden"
 	"namelaruzb_bot/kodi/anmelaruzb/Voleybol"
 	"namelaruzb_bot/kodi/anmelaruzb/Xarobalarqiroligi"
@@ -579,6 +580,8 @@ func Home(c tele.Context) error {
 		return Shikastlanishniistamasdimshuning.Home(c)
 	case "190", "Oxirgi Telba Boss paydo bo'ldi":
 		return OxirgiTelbaBosspayd.Home(c)
+	case "191", "Vayron bo'lgan mo'jizalar mamlakati":
+		return Vayronbolganmojizalar.Home(c)
 
 	//
 	//

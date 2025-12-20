@@ -209,8 +209,8 @@ func Bot() {
 			"Yettinchi shahzoda sifatida qayta tug'ildim va endi sehrimni istaganimcha kuchaytiraman!", "Mening Qotillik Maqomim Qahramonlik Maqomidan Yaxshiroq",
 			"Yugurening abadiyligi", "Daydi itlarning buyugi", "Meni qizcham nafaqat go'zal", "Meni qahramonlik akademiyam",
 			"Shangri-la chegarasi", "Barmoqlar uchidagi sevgi", " Kelajak kundaligi", "Men eng kuchli sarguzashtchi bo'lish uchun har doim mashq qildim",
-			"Do'stimning singlisi bezovta qilyapti", "Shikastlanishni istamasdim shuning uchun himoyamni kuchaytirdim", "Oxirgi Telba Boss paydo bo'ldi",
-			"Basketbol Kuroko":
+			"Do'stimning singlisi bezovta qilyapti", "Shikastlanishni istamasdim shuning uchun himoyamni kuchaytirdim",
+			"Oxirgi Telba Boss paydo bo'ldi", "Basketbol Kuroko", "Vayron bo'lgan mo'jizalar mamlakati":
 
 			return anmelaruzb.Home(c)
 
