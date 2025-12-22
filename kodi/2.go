@@ -12,7 +12,6 @@ import (
 	tele "gopkg.in/telebot.v4"
 )
 
-// 🔐 Join request yuborganlarni saqlash
 var (
 	pendingRequests = make(map[int64]map[int64]bool) // userID -> channelID
 	requestMutex    sync.RWMutex
@@ -26,13 +25,13 @@ type ChannelInfo struct {
 
 var myChannels = []ChannelInfo{
 	{ID: -1003050934981, Name: "anmelaruzb", Invite: "https://t.me/anmelaruzb"},
+	{ID: -1003316396409, Name: "anmelar_chat", Invite: "https://t.me/anmelar_chat"},
 	//{ID: -1003323161290, Name: "Manga Uzb", Invite: "https://t.me/Manga_uzbekcha26"},
 	{ID: -1003276785399, Name: "Maxfiy Kanal", Invite: "https://t.me/+9bsKINaEOHJiNjUy"},
 	//{ID: -1003316396409, Name: "Maxfiy Kanal", Invite: "https://t.me/+tiTQ4s1PcJJhZGNi"},
 	{ID: -1003411861509, Name: "Maxfiy Kanal", Invite: "https://t.me/+C0qmcf4ZHY83NmNi"},
 }
 
-// 🔍 Majburiy tekshiruv
 func notAllowedChannels(b *tele.Bot, userID int64) []ChannelInfo {
 	var missing []ChannelInfo
 
@@ -210,7 +209,7 @@ func Bot() {
 			"Yugurening abadiyligi", "Daydi itlarning buyugi", "Meni qizcham nafaqat go'zal", "Meni qahramonlik akademiyam",
 			"Shangri-la chegarasi", "Barmoqlar uchidagi sevgi", " Kelajak kundaligi", "Men eng kuchli sarguzashtchi bo'lish uchun har doim mashq qildim",
 			"Do'stimning singlisi bezovta qilyapti", "Shikastlanishni istamasdim shuning uchun himoyamni kuchaytirdim",
-			"Oxirgi Telba Boss paydo bo'ldi", "Basketbol Kuroko", "Vayron bo'lgan mo'jizalar mamlakati":
+			"Oxirgi Telba Boss paydo bo'ldi", "Basketbol Kuroko", "Vayron bo'lgan mo'jizalar mamlakati", "Qahramonning qaytishi":
 
 			return anmelaruzb.Home(c)
 
@@ -227,7 +226,6 @@ func Bot() {
 	b.Start()
 }
 
-// 📢 Obuna xabari
 func sendSubMessage(c tele.Context, missing []ChannelInfo) error {
 	text := "<b>❗ Botdan foydalanish uchun quyidagi kanallarga a'zo bo‘ling yoki so‘rov yuboring:</b>"
 	m := &tele.ReplyMarkup{}

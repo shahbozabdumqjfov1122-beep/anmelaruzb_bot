@@ -109,6 +109,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/PariDumihaqidaafsona"
 	"namelaruzb_bot/kodi/anmelaruzb/Polatqaladagikabaneri"
 	"namelaruzb_bot/kodi/anmelaruzb/QahramonBolishX"
+	"namelaruzb_bot/kodi/anmelaruzb/Qahramonningqaytishi"
 	"namelaruzb_bot/kodi/anmelaruzb/Qalqonqahromoni"
 	"namelaruzb_bot/kodi/anmelaruzb/Qaytatugilganaristokratningmisli"
 	"namelaruzb_bot/kodi/anmelaruzb/Qilichsanationline"
@@ -582,6 +583,8 @@ func Home(c tele.Context) error {
 		return OxirgiTelbaBosspayd.Home(c)
 	case "191", "Vayron bo'lgan mo'jizalar mamlakati":
 		return Vayronbolganmojizalar.Home(c)
+	case "192", "Qahramonning qaytishi":
+		return Qahramonningqaytishi.Home(c)
 
 	//
 	//
