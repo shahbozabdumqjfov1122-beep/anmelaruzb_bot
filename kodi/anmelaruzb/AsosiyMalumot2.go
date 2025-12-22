@@ -82,6 +82,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Naruto"
 	"namelaruzb_bot/kodi/anmelaruzb/Negahammameni"
 	"namelaruzb_bot/kodi/anmelaruzb/Nikohuzuklarihaqida"
+	"namelaruzb_bot/kodi/anmelaruzb/NinjavaYakudza"
 	"namelaruzb_bot/kodi/anmelaruzb/NomsizXotira"
 	"namelaruzb_bot/kodi/anmelaruzb/OchkozBerserk"
 	"namelaruzb_bot/kodi/anmelaruzb/Ochkozbosek"
@@ -585,6 +586,8 @@ func Home(c tele.Context) error {
 		return Vayronbolganmojizalar.Home(c)
 	case "192", "Qahramonning qaytishi":
 		return Qahramonningqaytishi.Home(c)
+	case "193", "Ninja va Yakudza":
+		return NinjavaYakudza.Home(c)
 
 	//
 	//

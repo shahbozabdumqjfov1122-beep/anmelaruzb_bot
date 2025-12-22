@@ -6,6 +6,7 @@ import (
 	"namelaruzb_bot/kodi/Help"
 	"namelaruzb_bot/kodi/Menu"
 	"namelaruzb_bot/kodi/anmelaruzb"
+	_default "namelaruzb_bot/kodi/default"
 	"sync"
 	"time"
 
@@ -209,7 +210,8 @@ func Bot() {
 			"Yugurening abadiyligi", "Daydi itlarning buyugi", "Meni qizcham nafaqat go'zal", "Meni qahramonlik akademiyam",
 			"Shangri-la chegarasi", "Barmoqlar uchidagi sevgi", " Kelajak kundaligi", "Men eng kuchli sarguzashtchi bo'lish uchun har doim mashq qildim",
 			"Do'stimning singlisi bezovta qilyapti", "Shikastlanishni istamasdim shuning uchun himoyamni kuchaytirdim",
-			"Oxirgi Telba Boss paydo bo'ldi", "Basketbol Kuroko", "Vayron bo'lgan mo'jizalar mamlakati", "Qahramonning qaytishi":
+			"Oxirgi Telba Boss paydo bo'ldi", "Basketbol Kuroko", "Vayron bo'lgan mo'jizalar mamlakati", "Qahramonning qaytishi",
+			"Ninja va Yakudza":
 
 			return anmelaruzb.Home(c)
 
@@ -218,7 +220,7 @@ func Bot() {
 		case "🧩 help":
 			return Help.Home(c)
 		default:
-			return anmelaruzb.Home(c)
+			return _default.Home(c)
 		}
 	})
 
