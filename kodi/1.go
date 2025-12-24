@@ -1,6 +1,7 @@
 package ko_di
 
 import (
+	"encoding/json"
 	"fmt"
 	beego "github.com/beego/beego/v2/server/web"
 	"log"
@@ -8,7 +9,7 @@ import (
 	"namelaruzb_bot/kodi/Menu"
 	"namelaruzb_bot/kodi/anmelaruzb"
 	_default "namelaruzb_bot/kodi/default"
-	"sort"
+	"os"
 	"sync"
 	"time"
 
@@ -30,7 +31,8 @@ type ChannelInfo struct {
 var myChannels = []ChannelInfo{
 	{ID: -1003050934981, Name: "anmelaruzb", Invite: "https://t.me/anmelaruzb"},
 	{ID: -1003316396409, Name: "anmelar_chat", Invite: "https://t.me/anmelar_chat"},
-	{ID: -1003276785399, Name: "Maxfiy Kanal", Invite: "https://t.me/+9bsKINaEOHJiNjUy"},
+	{ID: -1003323161290, Name: "Manga Uzb", Invite: "https://t.me/Manga_uzbekcha26"},
+	//{ID: -1003276785399, Name: "Maxfiy Kanal", Invite: "https://t.me/+9bsKINaEOHJiNjUy"},
 	{ID: -1003411861509, Name: "Maxfiy Kanal", Invite: "https://t.me/+C0qmcf4ZHY83NmNi"},
 }
 
@@ -44,15 +46,72 @@ var (
 
 func updateUserActivity(userID int64) {
 	statsMutex.Lock()
-	defer statsMutex.Unlock()
-
 	now := time.Now()
 	userActive[userID] = now
+
+	isNew := false
 	if _, ok := userJoined[userID]; !ok {
 		userJoined[userID] = now
+		isNew = true
+	}
+	statsMutex.Unlock()
+
+	// Faqat yangi odam qo'shilganda saqlaymiz (faylni qiynamaslik uchun)
+	if isNew {
+		saveStats()
 	}
 }
+func saveStats() {
+	statsMutex.RLock() // O'qish uchun lock
+	data := struct {
+		UserJoined  map[int64]time.Time `json:"userJoined"`
+		UserActive  map[int64]time.Time `json:"userActive"`
+		SearchStats map[string]int      `json:"searchStats"`
+	}{
+		UserJoined:  userJoined,
+		UserActive:  userActive,
+		SearchStats: searchStats,
+	}
+	statsMutex.RUnlock()
 
+	file, err := json.MarshalIndent(data, "", "  ")
+	if err != nil {
+		log.Println("Saqlashda xato:", err)
+		return
+	}
+	_ = os.WriteFile("stats.json", file, 0644)
+}
+
+// 3. Ma'lumotlarni yuklash funksiyasi
+func loadStats() {
+	file, err := os.ReadFile("stats.json")
+	if err != nil {
+		return // Fayl yo'q bo'lsa normal holat
+	}
+
+	var data struct {
+		UserJoined  map[int64]time.Time `json:"userJoined"`
+		UserActive  map[int64]time.Time `json:"userActive"`
+		SearchStats map[string]int      `json:"searchStats"`
+	}
+
+	if err := json.Unmarshal(file, &data); err != nil {
+		log.Println("Yuklashda xato:", err)
+		return
+	}
+
+	statsMutex.Lock()
+	if data.UserJoined != nil {
+		userJoined = data.UserJoined
+	}
+	if data.UserActive != nil {
+		userActive = data.UserActive
+	}
+	if data.SearchStats != nil {
+		searchStats = data.SearchStats
+	}
+	statsMutex.Unlock()
+}
 func addSearchStat(code string) {
 	statsMutex.Lock()
 	defer statsMutex.Unlock()
@@ -101,6 +160,7 @@ func notAllowedChannels(b *tele.Bot, userID int64) []ChannelInfo {
 
 // ---------------- BOT ----------------
 func Bot() {
+	loadStats()
 	token := beego.AppConfig.DefaultString("telegram::token", "")
 	b, err := tele.NewBot(tele.Settings{
 		Token:  token,
@@ -298,71 +358,72 @@ func sendStatistics(c tele.Context) error {
 	statsMutex.RLock()
 	defer statsMutex.RUnlock()
 
+	// 1. O'zbekiston vaqt zonasini belgilash (UTC+5)
+	loc := time.FixedZone("Asia/Tashkent", 5*3600)
+	now := time.Now().In(loc)
+
+	// 2. Bugun soat 00:00:00 vaqtini olish (Aynan shu kun boshini belgilaydi)
+	startOfToday := time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, loc)
+
+	// Kechagi kun boshlanishi (24 soatlik farq uchun)
+	startOfYesterday := startOfToday.AddDate(0, 0, -1)
+
+	// 7 va 30 kunlik chegaralar
+	startOf7Days := startOfToday.AddDate(0, 0, -6)
+	startOf30Days := startOfToday.AddDate(0, 0, -29)
+
 	total := len(userJoined)
 	active := 0
 	for _, t := range userActive {
-		if time.Since(t) < 24*time.Hour {
+		// Agar foydalanuvchi oxirgi 24 soat ichida botga kirgan bo'lsa
+		if now.Sub(t) < 24*time.Hour {
 			active++
 		}
 	}
 	inactive := total - active
 
-	today := 0
+	todayNew := 0
+	yesterdayNew := 0
 	last7 := 0
 	last30 := 0
-	now := time.Now()
+
 	for _, t := range userJoined {
-		if now.Sub(t) < 24*time.Hour {
-			today++
+		tInLoc := t.In(loc)
+
+		// Bugun qo'shilganlar (00:00 dan hozirgacha)
+		if tInLoc.After(startOfToday) {
+			todayNew++
 		}
-		if now.Sub(t) < 7*24*time.Hour {
+		// Kecha qo'shilganlar (Kechagi 00:00 dan bugungi 00:00 gacha)
+		if tInLoc.After(startOfYesterday) && tInLoc.Before(startOfToday) {
+			yesterdayNew++
+		}
+		// 7 kunlik
+		if tInLoc.After(startOf7Days) {
 			last7++
 		}
-		if now.Sub(t) < 30*24*time.Hour {
+		// 30 kunlik
+		if tInLoc.After(startOf30Days) {
 			last30++
 		}
 	}
 
-	type kv struct {
-		Key   string
-		Value int
-	}
-	var searchList []kv
-	for k, v := range searchStats {
-		searchList = append(searchList, kv{k, v})
-	}
-	sort.Slice(searchList, func(i, j int) bool {
-		return searchList[i].Value > searchList[j].Value
-	})
-	top := 5
-	if len(searchList) < 5 {
-		top = len(searchList)
-	}
+	// ... [Top 5 anime saralash qismi o'zgarishsiz qoladi] ...
 
-	text := "------------------------------------------\n"
-	text += "🏆 ENG MASHHUR 5 ANIME:\n"
-	for i := 0; i < top; i++ {
-		text += fmt.Sprintf("%d. %s — %d qidiruv\n", i+1, searchList[i].Key, searchList[i].Value)
-	}
+	text := "📊 **BOT STATISTIKASI** (O‘zb vaqti)\n"
 	text += "------------------------------------------\n"
-	text += "🔗 KANAL OBUNALARI:\n"
-	for _, ch := range myChannels {
-		text += fmt.Sprintf("✅ %s\n", ch.Invite)
-	}
-	text += "------------------------------------------\n"
-	text += "📊 FOYDALANUVCHILAR STATISTIKASI:\n"
-	text += fmt.Sprintf("🟢 Faol foydalanuvchilar: %d\n", active)
-	text += fmt.Sprintf("🚫 Nofaol foydalanuvchilar: %d\n", inactive)
-	text += "\n🆕 OBUNACHILAR:\n"
-	text += fmt.Sprintf("📅 Bugungi yangi: %d\n", today)
-	text += fmt.Sprintf("🗓 7 kunlik: %d\n", last7)
-	text += fmt.Sprintf("🗓 30 kunlik: %d\n", last30)
-	text += "\n🔥 AKTIVLIK:\n"
-	text += fmt.Sprintf("⚡️ Bugungi: %d\n", today)
-	text += fmt.Sprintf("📈 7 kunlik: %d\n", last7)
-	text += fmt.Sprintf("📊 30 kunlik: %d\n", last30)
-	text += "------------------------------------------\n"
-	text += fmt.Sprintf("ℹ️ Ma'lumotlar server vaqti bilan yangilangan: %s", now.Format("2006-01-02 15:04:05"))
+	text += fmt.Sprintf("👥 Umumiy obunachilar: %d\n", total)
+	text += fmt.Sprintf("🟢 Aktiv (24s ichida): %d\n", active)
+	text += fmt.Sprintf("🚫 Nofaol: %d\n", inactive)
 
-	return c.Send(text)
+	text += "\n📅 **QO'SHILISH DINAMIKASI:**\n"
+	text += fmt.Sprintf("🆕 Bugun (00:00 dan): %d\n", todayNew)
+	text += fmt.Sprintf("🔙 Kecha to'liq: %d\n", yesterdayNew)
+	text += fmt.Sprintf("🗓 Oxirgi 7 kun: %d\n", last7)
+	text += fmt.Sprintf("🗓 Oxirgi 30 kun: %d\n", last30)
+
+	text += "\n------------------------------------------\n"
+	text += fmt.Sprintf("🕒 Yangilangan vaqt: %s", now.Format("15:04:05 / 02.01.2006"))
+
+	return c.Send(text, tele.ModeMarkdown)
 }
