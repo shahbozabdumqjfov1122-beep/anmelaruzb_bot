@@ -19,6 +19,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Bleach"
 	"namelaruzb_bot/kodi/anmelaruzb/Boshqadunyobirzumda"
 	"namelaruzb_bot/kodi/anmelaruzb/Boshqadunyodanmuammolibolalar"
+	"namelaruzb_bot/kodi/anmelaruzb/Bosningqizivauning"
 	"namelaruzb_bot/kodi/anmelaruzb/Bucchgiri"
 	"namelaruzb_bot/kodi/anmelaruzb/Chegaraortida"
 	"namelaruzb_bot/kodi/anmelaruzb/Cheksizdendagron"
@@ -588,6 +589,8 @@ func Home(c tele.Context) error {
 		return Qahramonningqaytishi.Home(c)
 	case "193", "Ninja va Yakudza":
 		return NinjavaYakudza.Home(c)
+	case "194", "Bosning qizi va uning Enagasi":
+		return Bosningqizivauning.Home(c)
 
 	//
 	//
