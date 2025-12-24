@@ -10,6 +10,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb"
 	_default "namelaruzb_bot/kodi/default"
 	"os"
+	"sort"
 	"sync"
 	"time"
 
@@ -358,72 +359,86 @@ func sendStatistics(c tele.Context) error {
 	statsMutex.RLock()
 	defer statsMutex.RUnlock()
 
-	// 1. O'zbekiston vaqt zonasini belgilash (UTC+5)
 	loc := time.FixedZone("Asia/Tashkent", 5*3600)
 	now := time.Now().In(loc)
 
-	// 2. Bugun soat 00:00:00 vaqtini olish (Aynan shu kun boshini belgilaydi)
+	// Vaqt chegaralari
 	startOfToday := time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, loc)
-
-	// Kechagi kun boshlanishi (24 soatlik farq uchun)
-	startOfYesterday := startOfToday.AddDate(0, 0, -1)
-
-	// 7 va 30 kunlik chegaralar
 	startOf7Days := startOfToday.AddDate(0, 0, -6)
 	startOf30Days := startOfToday.AddDate(0, 0, -29)
 
+	// Foydalanuvchi hisoblash
 	total := len(userJoined)
 	active := 0
 	for _, t := range userActive {
-		// Agar foydalanuvchi oxirgi 24 soat ichida botga kirgan bo'lsa
 		if now.Sub(t) < 24*time.Hour {
 			active++
 		}
 	}
 	inactive := total - active
 
-	todayNew := 0
-	yesterdayNew := 0
-	last7 := 0
-	last30 := 0
-
+	todayNew, last7, last30 := 0, 0, 0
 	for _, t := range userJoined {
 		tInLoc := t.In(loc)
-
-		// Bugun qo'shilganlar (00:00 dan hozirgacha)
 		if tInLoc.After(startOfToday) {
 			todayNew++
 		}
-		// Kecha qo'shilganlar (Kechagi 00:00 dan bugungi 00:00 gacha)
-		if tInLoc.After(startOfYesterday) && tInLoc.Before(startOfToday) {
-			yesterdayNew++
-		}
-		// 7 kunlik
 		if tInLoc.After(startOf7Days) {
 			last7++
 		}
-		// 30 kunlik
 		if tInLoc.After(startOf30Days) {
 			last30++
 		}
 	}
 
-	// ... [Top 5 anime saralash qismi o'zgarishsiz qoladi] ...
+	// Top 5 Anime saralash
+	type kv struct {
+		Key   string
+		Value int
+	}
+	var searchList []kv
+	for k, v := range searchStats {
+		searchList = append(searchList, kv{k, v})
+	}
+	sort.Slice(searchList, func(i, j int) bool {
+		return searchList[i].Value > searchList[j].Value
+	})
 
-	text := "📊 **BOT STATISTIKASI** (O‘zb vaqti)\n"
+	topCount := 5
+	if len(searchList) < 5 {
+		topCount = len(searchList)
+	}
+
+	// XABARNI SHAKLLANTIRISH
+	text := "------------------------------------------\n"
+	text += "🏆 **ENG MASHHUR 5 ANIME:**\n"
+	if topCount == 0 {
+		text += "ℹ️ Hozircha ma'lumot yo'q\n"
+	} else {
+		for i := 0; i < topCount; i++ {
+			text += fmt.Sprintf("%d. %s — %d qidiruv\n", i+1, searchList[i].Key, searchList[i].Value)
+		}
+	}
+
 	text += "------------------------------------------\n"
+	text += "🔗 **KANAL OBUNALARI:**\n"
+	for _, ch := range myChannels {
+		text += fmt.Sprintf("✅ [Kanalga o'tish](%s)\n", ch.Invite)
+	}
+
+	text += "------------------------------------------\n"
+	text += "📊 **FOYDALANUVCHILAR:**\n"
+	text += fmt.Sprintf("🟢 Faol foydalanuvchilar: %d\n", active)
+	text += fmt.Sprintf("🚫 Nofaol foydalanuvchilar: %d\n", inactive)
 	text += fmt.Sprintf("👥 Umumiy obunachilar: %d\n", total)
-	text += fmt.Sprintf("🟢 Aktiv (24s ichida): %d\n", active)
-	text += fmt.Sprintf("🚫 Nofaol: %d\n", inactive)
 
-	text += "\n📅 **QO'SHILISH DINAMIKASI:**\n"
-	text += fmt.Sprintf("🆕 Bugun (00:00 dan): %d\n", todayNew)
-	text += fmt.Sprintf("🔙 Kecha to'liq: %d\n", yesterdayNew)
-	text += fmt.Sprintf("🗓 Oxirgi 7 kun: %d\n", last7)
-	text += fmt.Sprintf("🗓 Oxirgi 30 kun: %d\n", last30)
+	text += "\n🆕 **OBUNACHILAR (YANGI):**\n"
+	text += fmt.Sprintf("📅 Bugun: %d\n", todayNew)
+	text += fmt.Sprintf("🗓 7 kunlik: %d\n", last7)
+	text += fmt.Sprintf("🗓 30 kunlik: %d\n", last30)
 
-	text += "\n------------------------------------------\n"
-	text += fmt.Sprintf("🕒 Yangilangan vaqt: %s", now.Format("15:04:05 / 02.01.2006"))
+	text += "------------------------------------------\n"
+	text += fmt.Sprintf("ℹ️ Ma'lumotlar yangilangan: \n`%s`", now.Format("02.01.2006 | 15:04:05"))
 
-	return c.Send(text, tele.ModeMarkdown)
+	return c.Send(text, tele.ModeMarkdown, tele.NoPreview)
 }
