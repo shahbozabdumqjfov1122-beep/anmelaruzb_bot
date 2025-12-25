@@ -31,6 +31,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Davolashsehridan"
 	"namelaruzb_bot/kodi/anmelaruzb/Davolovchiqahramon"
 	"namelaruzb_bot/kodi/anmelaruzb/Daydiitlarningbuyugi"
+	"namelaruzb_bot/kodi/anmelaruzb/Detektivallaqchon"
 	"namelaruzb_bot/kodi/anmelaruzb/DoktorElizahayotlarni"
 	"namelaruzb_bot/kodi/anmelaruzb/Doktorstoun"
 	"namelaruzb_bot/kodi/anmelaruzb/Domekano"
@@ -43,6 +44,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Engzaifyirtqich"
 	"namelaruzb_bot/kodi/anmelaruzb/Fojiagasababchiblganmalika"
 	"namelaruzb_bot/kodi/anmelaruzb/Franksdagisevgi"
+	"namelaruzb_bot/kodi/anmelaruzb/FrirenSonggimanzilga"
 	"namelaruzb_bot/kodi/anmelaruzb/GachiakutaQasos"
 	"namelaruzb_bot/kodi/anmelaruzb/Gertsogningqizigashaxsiyoqituvchiboldim"
 	"namelaruzb_bot/kodi/anmelaruzb/Gildiyaadminstratoribolib"
@@ -591,6 +593,10 @@ func Home(c tele.Context) error {
 		return NinjavaYakudza.Home(c)
 	case "194", "Bosning qizi va uning Enagasi":
 		return Bosningqizivauning.Home(c)
+	case "195", "Detektiv allaqchon o'lgan":
+		return Detektivallaqchon.Home(c)
+	case "196", "Friren - Soʻnggi manzilga kuzatuvchi":
+		return FrirenSonggimanzilga.Home(c)
 
 	//
 	//

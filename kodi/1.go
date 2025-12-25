@@ -17,9 +17,8 @@ import (
 	tele "gopkg.in/telebot.v4"
 )
 
-// ---------------- JOIN REQUEST ----------------
 var (
-	pendingRequests = make(map[int64]map[int64]bool) // userID -> channelID
+	pendingRequests = make(map[int64]map[int64]bool)
 	requestMutex    sync.RWMutex
 )
 
@@ -37,12 +36,11 @@ var myChannels = []ChannelInfo{
 	{ID: -1003411861509, Name: "Maxfiy Kanal", Invite: "https://t.me/+C0qmcf4ZHY83NmNi"},
 }
 
-// ---------------- STATISTIKA ----------------
 var (
-	userActive  = make(map[int64]time.Time) // oxirgi faoliyat vaqti
-	userJoined  = make(map[int64]time.Time) // foydalanuvchi join vaqti
+	userActive  = make(map[int64]time.Time)
+	userJoined  = make(map[int64]time.Time)
 	statsMutex  sync.RWMutex
-	searchStats = make(map[string]int) // Kod: necha marta qidirilgan
+	searchStats = make(map[string]int)
 )
 
 func updateUserActivity(userID int64) {
@@ -83,7 +81,6 @@ func saveStats() {
 	_ = os.WriteFile("stats.json", file, 0644)
 }
 
-// 3. Ma'lumotlarni yuklash funksiyasi
 func loadStats() {
 	file, err := os.ReadFile("stats.json")
 	if err != nil {
@@ -113,15 +110,9 @@ func loadStats() {
 	}
 	statsMutex.Unlock()
 }
-func addSearchStat(code string) {
-	statsMutex.Lock()
-	defer statsMutex.Unlock()
-	searchStats[code]++
-}
 
-// ---------------- ADMIN LIST ----------------
 var admins = map[int64]bool{
-	7518992824: true, // bu yerga admin Telegram ID larini yozing
+	7518992824: true,
 	//987654321: true,
 }
 
@@ -129,7 +120,6 @@ func isAdmin(userID int64) bool {
 	return admins[userID]
 }
 
-// ---------------- CHECK SUBS ----------------
 func notAllowedChannels(b *tele.Bot, userID int64) []ChannelInfo {
 	var missing []ChannelInfo
 
@@ -159,7 +149,6 @@ func notAllowedChannels(b *tele.Bot, userID int64) []ChannelInfo {
 	return missing
 }
 
-// ---------------- BOT ----------------
 func Bot() {
 	loadStats()
 	token := beego.AppConfig.DefaultString("telegram::token", "")
@@ -312,7 +301,7 @@ func Bot() {
 			"Shangri-la chegarasi", "Barmoqlar uchidagi sevgi", " Kelajak kundaligi", "Men eng kuchli sarguzashtchi bo'lish uchun har doim mashq qildim",
 			"Do'stimning singlisi bezovta qilyapti", "Shikastlanishni istamasdim shuning uchun himoyamni kuchaytirdim",
 			"Oxirgi Telba Boss paydo bo'ldi", "Basketbol Kuroko", "Vayron bo'lgan mo'jizalar mamlakati", "Qahramonning qaytishi", "Bosning qizi va uning Enagasi",
-			"Ninja va Yakudza":
+			"Ninja va Yakudza", "Detektiv allaqchon o'lgan", "Friren - Soʻnggi manzilga kuzatuvchi":
 
 			return anmelaruzb.Home(c)
 
@@ -334,7 +323,6 @@ func Bot() {
 	b.Start()
 }
 
-// ---------------- SUB MESSAGE ----------------
 func sendSubMessage(c tele.Context, missing []ChannelInfo) error {
 	text := "<b>❗ Botdan foydalanish uchun quyidagi kanallarga a'zo bo‘ling yoki so‘rov yuboring:</b>"
 	m := &tele.ReplyMarkup{}
@@ -354,7 +342,6 @@ func sendSubMessage(c tele.Context, missing []ChannelInfo) error {
 	return c.Send(text, m, tele.ModeHTML)
 }
 
-// ---------------- STATISTIKA XABAR ----------------
 func sendStatistics(c tele.Context) error {
 	statsMutex.RLock()
 	defer statsMutex.RUnlock()
