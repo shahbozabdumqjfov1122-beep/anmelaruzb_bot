@@ -190,6 +190,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/ZulmatIblisi"
 	"namelaruzb_bot/kodi/anmelaruzb/bizbirga"
 	"namelaruzb_bot/kodi/anmelaruzb/dahoshahzodanimamlakat"
+	_default "namelaruzb_bot/kodi/anmelaruzb/default"
 	"namelaruzb_bot/kodi/anmelaruzb/iblislarqotili"
 	"namelaruzb_bot/kodi/anmelaruzb/qipqizilragna"
 	"namelaruzb_bot/kodi/anmelaruzb/tahlilashqobilyati"
@@ -602,6 +603,6 @@ func Home(c tele.Context) error {
 	//
 	//
 	default:
-		return c.Send("Noma'lum buyruq. Iltimos, /menu dan foydalaning.")
+		return _default.Home(c)
 	}
 }
