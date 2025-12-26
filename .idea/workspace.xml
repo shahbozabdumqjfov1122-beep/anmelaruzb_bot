@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8fcf7f-66fd-49b5-932d-7110c9820c5e" name="Changes" comment="izoy yozishga erindim.">
-      <change afterPath="$PROJECT_DIR$/kodi/3.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/anmelar.exe" beforeDir="false" afterPath="$PROJECT_DIR$/anmelar.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/default/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/default/1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/app.conf" beforeDir="false" afterPath="$PROJECT_DIR$/conf/app.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/3.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/3.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

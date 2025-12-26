@@ -598,6 +598,8 @@ func Home(c tele.Context) error {
 		return Detektivallaqchon.Home(c)
 	case "196", "Friren - Soʻnggi manzilga kuzatuvchi":
 		return FrirenSonggimanzilga.Home(c)
+	case "197", "Exo Terror":
+		return ExoTerror.Home(c)
 
 	//
 	//
