@@ -42,6 +42,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/ElitaSinfi"
 	"namelaruzb_bot/kodi/anmelaruzb/Engqudratlipartiya"
 	"namelaruzb_bot/kodi/anmelaruzb/Engzaifyirtqich"
+	"namelaruzb_bot/kodi/anmelaruzb/ExoTerror"
 	"namelaruzb_bot/kodi/anmelaruzb/Fojiagasababchiblganmalika"
 	"namelaruzb_bot/kodi/anmelaruzb/Franksdagisevgi"
 	"namelaruzb_bot/kodi/anmelaruzb/FrirenSonggimanzilga"
