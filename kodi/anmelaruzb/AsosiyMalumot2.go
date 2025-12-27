@@ -98,6 +98,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/OltinVaqt"
 	"namelaruzb_bot/kodi/anmelaruzb/Omadsizning"
 	"namelaruzb_bot/kodi/anmelaruzb/OnmyoQaytaTugilishi"
+	"namelaruzb_bot/kodi/anmelaruzb/Orientfasl"
 	"namelaruzb_bot/kodi/anmelaruzb/Ortayoshli"
 	"namelaruzb_bot/kodi/anmelaruzb/OsmondagiJanglar"
 	"namelaruzb_bot/kodi/anmelaruzb/OvozShakli"
@@ -156,6 +157,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/SuvSehrgari"
 	"namelaruzb_bot/kodi/anmelaruzb/Tahlilqilishqobiliyatigaega"
 	"namelaruzb_bot/kodi/anmelaruzb/TajribasizSenpai"
+	"namelaruzb_bot/kodi/anmelaruzb/TaktOpusTaqdir"
 	"namelaruzb_bot/kodi/anmelaruzb/TaqdirBuyukTartibMutlaqIblislarJabhasi"
 	"namelaruzb_bot/kodi/anmelaruzb/TaqdirJangKechasi"
 	"namelaruzb_bot/kodi/anmelaruzb/Taxtmuxri"
@@ -604,6 +606,10 @@ func Home(c tele.Context) error {
 		return ExoTerror.Home(c)
 	case "198", "Arknayts: Prelyudiya tongga tomon":
 		return ArknaytsPrelyudiyatongga.Home(c)
+	case "199", "Takt Opus. Taqdir":
+		return TaktOpusTaqdir.Home(c)
+	case "200", "Orient":
+		return Orientfasl.Home(c)
 
 	//
 	//
