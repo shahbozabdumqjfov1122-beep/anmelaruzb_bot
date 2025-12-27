@@ -8,6 +8,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Aliyabazanmegarustilidanoskarashmaqiladi"
 	"namelaruzb_bot/kodi/anmelaruzb/AprelYolgoni"
 	"namelaruzb_bot/kodi/anmelaruzb/ArifuretaDunyodagiengkuchli"
+	"namelaruzb_bot/kodi/anmelaruzb/ArknaytsPrelyudiyatongga"
 	"namelaruzb_bot/kodi/anmelaruzb/ArraOdam"
 	"namelaruzb_bot/kodi/anmelaruzb/Badargaqilinganqahramon"
 	"namelaruzb_bot/kodi/anmelaruzb/Baholovchiningmashhur"
@@ -601,6 +602,8 @@ func Home(c tele.Context) error {
 		return FrirenSonggimanzilga.Home(c)
 	case "197", "Exo Terror":
 		return ExoTerror.Home(c)
+	case "198", "Arknayts: Prelyudiya tongga tomon":
+		return ArknaytsPrelyudiyatongga.Home(c)
 
 	//
 	//
