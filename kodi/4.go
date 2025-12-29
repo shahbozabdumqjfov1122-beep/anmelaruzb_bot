@@ -125,36 +125,29 @@ var admins = map[int64]bool{7518992824: true}
 func isAdmin(userID int64) bool { return admins[userID] }
 
 func notAllowedChannels(b *tele.Bot, userID int64) []ChannelInfo {
-	// 1. Avval foydalanuvchi VIP ekanligini tekshiramiz
 	vipMutex.RLock()
 	isVip := vipUsers[userID]
 	vipMutex.RUnlock()
 
-	// Agar foydalanuvchi VIP bo'lsa, unga kanallar ro'yxatini qaytarmaymiz (bloklanmaydi)
 	if isVip {
 		return nil
 	}
 
-	// 2. Oddiy foydalanuvchilar uchun kanallarni tekshirish
 	var missing []ChannelInfo
 	for _, ch := range myChannels {
 		chat := &tele.Chat{ID: ch.ID}
 
-		// Kanaldagi azolik holatini tekshirish
 		member, err := b.ChatMemberOf(chat, &tele.User{ID: userID})
 
-		// Agar foydalanuvchi a'zo, admin yoki yaratuvchi bo'lsa, bu kanalni o'tkazib yuboramiz
 		if err == nil && (member.Role == tele.Member || member.Role == tele.Administrator || member.Role == tele.Creator) {
 			continue
 		}
 
-		// 3. Join Request (qo'shilish so'rovi) yuborganligini tekshirish
 		requestMutex.RLock()
 		userReqs := pendingRequests[userID]
 		hasRequested := userReqs != nil && userReqs[ch.ID]
 		requestMutex.RUnlock()
 
-		// Agar a'zo ham bo'lmasa va so'rov ham yubormagan bo'lsa, "topilmadi" ro'yxatiga qo'shamiz
 		if !hasRequested {
 			missing = append(missing, ch)
 		}
@@ -173,12 +166,10 @@ func Bot() {
 		log.Fatal(err)
 	}
 
-	// --- MENYULAR ---
 	menu := &tele.ReplyMarkup{ResizeKeyboard: true}
 	menu.Reply(menu.Row(menu.Text("Animelar")), menu.Row(menu.Text("🧩 help")))
 
-	// Bot() funksiyasi ichida:
-	loadVips() // VIP-larni yuklash
+	loadVips()
 
 	adminMenu := &tele.ReplyMarkup{}
 	btnBroadcast := adminMenu.Data("📢 Reklama", "admin_broadcast")
@@ -197,12 +188,12 @@ func Bot() {
 			return nil
 		}
 		adminMenu.Inline(adminMenu.Row(btnBroadcast, btnStats), adminMenu.Row(btnVip))
-		return c.Send("👨‍💻 **Admin Panel:**", adminMenu, tele.ModeMarkdown)
+		return c.Send("👨‍💻 Admin Panel:", adminMenu, tele.ModeMarkdown)
 	})
 
 	b.Handle(&btnVip, func(c tele.Context) error {
 		vipSubMenu.Inline(vipSubMenu.Row(btnAddVip, btnDelVip), vipSubMenu.Row(btnListVip))
-		return c.Edit("🌟 **VIP foydalanuvchilarni boshqarish:**", vipSubMenu)
+		return c.Edit("🌟 VIP foydalanuvchilarni boshqarish:", vipSubMenu)
 	})
 
 	// VIP qo'shish/o'chirish holatlari
@@ -218,7 +209,7 @@ func Bot() {
 
 	b.Handle(&btnListVip, func(c tele.Context) error {
 		vipMutex.RLock()
-		text := "🌟 **VIP Foydalanuvchilar ro'yxati:**\n\n"
+		text := "🌟 VIP Foydalanuvchilar ro'yxati:\n\n"
 		for id := range vipUsers {
 			text += fmt.Sprintf("👤 ` %d `\n", id)
 		}
