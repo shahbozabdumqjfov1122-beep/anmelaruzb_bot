@@ -181,6 +181,7 @@ func Bot() {
 	btnAddVip := vipSubMenu.Data("➕ Qo'shish", "vip_add")
 	btnDelVip := vipSubMenu.Data("➖ O'chirish", "vip_del")
 	btnListVip := vipSubMenu.Data("📜 Ro'yxat", "vip_list")
+	btnAdmin := vipSubMenu.Data("🔙 Orqaga", "btnAdmin")
 
 	// Handlerlarni qo'shish
 	b.Handle("/admin", func(c tele.Context) error {
@@ -192,8 +193,12 @@ func Bot() {
 	})
 
 	b.Handle(&btnVip, func(c tele.Context) error {
-		vipSubMenu.Inline(vipSubMenu.Row(btnAddVip, btnDelVip), vipSubMenu.Row(btnListVip))
+		vipSubMenu.Inline(vipSubMenu.Row(btnAddVip, btnDelVip), vipSubMenu.Row(btnListVip), vipSubMenu.Row(btnAdmin))
 		return c.Edit("🌟 VIP foydalanuvchilarni boshqarish:", vipSubMenu)
+	})
+	b.Handle(&btnAdmin, func(c tele.Context) error {
+		adminMenu.Inline(adminMenu.Row(btnBroadcast, btnStats), adminMenu.Row(btnVip))
+		return c.Send("👨‍💻 Admin Panel:", adminMenu, tele.ModeMarkdown)
 	})
 
 	// VIP qo'shish/o'chirish holatlari
