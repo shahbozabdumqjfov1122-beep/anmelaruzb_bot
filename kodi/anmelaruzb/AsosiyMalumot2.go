@@ -71,6 +71,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Lookism"
 	"namelaruzb_bot/kodi/anmelaruzb/LordiArmiyasiningeng"
 	"namelaruzb_bot/kodi/anmelaruzb/MabudlarHohishiBilan"
+	"namelaruzb_bot/kodi/anmelaruzb/MagicKaitoid"
 	"namelaruzb_bot/kodi/anmelaruzb/Maktabtomonidantan"
 	"namelaruzb_bot/kodi/anmelaruzb/Manorgimchakman"
 	"namelaruzb_bot/kodi/anmelaruzb/MasamuneQasosi"
@@ -610,6 +611,8 @@ func Home(c tele.Context) error {
 		return TaktOpusTaqdir.Home(c)
 	case "200", "Orient":
 		return Orientfasl.Home(c)
+	case "201", "Magic Kaito Kid ID":
+		return MagicKaitoid.Home(c)
 
 	//
 	//
