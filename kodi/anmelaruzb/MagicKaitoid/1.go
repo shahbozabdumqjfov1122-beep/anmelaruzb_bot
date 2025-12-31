@@ -7,24 +7,24 @@ import (
 func Home(c tele.Context) error {
 	b := c.Bot()
 	channelID := int64(-1003598783228)
-	messageIDs := []int{}
-	for i := 2; i < 20; i++ {
-		messageIDs = append(messageIDs, i)
-	}
 
-	for _, msgID := range messageIDs {
+	for i := 2; i < 20; i++ {
 
 		msg := &tele.Message{
-			ID:   msgID,
+			ID:   i,
 			Chat: &tele.Chat{ID: channelID},
+		}
+
+		// 🔒 AGAR VIDEO / RASM / FAYL bo‘lsa — SKIP
+		if msg.Video != nil || msg.Photo != nil || msg.Document != nil {
+			continue
 		}
 
 		_, err := b.Copy(c.Sender(), msg)
 		if err != nil {
-			// ❌ Xato bo‘lsa o‘sha xabarni tashlab keyingisiga o‘tadi
 			continue
 		}
 	}
 
-	return c.Send("✅ Videolar yuborish tugadi")
+	return c.Send("❌ choparlaga mukun emas")
 }
