@@ -45,12 +45,12 @@ var (
 	statsMutex  sync.RWMutex
 	searchStats = make(map[string]int)
 )
+
 var (
 	vipUsers = make(map[int64]bool)
 	vipMutex sync.RWMutex
 )
 
-// stats.json ichiga VIP-larni ham qo'shish uchun saveStats ni yangilaymiz
 func saveVips() {
 	vipMutex.RLock()
 	data, _ := json.Marshal(vipUsers)
@@ -67,6 +67,7 @@ func loadVips() {
 	_ = json.Unmarshal(file, &vipUsers)
 	vipMutex.Unlock()
 }
+
 func updateUserActivity(userID int64) {
 	statsMutex.Lock()
 	now := time.Now()
@@ -170,36 +171,82 @@ func Bot() {
 	menu.Reply(menu.Row(menu.Text("Animelar")), menu.Row(menu.Text("🧩 help")))
 
 	loadVips()
-
 	adminMenu := &tele.ReplyMarkup{}
 	btnBroadcast := adminMenu.Data("📢 Reklama", "admin_broadcast")
 	btnStats := adminMenu.Data("📊 Statistika", "admin_stats")
-	btnVip := adminMenu.Data("🌟 VIP Boshqaruv", "admin_vip_main") // Yangi tugma
+	btnVip := adminMenu.Data("🌟 VIP Boshqaruv", "admin_vip_main")
 
-	// VIP Menyu tugmalari
+	// VIP Menyu
 	vipSubMenu := &tele.ReplyMarkup{}
 	btnAddVip := vipSubMenu.Data("➕ Qo'shish", "vip_add")
 	btnDelVip := vipSubMenu.Data("➖ O'chirish", "vip_del")
 	btnListVip := vipSubMenu.Data("📜 Ro'yxat", "vip_list")
-	btnAdmin := vipSubMenu.Data("🔙 Orqaga", "btnAdmin")
+	btnBackAdmin := vipSubMenu.Data("⬅️ Orqaga", "back_admin")
 
-	// Handlerlarni qo'shish
+	// ===== ADMIN PANEL =====
 	b.Handle("/admin", func(c tele.Context) error {
 		if !isAdmin(c.Sender().ID) {
 			return nil
 		}
-		adminMenu.Inline(adminMenu.Row(btnBroadcast, btnStats), adminMenu.Row(btnVip))
-		return c.Send("👨‍💻 Admin Panel:", adminMenu, tele.ModeMarkdown)
+
+		adminMenu.Inline(
+			adminMenu.Row(btnBroadcast, btnStats),
+			adminMenu.Row(btnVip),
+		)
+
+		return c.Send("👨‍💻 *Admin Panel*", adminMenu, tele.ModeMarkdown)
 	})
 
+	// ===== VIP MENU =====
 	b.Handle(&btnVip, func(c tele.Context) error {
-		vipSubMenu.Inline(vipSubMenu.Row(btnAddVip, btnDelVip), vipSubMenu.Row(btnListVip), vipSubMenu.Row(btnAdmin))
-		return c.Edit("🌟 VIP foydalanuvchilarni boshqarish:", vipSubMenu)
+		vipSubMenu.Inline(
+			vipSubMenu.Row(btnAddVip, btnDelVip),
+			vipSubMenu.Row(btnListVip),
+			vipSubMenu.Row(btnBackAdmin),
+		)
+
+		return c.Edit("🌟 *VIP foydalanuvchilarni boshqarish*", vipSubMenu, tele.ModeMarkdown)
 	})
-	b.Handle(&btnAdmin, func(c tele.Context) error {
-		adminMenu.Inline(adminMenu.Row(btnBroadcast, btnStats), adminMenu.Row(btnVip))
-		return c.Send("👨‍💻 Admin Panel:", adminMenu, tele.ModeMarkdown)
+
+	// ===== 🔙 ORQAGA (TO‘G‘RI USUL) =====
+	b.Handle(&btnBackAdmin, func(c tele.Context) error {
+		adminMenu.Inline(
+			adminMenu.Row(btnBroadcast, btnStats),
+			adminMenu.Row(btnVip),
+		)
+
+		return c.Edit("👨‍💻 *Admin Panel*", adminMenu, tele.ModeMarkdown)
 	})
+
+	//adminMenu := &tele.ReplyMarkup{}
+	//btnBroadcast := adminMenu.Data("📢 Reklama", "admin_broadcast")
+	//btnStats := adminMenu.Data("📊 Statistika", "admin_stats")
+	//btnVip := adminMenu.Data("🌟 VIP Boshqaruv", "admin_vip_main") // Yangi tugma
+	//
+	//// VIP Menyu tugmalari
+	//vipSubMenu := &tele.ReplyMarkup{}
+	//btnAddVip := vipSubMenu.Data("➕ Qo'shish", "vip_add")
+	//btnDelVip := vipSubMenu.Data("➖ O'chirish", "vip_del")
+	//btnListVip := vipSubMenu.Data("📜 Ro'yxat", "vip_list")
+	//btnAdmin := vipSubMenu.Data("🔙 Orqaga", "btnAdmin")
+	//
+	//// Handlerlarni qo'shish
+	//b.Handle("/admin", func(c tele.Context) error {
+	//	if !isAdmin(c.Sender().ID) {
+	//		return nil
+	//	}
+	//	adminMenu.Inline(adminMenu.Row(btnBroadcast, btnStats), adminMenu.Row(btnVip))
+	//	return c.Send("👨‍💻 Admin Panel:", adminMenu, tele.ModeMarkdown)
+	//})
+	//
+	//b.Handle(&btnVip, func(c tele.Context) error {
+	//	vipSubMenu.Inline(vipSubMenu.Row(btnAddVip, btnDelVip), vipSubMenu.Row(btnListVip), vipSubMenu.Row(btnAdmin))
+	//	return c.Edit("🌟 VIP foydalanuvchilarni boshqarish:", vipSubMenu)
+	//})
+	//b.Handle(&btnAdmin, func(c tele.Context) error {
+	//	adminMenu.Inline(adminMenu.Row(btnBroadcast, btnStats), adminMenu.Row(btnVip))
+	//	return c.Send("👨‍💻 Admin Panel:", adminMenu, tele.ModeMarkdown)
+	//})
 
 	// VIP qo'shish/o'chirish holatlari
 	b.Handle(&btnAddVip, func(c tele.Context) error {

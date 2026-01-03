@@ -26,6 +26,6 @@ func Home(c tele.Context) error {
 		}
 	}
 
-	return c.Send("✅ Videolar yuborish tugadi " +
-		"❌ choparlaga mukun emas anime sotip olindi")
+	return c.Send("✅ Videolar yuborish tugadi \n" +
+		"❌ choparlaga mukun emas anime sotib olindi")
 }
