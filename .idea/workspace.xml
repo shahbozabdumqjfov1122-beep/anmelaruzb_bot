@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8fcf7f-66fd-49b5-932d-7110c9820c5e" name="Changes" comment="izoy yozishga erindim.">
+      <change afterPath="$PROJECT_DIR$/kodi/Menu/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Chitosekunvaramuna/1.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kodi/4.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/4.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/MagicKaitoid/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/MagicKaitoid/1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/Menu/menu.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/Menu/menu.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +70,7 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "D:/Dars1/telegram botlar/anmelar/kodi/anmelaruzb/MagicKaitoid",
+    "last_opened_file_path": "D:/Dars1/telegram botlar/anmelar/kodi/anmelaruzb/Chitosekunvaramuna",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -81,11 +84,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Chitosekunvaramuna" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\MagicKaitoid" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Orientfasl" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\TaktOpusTaqdir" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\ArknaytsPrelyudiyatongga" />
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\ExoTerror" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb" />

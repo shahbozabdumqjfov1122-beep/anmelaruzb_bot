@@ -25,6 +25,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Chegaraortida"
 	"namelaruzb_bot/kodi/anmelaruzb/Cheksizdendagron"
 	"namelaruzb_bot/kodi/anmelaruzb/Cheksizlikgacha"
+	"namelaruzb_bot/kodi/anmelaruzb/Chitosekunvaramuna"
 	"namelaruzb_bot/kodi/anmelaruzb/DMC"
 	"namelaruzb_bot/kodi/anmelaruzb/DahoShifokorningSoyadagi"
 	"namelaruzb_bot/kodi/anmelaruzb/Daholaruchunozga"
@@ -613,6 +614,8 @@ func Home(c tele.Context) error {
 		return Orientfasl.Home(c)
 	case "201", "Magic Kaito Kid ID":
 		return MagicKaitoid.Home(c)
+	case "202", "Chitose-kun va ramuna shishasi":
+		return Chitosekunvaramuna.Home(c)
 
 	//
 	//

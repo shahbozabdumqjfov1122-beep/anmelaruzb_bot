@@ -156,6 +156,7 @@ func notAllowedChannels(b *tele.Bot, userID int64) []ChannelInfo {
 
 	return missing
 }
+
 func Bot() {
 	loadStats()
 	token := beego.AppConfig.DefaultString("telegram::token", "")
