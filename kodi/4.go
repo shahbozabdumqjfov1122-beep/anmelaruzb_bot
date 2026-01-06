@@ -34,6 +34,7 @@ type ChannelInfo struct {
 
 var myChannels = []ChannelInfo{
 	{ID: -1003050934981, Name: "anmelaruzb", Invite: "https://t.me/anmelaruzb"},
+	{ID: -1003276785399, Name: "animelaruzbektilid3", Invite: "https://t.me/animelaruzbektilid3"},
 	//{ID: -1003316396409, Name: "anmelar_chat", Invite: "https://t.me/anmelar_chat"},
 	{ID: -1003323161290, Name: "Manga Uzb", Invite: "https://t.me/Manga_uzbekcha26"},
 	{ID: -1003411861509, Name: "Maxfiy Kanal", Invite: "https://t.me/+C0qmcf4ZHY83NmNi"},
@@ -219,36 +220,6 @@ func Bot() {
 		return c.Edit("👨‍💻 *Admin Panel*", adminMenu, tele.ModeMarkdown)
 	})
 
-	//adminMenu := &tele.ReplyMarkup{}
-	//btnBroadcast := adminMenu.Data("📢 Reklama", "admin_broadcast")
-	//btnStats := adminMenu.Data("📊 Statistika", "admin_stats")
-	//btnVip := adminMenu.Data("🌟 VIP Boshqaruv", "admin_vip_main") // Yangi tugma
-	//
-	//// VIP Menyu tugmalari
-	//vipSubMenu := &tele.ReplyMarkup{}
-	//btnAddVip := vipSubMenu.Data("➕ Qo'shish", "vip_add")
-	//btnDelVip := vipSubMenu.Data("➖ O'chirish", "vip_del")
-	//btnListVip := vipSubMenu.Data("📜 Ro'yxat", "vip_list")
-	//btnAdmin := vipSubMenu.Data("🔙 Orqaga", "btnAdmin")
-	//
-	//// Handlerlarni qo'shish
-	//b.Handle("/admin", func(c tele.Context) error {
-	//	if !isAdmin(c.Sender().ID) {
-	//		return nil
-	//	}
-	//	adminMenu.Inline(adminMenu.Row(btnBroadcast, btnStats), adminMenu.Row(btnVip))
-	//	return c.Send("👨‍💻 Admin Panel:", adminMenu, tele.ModeMarkdown)
-	//})
-	//
-	//b.Handle(&btnVip, func(c tele.Context) error {
-	//	vipSubMenu.Inline(vipSubMenu.Row(btnAddVip, btnDelVip), vipSubMenu.Row(btnListVip), vipSubMenu.Row(btnAdmin))
-	//	return c.Edit("🌟 VIP foydalanuvchilarni boshqarish:", vipSubMenu)
-	//})
-	//b.Handle(&btnAdmin, func(c tele.Context) error {
-	//	adminMenu.Inline(adminMenu.Row(btnBroadcast, btnStats), adminMenu.Row(btnVip))
-	//	return c.Send("👨‍💻 Admin Panel:", adminMenu, tele.ModeMarkdown)
-	//})
-
 	// VIP qo'shish/o'chirish holatlari
 	b.Handle(&btnAddVip, func(c tele.Context) error {
 		adminState[c.Sender().ID] = "wait_vip_add"
@@ -415,44 +386,6 @@ func sendSubMessage(c tele.Context, missing []ChannelInfo) error {
 	rows = append(rows, m.Row(m.Data("✅ Tekshirish", "check_sub")))
 	m.Inline(rows...)
 	return c.Send(text, m, tele.ModeHTML)
-}
-
-func handleAllMessages(b *tele.Bot, c tele.Context) error {
-	updateUserActivity(c.Sender().ID)
-
-	// ADMIN REKLAMA KUTAYOTGAN BO'LSA
-	if isAdmin(c.Sender().ID) && adminState[c.Sender().ID] == "waiting_for_ad" {
-		adminWaitingAd[c.Sender().ID] = c.Message()
-
-		confirmMarkup := &tele.ReplyMarkup{}
-		btnConfirm := confirmMarkup.Data("✅ Tasdiqlash", "confirm_ad")
-		btnCancel := confirmMarkup.Data("❌ Bekor qilish", "cancel_ad")
-		confirmMarkup.Inline(confirmMarkup.Row(btnConfirm, btnCancel))
-
-		_ = c.Send("👇 **Reklama ko'rinishi:**")
-		_, _ = b.Copy(c.Recipient(), c.Message())
-		return c.Send("Yuqoridagi xabarni hamma foydalanuvchilarga yuboramizmi?", confirmMarkup)
-	}
-
-	// OBUNA TEKSHIRUVI
-	missing := notAllowedChannels(b, c.Sender().ID)
-	if len(missing) > 0 {
-		return sendSubMessage(c, missing)
-	}
-
-	// BUYRUQLAR (Faqat matn bo'lsa ishlaydi)
-	text := c.Text()
-	if text != "" {
-		switch text {
-		case "Animelar", "/menu":
-			return Menu.Home(c)
-		case "🧩 help":
-			return Help.Home(c)
-		default:
-			return anmelaruzb.Home(c)
-		}
-	}
-	return nil
 }
 
 func sendStatistics(c tele.Context) error {
