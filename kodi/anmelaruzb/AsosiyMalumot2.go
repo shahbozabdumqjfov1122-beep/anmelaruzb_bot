@@ -191,6 +191,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/YozukuraOilasi"
 	"namelaruzb_bot/kodi/anmelaruzb/Yugureningabadiyligi"
 	"namelaruzb_bot/kodi/anmelaruzb/YulduzFarzandi"
+	"namelaruzb_bot/kodi/anmelaruzb/Zanjirliqul"
 	"namelaruzb_bot/kodi/anmelaruzb/Zombi100"
 	"namelaruzb_bot/kodi/anmelaruzb/ZulmatFarzandi"
 	"namelaruzb_bot/kodi/anmelaruzb/ZulmatIblisi"
@@ -616,6 +617,8 @@ func Home(c tele.Context) error {
 		return MagicKaitoid.Home(c)
 	case "202", "Chitose-kun va ramuna shishasi":
 		return Chitosekunvaramuna.Home(c)
+	case "203", "Zanjirli qul":
+		return Zanjirliqul.Home(c)
 
 	//
 	//
