@@ -38,6 +38,7 @@ var myChannels = []ChannelInfo{
 	//{ID: -1003316396409, Name: "anmelar_chat", Invite: "https://t.me/anmelar_chat"},
 	{ID: -1003323161290, Name: "Manga Uzb", Invite: "https://t.me/Manga_uzbekcha26"},
 	{ID: -1003411861509, Name: "Maxfiy Kanal", Invite: "https://t.me/+C0qmcf4ZHY83NmNi"},
+	{ID: -1003227139819, Name: "Maxfiy Kanal", Invite: "https://t.me/+O3K3g71yc2cwYThi"},
 }
 
 var (

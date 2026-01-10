@@ -18,6 +18,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Birsoatliqizcha"
 	"namelaruzb_bot/kodi/anmelaruzb/Birzarbliodam"
 	"namelaruzb_bot/kodi/anmelaruzb/Bleach"
+	"namelaruzb_bot/kodi/anmelaruzb/Bosanijalbetib"
 	"namelaruzb_bot/kodi/anmelaruzb/Boshqadunyobirzumda"
 	"namelaruzb_bot/kodi/anmelaruzb/Boshqadunyodanmuammolibolalar"
 	"namelaruzb_bot/kodi/anmelaruzb/Bosningqizivauning"
@@ -619,6 +620,8 @@ func Home(c tele.Context) error {
 		return Chitosekunvaramuna.Home(c)
 	case "203", "Zanjirli qul":
 		return Zanjirliqul.Home(c)
+	case "204", "Bo’sani jalb etib":
+		return Bosanijalbetib.Home(c)
 
 	//
 	//
