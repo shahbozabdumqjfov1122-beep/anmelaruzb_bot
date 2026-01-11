@@ -105,6 +105,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Ortayoshli"
 	"namelaruzb_bot/kodi/anmelaruzb/OsmondagiJanglar"
 	"namelaruzb_bot/kodi/anmelaruzb/OvozShakli"
+	"namelaruzb_bot/kodi/anmelaruzb/OxirgiChaqiruvchi"
 	"namelaruzb_bot/kodi/anmelaruzb/OxirgiTelbaBosspaydo"
 	"namelaruzb_bot/kodi/anmelaruzb/OyindagiEngBoyodam"
 	"namelaruzb_bot/kodi/anmelaruzb/Oyingbilanbirgavideo"
@@ -622,6 +623,8 @@ func Home(c tele.Context) error {
 		return Zanjirliqul.Home(c)
 	case "204", "Bo’sani jalb etib":
 		return Bosanijalbetib.Home(c)
+	case "205", "Oxirgi Chaqiruvchi":
+		return OxirgiChaqiruvchi.Home(c)
 
 	//
 	//
