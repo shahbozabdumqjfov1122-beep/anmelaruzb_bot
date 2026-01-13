@@ -1,4 +1,4 @@
-package OxirgiChaqiruvchi
+package OdamlarJinlarsolnomasi
 
 import (
 	tele "gopkg.in/telebot.v4"
@@ -6,9 +6,9 @@ import (
 
 func Home(c tele.Context) error {
 	b := c.Bot()
-	channelID := int64(-1003560450775)
+	channelID := int64(-1003378551457)
 	messageIDs := []int{}
-	for i := 2; i < 30; i++ {
+	for i := 2; i < 33; i++ {
 		messageIDs = append(messageIDs, i)
 	}
 

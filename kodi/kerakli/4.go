@@ -1,4 +1,4 @@
-package ko_di
+package kerakli
 
 //
 //import (
@@ -10,6 +10,8 @@ package ko_di
 //	"namelaruzb_bot/kodi/Menu"
 //	"namelaruzb_bot/kodi/anmelaruzb"
 //	"sort"
+//	"strconv"
+//	"strings"
 //
 //	"os"
 //	"sync"
@@ -26,18 +28,37 @@ package ko_di
 //	adminState     = make(map[int64]string)        // Admin holatini saqlash
 //	adminWaitingAd = make(map[int64]*tele.Message) // Yuborilishi kerak bo'lgan xabarni saqlash
 //)
+//var (
+//	scheduledPosts = make(map[int]*ScheduledPost)
+//	scheduleMutex  sync.RWMutex
+//	scheduleAutoID = 1
+//)
 //
 //type ChannelInfo struct {
 //	ID     int64
 //	Name   string
 //	Invite string
 //}
+//type ScheduledPost struct {
+//	ID       int
+//	AdminID  int64
+//	SendTime time.Time
+//	ChatIDs  []int64
+//	Content  ContentItem
+//}
+//type ContentItem struct {
+//	Kind   string // text | photo | video
+//	FileID string // rasm/video uchun
+//	Text   string // matn yoki caption
+//}
 //
 //var myChannels = []ChannelInfo{
 //	{ID: -1003050934981, Name: "anmelaruzb", Invite: "https://t.me/anmelaruzb"},
+//	{ID: -1003276785399, Name: "animelaruzbektilid3", Invite: "https://t.me/animelaruzbektilid3"},
 //	//{ID: -1003316396409, Name: "anmelar_chat", Invite: "https://t.me/anmelar_chat"},
 //	{ID: -1003323161290, Name: "Manga Uzb", Invite: "https://t.me/Manga_uzbekcha26"},
 //	{ID: -1003411861509, Name: "Maxfiy Kanal", Invite: "https://t.me/+C0qmcf4ZHY83NmNi"},
+//	{ID: -1003227139819, Name: "Maxfiy Kanal", Invite: "https://t.me/+O3K3g71yc2cwYThi"},
 //}
 //
 //var (
@@ -46,6 +67,103 @@ package ko_di
 //	statsMutex  sync.RWMutex
 //	searchStats = make(map[string]int)
 //)
+//
+//var (
+//	vipUsers = make(map[int64]bool)
+//	vipMutex sync.RWMutex
+//)
+//
+//func saveVips() {
+//	vipMutex.RLock()
+//	data, _ := json.Marshal(vipUsers)
+//	vipMutex.RUnlock()
+//	_ = os.WriteFile("vips.json", data, 0644)
+//}
+//
+//func loadVips() {
+//	file, err := os.ReadFile("vips.json")
+//	if err != nil {
+//		return
+//	}
+//	vipMutex.Lock()
+//	_ = json.Unmarshal(file, &vipUsers)
+//	vipMutex.Unlock()
+//}
+//
+//// --- RELATIVE TIME PARSER ---
+//func parseRelativeTime(input string) (time.Time, error) {
+//	now := time.Now()
+//	input = strings.TrimSpace(strings.ToLower(input))
+//	if len(input) < 2 {
+//		return time.Time{}, fmt.Errorf("invalid input")
+//	}
+//
+//	unit := input[len(input)-1:] // oxirgi harf: s/m/h/d
+//	numStr := input[:len(input)-1]
+//
+//	num, err := strconv.Atoi(numStr)
+//	if err != nil {
+//		return time.Time{}, err
+//	}
+//
+//	var dur time.Duration
+//	switch unit {
+//	case "s":
+//		dur = time.Duration(num) * time.Second
+//	case "m":
+//		dur = time.Duration(num) * time.Minute
+//	case "h":
+//		dur = time.Duration(num) * time.Hour
+//	case "d":
+//		dur = time.Duration(num) * 24 * time.Hour
+//	default:
+//		return time.Time{}, fmt.Errorf("unknown unit")
+//	}
+//
+//	return now.Add(dur), nil
+//}
+//
+//// --- SCHEDULE POST FUNCTION ---
+//func schedulePost(bot *tele.Bot, post *ScheduledPost) {
+//	delay := time.Until(post.SendTime)
+//	if delay <= 0 {
+//		log.Println("❌ Vaqt o‘tib ketgan")
+//		return
+//	}
+//
+//	time.AfterFunc(delay, func() {
+//		for _, chatID := range post.ChatIDs {
+//			sendScheduledContent(bot, chatID, post.Content)
+//			time.Sleep(50 * time.Millisecond)
+//		}
+//		log.Println("⏰ Rejalashtirilgan post yuborildi:", post.ID)
+//
+//		// postni o'chirish
+//		scheduleMutex.Lock()
+//		delete(scheduledPosts, post.ID)
+//		scheduleMutex.Unlock()
+//	})
+//}
+//
+//// --- SEND CONTENT FUNCTION ---
+//func sendScheduledContent(bot *tele.Bot, chatID int64, item ContentItem) {
+//	chat := &tele.Chat{ID: chatID}
+//
+//	switch item.Kind {
+//	case "text":
+//		bot.Send(chat, item.Text)
+//	case "photo":
+//		bot.Send(chat, &tele.Photo{
+//			File:    tele.File{FileID: item.FileID},
+//			Caption: item.Text,
+//		})
+//	case "video":
+//		bot.Send(chat, &tele.Video{
+//			File:    tele.File{FileID: item.FileID},
+//			Caption: item.Text,
+//		})
+//	}
+//}
 //
 //func updateUserActivity(userID int64) {
 //	statsMutex.Lock()
@@ -105,21 +223,34 @@ package ko_di
 //func isAdmin(userID int64) bool { return admins[userID] }
 //
 //func notAllowedChannels(b *tele.Bot, userID int64) []ChannelInfo {
+//	vipMutex.RLock()
+//	isVip := vipUsers[userID]
+//	vipMutex.RUnlock()
+//
+//	if isVip {
+//		return nil
+//	}
+//
 //	var missing []ChannelInfo
 //	for _, ch := range myChannels {
 //		chat := &tele.Chat{ID: ch.ID}
+//
 //		member, err := b.ChatMemberOf(chat, &tele.User{ID: userID})
+//
 //		if err == nil && (member.Role == tele.Member || member.Role == tele.Administrator || member.Role == tele.Creator) {
 //			continue
 //		}
+//
 //		requestMutex.RLock()
 //		userReqs := pendingRequests[userID]
 //		hasRequested := userReqs != nil && userReqs[ch.ID]
 //		requestMutex.RUnlock()
+//
 //		if !hasRequested {
 //			missing = append(missing, ch)
 //		}
 //	}
+//
 //	return missing
 //}
 //
@@ -134,23 +265,92 @@ package ko_di
 //		log.Fatal(err)
 //	}
 //
-//	// --- MENYULAR ---
 //	menu := &tele.ReplyMarkup{ResizeKeyboard: true}
 //	menu.Reply(menu.Row(menu.Text("Animelar")), menu.Row(menu.Text("🧩 help")))
 //
+//	loadVips()
 //	adminMenu := &tele.ReplyMarkup{}
-//	btnBroadcast := adminMenu.Data("📢 Reklama yuborish", "admin_broadcast")
-//	btnStats := adminMenu.Data("📊 Statistika", "admin_stats")
+//	btnSchedule := adminMenu.Data("⏰ Rejalashtirilgan post", "admin_schedule")
+//	btnSettings := adminMenu.Data("⚙️ Sozlamalar", "admin_settings")
 //
-//	// --- ADMIN HANDLERLARI ---
+//	btnBroadcast := adminMenu.Data("📢 Reklama", "admin_broadcast")
+//	btnStats := adminMenu.Data("📊 Statistika", "admin_stats")
+//	btnVip := adminMenu.Data("🌟 VIP Boshqaruv", "admin_vip_main")
+//
+//	// VIP Menyu
+//	vipSubMenu := &tele.ReplyMarkup{}
+//	btnAddVip := vipSubMenu.Data("➕ Qo'shish", "vip_add")
+//	btnDelVip := vipSubMenu.Data("➖ O'chirish", "vip_del")
+//	btnListVip := vipSubMenu.Data("📜 Ro'yxat", "vip_list")
+//	btnBackAdmin := vipSubMenu.Data("⬅️ Orqaga", "back_admin")
+//
+//	// ===== ADMIN PANEL =====
 //	b.Handle("/admin", func(c tele.Context) error {
 //		if !isAdmin(c.Sender().ID) {
 //			return nil
 //		}
-//		adminMenu.Inline(adminMenu.Row(btnBroadcast, btnStats))
-//		return c.Send("👨‍💻 **Admin Boshqaruv Paneli:**", adminMenu, tele.ModeMarkdown)
+//
+//		adminMenu.Inline(
+//			adminMenu.Row(btnSchedule, btnSettings),
+//			adminMenu.Row(btnBroadcast, btnStats),
+//			adminMenu.Row(btnVip),
+//		)
+//
+//		return c.Send("👨‍💻 *Admin Panel*", adminMenu, tele.ModeMarkdown)
 //	})
 //
+//	// ===== VIP MENU =====
+//	b.Handle(&btnVip, func(c tele.Context) error {
+//		vipSubMenu.Inline(
+//			vipSubMenu.Row(btnAddVip, btnDelVip),
+//			vipSubMenu.Row(btnListVip),
+//			vipSubMenu.Row(btnBackAdmin),
+//		)
+//
+//		return c.Edit("🌟 *VIP foydalanuvchilarni boshqarish*", vipSubMenu, tele.ModeMarkdown)
+//	})
+//	b.Handle(&btnSchedule, func(c tele.Context) error {
+//		adminState[c.Sender().ID] = "wait_schedule_time"
+//		return c.Send(
+//			"⏰ *Post yuborish vaqtini kiriting*\n\n"+
+//				"Masalan:\n"+
+//				"`10s` – 10 soniya\n"+
+//				"`10m` – 10 minut\n"+
+//				"`3h` – 3 soat\n"+
+//				"`2d` – 2 kun",
+//			tele.ModeMarkdown,
+//		)
+//	})
+//	// ===== 🔙 ORQAGA (TO‘G‘RI USUL) =====
+//	b.Handle(&btnBackAdmin, func(c tele.Context) error {
+//		adminMenu.Inline(
+//			adminMenu.Row(btnBroadcast, btnStats),
+//			adminMenu.Row(btnVip),
+//		)
+//
+//		return c.Edit("👨‍💻 *Admin Panel*", adminMenu, tele.ModeMarkdown)
+//	})
+//
+//	// VIP qo'shish/o'chirish holatlari
+//	b.Handle(&btnAddVip, func(c tele.Context) error {
+//		adminState[c.Sender().ID] = "wait_vip_add"
+//		return c.Send("🆔 VIP qilmoqchi bo'lgan foydalanuvchi ID sini yuboring:")
+//	})
+//
+//	b.Handle(&btnDelVip, func(c tele.Context) error {
+//		adminState[c.Sender().ID] = "wait_vip_del"
+//		return c.Send("🆔 VIP-dan olib tashlamoqchi bo'lgan foydalanuvchi ID sini yuboring:")
+//	})
+//
+//	b.Handle(&btnListVip, func(c tele.Context) error {
+//		vipMutex.RLock()
+//		text := "🌟 VIP Foydalanuvchilar ro'yxati:\n\n"
+//		for id := range vipUsers {
+//			text += fmt.Sprintf("👤 ` %d `\n", id)
+//		}
+//		vipMutex.RUnlock()
+//		return c.Send(text, tele.ModeMarkdown)
+//	})
 //	b.Handle(&btnBroadcast, func(c tele.Context) error {
 //		adminState[c.Sender().ID] = "waiting_for_ad"
 //		return c.Send("📥 Reklama xabarini yuboring. (Rasm, video yoki matn)")
@@ -213,8 +413,33 @@ package ko_di
 //				return sendSubMessage(c, missing)
 //			}
 //		}
+//		// handleAll funksiyasi ichida:
+//		if isAdmin(c.Sender().ID) {
+//			state := adminState[c.Sender().ID]
 //
-//		// 3. Matnli buyruqlar
+//			// VIP ID sini qabul qilish
+//			if state == "wait_vip_add" || state == "wait_vip_del" {
+//				var targetID int64
+//				_, err := fmt.Sscanf(c.Text(), "%d", &targetID)
+//				if err != nil {
+//					return c.Send("❌ Xato! Faqat raqamlardan iborat ID yuboring.")
+//				}
+//
+//				vipMutex.Lock()
+//				if state == "wait_vip_add" {
+//					vipUsers[targetID] = true
+//					c.Send(fmt.Sprintf("✅ %d muvaffaqiyatli VIP qilindi!", targetID))
+//				} else {
+//					delete(vipUsers, targetID)
+//					c.Send(fmt.Sprintf("🗑 %d VIP ro'yxatidan o'chirildi!", targetID))
+//				}
+//				vipMutex.Unlock()
+//
+//				saveVips()
+//				delete(adminState, c.Sender().ID)
+//				return nil
+//			}
+//		}
 //		text := c.Text()
 //		if text != "" {
 //			switch text {
@@ -228,6 +453,107 @@ package ko_di
 //				return anmelaruzb.Home(c)
 //			}
 //		}
+//		// ⛔ Vaqt kutilayotganda media yuborilmasin
+//		if isAdmin(c.Sender().ID) && adminState[c.Sender().ID] == "wait_schedule_time" {
+//			if c.Message().Media() != nil {
+//				return c.Send(
+//					"❌ Avval vaqtni yuboring!\n\n"+
+//						"Misollar:\n"+
+//						"`10s` – 10 soniya\n"+
+//						"`10m` – 10 minut\n"+
+//						"`3h` – 3 soat\n"+
+//						"`2d` – 2 kun",
+//					tele.ModeMarkdown,
+//				)
+//			}
+//		}
+//
+//		// ⏰ VAQTNI QABUL QILISH (teskari sanoq)
+//		if isAdmin(c.Sender().ID) && adminState[c.Sender().ID] == "wait_schedule_time" {
+//			sendTime, err := parseRelativeTime(c.Text())
+//			if err != nil {
+//				return c.Send(
+//					"❌ Format xato!\n\n"+
+//						"To‘g‘ri misollar:\n"+
+//						"`10s` – 10 soniya\n"+
+//						"`10m` – 10 minut\n"+
+//						"`3h` – 3 soat\n"+
+//						"`2d` – 2 kun",
+//					tele.ModeMarkdown,
+//				)
+//			}
+//
+//			adminState[c.Sender().ID] = "wait_schedule_content"
+//
+//			scheduleMutex.Lock()
+//			scheduledPosts[scheduleAutoID] = &ScheduledPost{
+//				ID:       scheduleAutoID,
+//				SendTime: sendTime,
+//			}
+//			scheduleAutoID++
+//			scheduleMutex.Unlock()
+//
+//			return c.Send("📨 Endi postni yuboring (matn / rasm / video)")
+//		}
+//
+//		// 📦 POST CONTENT QABUL QILISH
+//		if isAdmin(c.Sender().ID) && adminState[c.Sender().ID] == "wait_schedule_content" {
+//			var post *ScheduledPost
+//
+//			scheduleMutex.Lock()
+//			for _, p := range scheduledPosts {
+//				if p.Content.Kind == "" {
+//					post = p
+//					break
+//				}
+//			}
+//			scheduleMutex.Unlock()
+//
+//			if post == nil {
+//				return c.Send("❌ Xatolik. Qaytadan urinib ko‘ring.")
+//			}
+//
+//			// BARCHA OBUNACHILARNI QO‘SHISH
+//			statsMutex.RLock()
+//			for userID := range userJoined {
+//				post.ChatIDs = append(post.ChatIDs, userID)
+//			}
+//			statsMutex.RUnlock()
+//
+//			msg := c.Message()
+//
+//			if msg.Text != "" {
+//				post.Content = ContentItem{
+//					Kind: "text",
+//					Text: msg.Text,
+//				}
+//			} else if msg.Photo != nil {
+//				post.Content = ContentItem{
+//					Kind:   "photo",
+//					FileID: msg.Photo.FileID,
+//					Text:   msg.Caption,
+//				}
+//			} else if msg.Video != nil {
+//				post.Content = ContentItem{
+//					Kind:   "video",
+//					FileID: msg.Video.FileID,
+//					Text:   msg.Caption,
+//				}
+//			} else {
+//				return c.Send("❌ Noto‘g‘ri format. Matn, rasm yoki video yuboring.")
+//			}
+//
+//			schedulePost(b, post)
+//			delete(adminState, c.Sender().ID)
+//
+//			return c.Send(
+//				fmt.Sprintf(
+//					"✅ Post rejalashtirildi!\n🕒 %s dan keyin yuboriladi",
+//					time.Until(post.SendTime).Round(time.Second),
+//				),
+//			)
+//		}
+//
 //		return anmelaruzb.Home(c)
 //	}
 //
@@ -271,44 +597,6 @@ package ko_di
 //	rows = append(rows, m.Row(m.Data("✅ Tekshirish", "check_sub")))
 //	m.Inline(rows...)
 //	return c.Send(text, m, tele.ModeHTML)
-//}
-//
-//func handleAllMessages(b *tele.Bot, c tele.Context) error {
-//	updateUserActivity(c.Sender().ID)
-//
-//	// ADMIN REKLAMA KUTAYOTGAN BO'LSA
-//	if isAdmin(c.Sender().ID) && adminState[c.Sender().ID] == "waiting_for_ad" {
-//		adminWaitingAd[c.Sender().ID] = c.Message()
-//
-//		confirmMarkup := &tele.ReplyMarkup{}
-//		btnConfirm := confirmMarkup.Data("✅ Tasdiqlash", "confirm_ad")
-//		btnCancel := confirmMarkup.Data("❌ Bekor qilish", "cancel_ad")
-//		confirmMarkup.Inline(confirmMarkup.Row(btnConfirm, btnCancel))
-//
-//		_ = c.Send("👇 **Reklama ko'rinishi:**")
-//		_, _ = b.Copy(c.Recipient(), c.Message())
-//		return c.Send("Yuqoridagi xabarni hamma foydalanuvchilarga yuboramizmi?", confirmMarkup)
-//	}
-//
-//	// OBUNA TEKSHIRUVI
-//	missing := notAllowedChannels(b, c.Sender().ID)
-//	if len(missing) > 0 {
-//		return sendSubMessage(c, missing)
-//	}
-//
-//	// BUYRUQLAR (Faqat matn bo'lsa ishlaydi)
-//	text := c.Text()
-//	if text != "" {
-//		switch text {
-//		case "Animelar", "/menu":
-//			return Menu.Home(c)
-//		case "🧩 help":
-//			return Help.Home(c)
-//		default:
-//			return anmelaruzb.Home(c)
-//		}
-//	}
-//	return nil
 //}
 //
 //func sendStatistics(c tele.Context) error {

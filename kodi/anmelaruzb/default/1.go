@@ -7,17 +7,42 @@ import (
 func Home(c tele.Context) error {
 	b := c.Bot()
 	channelID := int64(-1002974691269)
-	messageIDs := []int{2, 5}
+	messageIDs := []int{}
+	for i := 2; i < 30; i++ {
+		messageIDs = append(messageIDs, i)
+	}
 
 	for _, msgID := range messageIDs {
+
 		msg := &tele.Message{
 			ID:   msgID,
 			Chat: &tele.Chat{ID: channelID},
 		}
+
 		_, err := b.Copy(c.Sender(), msg)
 		if err != nil {
-			return c.Send("❌ Video olishda xatolik: " + err.Error())
+			// ❌ Xato bo‘lsa o‘sha xabarni tashlab keyingisiga o‘tadi
+			continue
 		}
 	}
+
 	return nil
 }
+
+//func Home(c tele.Context) error {
+//	b := c.Bot()
+//	channelID := int64(-1002974691269)
+//	messageIDs := []int{2, 9}
+//
+//	for _, msgID := range messageIDs {
+//		msg := &tele.Message{
+//			ID:   msgID,
+//			Chat: &tele.Chat{ID: channelID},
+//		}
+//		_, err := b.Copy(c.Sender(), msg)
+//		if err != nil {
+//			return c.Send("❌ Video olishda xatolik: " + err.Error())
+//		}
+//	}
+//	return nil
+//}

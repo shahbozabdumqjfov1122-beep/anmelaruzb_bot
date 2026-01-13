@@ -68,6 +68,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Kelajakkundaligi"
 	"namelaruzb_bot/kodi/anmelaruzb/KimMeniMalikaQildi"
 	"namelaruzb_bot/kodi/anmelaruzb/KokZindon"
+	"namelaruzb_bot/kodi/anmelaruzb/Konansehrnikoraoladigan"
 	"namelaruzb_bot/kodi/anmelaruzb/Kumushqirolning"
 	"namelaruzb_bot/kodi/anmelaruzb/LideylDunyosi"
 	"namelaruzb_bot/kodi/anmelaruzb/Lookism"
@@ -94,6 +95,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/NomsizXotira"
 	"namelaruzb_bot/kodi/anmelaruzb/OchkozBerserk"
 	"namelaruzb_bot/kodi/anmelaruzb/Ochkozbosek"
+	"namelaruzb_bot/kodi/anmelaruzb/OdamlarJinlarsolnomasi"
 	"namelaruzb_bot/kodi/anmelaruzb/Oddiyinsondanqahramonlikkacha"
 	"namelaruzb_bot/kodi/anmelaruzb/Olimkundaligi"
 	"namelaruzb_bot/kodi/anmelaruzb/Olmasqirolningkundalikhayoti"
@@ -162,6 +164,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Tahlilqilishqobiliyatigaega"
 	"namelaruzb_bot/kodi/anmelaruzb/TajribasizSenpai"
 	"namelaruzb_bot/kodi/anmelaruzb/TaktOpusTaqdir"
+	"namelaruzb_bot/kodi/anmelaruzb/TamonQaysiShaxsiyatta"
 	"namelaruzb_bot/kodi/anmelaruzb/TaqdirBuyukTartibMutlaqIblislarJabhasi"
 	"namelaruzb_bot/kodi/anmelaruzb/TaqdirJangKechasi"
 	"namelaruzb_bot/kodi/anmelaruzb/Taxtmuxri"
@@ -625,6 +628,12 @@ func Home(c tele.Context) error {
 		return Bosanijalbetib.Home(c)
 	case "205", "Oxirgi Chaqiruvchi":
 		return OxirgiChaqiruvchi.Home(c)
+	case "206", "Odamlar va Jinlar solnomasi":
+		return OdamlarJinlarsolnomasi.Home(c)
+	case "207", "Tamon Qaysi Shaxsiyatta":
+		return TamonQaysiShaxsiyatta.Home(c)
+	case "208", "Konan sehrni ko'ra oladigan sehrgar":
+		return Konansehrnikoraoladigan.Home(c)
 
 	//
 	//
