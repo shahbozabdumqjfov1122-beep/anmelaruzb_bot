@@ -1,13 +1,12 @@
-package QahramonBolishX
+package Qahramonlarsadosi
 
 import (
 	tele "gopkg.in/telebot.v4"
 )
 
-
 func Home(c tele.Context) error {
 	b := c.Bot()
-	channelID := int64(-1003243356409)
+	channelID := int64(-1003513258049)
 	messageIDs := []int{}
 	for i := 2; i < 30; i++ {
 		messageIDs = append(messageIDs, i)

@@ -121,7 +121,9 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/ParazitHayotSaboqlari"
 	"namelaruzb_bot/kodi/anmelaruzb/PariDumihaqidaafsona"
 	"namelaruzb_bot/kodi/anmelaruzb/Polatqaladagikabaneri"
+	"namelaruzb_bot/kodi/anmelaruzb/QORAOYqonliqurbonxona"
 	"namelaruzb_bot/kodi/anmelaruzb/QahramonBolishX"
+	"namelaruzb_bot/kodi/anmelaruzb/Qahramonlarsadosi"
 	"namelaruzb_bot/kodi/anmelaruzb/Qahramonningqaytishi"
 	"namelaruzb_bot/kodi/anmelaruzb/Qalqonqahromoni"
 	"namelaruzb_bot/kodi/anmelaruzb/Qaytatugilganaristokratningmisli"
@@ -204,6 +206,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/dahoshahzodanimamlakat"
 	_default "namelaruzb_bot/kodi/anmelaruzb/default"
 	"namelaruzb_bot/kodi/anmelaruzb/iblislarqotili"
+	"namelaruzb_bot/kodi/anmelaruzb/qahramonlikdanvoskechib"
 	"namelaruzb_bot/kodi/anmelaruzb/qipqizilragna"
 	"namelaruzb_bot/kodi/anmelaruzb/tahlilashqobilyati"
 	"namelaruzb_bot/kodi/anmelaruzb/tanyangurushyilnomalari"
@@ -634,6 +637,12 @@ func Home(c tele.Context) error {
 		return TamonQaysiShaxsiyatta.Home(c)
 	case "208", "Konan sehrni ko'ra oladigan sehrgar":
 		return Konansehrnikoraoladigan.Home(c)
+	case "209", "qahramonlikdan vos kechib":
+		return qahramonlikdanvoskechib.Home(c)
+	case "210", "QORA OY: qonli  qurbonxona":
+		return QORAOYqonliqurbonxona.Home(c)
+	case "211", "Qahramonlar sadosi":
+		return Qahramonlarsadosi.Home(c)
 
 	//
 	//

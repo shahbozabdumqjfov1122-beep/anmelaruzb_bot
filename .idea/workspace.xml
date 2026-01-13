@@ -5,22 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8fcf7f-66fd-49b5-932d-7110c9820c5e" name="Changes" comment="izoy yozishga erindim.">
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Konansehrnikoraoladigan/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/OdamlarJinlarsolnomasi/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/TamonQaysiShaxsiyatta/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/QORAOYqonliqurbonxona/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Qahramonlarsadosi/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/qahramonlikdanvoskechib/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodi/kerakli/5.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/anmelar.exe" beforeDir="false" afterPath="$PROJECT_DIR$/anmelar.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/kerakli/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/kerakli/2.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/3.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/kerakli/3.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/4.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/kerakli/4.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/5.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/5.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/5.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/6.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/NomsizXotira/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/NomsizXotira/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/OchkozBerserk/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/OchkozBerserk/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Ochkozbosek/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Ochkozbosek/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/OxirgiChaqiruvchi/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/OxirgiChaqiruvchi/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/default/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/default/1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/Polatqaladagikabaneri/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/Polatqaladagikabaneri/1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/QahramonBolishX/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/QahramonBolishX/1.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +74,7 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "D:/Dars1/telegram botlar/anmelar/kodi/anmelaruzb/Konansehrnikoraoladigan",
+    "last_opened_file_path": "D:/Dars1/telegram botlar/anmelar/kodi/anmelaruzb/Qahramonlarsadosi",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -94,11 +88,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\Menu" />
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\OxirgiChaqiruvchi" />
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Bosanijalbetib" />
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Zanjirliqul" />
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Chitosekunvaramuna" />
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Qahramonlarsadosi" />
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\Qahramonlar sadosi" />
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\QORAOYqonliqurbonxona" />
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\qahramonlikdanvoskechib" />
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\kerakli" />

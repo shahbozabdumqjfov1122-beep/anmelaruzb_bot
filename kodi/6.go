@@ -38,13 +38,16 @@ type ChannelInfo struct {
 	Name   string
 	Invite string
 }
+
 type ScheduledPost struct {
-	ID       int
-	AdminID  int64 // Kim rejalashtirganini bilish uchun
-	Content  ContentItem
+	ID      int
+	AdminID int64 // Kim rejalashtirganini bilish uchun
+	Content ContentItem
+
 	SendTime time.Time
 	ChatIDs  []int64
 }
+
 type ContentItem struct {
 	Kind   string // text | photo | video
 	FileID string // rasm/video uchun
@@ -89,7 +92,6 @@ func loadVips() {
 	vipMutex.Unlock()
 }
 
-// --- RELATIVE TIME PARSER ---
 func parseRelativeTime(input string) (time.Time, error) {
 	now := time.Now()
 	input = strings.TrimSpace(strings.ToLower(input))
@@ -122,36 +124,73 @@ func parseRelativeTime(input string) (time.Time, error) {
 	return now.Add(dur), nil
 }
 
-// --- SCHEDULE POST FUNCTION ---
 func schedulePost(bot *tele.Bot, post *ScheduledPost) {
+	// 1. Kutish vaqtini hisoblaymiz
 	delay := time.Until(post.SendTime)
 	if delay <= 0 {
 		delay = 1 * time.Second
 	}
 
+	// 2. Taymerni ishga tushiramiz
 	time.AfterFunc(delay, func() {
+		// --- BEKOR QILINGANLIGINI TEKSHIRISH ---
+		scheduleMutex.Lock()
+		_, exists := scheduledPosts[post.ID]
+		scheduleMutex.Unlock()
+
+		// Agar admin "Bekor qilish" tugmasini bosgan bo'lsa, post mapdan o'chirilgan bo'ladi
+		if !exists {
+			fmt.Printf("🚫 Post (ID: %d) bekor qilingan, yuborish to'xtatildi.\n", post.ID)
+			return
+		}
+		// ---------------------------------------
+
 		count := 0
+		total := len(post.ChatIDs)
+
+		fmt.Printf("\n🚀 Post yuborish boshlandi. Jami: %d kishiga\n", total)
+
+		// 3. Foydalanuvchilarga yuborish loopi
 		for _, chatID := range post.ChatIDs {
+			// Yuborish jarayonida ham post bekor qilinganini tekshirish (ixtiyoriy, juda katta bazalar uchun)
 			err := sendScheduledContent(bot, chatID, post.Content)
 			if err == nil {
 				count++
+			} else {
+				fmt.Printf("⚠️ Xato (ChatID %d): %v\n", chatID, err)
 			}
-			time.Sleep(33 * time.Millisecond) // Telegram limiti uchun
+
+			// Telegram limiti: ~30 msg/sec
+			time.Sleep(35 * time.Millisecond)
 		}
 
-		// --- ADMINGA HISOBOT YUBORISH ---
-		reportMsg := fmt.Sprintf("✅ **Rejalashtirilgan post tugatildi!**\n\n📊 Yuborildi: %d kishiga", count)
-		bot.Send(tele.ChatID(post.AdminID), reportMsg, tele.ModeMarkdown)
-		// --------------------------------
+		// 4. ADMINGA HISOBOT YUBORISH
+		reportMsg := fmt.Sprintf(
+			"✅ <b>Rejalashtirilgan post tugatildi!</b>\n\n"+
+				"📊 <b>Natija:</b>\n"+
+				"🟢 Muvaffaqiyatli: <code>%d</code>\n"+
+				"🔴 Xatolik: <code>%d</code>\n"+
+				"🏁 Jami: <code>%d</code>",
+			count, total-count, total,
+		)
 
+		fmt.Printf("📢 Adminga hisobot yuborilmoqda... (AdminID: %d)\n", post.AdminID)
+
+		// Admin ID 0 bo'lmasligi kerak (yuqoridagi handleAll da to'g'irladik)
+		_, err := bot.Send(tele.ChatID(post.AdminID), reportMsg, tele.ModeHTML)
+		if err != nil {
+			fmt.Printf("❌ Admin xabari ketmadi (AdminID %d): %v\n", post.AdminID, err)
+		}
+
+		// 5. Xotirani tozalash
 		scheduleMutex.Lock()
 		delete(scheduledPosts, post.ID)
 		scheduleMutex.Unlock()
+
+		fmt.Println("🏁 Jarayon yakunlandi.")
 	})
 }
 
-// --- SEND CONTENT FUNCTION ---
-// SEND CONTENT - Endi error qaytaradi
 func sendScheduledContent(bot *tele.Bot, chatID int64, item ContentItem) error {
 	recipient := tele.ChatID(chatID)
 	var err error
@@ -170,10 +209,11 @@ func sendScheduledContent(bot *tele.Bot, chatID int64, item ContentItem) error {
 			Caption: item.Text,
 		})
 	default:
-		return fmt.Errorf("noma'lum kontent turi")
+		return fmt.Errorf("noma'lum kontent turi: %s", item.Kind)
 	}
 	return err
 }
+
 func updateUserActivity(userID int64) {
 	statsMutex.Lock()
 	now := time.Now()
@@ -397,7 +437,40 @@ func Bot() {
 		delete(adminState, c.Sender().ID)
 		return c.Edit("❌ Reklama bekor qilindi.")
 	})
+	b.Handle(tele.OnCallback, func(c tele.Context) error {
+		data := c.Callback().Data
 
+		// 1. Qaysi tugma bosilganini aniqlaymiz
+		if strings.Contains(data, "cancel_post") {
+			// Telebot data formati: "\funique|data"
+			parts := strings.Split(data, "|")
+			if len(parts) < 2 {
+				return c.Respond(&tele.CallbackResponse{Text: "❌ Xatolik: ID topilmadi"})
+			}
+
+			// ID ni olamiz
+			postID, err := strconv.Atoi(parts[1])
+			if err != nil {
+				return c.Respond(&tele.CallbackResponse{Text: "❌ Noto'g'ri ID"})
+			}
+
+			scheduleMutex.Lock()
+			// 2. Post hali mapda bormi (yuborilmaganmi)?
+			if _, exists := scheduledPosts[postID]; exists {
+				delete(scheduledPosts, postID) // Mapdan o'chirish = Yuborishni to'xtatish
+				scheduleMutex.Unlock()
+
+				// Tugmani o'chirib, matnni o'zgartiramiz
+				c.Respond(&tele.CallbackResponse{Text: "✅ Muvaffaqiyatli bekor qilindi"})
+				return c.Edit("🗑 <b>Rejalashtirilgan post bekor qilindi va o'chirildi!</b>", tele.ModeHTML)
+			}
+			scheduleMutex.Unlock()
+
+			return c.Respond(&tele.CallbackResponse{Text: "⚠️ Kech qoldingiz yoki post topilmadi!"})
+		}
+
+		return c.Respond() // Callbackni yopish (soat belgisi ketishi uchun)
+	})
 	// --- ASOSIY XABARLARNI QABUL QILISH ---
 	handleAll := func(c tele.Context) error {
 		updateUserActivity(c.Sender().ID)
@@ -458,6 +531,7 @@ func Bot() {
 				scheduleMutex.Lock()
 				scheduledPosts[scheduleAutoID] = &ScheduledPost{
 					ID:       scheduleAutoID,
+					AdminID:  userID, // <--- ADMIN ID MANA SHU YERDA SAQLANADI
 					SendTime: sendTime,
 				}
 				scheduleAutoID++
@@ -470,8 +544,9 @@ func Bot() {
 			if state == "wait_schedule_content" {
 				var post *ScheduledPost
 				scheduleMutex.Lock()
+				// Hali kontenti bo'sh bo'lgan va ushbu admin yaratgan postni qidiramiz
 				for _, p := range scheduledPosts {
-					if p.Content.Kind == "" {
+					if p.Content.Kind == "" && p.AdminID == userID {
 						post = p
 						break
 					}
@@ -479,11 +554,12 @@ func Bot() {
 				scheduleMutex.Unlock()
 
 				if post == nil {
-					return c.Send("❌ Xatolik. Qaytadan urinib ko‘ring.")
+					return c.Send("❌ Xatolik: Rejalashtirilgan vaqt topilmadi. Qaytadan urinib ko‘ring.")
 				}
 
 				// Obunachilarni yig'ish
 				statsMutex.RLock()
+				post.ChatIDs = []int64{}
 				for uid := range userJoined {
 					post.ChatIDs = append(post.ChatIDs, uid)
 				}
@@ -497,16 +573,27 @@ func Bot() {
 				} else if msg.Video != nil {
 					post.Content = ContentItem{Kind: "video", FileID: msg.Video.FileID, Text: msg.Caption}
 				} else {
-					return c.Send("❌ Noto‘g‘ri format.")
+					return c.Send("❌ Noto‘g‘ri format. Faqat matn, rasm yoki video yuboring.")
 				}
 
-				schedulePost(b, post)
+				// Endi postni haqiqiy timerga topshiramiz
+				go schedulePost(b, post)
+
 				delete(adminState, userID)
-				return c.Send(fmt.Sprintf("✅ Rejalashtirildi! 🕒 %s dan keyin yuboriladi", time.Until(post.SendTime).Round(time.Second)))
+
+				// --- BEKOR QILISH TUGMASINI YARATISH ---
+				selector := &tele.ReplyMarkup{}
+				// Callback ma'lumotiga post ID sini biriktiramiz
+				btnCancel := selector.Data("❌ Bekor qilish", "cancel_post", fmt.Sprintf("%d", post.ID))
+				selector.Inline(selector.Row(btnCancel))
+
+				return c.Send(fmt.Sprintf("✅ Rejalashtirildi!\n📊 Obunachilar soni: %d\n🕒 %s dan keyin yuboriladi",
+					len(post.ChatIDs),
+					time.Until(post.SendTime).Round(time.Second)), selector, tele.ModeHTML)
 			}
 		}
 
-		// 2. Oddiy foydalanuvchilar va buyruqlar uchun (Hech qanday holat bo'lmasa)
+		// 2. Oddiy foydalanuvchilar va buyruqlar uchun
 		if !isAdmin(userID) {
 			missing := notAllowedChannels(b, userID)
 			if len(missing) > 0 {
@@ -523,11 +610,10 @@ func Bot() {
 		case "🧩 help":
 			return Help.Home(c)
 		default:
-			// Agar hech qanday shartga tushmasa va admin holatida bo'lmasa
+			// Agar admin holatida bo'lmasa va hech qanday shartga tushmasa
 			return anmelaruzb.Home(c)
 		}
-	}
-	// Faqat shu ikkita handler yetarli:
+	} // Faqat shu ikkita handler yetarli:
 	b.Handle(tele.OnText, handleAll)
 	b.Handle(tele.OnMedia, handleAll)
 
