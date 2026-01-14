@@ -34,6 +34,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Davolashsehridan"
 	"namelaruzb_bot/kodi/anmelaruzb/Davolovchiqahramon"
 	"namelaruzb_bot/kodi/anmelaruzb/Daydiitlarningbuyugi"
+	"namelaruzb_bot/kodi/anmelaruzb/Detektivallaqachonolgan"
 	"namelaruzb_bot/kodi/anmelaruzb/Detektivallaqchon"
 	"namelaruzb_bot/kodi/anmelaruzb/DoktorElizahayotlarni"
 	"namelaruzb_bot/kodi/anmelaruzb/Doktorstoun"
@@ -643,6 +644,8 @@ func Home(c tele.Context) error {
 		return QORAOYqonliqurbonxona.Home(c)
 	case "211", "Qahramonlar sadosi":
 		return Qahramonlarsadosi.Home(c)
+	case "212", "Detektiv allaqachon o'lgan":
+		return Detektivallaqachonolgan.Home(c)
 
 	//
 	//
