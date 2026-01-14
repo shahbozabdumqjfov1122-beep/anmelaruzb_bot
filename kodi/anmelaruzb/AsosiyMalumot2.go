@@ -207,6 +207,19 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/dahoshahzodanimamlakat"
 	_default "namelaruzb_bot/kodi/anmelaruzb/default"
 	"namelaruzb_bot/kodi/anmelaruzb/iblislarqotili"
+	"namelaruzb_bot/kodi/anmelaruzb/n213"
+	"namelaruzb_bot/kodi/anmelaruzb/n214"
+	"namelaruzb_bot/kodi/anmelaruzb/n215"
+	"namelaruzb_bot/kodi/anmelaruzb/n216"
+	"namelaruzb_bot/kodi/anmelaruzb/n217"
+	"namelaruzb_bot/kodi/anmelaruzb/n218"
+	"namelaruzb_bot/kodi/anmelaruzb/n219"
+	"namelaruzb_bot/kodi/anmelaruzb/n220"
+	"namelaruzb_bot/kodi/anmelaruzb/n221"
+	"namelaruzb_bot/kodi/anmelaruzb/n222"
+	"namelaruzb_bot/kodi/anmelaruzb/n223"
+	"namelaruzb_bot/kodi/anmelaruzb/n224"
+	"namelaruzb_bot/kodi/anmelaruzb/n225"
 	"namelaruzb_bot/kodi/anmelaruzb/qahramonlikdanvoskechib"
 	"namelaruzb_bot/kodi/anmelaruzb/qipqizilragna"
 	"namelaruzb_bot/kodi/anmelaruzb/tahlilashqobilyati"
@@ -646,6 +659,32 @@ func Home(c tele.Context) error {
 		return Qahramonlarsadosi.Home(c)
 	case "212", "Detektiv allaqachon o'lgan":
 		return Detektivallaqachonolgan.Home(c)
+	case "213", "O'zga dunyoda smartfonim bilan":
+		return n213.Home(c)
+	case "214":
+		return n214.Home(c)
+	case "215":
+		return n215.Home(c)
+	case "216":
+		return n216.Home(c)
+	case "217":
+		return n217.Home(c)
+	case "218":
+		return n218.Home(c)
+	case "219":
+		return n219.Home(c)
+	case "220":
+		return n220.Home(c)
+	case "221":
+		return n221.Home(c)
+	case "222":
+		return n222.Home(c)
+	case "223":
+		return n223.Home(c)
+	case "224":
+		return n224.Home(c)
+	case "225":
+		return n225.Home(c)
 
 	//
 	//
