@@ -5,26 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8fcf7f-66fd-49b5-932d-7110c9820c5e" name="Changes" comment="izoy yozishga erindim.">
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/n213/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/n214/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/n215/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/n216/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/n217/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/n218/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/n219/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/n220/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/n221/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/n222/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/n223/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/n224/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/anmelaruzb/n225/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kodi/kerakli/6.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/1.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/anmelar.exe" beforeDir="false" afterPath="$PROJECT_DIR$/anmelar.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/6.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/7.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stats.json" beforeDir="false" afterPath="$PROJECT_DIR$/stats.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +22,12 @@
   </component>
   <component name="GOROOT" url="file://C:/Program Files/Go" />
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
@@ -105,9 +93,9 @@
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\n217" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\n215" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\kerakli" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi" />
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\n215" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb" />
     </key>
   </component>
