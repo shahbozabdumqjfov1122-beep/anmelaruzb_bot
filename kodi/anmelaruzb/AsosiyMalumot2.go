@@ -661,7 +661,7 @@ func Home(c tele.Context) error {
 		return Detektivallaqachonolgan.Home(c)
 	case "213", "O'zga dunyoda smartfonim bilan":
 		return n213.Home(c)
-	case "214":
+	case "214", "Friren So'ngi manzilga kuzatuvchi":
 		return n214.Home(c)
 	case "215":
 		return n215.Home(c)

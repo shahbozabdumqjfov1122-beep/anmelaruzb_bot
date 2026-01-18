@@ -58,8 +58,9 @@ package kerakli
 //var myChannels = []ChannelInfo{
 //	{ID: -1003050934981, Name: "anmelaruzb", Invite: "https://t.me/anmelaruzb"},
 //	{ID: -1003323161290, Name: "Manga Uzb", Invite: "https://t.me/Manga_uzbekcha26"},
-//	{ID: -1003411861509, Name: "Maxfiy Kanal", Invite: "https://t.me/+C0qmcf4ZHY83NmNi"},
+//	{ID: -1003540484817, Name: "Maxfiy Kanal", Invite: "https://t.me/+mbBXFN4zFHAyMDQy"},
 //	{ID: -1003588929805, Name: "Maxfiy Kanal", Invite: "https://t.me/+CPtYbpger5U0YjNi"},
+//	//{ID: -1003411861509, Name: "Maxfiy Kanal", Invite: "https://t.me/+C0qmcf4ZHY83NmNi"},
 //	//{ID: -1003276785399, Name: "animelaruzbektilid3", Invite: "https://t.me/animelaruzbektilid3"},
 //	//{ID: -1003316396409, Name: "anmelar_chat", Invite: "https://t.me/anmelar_chat"},
 //	//{ID: -1003227139819, Name: "Maxfiy Kanal", Invite: "https://t.me/+O3K3g71yc2cwYThi"},
@@ -347,7 +348,7 @@ package kerakli
 //			adminMenu.Row(btnVip),
 //		)
 //
-//		return c.Send("👨‍💻 *Admin Panel*", adminMenu, tele.ModeMarkdown)
+//		return c.Send("👨‍💻 Admin Panel", adminMenu, tele.ModeMarkdown)
 //	})
 //
 //	// ===== VIP MENU =====
@@ -375,6 +376,7 @@ package kerakli
 //	// ===== 🔙 ORQAGA (TO‘G‘RI USUL) =====
 //	b.Handle(&btnBackAdmin, func(c tele.Context) error {
 //		adminMenu.Inline(
+//			adminMenu.Row(btnSchedule, btnSettings),
 //			adminMenu.Row(btnBroadcast, btnStats),
 //			adminMenu.Row(btnVip),
 //		)

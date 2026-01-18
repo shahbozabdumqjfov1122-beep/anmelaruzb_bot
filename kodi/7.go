@@ -1,4 +1,4 @@
-package ko_di
+package kodi
 
 import (
 	"encoding/json"
@@ -56,9 +56,11 @@ type ContentItem struct {
 
 var myChannels = []ChannelInfo{
 	{ID: -1003050934981, Name: "anmelaruzb", Invite: "https://t.me/anmelaruzb"},
-	{ID: -1003323161290, Name: "Manga Uzb", Invite: "https://t.me/Manga_uzbekcha26"},
-	{ID: -1003411861509, Name: "Maxfiy Kanal", Invite: "https://t.me/+C0qmcf4ZHY83NmNi"},
 	{ID: -1003588929805, Name: "Maxfiy Kanal", Invite: "https://t.me/+CPtYbpger5U0YjNi"},
+	{ID: -1003540484817, Name: "Maxfiy Kanal", Invite: "https://t.me/+mbBXFN4zFHAyMDQy"},
+	{ID: -1003532028606, Name: "Maxfiy Kanal", Invite: "https://t.me/+4u-B783Cgvs5YWNi"},
+	//{ID: -1003323161290, Name: "Manga Uzb", Invite: "https://t.me/Manga_uzbekcha26"},
+	//{ID: -1003411861509, Name: "Maxfiy Kanal", Invite: "https://t.me/+C0qmcf4ZHY83NmNi"},
 	//{ID: -1003276785399, Name: "animelaruzbektilid3", Invite: "https://t.me/animelaruzbektilid3"},
 	//{ID: -1003316396409, Name: "anmelar_chat", Invite: "https://t.me/anmelar_chat"},
 	//{ID: -1003227139819, Name: "Maxfiy Kanal", Invite: "https://t.me/+O3K3g71yc2cwYThi"},
@@ -322,7 +324,6 @@ func Bot() {
 	adminMenu := &tele.ReplyMarkup{}
 	btnSchedule := adminMenu.Data("⏰ Rejalashtirilgan post", "admin_schedule")
 	btnSettings := adminMenu.Data("⚙️ Sozlamalar", "admin_settings")
-
 	btnBroadcast := adminMenu.Data("📢 Reklama", "admin_broadcast")
 	btnStats := adminMenu.Data("📊 Statistika", "admin_stats")
 	btnVip := adminMenu.Data("🌟 VIP Boshqaruv", "admin_vip_main")
@@ -359,6 +360,15 @@ func Bot() {
 
 		return c.Edit("🌟 *VIP foydalanuvchilarni boshqarish*", vipSubMenu, tele.ModeMarkdown)
 	})
+	b.Handle(&btnBackAdmin, func(c tele.Context) error {
+		adminMenu.Inline(
+			adminMenu.Row(btnSchedule, btnSettings),
+			adminMenu.Row(btnBroadcast, btnStats),
+			adminMenu.Row(btnVip),
+		)
+
+		return c.Edit("👨‍💻 Admin Panel", adminMenu, tele.ModeMarkdown)
+	})
 	b.Handle(&btnSchedule, func(c tele.Context) error {
 		adminState[c.Sender().ID] = "wait_schedule_time"
 		return c.Send(
@@ -371,16 +381,6 @@ func Bot() {
 			tele.ModeMarkdown,
 		)
 	})
-	// ===== 🔙 ORQAGA (TO‘G‘RI USUL) =====
-	b.Handle(&btnBackAdmin, func(c tele.Context) error {
-		adminMenu.Inline(
-			adminMenu.Row(btnBroadcast, btnStats),
-			adminMenu.Row(btnVip),
-		)
-
-		return c.Edit("👨‍💻 *Admin Panel*", adminMenu, tele.ModeMarkdown)
-	})
-
 	// VIP qo'shish/o'chirish holatlari
 	b.Handle(&btnAddVip, func(c tele.Context) error {
 		adminState[c.Sender().ID] = "wait_vip_add"
@@ -411,29 +411,39 @@ func Bot() {
 	})
 
 	// Reklamani tasdiqlash
+	// Reklamani tasdiqlash qismini shunga almashtiring:
 	b.Handle(&tele.Btn{Unique: "confirm_ad"}, func(c tele.Context) error {
 		adMsg := adminWaitingAd[c.Sender().ID]
 		if adMsg == nil {
 			return c.Edit("❌ Xabar topilmadi.")
 		}
 
-		go func() {
+		// 1. Foydalanuvchilar ro'yxatini xotiraga nusxalab olamiz (Copying slice)
+		var usersToBroadcast []int64
+		statsMutex.RLock()
+		for userID := range userJoined {
+			usersToBroadcast = append(usersToBroadcast, userID)
+		}
+		statsMutex.RUnlock() // Qulfni darhol ochamiz!
+
+		// 2. Reklamani alohida goroutine ichida yuboramiz
+		go func(msg *tele.Message, targets []int64) {
 			count := 0
-			statsMutex.RLock()
-			for userID := range userJoined {
-				_, err := b.Copy(tele.ChatID(userID), adMsg)
+			for _, userID := range targets {
+				_, err := b.Copy(tele.ChatID(userID), msg)
 				if err == nil {
 					count++
 				}
-				time.Sleep(33 * time.Millisecond)
+				// Telegram cheklovlari (Limit) uchun kichik pauza
+				time.Sleep(35 * time.Millisecond)
 			}
-			statsMutex.RUnlock()
 			b.Send(c.Sender(), fmt.Sprintf("✅ Reklama tugatildi! %d kishiga yuborildi.", count))
-		}()
-		delete(adminState, c.Sender().ID)
-		return c.Edit("🚀 Reklama tarqatish boshlandi...")
-	})
+		}(adMsg, usersToBroadcast)
 
+		delete(adminState, c.Sender().ID)
+		delete(adminWaitingAd, c.Sender().ID) // Xotirani tozalash
+		return c.Edit("🚀 Reklama tarqatish boshlandi. Bot boshqa buyruqlarni qabul qilaveradi.")
+	})
 	b.Handle(&tele.Btn{Unique: "cancel_ad"}, func(c tele.Context) error {
 		delete(adminState, c.Sender().ID)
 		return c.Edit("❌ Reklama bekor qilindi.")
