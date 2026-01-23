@@ -57,16 +57,21 @@ type ContentItem struct {
 var myChannels = []ChannelInfo{
 	{ID: -1003050934981, Name: "anmelaruzb", Invite: "https://t.me/anmelaruzb"},
 	//{ID: -1003557426309, Name: "nakrutkaurush", Invite: "https://t.me/nakrutkaurush"},
+	{ID: -1003411861509, Name: "Maxfiy Kanal", Invite: "https://t.me/+C0qmcf4ZHY83NmNi"},
 	{ID: -1003588929805, Name: "Maxfiy Kanal", Invite: "https://t.me/+CPtYbpger5U0YjNi"},
 	{ID: -1003540484817, Name: "Maxfiy Kanal", Invite: "https://t.me/+mbBXFN4zFHAyMDQy"},
 	{ID: -1003532028606, Name: "Maxfiy Kanal", Invite: "https://t.me/+4u-B783Cgvs5YWNi"},
 	//{ID: -1003323161290, Name: "Manga Uzb", Invite: "https://t.me/Manga_uzbekcha26"},
-	//{ID: -1003411861509, Name: "Maxfiy Kanal", Invite: "https://t.me/+C0qmcf4ZHY83NmNi"},
 	//{ID: -1003276785399, Name: "animelaruzbektilid3", Invite: "https://t.me/animelaruzbektilid3"},
 	//{ID: -1003316396409, Name: "anmelar_chat", Invite: "https://t.me/anmelar_chat"},
 	//{ID: -1003227139819, Name: "Maxfiy Kanal", Invite: "https://t.me/+O3K3g71yc2cwYThi"},
 }
+var (
+	// Mavjud o'zgaruvchilaringiz...
 
+	// 🆕 Mana buni qo'shing:
+	userState = make(map[int64]string)
+)
 var (
 	userActive  = make(map[int64]time.Time)
 	userJoined  = make(map[int64]time.Time)
@@ -319,7 +324,10 @@ func Bot() {
 	}
 
 	menu := &tele.ReplyMarkup{ResizeKeyboard: true}
-	menu.Reply(menu.Row(menu.Text("Animelar")), menu.Row(menu.Text("🧩 help")))
+	menu.Reply(
+		menu.Row(menu.Text("Animelar")),
+		menu.Row(menu.Text("🖼 Rasm orqali qidirish"), menu.Text("🧩 help")), // Tugma qo'shildi
+	)
 
 	loadVips()
 	adminMenu := &tele.ReplyMarkup{}
@@ -488,10 +496,10 @@ func Bot() {
 		updateUserActivity(c.Sender().ID)
 		userID := c.Sender().ID
 		state := adminState[userID]
+		text := c.Text()
 
-		// 1. Admin holatlarini tekshirish
+		// 1. ADMIN HOLATLARINI TEKSHIRISH
 		if isAdmin(userID) && state != "" {
-
 			// REKLAMA YUBORISH HOLATI
 			if state == "waiting_for_ad" {
 				adminWaitingAd[userID] = c.Message()
@@ -508,7 +516,7 @@ func Bot() {
 			// VIP QO'SHISH/O'CHIRISH HOLATI
 			if state == "wait_vip_add" || state == "wait_vip_del" {
 				var targetID int64
-				_, err := fmt.Sscanf(c.Text(), "%d", &targetID)
+				_, err := fmt.Sscanf(text, "%d", &targetID)
 				if err != nil {
 					return c.Send("❌ Xato! Faqat raqamlardan iborat ID yuboring.")
 				}
@@ -533,22 +541,20 @@ func Bot() {
 					return c.Send("❌ Avval vaqtni yuboring! (Masalan: 10m)")
 				}
 
-				sendTime, err := parseRelativeTime(c.Text())
+				sendTime, err := parseRelativeTime(text)
 				if err != nil {
 					return c.Send("❌ Format xato! Misol: `10m`, `1h`...", tele.ModeMarkdown)
 				}
 
 				adminState[userID] = "wait_schedule_content"
-
 				scheduleMutex.Lock()
 				scheduledPosts[scheduleAutoID] = &ScheduledPost{
 					ID:       scheduleAutoID,
-					AdminID:  userID, // <--- ADMIN ID MANA SHU YERDA SAQLANADI
+					AdminID:  userID,
 					SendTime: sendTime,
 				}
 				scheduleAutoID++
 				scheduleMutex.Unlock()
-
 				return c.Send("📨 Endi postni yuboring (matn / rasm / video)")
 			}
 
@@ -556,7 +562,6 @@ func Bot() {
 			if state == "wait_schedule_content" {
 				var post *ScheduledPost
 				scheduleMutex.Lock()
-				// Hali kontenti bo'sh bo'lgan va ushbu admin yaratgan postni qidiramiz
 				for _, p := range scheduledPosts {
 					if p.Content.Kind == "" && p.AdminID == userID {
 						post = p
@@ -569,7 +574,6 @@ func Bot() {
 					return c.Send("❌ Xatolik: Rejalashtirilgan vaqt topilmadi. Qaytadan urinib ko‘ring.")
 				}
 
-				// Obunachilarni yig'ish
 				statsMutex.RLock()
 				post.ChatIDs = []int64{}
 				for uid := range userJoined {
@@ -588,14 +592,10 @@ func Bot() {
 					return c.Send("❌ Noto‘g‘ri format. Faqat matn, rasm yoki video yuboring.")
 				}
 
-				// Endi postni haqiqiy timerga topshiramiz
 				go schedulePost(b, post)
-
 				delete(adminState, userID)
 
-				// --- BEKOR QILISH TUGMASINI YARATISH ---
 				selector := &tele.ReplyMarkup{}
-				// Callback ma'lumotiga post ID sini biriktiramiz
 				btnCancel := selector.Data("❌ Bekor qilish", "cancel_post", fmt.Sprintf("%d", post.ID))
 				selector.Inline(selector.Row(btnCancel))
 
@@ -605,7 +605,7 @@ func Bot() {
 			}
 		}
 
-		// 2. Oddiy foydalanuvchilar va buyruqlar uchun
+		// 2. OBUNA TEKSHIRUVI (Oddiy foydalanuvchilar uchun)
 		if !isAdmin(userID) {
 			missing := notAllowedChannels(b, userID)
 			if len(missing) > 0 {
@@ -613,7 +613,33 @@ func Bot() {
 			}
 		}
 
-		text := c.Text()
+		// 3. RASM ORQALI QIDIRISH (GOOGLE LENS)
+		// Tugma bosilganda
+		if text == "🖼 Rasm orqali qidirish" {
+			userState[userID] = "wait_image_search"
+			return c.Send("🔍 Iltimos, qidirmoqchi bo'lgan rasmingizni yuboring...")
+		}
+
+		// Rasm yuborilganda
+		if c.Message().Photo != nil && userState[userID] == "wait_image_search" {
+			photo := c.Message().Photo
+			file, err := b.FileByID(photo.FileID)
+			if err != nil {
+				return c.Send("❌ Rasmni yuklab olishda xatolik yuz berdi.")
+			}
+
+			imageURL := fmt.Sprintf("https://api.telegram.org/file/bot%s/%s", token, file.FilePath)
+			googleSearchURL := "https://www.google.com/searchbyimage?sbisrc=4ig&image_url=" + imageURL
+
+			inlineMenu := &tele.ReplyMarkup{}
+			btnResult := inlineMenu.URL("🔍 Natijani ko'rish (Google)", googleSearchURL)
+			inlineMenu.Inline(inlineMenu.Row(btnResult))
+
+			delete(userState, userID)
+			return c.Send("✅ Rasm qabul qilindi! Google Lens orqali qidirish uchun pastdagi tugmani bosing:", inlineMenu)
+		}
+
+		// 4. ASOSIY BUYRUQLAR VA KODLAR
 		switch text {
 		case "/start":
 			return c.Send("✅ Xush kelibsiz!", menu)
@@ -622,10 +648,10 @@ func Bot() {
 		case "🧩 help":
 			return Help.Home(c)
 		default:
-			// Agar admin holatida bo'lmasa va hech qanday shartga tushmasa
+			// Agar hech qanday shartga tushmasa (Masalan: Anime kodi yozilsa)
 			return anmelaruzb.Home(c)
 		}
-	} // Faqat shu ikkita handler yetarli:
+	}
 	b.Handle(tele.OnText, handleAll)
 	b.Handle(tele.OnMedia, handleAll)
 
