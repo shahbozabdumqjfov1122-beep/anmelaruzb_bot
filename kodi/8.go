@@ -326,7 +326,8 @@ func Bot() {
 	menu := &tele.ReplyMarkup{ResizeKeyboard: true}
 	menu.Reply(
 		menu.Row(menu.Text("Animelar")),
-		menu.Row(menu.Text("🖼 Rasm orqali qidirish"), menu.Text("🧩 help")), // Tugma qo'shildi
+		menu.Row(menu.Text("🔍 Qidiruv"), menu.Text("🖼 Rasm orqali qidirish")),
+		menu.Row(menu.Text("🧩 help")),
 	)
 
 	loadVips()
@@ -457,6 +458,7 @@ func Bot() {
 		delete(adminState, c.Sender().ID)
 		return c.Edit("❌ Reklama bekor qilindi.")
 	})
+
 	b.Handle(tele.OnCallback, func(c tele.Context) error {
 		data := c.Callback().Data
 
@@ -491,14 +493,61 @@ func Bot() {
 
 		return c.Respond() // Callbackni yopish (soat belgisi ketishi uchun)
 	})
-	// --- ASOSIY XABARLARNI QABUL QILISH ---
+	b.Handle(tele.OnCallback, func(c tele.Context) error {
+		data := c.Callback().Data
+
+		// Telebot callback data formati: "\fselect_anime|97"
+		if strings.HasPrefix(data, "\fselect_anime") {
+			parts := strings.Split(data, "|")
+			if len(parts) > 1 {
+				animeID := parts[1]
+
+				_ = c.Respond() // Soat belgisini yo'qotish
+				_ = c.Delete()  // Qidiruv natijalari menyusini o'chirib tashlash (toza turishi uchun)
+
+				// Foydalanuvchiga ID ni qanday yozish kerakligini ko'rsatamiz
+				return c.Send(fmt.Sprintf("%s ni kiriting", animeID))
+			}
+		}
+		return c.Respond()
+	})
+
 	handleAll := func(c tele.Context) error {
 		updateUserActivity(c.Sender().ID)
 		userID := c.Sender().ID
 		state := adminState[userID]
 		text := c.Text()
+		// handleAll ichida:
 
-		// 1. ADMIN HOLATLARINI TEKSHIRISH
+		// handleAll ichida:
+
+		if text == "🔍 Qidiruv" {
+			userState[userID] = "wait_anime_search"
+			return c.Send("🔍 Anime nomini kiriting (masalan: Narotu):")
+		}
+		if userState[userID] == "wait_anime_search" && text != "" {
+			results := SearchAnime(text) // search.go dagi funksiya
+
+			if len(results) == 0 {
+				return c.Send("😔 Hech narsa topilmadi.")
+			}
+
+			inlineMenu := &tele.ReplyMarkup{}
+			var rows []tele.Row
+
+			for _, res := range results {
+				// Tugma ustida Nomi, bosilganda ID ketsin
+				btn := inlineMenu.Data("🎬 "+res.Name, "select_anime", res.ID)
+				rows = append(rows, inlineMenu.Row(btn))
+			}
+
+			inlineMenu.Inline(rows...)
+			delete(userState, userID) // Holatni yopamiz
+			return c.Send("🔍 Natijalar (keraklisini tanlang):", inlineMenu)
+		} // handleAll ichida qidiruv natijasini chiqarish qismi:
+
+		// Home funksiyasi ichida text := c.Text() dan keyin joylashtiring:
+
 		if isAdmin(userID) && state != "" {
 			// REKLAMA YUBORISH HOLATI
 			if state == "waiting_for_ad" {

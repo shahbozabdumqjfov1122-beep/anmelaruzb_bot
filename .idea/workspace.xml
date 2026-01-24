@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8fcf7f-66fd-49b5-932d-7110c9820c5e" name="Changes" comment="izoy yozishga erindim.">
+      <change afterPath="$PROJECT_DIR$/kodi/kerakli/7.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kodi/search.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/anmelar.exe" beforeDir="false" afterPath="$PROJECT_DIR$/anmelar.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/7.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/7.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kodi/Help/help.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/Help/help.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/7.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/8.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" beforeDir="false" afterPath="$PROJECT_DIR$/kodi/anmelaruzb/AsosiyMalumot2.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stats.json" beforeDir="false" afterPath="$PROJECT_DIR$/stats.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,8 +92,8 @@
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\n218" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Dars1\telegram botlar\anmelar\kodi" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\kerakli" />
+      <recent name="D:\Dars1\telegram botlar\anmelar\kodi" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb\n215" />
       <recent name="D:\Dars1\telegram botlar\anmelar\kodi\anmelaruzb" />
     </key>
@@ -130,5 +134,21 @@
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/kodi/8.go</url>
+          <line>30</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/kodi/8.go</url>
+          <line>260</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

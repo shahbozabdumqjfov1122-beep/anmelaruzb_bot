@@ -3,6 +3,7 @@ module namelaruzb_bot
 go 1.24.2
 
 require (
+	github.com/agnivade/levenshtein v1.2.1
 	github.com/beego/beego/v2 v2.3.8
 	gopkg.in/telebot.v4 v4.0.0-beta.5
 )

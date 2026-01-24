@@ -231,6 +231,7 @@ import (
 )
 
 func Home(c tele.Context) error {
+
 	text := c.Text()
 	switch text {
 	case "🖋️ anme izlash":
