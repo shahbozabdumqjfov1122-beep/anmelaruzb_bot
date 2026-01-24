@@ -664,15 +664,15 @@ func Home(c tele.Context) error {
 		return n213.Home(c)
 	case "214", "Friren So'ngi manzilga kuzatuvchi":
 		return n214.Home(c)
-	case "215":
+	case "215", "So'ngi sulola":
 		return n215.Home(c)
-	case "216":
+	case "216", "Likoris Rikoil":
 		return n216.Home(c)
-	case "217":
+	case "217", "Sehirgar kunon ko'ra olmaydi":
 		return n217.Home(c)
-	case "218":
+	case "218", "":
 		return n218.Home(c)
-	case "219":
+	case "219", "Qahramon bo‘lishga hukm qilingan":
 		return n219.Home(c)
 	case "220":
 		return n220.Home(c)
