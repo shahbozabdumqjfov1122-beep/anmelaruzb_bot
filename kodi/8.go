@@ -12,6 +12,7 @@ import (
 	"strconv"
 	"strings"
 
+	"net/url"
 	"os"
 	"sync"
 	"time"
@@ -420,7 +421,6 @@ func Bot() {
 		return sendStatistics(c)
 	})
 
-	// Reklamani tasdiqlash
 	// Reklamani tasdiqlash qismini shunga almashtiring:
 	b.Handle(&tele.Btn{Unique: "confirm_ad"}, func(c tele.Context) error {
 		adMsg := adminWaitingAd[c.Sender().ID]
@@ -511,7 +511,50 @@ func Bot() {
 		}
 		return c.Respond()
 	})
+	// 1. Matnli buyruqlarni ushlash (Tugma bosilganda)
+	b.Handle(tele.OnText, func(c tele.Context) error {
+		text := c.Text()
+		userID := c.Sender().ID
 
+		if text == "🖼 Rasm orqali qidirish" {
+			userState[userID] = "wait_image_search"
+			return c.Send("🔍 Iltimos, qidirmoqchi bo'lgan rasmingizni yuboring...")
+		}
+
+		// FAQAT matnli xabarlar uchun default javob
+		return c.Send("Uzr bu kod noto'g'ri yoki hozircha mavjud emas!")
+	})
+
+	// 2. Rasm yuborilganda (Alohida handler!)
+	b.Handle(tele.OnPhoto, func(c tele.Context) error {
+		userID := c.Sender().ID
+
+		// Faqat holat "wait_image_search" bo'lgandagina ishlaydi
+		if userState[userID] == "wait_image_search" {
+			photo := c.Message().Photo // Ba'zi versiyalarda bu massiv bo'lishi mumkin
+
+			// Agar indexing xatosi bersa, shunchaki photo.FileID ishlating
+			// Agar bermasa, eng oxirgisini oling:
+			file, err := b.FileByID(photo.FileID)
+			if err != nil {
+				return c.Send("❌ Rasmni yuklab olishda xatolik yuz berdi.")
+			}
+
+			imageURL := fmt.Sprintf("https://api.telegram.org/file/bot%s/%s", token, file.FilePath)
+
+			// Google Lens'ga URL-ni xavfsiz formatda yuboramiz
+			encodedURL := url.QueryEscape(imageURL)
+			googleSearchURL := "https://lens.google.com/uploadbyurl?url=" + encodedURL
+
+			inlineMenu := &tele.ReplyMarkup{}
+			btnResult := inlineMenu.URL("🔍 Ob'ektni aniqlash (Google Lens)", googleSearchURL)
+			inlineMenu.Inline(inlineMenu.Row(btnResult))
+
+			delete(userState, userID) // Holatni tozalash
+			return c.Send("✅ Rasm qabul qilindi! Ma'lumot olish uchun tugmani bosing:", inlineMenu)
+		}
+		return nil
+	})
 	handleAll := func(c tele.Context) error {
 		updateUserActivity(c.Sender().ID)
 		userID := c.Sender().ID
@@ -543,7 +586,10 @@ func Bot() {
 		} // handleAll ichida qidiruv natijasini chiqarish qismi:
 
 		// Home funksiyasi ichida text := c.Text() dan keyin joylashtiring:
-
+		if text == "🖼 Rasm orqali qidirish" {
+			userState[userID] = "wait_image_search"
+			return c.Send("🔍 Iltimos, qidirmoqchi bo'lgan rasmingizni yuboring...")
+		}
 		if isAdmin(userID) && state != "" {
 			// REKLAMA YUBORISH HOLATI
 			if state == "waiting_for_ad" {
@@ -656,32 +702,6 @@ func Bot() {
 			if len(missing) > 0 {
 				return sendSubMessage(c, missing)
 			}
-		}
-
-		// 3. RASM ORQALI QIDIRISH (GOOGLE LENS)
-		// Tugma bosilganda
-		if text == "🖼 Rasm orqali qidirish" {
-			userState[userID] = "wait_image_search"
-			return c.Send("🔍 Iltimos, qidirmoqchi bo'lgan rasmingizni yuboring...")
-		}
-
-		// Rasm yuborilganda
-		if c.Message().Photo != nil && userState[userID] == "wait_image_search" {
-			photo := c.Message().Photo
-			file, err := b.FileByID(photo.FileID)
-			if err != nil {
-				return c.Send("❌ Rasmni yuklab olishda xatolik yuz berdi.")
-			}
-
-			imageURL := fmt.Sprintf("https://api.telegram.org/file/bot%s/%s", token, file.FilePath)
-			googleSearchURL := "https://www.google.com/searchbyimage?sbisrc=4ig&image_url=" + imageURL
-
-			inlineMenu := &tele.ReplyMarkup{}
-			btnResult := inlineMenu.URL("🔍 Natijani ko'rish (Google)", googleSearchURL)
-			inlineMenu.Inline(inlineMenu.Row(btnResult))
-
-			delete(userState, userID)
-			return c.Send("✅ Rasm qabul qilindi! Google Lens orqali qidirish uchun pastdagi tugmani bosing:", inlineMenu)
 		}
 
 		// 4. ASOSIY BUYRUQLAR VA KODLAR
