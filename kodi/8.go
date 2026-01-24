@@ -506,7 +506,7 @@ func Bot() {
 				_ = c.Delete()  // Qidiruv natijalari menyusini o'chirib tashlash (toza turishi uchun)
 
 				// Foydalanuvchiga ID ni qanday yozish kerakligini ko'rsatamiz
-				return c.Send(fmt.Sprintf("%s ni kiriting", animeID))
+				return c.Send(fmt.Sprintf("%s bu kodni  kiriting", animeID))
 			}
 		}
 		return c.Respond()
@@ -517,10 +517,6 @@ func Bot() {
 		userID := c.Sender().ID
 		state := adminState[userID]
 		text := c.Text()
-		// handleAll ichida:
-
-		// handleAll ichida:
-
 		if text == "🔍 Qidiruv" {
 			userState[userID] = "wait_anime_search"
 			return c.Send("🔍 Anime nomini kiriting (masalan: Narotu):")
@@ -529,7 +525,7 @@ func Bot() {
 			results := SearchAnime(text) // search.go dagi funksiya
 
 			if len(results) == 0 {
-				return c.Send("😔 Hech narsa topilmadi.")
+				return anmelaruzb.Home(c)
 			}
 
 			inlineMenu := &tele.ReplyMarkup{}
@@ -829,3 +825,5 @@ func sendStatistics(c tele.Context) error {
 
 	return c.Send(text, tele.ModeMarkdown, tele.NoPreview)
 }
+
+//
