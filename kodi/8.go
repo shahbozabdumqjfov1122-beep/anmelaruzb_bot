@@ -8,6 +8,7 @@ import (
 	"namelaruzb_bot/kodi/Help"
 	"namelaruzb_bot/kodi/Menu"
 	"namelaruzb_bot/kodi/anmelaruzb"
+	"os/exec"
 	"sort"
 	"strconv"
 	"strings"
@@ -327,8 +328,14 @@ func Bot() {
 	menu := &tele.ReplyMarkup{ResizeKeyboard: true}
 	menu.Reply(
 		menu.Row(menu.Text("Animelar")),
-		menu.Row(menu.Text("🔍 Qidiruv"), menu.Text("🖼 Rasm orqali qidirish")),
-		menu.Row(menu.Text("🧩 help")),
+		menu.Row(
+			menu.Text("🖼 Rasm orqali qidirish"),
+			menu.Text("📹 Video orqali qidirish"), // Yangi tugma qo'shildi
+		),
+		menu.Row(
+			menu.Text("🔍 Qidiruv"),
+			menu.Text("🧩 help"),
+		),
 	)
 
 	loadVips()
@@ -555,11 +562,82 @@ func Bot() {
 		}
 		return nil
 	})
+	b.Handle(tele.OnVideo, func(c tele.Context) error {
+		userID := c.Sender().ID
+		if userState[userID] != "wait_video_search" {
+			return nil
+		}
+
+		loadingMsg, _ := c.Bot().Send(c.Recipient(), "⏳ Video tahlil qilinmoqda (3 xil nuqtadan kadr olinmoqda)...")
+
+		video := c.Message().Video
+		tempVideo := fmt.Sprintf("temp_%d.mp4", userID)
+
+		// Videoni yuklab olish
+		if err := c.Bot().Download(&video.File, tempVideo); err != nil {
+			c.Bot().Delete(loadingMsg)
+			return c.Send("❌ Video yuklashda xato yoki hajmi juda katta.")
+		}
+		defer os.Remove(tempVideo)
+
+		// Kadr olish nuqtalari (20%, 50%, 80%)
+		percentages := []float64{0.2, 0.5, 0.8}
+
+		inlineMenu := &tele.ReplyMarkup{}
+		var rows []tele.Row
+
+		for i, p := range percentages {
+			currentTime := int(float64(video.Duration) * p)
+			timestamp := fmt.Sprintf("%02d:%02d:%02d", currentTime/3600, (currentTime%3600)/60, currentTime%60)
+			tempImg := fmt.Sprintf("out_%d_%d.jpg", userID, i)
+
+			// FFmpeg orqali kadrni qirqish
+			cmd := exec.Command("ffmpeg", "-i", tempVideo, "-ss", timestamp, "-vframes", "1", tempImg, "-y")
+			if err := cmd.Run(); err != nil {
+				continue // Agar bitta kadrda xato bo'lsa, keyingisiga o'tadi
+			}
+
+			// Rasmni Telegramga yuborish (FileID olish uchun)
+			photo := &tele.Photo{File: tele.FromDisk(tempImg)}
+			sentMsg, err := c.Bot().Send(c.Recipient(), photo)
+
+			if err == nil {
+				// Google Lens linkini yasash
+				// Eslatma: 'token' o'zgaruvchisi sizda global e'lon qilingan bo'lishi kerak
+				imageURL := fmt.Sprintf("https://api.telegram.org/file/bot%s/%s", token, sentMsg.Photo.FilePath)
+				if sentMsg.Photo.FilePath == "" {
+					// Agar FilePath bo'sh bo'lsa, qayta so'raymiz
+					f, _ := c.Bot().FileByID(sentMsg.Photo.FileID)
+					imageURL = fmt.Sprintf("https://api.telegram.org/file/bot%s/%s", token, f.FilePath)
+				}
+
+				gSearchURL := "https://lens.google.com/uploadbyurl?url=" + url.QueryEscape(imageURL)
+
+				// Har bir kadr uchun tugma qo'shish
+				btn := inlineMenu.URL(fmt.Sprintf("🔍 %d-kadrni qidirish", i+1), gSearchURL)
+				rows = append(rows, inlineMenu.Row(btn))
+			}
+
+			os.Remove(tempImg) // Rasmni o'chirish
+		}
+
+		// Holatni tozalash va loading xabarini o'chirish
+		delete(userState, userID)
+		c.Bot().Delete(loadingMsg)
+
+		if len(rows) == 0 {
+			return c.Send("❌ Videodan kadr olib bo'lmadi.")
+		}
+
+		inlineMenu.Inline(rows...)
+		return c.Send("✅ Kadrlar tayyor! Google Lens orqali qidirish uchun tugmalarni bosing:", inlineMenu)
+	})
 	handleAll := func(c tele.Context) error {
 		updateUserActivity(c.Sender().ID)
 		userID := c.Sender().ID
 		state := adminState[userID]
 		text := c.Text()
+
 		if text == "🔍 Qidiruv" {
 			userState[userID] = "wait_anime_search"
 			return c.Send("🔍 Anime nomini kiriting (masalan: Narotu):")
@@ -695,6 +773,11 @@ func Bot() {
 					time.Until(post.SendTime).Round(time.Second)), selector, tele.ModeHTML)
 			}
 		}
+		// handleAll funksiyasi boshrog'iga qo'shing:
+		if text == "📹 Video orqali qidirish" {
+			userState[userID] = "wait_video_search"
+			return c.Send(" 📹 Iltimos, videongizni yuboring...")
+		}
 
 		// 2. OBUNA TEKSHIRUVI (Oddiy foydalanuvchilar uchun)
 		if !isAdmin(userID) {
@@ -707,7 +790,7 @@ func Bot() {
 		// 4. ASOSIY BUYRUQLAR VA KODLAR
 		switch text {
 		case "/start":
-			return c.Send("✅ Xush kelibsiz!", menu)
+			return c.Send("✅ Xush kelibsiz marhamt /menu dan foydalaning!", menu)
 		case "Animelar", "/menu":
 			return Menu.Home(c)
 		case "🧩 help":
@@ -719,7 +802,34 @@ func Bot() {
 	}
 	b.Handle(tele.OnText, handleAll)
 	b.Handle(tele.OnMedia, handleAll)
-
+	//b.Handle(tele.OnText, func(c tele.Context) error {
+	//	text := c.Text()
+	//	userID := c.Sender().ID
+	//
+	//	if text == "🖼 Rasm orqali qidirish" {
+	//		userState[userID] = "wait_image_search"
+	//		return c.Send("🔍 Iltimos, rasmingizni yuboring...")
+	//	}
+	//
+	//	if text == "📹 Video orqali qidirish" {
+	//		userState[userID] = "wait_video_search"
+	//		return c.Send("📹 Iltimos, videongizni yuboring...")
+	//	}
+	//
+	//	// Agar bot rasm/video kutayotgan bo'lsa-yu, foydalanuvchi matn yuborsa
+	//	if userState[userID] == "wait_image_search" || userState[userID] == "wait_video_search" {
+	//		return c.Send("⚠️ Iltimos, rasm yoki video yuboring. Bekor qilish uchun /start.")
+	//	}
+	//
+	//	// Boshqa switch-case (Anime kodlari va h.k.)
+	//	switch text {
+	//	case "/start":
+	//		delete(userState, userID)
+	//		return c.Send("Xush kelibsiz!", menu)
+	//	default:
+	//		return anmelaruzb.Home(c)
+	//	}
+	//})
 	// Join request uchun
 	b.Handle(tele.OnChatJoinRequest, func(c tele.Context) error {
 		req := c.ChatJoinRequest()
