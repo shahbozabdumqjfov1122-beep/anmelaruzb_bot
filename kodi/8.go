@@ -1,6 +1,7 @@
 package kodi
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	beego "github.com/beego/beego/v2/server/web"
@@ -9,6 +10,7 @@ import (
 	"namelaruzb_bot/kodi/Menu"
 	"namelaruzb_bot/kodi/anmelaruzb"
 	"os/exec"
+	"path/filepath"
 	"sort"
 	"strconv"
 	"strings"
@@ -568,69 +570,71 @@ func Bot() {
 			return nil
 		}
 
-		loadingMsg, _ := c.Bot().Send(c.Recipient(), "⏳ Video tahlil qilinmoqda (3 xil nuqtadan kadr olinmoqda)...")
-
 		video := c.Message().Video
-		tempVideo := fmt.Sprintf("temp_%d.mp4", userID)
+		// Telegram Bot API orqali 20MB dan katta fayllarni oddiy usulda yuklab bo'lmaydi
+		if video.FileSize > 20*1024*1024 {
+			return c.Send("⚠️ Video juda katta. Telegram cheklovi tufayli faqat 20MB gacha bo'lgan videolarni tahlil qila olaman.")
+		}
 
-		// Videoni yuklab olish
-		if err := c.Bot().Download(&video.File, tempVideo); err != nil {
+		loadingMsg, _ := c.Bot().Send(c.Recipient(), "⏳ Video yuklanmoqda (bu biroz vaqt olishi mumkin)...")
+
+		tempVideo := filepath.Join(os.TempDir(), fmt.Sprintf("temp_%d.mp4", userID))
+
+		// Videoni yuklab olishni tekshiramiz
+		err := c.Bot().Download(&video.File, tempVideo)
+		if err != nil {
 			c.Bot().Delete(loadingMsg)
-			return c.Send("❌ Video yuklashda xato yoki hajmi juda katta.")
+			log.Printf("Yuklashda xato: %v", err)
+			return c.Send("❌ Videoni yuklab olishda xatolik yuz berdi. Bot serverida joy qolmagan bo'lishi mumkin.")
 		}
 		defer os.Remove(tempVideo)
 
-		// Kadr olish nuqtalari (20%, 50%, 80%)
 		percentages := []float64{0.2, 0.5, 0.8}
-
 		inlineMenu := &tele.ReplyMarkup{}
 		var rows []tele.Row
+		successCount := 0
 
 		for i, p := range percentages {
 			currentTime := int(float64(video.Duration) * p)
 			timestamp := fmt.Sprintf("%02d:%02d:%02d", currentTime/3600, (currentTime%3600)/60, currentTime%60)
-			tempImg := fmt.Sprintf("out_%d_%d.jpg", userID, i)
+			tempImg := filepath.Join(os.TempDir(), fmt.Sprintf("out_%d_%d.jpg", userID, i))
 
-			// FFmpeg orqali kadrni qirqish
+			// FFmpeg buyrug'iga diagnostika qo'shamiz
+			var stderr bytes.Buffer
 			cmd := exec.Command("ffmpeg", "-i", tempVideo, "-ss", timestamp, "-vframes", "1", tempImg, "-y")
+			cmd.Stderr = &stderr
+
 			if err := cmd.Run(); err != nil {
-				continue // Agar bitta kadrda xato bo'lsa, keyingisiga o'tadi
+				log.Printf("FFmpeg %d-kadrda xato: %v, Stderr: %s", i, err, stderr.String())
+				continue
 			}
 
-			// Rasmni Telegramga yuborish (FileID olish uchun)
+			// Rasmni yuborish
 			photo := &tele.Photo{File: tele.FromDisk(tempImg)}
 			sentMsg, err := c.Bot().Send(c.Recipient(), photo)
 
 			if err == nil {
-				// Google Lens linkini yasash
-				// Eslatma: 'token' o'zgaruvchisi sizda global e'lon qilingan bo'lishi kerak
-				imageURL := fmt.Sprintf("https://api.telegram.org/file/bot%s/%s", token, sentMsg.Photo.FilePath)
-				if sentMsg.Photo.FilePath == "" {
-					// Agar FilePath bo'sh bo'lsa, qayta so'raymiz
-					f, _ := c.Bot().FileByID(sentMsg.Photo.FileID)
-					imageURL = fmt.Sprintf("https://api.telegram.org/file/bot%s/%s", token, f.FilePath)
-				}
-
+				successCount++
+				// FilePath olishni tekshirish
+				f, _ := c.Bot().FileByID(sentMsg.Photo.FileID)
+				imageURL := fmt.Sprintf("https://api.telegram.org/file/bot%s/%s", token, f.FilePath)
 				gSearchURL := "https://lens.google.com/uploadbyurl?url=" + url.QueryEscape(imageURL)
 
-				// Har bir kadr uchun tugma qo'shish
-				btn := inlineMenu.URL(fmt.Sprintf("🔍 %d-kadrni qidirish", i+1), gSearchURL)
+				btn := inlineMenu.URL(fmt.Sprintf("🔍 %d-kadr (Lens)", i+1), gSearchURL)
 				rows = append(rows, inlineMenu.Row(btn))
 			}
-
-			os.Remove(tempImg) // Rasmni o'chirish
+			os.Remove(tempImg)
 		}
 
-		// Holatni tozalash va loading xabarini o'chirish
 		delete(userState, userID)
 		c.Bot().Delete(loadingMsg)
 
-		if len(rows) == 0 {
-			return c.Send("Ushbu video hajmi juda katta, 20MB dan katta bo'lgan videolar qabul qilinmaydi❗️❗️❗️")
+		if successCount == 0 {
+			return c.Send("❌ Videodan kadr olib bo'lmadi. Video formati FFmpeg-ga mos kelmadi.")
 		}
 
 		inlineMenu.Inline(rows...)
-		return c.Send("✅ Kadrlar tayyor! Google Lens orqali qidirish uchun tugmalarni bosing:", inlineMenu)
+		return c.Send("✅ Kadrlar tayyor! Qidirish uchun tugmalarni bosing:", inlineMenu)
 	})
 	handleAll := func(c tele.Context) error {
 		updateUserActivity(c.Sender().ID)
