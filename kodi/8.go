@@ -626,7 +626,7 @@ func Bot() {
 		c.Bot().Delete(loadingMsg)
 
 		if len(rows) == 0 {
-			return c.Send("❌ Videodan kadr olib bo'lmadi.")
+			return c.Send("Ushbu video hajmi juda katta, 20MB dan katta bo'lgan videolar qabul qilinmaydi❗️❗️❗️")
 		}
 
 		inlineMenu.Inline(rows...)
