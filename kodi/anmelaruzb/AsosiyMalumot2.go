@@ -220,6 +220,16 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/n223"
 	"namelaruzb_bot/kodi/anmelaruzb/n224"
 	"namelaruzb_bot/kodi/anmelaruzb/n225"
+	"namelaruzb_bot/kodi/anmelaruzb/n226"
+	"namelaruzb_bot/kodi/anmelaruzb/n227"
+	"namelaruzb_bot/kodi/anmelaruzb/n228"
+	"namelaruzb_bot/kodi/anmelaruzb/n229"
+	"namelaruzb_bot/kodi/anmelaruzb/n230"
+	"namelaruzb_bot/kodi/anmelaruzb/n231"
+	"namelaruzb_bot/kodi/anmelaruzb/n232"
+	"namelaruzb_bot/kodi/anmelaruzb/n233"
+	"namelaruzb_bot/kodi/anmelaruzb/n234"
+	"namelaruzb_bot/kodi/anmelaruzb/n235"
 	"namelaruzb_bot/kodi/anmelaruzb/qahramonlikdanvoskechib"
 	"namelaruzb_bot/kodi/anmelaruzb/qipqizilragna"
 	"namelaruzb_bot/kodi/anmelaruzb/tahlilashqobilyati"
@@ -674,9 +684,9 @@ func Home(c tele.Context) error {
 		return n218.Home(c)
 	case "219", "Qahramon bo‘lishga hukm qilingan":
 		return n219.Home(c)
-	case "220":
+	case "220", "ozga dunyoda muborak tugilgadim shuning uchun men eng kuchlisi bolishim kere ":
 		return n220.Home(c)
-	case "221":
+	case "221", "Farmatsevtning monologi":
 		return n221.Home(c)
 	case "222":
 		return n222.Home(c)
@@ -686,6 +696,26 @@ func Home(c tele.Context) error {
 		return n224.Home(c)
 	case "225":
 		return n225.Home(c)
+	case "226":
+		return n226.Home(c)
+	case "227":
+		return n227.Home(c)
+	case "228":
+		return n228.Home(c)
+	case "229":
+		return n229.Home(c)
+	case "230":
+		return n230.Home(c)
+	case "231":
+		return n231.Home(c)
+	case "232":
+		return n232.Home(c)
+	case "233":
+		return n233.Home(c)
+	case "234":
+		return n234.Home(c)
+	case "235":
+		return n235.Home(c)
 
 	//
 	//
