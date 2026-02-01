@@ -60,7 +60,7 @@ type ContentItem struct {
 
 var myChannels = []ChannelInfo{
 	{ID: -1003050934981, Name: "anmelaruzb", Invite: "https://t.me/anmelaruzb"},
-	{ID: -1003369138926, Name: "AniDarkX", Invite: "https://t.me/AniDarkX"},
+	//{ID: -1003369138926, Name: "AniDarkX", Invite: "https://t.me/AniDarkX"},
 	//{ID: -1003557426309, Name: "nakrutkaurush", Invite: "https://t.me/nakrutkaurush"},
 	{ID: -1003411861509, Name: "Maxfiy Kanal", Invite: "https://t.me/+C0qmcf4ZHY83NmNi"},
 	//{ID: -1003588929805, Name: "Maxfiy Kanal", Invite: "https://t.me/+CPtYbpger5U0YjNi"},
@@ -348,14 +348,12 @@ func Bot() {
 	btnBroadcast := adminMenu.Data("📢 Reklama", "admin_broadcast")
 	btnStats := adminMenu.Data("📊 Statistika", "admin_stats")
 	btnVip := adminMenu.Data("🌟 VIP Boshqaruv", "admin_vip_main")
-
 	// VIP Menyu
 	vipSubMenu := &tele.ReplyMarkup{}
 	btnAddVip := vipSubMenu.Data("➕ Qo'shish", "vip_add")
 	btnDelVip := vipSubMenu.Data("➖ O'chirish", "vip_del")
 	btnListVip := vipSubMenu.Data("📜 Ro'yxat", "vip_list")
 	btnBackAdmin := vipSubMenu.Data("⬅️ Orqaga", "back_admin")
-
 	// ===== ADMIN PANEL =====
 	b.Handle("/admin", func(c tele.Context) error {
 		if !isAdmin(c.Sender().ID) {
@@ -370,7 +368,6 @@ func Bot() {
 
 		return c.Send("👨‍💻 *Admin Panel*", adminMenu, tele.ModeMarkdown)
 	})
-
 	// ===== VIP MENU =====
 	b.Handle(&btnVip, func(c tele.Context) error {
 		vipSubMenu.Inline(
@@ -407,12 +404,10 @@ func Bot() {
 		adminState[c.Sender().ID] = "wait_vip_add"
 		return c.Send("🆔 VIP qilmoqchi bo'lgan foydalanuvchi ID sini yuboring:")
 	})
-
 	b.Handle(&btnDelVip, func(c tele.Context) error {
 		adminState[c.Sender().ID] = "wait_vip_del"
 		return c.Send("🆔 VIP-dan olib tashlamoqchi bo'lgan foydalanuvchi ID sini yuboring:")
 	})
-
 	b.Handle(&btnListVip, func(c tele.Context) error {
 		vipMutex.RLock()
 		text := "🌟 VIP Foydalanuvchilar ro'yxati:\n\n"
@@ -426,11 +421,9 @@ func Bot() {
 		adminState[c.Sender().ID] = "waiting_for_ad"
 		return c.Send("📥 Reklama xabarini yuboring. (Rasm, video yoki matn)")
 	})
-
 	b.Handle(&btnStats, func(c tele.Context) error {
 		return sendStatistics(c)
 	})
-
 	// Reklamani tasdiqlash qismini shunga almashtiring:
 	b.Handle(&tele.Btn{Unique: "confirm_ad"}, func(c tele.Context) error {
 		adMsg := adminWaitingAd[c.Sender().ID]
@@ -468,7 +461,6 @@ func Bot() {
 		delete(adminState, c.Sender().ID)
 		return c.Edit("❌ Reklama bekor qilindi.")
 	})
-
 	b.Handle(tele.OnCallback, func(c tele.Context) error {
 		data := c.Callback().Data
 
@@ -534,7 +526,6 @@ func Bot() {
 		// FAQAT matnli xabarlar uchun default javob
 		return c.Send("Uzr bu kod noto'g'ri yoki hozircha mavjud emas!")
 	})
-
 	// 2. Rasm yuborilganda (Alohida handler!)
 	b.Handle(tele.OnPhoto, func(c tele.Context) error {
 		userID := c.Sender().ID
@@ -807,35 +798,6 @@ func Bot() {
 	}
 	b.Handle(tele.OnText, handleAll)
 	b.Handle(tele.OnMedia, handleAll)
-	//b.Handle(tele.OnText, func(c tele.Context) error {
-	//	text := c.Text()
-	//	userID := c.Sender().ID
-	//
-	//	if text == "🖼 Rasm orqali qidirish" {
-	//		userState[userID] = "wait_image_search"
-	//		return c.Send("🔍 Iltimos, rasmingizni yuboring...")
-	//	}
-	//
-	//	if text == "📹 Video orqali qidirish" {
-	//		userState[userID] = "wait_video_search"
-	//		return c.Send("📹 Iltimos, videongizni yuboring...")
-	//	}
-	//
-	//	// Agar bot rasm/video kutayotgan bo'lsa-yu, foydalanuvchi matn yuborsa
-	//	if userState[userID] == "wait_image_search" || userState[userID] == "wait_video_search" {
-	//		return c.Send("⚠️ Iltimos, rasm yoki video yuboring. Bekor qilish uchun /start.")
-	//	}
-	//
-	//	// Boshqa switch-case (Anime kodlari va h.k.)
-	//	switch text {
-	//	case "/start":
-	//		delete(userState, userID)
-	//		return c.Send("Xush kelibsiz!", menu)
-	//	default:
-	//		return anmelaruzb.Home(c)
-	//	}
-	//})
-	// Join request uchun
 	b.Handle(tele.OnChatJoinRequest, func(c tele.Context) error {
 		req := c.ChatJoinRequest()
 		requestMutex.Lock()
@@ -846,7 +808,6 @@ func Bot() {
 		requestMutex.Unlock()
 		return nil
 	})
-
 	// Tekshirish tugmasi
 	b.Handle(&tele.Btn{Unique: "check_sub"}, func(c tele.Context) error {
 		missing := notAllowedChannels(b, c.Sender().ID)
@@ -856,7 +817,6 @@ func Bot() {
 		}
 		return c.Respond(&tele.CallbackResponse{Text: "❌ Hali hamma kanal bajarilmadi", ShowAlert: true})
 	})
-
 	log.Println("🤖 Bot ishga tushdi")
 	b.Start()
 }
