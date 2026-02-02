@@ -633,7 +633,7 @@ func Bot() {
 		userID := c.Sender().ID
 		state := adminState[userID]
 		text := c.Text()
-
+		msg := c.Message()
 		if text == "🔍 Qidiruv" {
 			userState[userID] = "wait_anime_search"
 			return c.Send("🔍 Anime nomini kiriting (masalan: Narotu):")
@@ -665,17 +665,40 @@ func Bot() {
 			return c.Send("🔍 Iltimos, qidirmoqchi bo'lgan rasmingizni yuboring...")
 		}
 		if isAdmin(userID) && state != "" {
-			// REKLAMA YUBORISH HOLATI
+			// REKLAMA YUBORISH HOLATI Message
 			if state == "waiting_for_ad" {
-				adminWaitingAd[userID] = c.Message()
+				// 1. Jarayon boshlanganini tekshirish
+				log.Printf(">>> [REKLAMA] User %d xabar yubordi", userID)
+
+				// 2. Kelgan xabar turini aniqlash
+				msg := c.Message()
+				if msg.Photo != nil {
+					log.Printf(">>> [TUR] Rasm keldi. Caption: %s", msg.Caption)
+				} else if msg.Video != nil {
+					log.Printf(">>> [TUR] Video keldi. Caption: %s", msg.Caption)
+				} else {
+					log.Printf(">>> [TUR] Matn keldi. Text: %s", msg.Text)
+				}
+
+				// 3. Xabarni xotiraga saqlash
+				adminWaitingAd[userID] = msg
+				log.Println(">>> [OK] Xabar adminWaitingAd xaritasiga saqlandi")
+
 				m := &tele.ReplyMarkup{}
 				btnYes := m.Data("✅ Tasdiqlash", "confirm_ad")
 				btnNo := m.Data("❌ Bekor qilish", "cancel_ad")
 				m.Inline(m.Row(btnYes, btnNo))
 
+				// 4. Nusxalash jarayoni
 				_ = c.Send("👇 **Reklama ko'rinishi:**")
-				_, _ = b.Copy(c.Recipient(), c.Message())
-				return c.Send("Ushbu xabarni yuboramizmi?", m)
+				_, err := b.Copy(c.Recipient(), msg)
+				if err != nil {
+					log.Printf(">>> [XATO] Copy qilishda xatolik: %v", err)
+					return c.Send("❌ Xabarni nusxalashda xatolik.")
+				}
+				log.Println(">>> [OK] Reklama nusxasi adminning o'ziga ko'rsatildi")
+
+				return c.Send("Ushbu xabarni hamma foydalanuvchilarga yuboramizmi?", m)
 			}
 			// VIP QO'SHISH/O'CHIRISH HOLATI
 			if state == "wait_vip_add" || state == "wait_vip_del" {
@@ -721,6 +744,8 @@ func Bot() {
 				scheduleMutex.Unlock()
 				return c.Send("📨 Endi postni yuboring (matn / rasm / video)")
 			}
+
+			// POST KONTENTINI QABUL QILISH HOLATI
 			if state == "wait_schedule_content" {
 				var post *ScheduledPost
 				scheduleMutex.Lock()
@@ -733,39 +758,27 @@ func Bot() {
 				scheduleMutex.Unlock()
 
 				if post == nil {
-					return c.Send("❌ Xatolik: Rejalashtirilgan vaqt topilmadi. Qaytadan urinib ko‘ring.")
+					return c.Send("❌ Xatolik: Rejalashtirilgan vaqt topilmadi.")
 				}
 
-				statsMutex.RLock()
-				post.ChatIDs = []int64{}
-				for uid := range userJoined {
-					post.ChatIDs = append(post.ChatIDs, uid)
-				}
-				statsMutex.RUnlock()
-
-				msg := c.Message()
-				if msg.Text != "" {
-					post.Content = ContentItem{Kind: "text", Text: msg.Text}
-				} else if msg.Photo != nil {
+				// Kontentni aniqlash
+				if msg.Photo != nil {
 					post.Content = ContentItem{Kind: "photo", FileID: msg.Photo.FileID, Text: msg.Caption}
 				} else if msg.Video != nil {
 					post.Content = ContentItem{Kind: "video", FileID: msg.Video.FileID, Text: msg.Caption}
+				} else if msg.Text != "" {
+					post.Content = ContentItem{Kind: "text", Text: msg.Text}
 				} else {
-					return c.Send("❌ Noto‘g‘ri format. Faqat matn, rasm yoki video yuboring.")
+					return c.Send("❌ Faqat matn, rasm yoki video!")
 				}
 
+				// ... qolgan schedulePost va javob qaytarish kodi ...
 				go schedulePost(b, post)
 				delete(adminState, userID)
-
-				selector := &tele.ReplyMarkup{}
-				btnCancel := selector.Data("❌ Bekor qilish", "cancel_post", fmt.Sprintf("%d", post.ID))
-				selector.Inline(selector.Row(btnCancel))
-
-				return c.Send(fmt.Sprintf("✅ Rejalashtirildi!\n📊 Obunachilar soni: %d\n🕒 %s dan keyin yuboriladi",
-					len(post.ChatIDs),
-					time.Until(post.SendTime).Round(time.Second)), selector, tele.ModeHTML)
+				return c.Send("✅ Rejalashtirildi!")
 			}
 		}
+		// handleAll funksiyasi boshrog'iga qo'shing:
 		// handleAll funksiyasi boshrog'iga qo'shing:
 		if text == "📹 Video orqali qidirish" {
 			userState[userID] = "wait_video_search"
@@ -795,6 +808,8 @@ func Bot() {
 	}
 	b.Handle(tele.OnText, handleAll)
 	b.Handle(tele.OnMedia, handleAll)
+	b.Handle(tele.OnPhoto, handleAll)
+	b.Handle(tele.OnVideo, handleAll)
 	b.Handle(tele.OnChatJoinRequest, func(c tele.Context) error {
 		req := c.ChatJoinRequest()
 		requestMutex.Lock()
