@@ -667,14 +667,25 @@ func Bot() {
 		if isAdmin(userID) && state != "" {
 			// REKLAMA YUBORISH HOLATI
 			if state == "waiting_for_ad" {
-				adminWaitingAd[userID] = c.Message()
+				msg := c.Message()
+				if msg == nil {
+					return c.Send("❌ Xabar topilmadi.")
+				}
+
+				if msg.Text == "" && msg.Photo == nil && msg.Video == nil {
+					return c.Send("❌ Faqat matn, rasm yoki video yuboring.")
+				}
+
+				adminWaitingAd[userID] = msg
+
 				m := &tele.ReplyMarkup{}
 				btnYes := m.Data("✅ Tasdiqlash", "confirm_ad")
 				btnNo := m.Data("❌ Bekor qilish", "cancel_ad")
 				m.Inline(m.Row(btnYes, btnNo))
 
-				_ = c.Send("👇 **Reklama ko'rinishi:**")
-				_, _ = b.Copy(c.Recipient(), c.Message())
+				_ = c.Send("👇 <b>Reklama ko‘rinishi:</b>", tele.ModeHTML)
+				_ = c.Send(msg)
+
 				return c.Send("Ushbu xabarni yuboramizmi?", m)
 			}
 
@@ -702,16 +713,23 @@ func Bot() {
 
 			// VAQTNI QABUL QILISH HOLATI (10s, 10m...)
 			if state == "wait_schedule_time" {
-				if c.Message().Media() != nil {
-					return c.Send("❌ Avval vaqtni yuboring! (Masalan: 10m)")
+				msg := c.Message()
+				if msg == nil {
+					return c.Send("❌ Xabar topilmadi.")
 				}
 
-				sendTime, err := parseRelativeTime(text)
+				// ❗ MUHIM: faqat matn qabul qilamiz
+				if msg.Text == "" {
+					return c.Send("❌ Avval vaqtni matn ko‘rinishida yuboring!\nMasalan: 10m, 1h")
+				}
+
+				sendTime, err := parseRelativeTime(msg.Text)
 				if err != nil {
-					return c.Send("❌ Format xato! Misol: `10m`, `1h`...", tele.ModeMarkdown)
+					return c.Send("❌ Format xato!\nMisol: `10m`, `1h`, `30s`", tele.ModeMarkdown)
 				}
 
 				adminState[userID] = "wait_schedule_content"
+
 				scheduleMutex.Lock()
 				scheduledPosts[scheduleAutoID] = &ScheduledPost{
 					ID:       scheduleAutoID,
@@ -720,6 +738,7 @@ func Bot() {
 				}
 				scheduleAutoID++
 				scheduleMutex.Unlock()
+
 				return c.Send("📨 Endi postni yuboring (matn / rasm / video)")
 			}
 
