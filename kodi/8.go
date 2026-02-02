@@ -667,28 +667,16 @@ func Bot() {
 		if isAdmin(userID) && state != "" {
 			// REKLAMA YUBORISH HOLATI
 			if state == "waiting_for_ad" {
-				msg := c.Message()
-				if msg == nil {
-					return c.Send("❌ Xabar topilmadi.")
-				}
-
-				if msg.Text == "" && msg.Photo == nil && msg.Video == nil {
-					return c.Send("❌ Faqat matn, rasm yoki video yuboring.")
-				}
-
-				adminWaitingAd[userID] = msg
-
+				adminWaitingAd[userID] = c.Message()
 				m := &tele.ReplyMarkup{}
 				btnYes := m.Data("✅ Tasdiqlash", "confirm_ad")
 				btnNo := m.Data("❌ Bekor qilish", "cancel_ad")
 				m.Inline(m.Row(btnYes, btnNo))
 
-				_ = c.Send("👇 <b>Reklama ko‘rinishi:</b>", tele.ModeHTML)
-				_ = c.Send(msg)
-
+				_ = c.Send("👇 **Reklama ko'rinishi:**")
+				_, _ = b.Copy(c.Recipient(), c.Message())
 				return c.Send("Ushbu xabarni yuboramizmi?", m)
 			}
-
 			// VIP QO'SHISH/O'CHIRISH HOLATI
 			if state == "wait_vip_add" || state == "wait_vip_del" {
 				var targetID int64
@@ -713,23 +701,16 @@ func Bot() {
 
 			// VAQTNI QABUL QILISH HOLATI (10s, 10m...)
 			if state == "wait_schedule_time" {
-				msg := c.Message()
-				if msg == nil {
-					return c.Send("❌ Xabar topilmadi.")
+				if c.Message().Media() != nil {
+					return c.Send("❌ Avval vaqtni yuboring! (Masalan: 10m)")
 				}
 
-				// ❗ MUHIM: faqat matn qabul qilamiz
-				if msg.Text == "" {
-					return c.Send("❌ Avval vaqtni matn ko‘rinishida yuboring!\nMasalan: 10m, 1h")
-				}
-
-				sendTime, err := parseRelativeTime(msg.Text)
+				sendTime, err := parseRelativeTime(text)
 				if err != nil {
-					return c.Send("❌ Format xato!\nMisol: `10m`, `1h`, `30s`", tele.ModeMarkdown)
+					return c.Send("❌ Format xato! Misol: `10m`, `1h`...", tele.ModeMarkdown)
 				}
 
 				adminState[userID] = "wait_schedule_content"
-
 				scheduleMutex.Lock()
 				scheduledPosts[scheduleAutoID] = &ScheduledPost{
 					ID:       scheduleAutoID,
@@ -738,11 +719,8 @@ func Bot() {
 				}
 				scheduleAutoID++
 				scheduleMutex.Unlock()
-
 				return c.Send("📨 Endi postni yuboring (matn / rasm / video)")
 			}
-
-			// POST KONTENTINI QABUL QILISH HOLATI
 			if state == "wait_schedule_content" {
 				var post *ScheduledPost
 				scheduleMutex.Lock()
