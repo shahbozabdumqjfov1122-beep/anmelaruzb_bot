@@ -1,7 +1,6 @@
 package kodi
 
 import (
-	"bytes"
 	"encoding/json"
 	"fmt"
 	beego "github.com/beego/beego/v2/server/web"
@@ -9,8 +8,6 @@ import (
 	"namelaruzb_bot/kodi/Help"
 	"namelaruzb_bot/kodi/Menu"
 	"namelaruzb_bot/kodi/anmelaruzb"
-	"os/exec"
-	"path/filepath"
 	"sort"
 	"strconv"
 	"strings"
@@ -330,14 +327,18 @@ func Bot() {
 
 	menu := &tele.ReplyMarkup{ResizeKeyboard: true}
 	menu.Reply(
-		menu.Row(menu.Text("Animelar")),
-		menu.Row(
-			menu.Text("🖼 Rasm orqali qidirish"),
-			menu.Text("📹 Video orqali qidirish"), // Yangi tugma qo'shildi
+		menu.Row(menu.Text("Animelar"),
+			menu.Text("🔍 Qidiruv"),
 		),
 		menu.Row(
-			menu.Text("🔍 Qidiruv"),
+			menu.Text("🖼 Rasm orqali qidirish"),
 			menu.Text("🧩 help"),
+
+			//menu.Text("📹 Video orqali qidirish"), // Yangi tugma qo'shildi
+		),
+		menu.Row(
+		//menu.Text("🔍 Qidiruv"),
+		//menu.Text("🧩 help"),
 		),
 	)
 
@@ -368,7 +369,6 @@ func Bot() {
 
 		return c.Send("👨‍💻 *Admin Panel*", adminMenu, tele.ModeMarkdown)
 	})
-	// ===== VIP MENU =====
 	b.Handle(&btnVip, func(c tele.Context) error {
 		vipSubMenu.Inline(
 			vipSubMenu.Row(btnAddVip, btnDelVip),
@@ -399,7 +399,6 @@ func Bot() {
 			tele.ModeMarkdown,
 		)
 	})
-	// VIP qo'shish/o'chirish holatlari
 	b.Handle(&btnAddVip, func(c tele.Context) error {
 		adminState[c.Sender().ID] = "wait_vip_add"
 		return c.Send("🆔 VIP qilmoqchi bo'lgan foydalanuvchi ID sini yuboring:")
@@ -424,7 +423,6 @@ func Bot() {
 	b.Handle(&btnStats, func(c tele.Context) error {
 		return sendStatistics(c)
 	})
-	// Reklamani tasdiqlash qismini shunga almashtiring:
 	b.Handle(&tele.Btn{Unique: "confirm_ad"}, func(c tele.Context) error {
 		adMsg := adminWaitingAd[c.Sender().ID]
 		if adMsg == nil {
@@ -513,7 +511,6 @@ func Bot() {
 		}
 		return c.Respond()
 	})
-	// 1. Matnli buyruqlarni ushlash (Tugma bosilganda)
 	b.Handle(tele.OnText, func(c tele.Context) error {
 		text := c.Text()
 		userID := c.Sender().ID
@@ -526,7 +523,6 @@ func Bot() {
 		// FAQAT matnli xabarlar uchun default javob
 		return c.Send("Uzr bu kod noto'g'ri yoki hozircha mavjud emas!")
 	})
-	// 2. Rasm yuborilganda (Alohida handler!)
 	b.Handle(tele.OnPhoto, func(c tele.Context) error {
 		userID := c.Sender().ID
 
@@ -556,78 +552,6 @@ func Bot() {
 		}
 		return nil
 	})
-	b.Handle(tele.OnVideo, func(c tele.Context) error {
-		userID := c.Sender().ID
-		if userState[userID] != "wait_video_search" {
-			return nil
-		}
-
-		video := c.Message().Video
-		// Telegram Bot API orqali 20MB dan katta fayllarni oddiy usulda yuklab bo'lmaydi
-		if video.FileSize > 20*1024*1024 {
-			return c.Send("⚠️ Video juda katta. Telegram cheklovi tufayli faqat 20MB gacha bo'lgan videolarni tahlil qila olaman.")
-		}
-
-		loadingMsg, _ := c.Bot().Send(c.Recipient(), "⏳ Video yuklanmoqda (bu biroz vaqt olishi mumkin)...")
-
-		tempVideo := filepath.Join(os.TempDir(), fmt.Sprintf("temp_%d.mp4", userID))
-
-		// Videoni yuklab olishni tekshiramiz
-		err := c.Bot().Download(&video.File, tempVideo)
-		if err != nil {
-			c.Bot().Delete(loadingMsg)
-			log.Printf("Yuklashda xato: %v", err)
-			return c.Send("❌ Videoni yuklab olishda xatolik yuz berdi. Bot serverida joy qolmagan bo'lishi mumkin.")
-		}
-		defer os.Remove(tempVideo)
-
-		percentages := []float64{0.2, 0.5, 0.8}
-		inlineMenu := &tele.ReplyMarkup{}
-		var rows []tele.Row
-		successCount := 0
-
-		for i, p := range percentages {
-			currentTime := int(float64(video.Duration) * p)
-			timestamp := fmt.Sprintf("%02d:%02d:%02d", currentTime/3600, (currentTime%3600)/60, currentTime%60)
-			tempImg := filepath.Join(os.TempDir(), fmt.Sprintf("out_%d_%d.jpg", userID, i))
-
-			// FFmpeg buyrug'iga diagnostika qo'shamiz
-			var stderr bytes.Buffer
-			cmd := exec.Command("ffmpeg", "-i", tempVideo, "-ss", timestamp, "-vframes", "1", tempImg, "-y")
-			cmd.Stderr = &stderr
-
-			if err := cmd.Run(); err != nil {
-				log.Printf("FFmpeg %d-kadrda xato: %v, Stderr: %s", i, err, stderr.String())
-				continue
-			}
-
-			// Rasmni yuborish
-			photo := &tele.Photo{File: tele.FromDisk(tempImg)}
-			sentMsg, err := c.Bot().Send(c.Recipient(), photo)
-
-			if err == nil {
-				successCount++
-				// FilePath olishni tekshirish
-				f, _ := c.Bot().FileByID(sentMsg.Photo.FileID)
-				imageURL := fmt.Sprintf("https://api.telegram.org/file/bot%s/%s", token, f.FilePath)
-				gSearchURL := "https://lens.google.com/uploadbyurl?url=" + url.QueryEscape(imageURL)
-
-				btn := inlineMenu.URL(fmt.Sprintf("🔍 %d-kadr (Lens)", i+1), gSearchURL)
-				rows = append(rows, inlineMenu.Row(btn))
-			}
-			os.Remove(tempImg)
-		}
-
-		delete(userState, userID)
-		c.Bot().Delete(loadingMsg)
-
-		if successCount == 0 {
-			return c.Send("❌ Videodan kadr olib bo'lmadi. Video formati FFmpeg-ga mos kelmadi.")
-		}
-
-		inlineMenu.Inline(rows...)
-		return c.Send("✅ Kadrlar tayyor! Qidirish uchun tugmalarni bosing:", inlineMenu)
-	})
 	handleAll := func(c tele.Context) error {
 		updateUserActivity(c.Sender().ID)
 		userID := c.Sender().ID
@@ -650,16 +574,51 @@ func Bot() {
 
 			for _, res := range results {
 				// Tugma ustida Nomi, bosilganda ID ketsin
-				btn := inlineMenu.Data("🎬 "+res.Name, "select_anime", res.ID)
+				btn := inlineMenu.Data("� "+res.Name, "select_anime", res.ID)
 				rows = append(rows, inlineMenu.Row(btn))
 			}
 
 			inlineMenu.Inline(rows...)
 			delete(userState, userID) // Holatni yopamiz
-			return c.Send("🔍 Natijalar (keraklisini tanlang):", inlineMenu)
-		} // handleAll ichida qidiruv natijasini chiqarish qismi:
+			return c.Send(" Natijalar (keraklisini tanlang):", inlineMenu)
+		}
+		if userState[userID] == "wait_image_search" {
 
-		// Home funksiyasi ichida text := c.Text() dan keyin joylashtiring:
+			// ❌ Agar rasm yuborilmagan bo‘lsa
+			if c.Message().Photo == nil {
+				// state’dan chiqamiz
+				delete(userState, userID)
+
+				return c.Send("ℹ️ Rasm yuborilmadi. Qidiruv bekor qilindi.\nBot odatdagi rejimda ishlashda davom etadi.")
+			}
+
+			// ✅ Agar rasm bo‘lsa — davom etamiz
+			photo := c.Message().Photo
+
+			file, err := b.FileByID(photo.FileID)
+			if err != nil {
+				delete(userState, userID)
+				return c.Send("❌ Rasmni yuklab olishda xatolik yuz berdi.")
+			}
+
+			imageURL := fmt.Sprintf(
+				"https://api.telegram.org/file/bot%s/%s",
+				token,
+				file.FilePath,
+			)
+
+			encodedURL := url.QueryEscape(imageURL)
+			googleSearchURL := "https://lens.google.com/uploadbyurl?url=" + encodedURL
+
+			inlineMenu := &tele.ReplyMarkup{}
+			btnResult := inlineMenu.URL("🔍 Ob'ektni aniqlash (Google Lens)", googleSearchURL)
+			inlineMenu.Inline(inlineMenu.Row(btnResult))
+
+			delete(userState, userID)
+
+			return c.Send("✅ Rasm qabul qilindi! Ma'lumot olish uchun tugmani bosing:", inlineMenu)
+		}
+
 		if text == "🖼 Rasm orqali qidirish" {
 			userState[userID] = "wait_image_search"
 			return c.Send("🔍 Iltimos, qidirmoqchi bo'lgan rasmingizni yuboring...")
@@ -778,12 +737,6 @@ func Bot() {
 				return c.Send("✅ Rejalashtirildi!")
 			}
 		}
-		// handleAll funksiyasi boshrog'iga qo'shing:
-		// handleAll funksiyasi boshrog'iga qo'shing:
-		if text == "📹 Video orqali qidirish" {
-			userState[userID] = "wait_video_search"
-			return c.Send(" 📹 Iltimos, videongizni yuboring...")
-		}
 
 		// 2. OBUNA TEKSHIRUVI (Oddiy foydalanuvchilar uchun)
 		if !isAdmin(userID) {
@@ -806,6 +759,7 @@ func Bot() {
 			return anmelaruzb.Home(c)
 		}
 	}
+
 	b.Handle(tele.OnText, handleAll)
 	b.Handle(tele.OnMedia, handleAll)
 	b.Handle(tele.OnPhoto, handleAll)
@@ -834,7 +788,7 @@ func Bot() {
 }
 
 func sendSubMessage(c tele.Context, missing []ChannelInfo) error {
-	text := "<b>❗ Botdan foydalanish uchun quyidagi kanallarga a'zo bo‘ling yoki so‘rov yuboring:</b>"
+	text := "<b>❗️ Botdan foydalanish uchun quyidagi kanallarga a'zo bo‘ling yoki so‘rov yuboring:</b>"
 	m := &tele.ReplyMarkup{}
 	var rows []tele.Row
 	for _, ch := range missing {
@@ -844,7 +798,6 @@ func sendSubMessage(c tele.Context, missing []ChannelInfo) error {
 	m.Inline(rows...)
 	return c.Send(text, m, tele.ModeHTML)
 }
-
 func sendStatistics(c tele.Context) error {
 	statsMutex.RLock()
 	defer statsMutex.RUnlock()
