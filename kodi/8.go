@@ -61,21 +61,21 @@ var myChannels = []ChannelInfo{
 	//{ID: -1003557426309, Name: "nakrutkaurush", Invite: "https://t.me/nakrutkaurush"},
 	//{ID: -1003411861509, Name: "Maxfiy Kanal", Invite: "https://t.me/+C0qmcf4ZHY83NmNi"},
 	//{ID: -1003588929805, Name: "Maxfiy Kanal", Invite: "https://t.me/+CPtYbpger5U0YjNi"},
-	{ID: -1003477849513, Name: "Aniprimetv", Invite: "https://t.me/Aniprimetv"},
+	//{ID: -1003477849513, Name: "Aniprimetv", Invite: "https://t.me/Aniprimetv"},
 	{ID: -1003795666787, Name: "Maxfiy Kanal", Invite: "https://t.me/+ySy0irjmrao0MGZi"},
 	{ID: -1003540484817, Name: "Maxfiy Kanal", Invite: "https://t.me/+mbBXFN4zFHAyMDQy"},
-	//{ID: -1003532028606, Name: "Maxfiy Kanal", Invite: "https://t.me/+4u-B783Cgvs5YWNi"},
+	{ID: -1003532028606, Name: "Maxfiy Kanal", Invite: "https://t.me/+4u-B783Cgvs5YWNi"},
 	//{ID: -1003323161290, Name: "Manga Uzb", Invite: "https://t.me/Manga_uzbekcha26"},
 	//{ID: -1003276785399, Name: "animelaruzbektilid3", Invite: "https://t.me/animelaruzbektilid3"},
 	//{ID: -1003316396409, Name: "anmelar_chat", Invite: "https://t.me/anmelar_chat"},
 	//{ID: -1003227139819, Name: "Maxfiy Kanal", Invite: "https://t.me/+O3K3g71yc2cwYThi"},
 }
-var (
-	// Mavjud o'zgaruvchilaringiz...
 
+var (
 	// 🆕 Mana buni qo'shing:
 	userState = make(map[int64]string)
 )
+
 var (
 	userActive  = make(map[int64]time.Time)
 	userJoined  = make(map[int64]time.Time)
@@ -800,6 +800,7 @@ func sendSubMessage(c tele.Context, missing []ChannelInfo) error {
 	m.Inline(rows...)
 	return c.Send(text, m, tele.ModeHTML)
 }
+
 func sendStatistics(c tele.Context) error {
 	statsMutex.RLock()
 	defer statsMutex.RUnlock()
