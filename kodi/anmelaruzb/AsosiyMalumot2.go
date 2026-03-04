@@ -134,7 +134,6 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/Qogirchoqlarsirki"
 	"namelaruzb_bot/kodi/anmelaruzb/QoraKlever"
 	"namelaruzb_bot/kodi/anmelaruzb/Qorachaqiruvchi"
-	"namelaruzb_bot/kodi/anmelaruzb/Qoraoq"
 	"namelaruzb_bot/kodi/anmelaruzb/Qoshnifarishta"
 	"namelaruzb_bot/kodi/anmelaruzb/QotilAkame"
 	"namelaruzb_bot/kodi/anmelaruzb/QudratYangiHikoya"
@@ -206,6 +205,7 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/bizbirga"
 	"namelaruzb_bot/kodi/anmelaruzb/dahoshahzodanimamlakat"
 	_default "namelaruzb_bot/kodi/anmelaruzb/default"
+	"namelaruzb_bot/kodi/anmelaruzb/engbuyukiblislarlordioddiy"
 	"namelaruzb_bot/kodi/anmelaruzb/iblislarqotili"
 	"namelaruzb_bot/kodi/anmelaruzb/n213"
 	"namelaruzb_bot/kodi/anmelaruzb/n214"
@@ -230,6 +230,16 @@ import (
 	"namelaruzb_bot/kodi/anmelaruzb/n233"
 	"namelaruzb_bot/kodi/anmelaruzb/n234"
 	"namelaruzb_bot/kodi/anmelaruzb/n235"
+	"namelaruzb_bot/kodi/anmelaruzb/n236"
+	"namelaruzb_bot/kodi/anmelaruzb/n237"
+	"namelaruzb_bot/kodi/anmelaruzb/n238"
+	"namelaruzb_bot/kodi/anmelaruzb/n239"
+	"namelaruzb_bot/kodi/anmelaruzb/n240"
+	"namelaruzb_bot/kodi/anmelaruzb/n241"
+	"namelaruzb_bot/kodi/anmelaruzb/n242"
+	"namelaruzb_bot/kodi/anmelaruzb/n243"
+	"namelaruzb_bot/kodi/anmelaruzb/n244"
+	"namelaruzb_bot/kodi/anmelaruzb/n245"
 	"namelaruzb_bot/kodi/anmelaruzb/qahramonlikdanvoskechib"
 	"namelaruzb_bot/kodi/anmelaruzb/qipqizilragna"
 	"namelaruzb_bot/kodi/anmelaruzb/tahlilashqobilyati"
@@ -300,8 +310,8 @@ func Home(c tele.Context) error {
 		return Bleach.Home(c)
 	case "27", "O‘lmas qirolning kundalik hayoti":
 		return Olmasqirolningkundalikhayoti.Home(c)
-	case "28", "Qora o'q":
-		return Qoraoq.Home(c)
+	case "28", "eng buyuk iblislar lordi oddiy qishloqlik bo'lib qayta tug'ildi":
+		return engbuyukiblislarlordioddiy.Home(c)
 	case "29", "Men Muvaffaqiyatsiz...":
 		return Menmuvaffaqiyatsiz.Home(c)
 	case "30", "Sakamoto Kunlari":
@@ -688,34 +698,54 @@ func Home(c tele.Context) error {
 		return n220.Home(c)
 	case "221", "Farmatsevtning monologi":
 		return n221.Home(c)
-	case "222":
+	case "222", "Jozibali taomlar ma'budasi":
 		return n222.Home(c)
-	case "223":
+	case "223", "SHIBOYUGI Stolga ovqat qoyish uchun hayot va mamotga aylangan oyin":
 		return n223.Home(c)
-	case "224":
+	case "224", "Yolg‘iz Qahramon: Ming Hunar Egasi":
 		return n224.Home(c)
-	case "225":
+	case "225", "Oxiridan keyingi boshlanish":
 		return n225.Home(c)
-	case "226":
+	case "226", "Juda mukammal avliyo":
 		return n226.Home(c)
-	case "227":
+	case "227", "Eng Yomon Sehr O'qituvchisi":
 		return n227.Home(c)
-	case "228":
+	case "228", "Muqaddas Uch Birlik: Qilich, Sehr, Maktab":
 		return n228.Home(c)
-	case "229":
+	case "229", "Kunon sehrni ko'ra oladigan sehrgar":
 		return n229.Home(c)
-	case "230":
+	case "230", "Mening baxtli turmushim":
 		return n230.Home(c)
-	case "231":
+	case "231", "Yolg‘iz Qahramon: Ming Hunar":
 		return n231.Home(c)
-	case "232":
+	case "232", "Iblis lordi 2099":
 		return n232.Home(c)
-	case "233":
+	case "233", "Parallel Dunyodagi farmaseft":
 		return n233.Home(c)
-	case "234":
+	case "234", "Shiboyugi: Stolga ovqat qo'yish uchun hayot va mamotga aylangan o'yin ":
 		return n234.Home(c)
 	case "235":
 		return n235.Home(c)
+	case "236":
+		return n236.Home(c)
+	case "237":
+		return n237.Home(c)
+	case "238":
+		return n238.Home(c)
+	case "239":
+		return n239.Home(c)
+	case "240":
+		return n240.Home(c)
+	case "241":
+		return n241.Home(c)
+	case "242":
+		return n242.Home(c)
+	case "243":
+		return n243.Home(c)
+	case "244":
+		return n244.Home(c)
+	case "245":
+		return n245.Home(c)
 
 	//
 	//

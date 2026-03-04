@@ -57,14 +57,16 @@ type ContentItem struct {
 
 var myChannels = []ChannelInfo{
 	{ID: -1003050934981, Name: "anmelaruzb", Invite: "https://t.me/anmelaruzb"},
+	{ID: -1003540484817, Name: "Maxfiy Kanal", Invite: "https://t.me/+mbBXFN4zFHAyMDQy"},
+	{ID: -1003772571750, Name: "Maxfiy Kanal", Invite: "https://t.me/+n24SCS86wKNjMjli"},
+	{ID: -1003609063714, Name: "Maxfiy Kanal", Invite: "https://t.me/+t6JK9TrX4AkxN2Y6"},
 	//{ID: -1003369138926, Name: "AniDarkX", Invite: "https://t.me/AniDarkX"},
 	//{ID: -1003557426309, Name: "nakrutkaurush", Invite: "https://t.me/nakrutkaurush"},
 	//{ID: -1003411861509, Name: "Maxfiy Kanal", Invite: "https://t.me/+C0qmcf4ZHY83NmNi"},
 	//{ID: -1003588929805, Name: "Maxfiy Kanal", Invite: "https://t.me/+CPtYbpger5U0YjNi"},
 	//{ID: -1003477849513, Name: "Aniprimetv", Invite: "https://t.me/Aniprimetv"},
-	{ID: -1003795666787, Name: "Maxfiy Kanal", Invite: "https://t.me/+ySy0irjmrao0MGZi"},
-	{ID: -1003540484817, Name: "Maxfiy Kanal", Invite: "https://t.me/+mbBXFN4zFHAyMDQy"},
-	{ID: -1003609063714, Name: "Maxfiy Kanal", Invite: "https://t.me/+t6JK9TrX4AkxN2Y6"},
+	//{ID: -1003795666787, Name: "Maxfiy Kanal", Invite: "https://t.me/+ySy0irjmrao0MGZi"},
+
 	//{ID: -1003532028606, Name: "Maxfiy Kanal", Invite: "https://t.me/+4u-B783Cgvs5YWNi"},
 	//{ID: -1003323161290, Name: "Manga Uzb", Invite: "https://t.me/Manga_uzbekcha26"},
 	//{ID: -1003276785399, Name: "animelaruzbektilid3", Invite: "https://t.me/animelaruzbektilid3"},
