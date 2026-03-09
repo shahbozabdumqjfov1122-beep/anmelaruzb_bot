@@ -57,11 +57,12 @@ type ContentItem struct {
 
 var myChannels = []ChannelInfo{
 	{ID: -1003050934981, Name: "anmelaruzb", Invite: "https://t.me/anmelaruzb"},
-	{ID: -1002721749285, Name: "SpectreStudioRasmiy", Invite: "https://t.me/+4VtBlY5XvSxiMDEy"},
-	//{ID: -1003540484817, Name: "Maxfiy Kanal", Invite: "https://t.me/+mbBXFN4zFHAyMDQy"},
-	{ID: -1003661572905, Name: "Maxfiy Kanal", Invite: "https://t.me/+jeN9wWTZx7FkMmMy"},
-	{ID: -1003772571750, Name: "Maxfiy Kanal", Invite: "https://t.me/+n24SCS86wKNjMjli"},
-	{ID: -1003609063714, Name: "Maxfiy Kanal", Invite: "https://t.me/+t6JK9TrX4AkxN2Y6"},
+	{ID: -1002721749285, Name: "Obuna Bolish", Invite: "https://t.me/+4VtBlY5XvSxiMDEy"},
+	{ID: -1003131703664, Name: "Obuna Bolish", Invite: "https://t.me/JahanamJanati_2fasil"},
+	{ID: -1003540484817, Name: "Maxfiy Kanal", Invite: "https://t.me/+mbBXFN4zFHAyMDQy"},
+	//{ID: -1003661572905, Name: "Maxfiy Kanal", Invite: "https://t.me/+jeN9wWTZx7FkMmMy"},
+	//{ID: -1003772571750, Name: "Maxfiy Kanal", Invite: "https://t.me/+n24SCS86wKNjMjli"},
+	//{ID: -1003609063714, Name: "Maxfiy Kanal", Invite: "https://t.me/+t6JK9TrX4AkxN2Y6"},
 	//{ID: -1003369138926, Name: "AniDarkX", Invite: "https://t.me/AniDarkX"},
 	//{ID: -1003557426309, Name: "nakrutkaurush", Invite: "https://t.me/nakrutkaurush"},
 	//{ID: -1003411861509, Name: "Maxfiy Kanal", Invite: "https://t.me/+C0qmcf4ZHY83NmNi"},
